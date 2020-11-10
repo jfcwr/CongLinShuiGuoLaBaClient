@@ -1,0 +1,470 @@
+{
+  "mc": {
+    "action": {
+      "frameRate": 10,
+      "labels": [
+        {
+          "name": "mc",
+          "frame": 1,
+          "end": 41
+        }
+      ],
+      "events": [],
+      "frames": [
+        {
+          "res": "bigwin_particle__00",
+          "x": -40,
+          "y": 49
+        },
+        {
+          "res": "bigwin_particle__01",
+          "x": -46,
+          "y": 46
+        },
+        {
+          "res": "bigwin_particle__02",
+          "x": -50,
+          "y": 44
+        },
+        {
+          "res": "bigwin_particle__03",
+          "x": -54,
+          "y": 43
+        },
+        {
+          "res": "bigwin_particle__04",
+          "x": -57,
+          "y": 38
+        },
+        {
+          "res": "bigwin_particle__05",
+          "x": -61,
+          "y": 32
+        },
+        {
+          "res": "bigwin_particle__06",
+          "x": -79,
+          "y": 26
+        },
+        {
+          "res": "bigwin_particle__07",
+          "x": -103,
+          "y": 14
+        },
+        {
+          "res": "bigwin_particle__08",
+          "x": -128,
+          "y": -9
+        },
+        {
+          "res": "bigwin_particle__09",
+          "x": -152,
+          "y": -33
+        },
+        {
+          "res": "bigwin_particle__10",
+          "x": -178,
+          "y": -58
+        },
+        {
+          "res": "bigwin_particle__11",
+          "x": -203,
+          "y": -83
+        },
+        {
+          "res": "bigwin_particle__12",
+          "x": -229,
+          "y": -108
+        },
+        {
+          "res": "bigwin_particle__13",
+          "x": -256,
+          "y": -134
+        },
+        {
+          "res": "bigwin_particle__14",
+          "x": -306,
+          "y": -162
+        },
+        {
+          "res": "bigwin_particle__15",
+          "x": -360,
+          "y": -201
+        },
+        {
+          "res": "bigwin_particle__16",
+          "x": -352,
+          "y": -241
+        },
+        {
+          "res": "bigwin_particle__17",
+          "x": -360,
+          "y": -242
+        },
+        {
+          "res": "bigwin_particle__18",
+          "x": -360,
+          "y": -303
+        },
+        {
+          "res": "bigwin_particle__19",
+          "x": -348,
+          "y": -369
+        },
+        {
+          "res": "bigwin_particle__20",
+          "x": -360,
+          "y": -434
+        },
+        {
+          "res": "bigwin_particle__21",
+          "x": -344,
+          "y": -498
+        },
+        {
+          "res": "bigwin_particle__22",
+          "x": -360,
+          "y": -664
+        },
+        {
+          "res": "bigwin_particle__23",
+          "x": -358,
+          "y": -623
+        },
+        {
+          "res": "bigwin_particle__24",
+          "x": -324,
+          "y": -685
+        },
+        {
+          "res": "bigwin_particle__25",
+          "x": -341,
+          "y": -746
+        },
+        {
+          "res": "bigwin_particle__26",
+          "x": -359,
+          "y": -516
+        },
+        {
+          "res": "bigwin_particle__27",
+          "x": -355,
+          "y": -458
+        },
+        {
+          "res": "bigwin_particle__28",
+          "x": -147,
+          "y": -485
+        },
+        {
+          "res": "bigwin_particle__29",
+          "x": -153,
+          "y": -511
+        },
+        {
+          "res": "bigwin_particle__30",
+          "x": -159,
+          "y": -537
+        },
+        {
+          "res": "bigwin_particle__31",
+          "x": -165,
+          "y": -563
+        },
+        {
+          "res": "bigwin_particle__32",
+          "x": -171,
+          "y": -587
+        },
+        {
+          "res": "bigwin_particle__33",
+          "x": -177,
+          "y": -612
+        },
+        {
+          "res": "bigwin_particle__34",
+          "x": -183,
+          "y": -636
+        },
+        {
+          "res": "bigwin_particle__35",
+          "x": -132,
+          "y": -277
+        },
+        {
+          "res": "bigwin_particle__36",
+          "x": -360,
+          "y": -780
+        },
+        {
+          "res": "bigwin_particle__37",
+          "x": -360,
+          "y": -780
+        },
+        {
+          "res": "bigwin_particle__38",
+          "x": -360,
+          "y": -780
+        },
+        {
+          "res": "bigwin_particle__39",
+          "x": -360,
+          "y": -780
+        },
+        {
+          "res": "bigwin_particle__40",
+          "x": -360,
+          "y": -780
+        }
+      ]
+    }
+  },
+  "res": {
+    "bigwin_particle__00": {
+      "x": 288,
+      "y": 4012,
+      "w": 78,
+      "h": 79
+    },
+    "bigwin_particle__01": {
+      "x": 1300,
+      "y": 3491,
+      "w": 88,
+      "h": 84
+    },
+    "bigwin_particle__02": {
+      "x": 1201,
+      "y": 3491,
+      "w": 98,
+      "h": 90
+    },
+    "bigwin_particle__03": {
+      "x": 3470,
+      "y": 1213,
+      "w": 109,
+      "h": 94
+    },
+    "bigwin_particle__04": {
+      "x": 539,
+      "y": 3904,
+      "w": 125,
+      "h": 112
+    },
+    "bigwin_particle__05": {
+      "x": 539,
+      "y": 3771,
+      "w": 142,
+      "h": 132
+    },
+    "bigwin_particle__06": {
+      "x": 1927,
+      "y": 2354,
+      "w": 174,
+      "h": 152
+    },
+    "bigwin_particle__07": {
+      "x": 3988,
+      "y": 985,
+      "w": 211,
+      "h": 179
+    },
+    "bigwin_particle__08": {
+      "x": 288,
+      "y": 3771,
+      "w": 250,
+      "h": 240
+    },
+    "bigwin_particle__09": {
+      "x": 0,
+      "y": 3771,
+      "w": 287,
+      "h": 302
+    },
+    "bigwin_particle__10": {
+      "x": 1201,
+      "y": 3606,
+      "w": 330,
+      "h": 365
+    },
+    "bigwin_particle__11": {
+      "x": 4383,
+      "y": 626,
+      "w": 388,
+      "h": 429
+    },
+    "bigwin_particle__12": {
+      "x": 4971,
+      "y": 0,
+      "w": 447,
+      "h": 493
+    },
+    "bigwin_particle__13": {
+      "x": 696,
+      "y": 3491,
+      "w": 504,
+      "h": 558
+    },
+    "bigwin_particle__14": {
+      "x": 4383,
+      "y": 0,
+      "w": 587,
+      "h": 625
+    },
+    "bigwin_particle__15": {
+      "x": 1927,
+      "y": 3364,
+      "w": 685,
+      "h": 704
+    },
+    "bigwin_particle__16": {
+      "x": 2646,
+      "y": 2532,
+      "w": 712,
+      "h": 784
+    },
+    "bigwin_particle__17": {
+      "x": 1927,
+      "y": 2537,
+      "w": 718,
+      "h": 826
+    },
+    "bigwin_particle__18": {
+      "x": 721,
+      "y": 2563,
+      "w": 720,
+      "h": 927
+    },
+    "bigwin_particle__19": {
+      "x": 1409,
+      "y": 1294,
+      "w": 708,
+      "h": 1059
+    },
+    "bigwin_particle__20": {
+      "x": 0,
+      "y": 1445,
+      "w": 720,
+      "h": 1200
+    },
+    "bigwin_particle__21": {
+      "x": 2119,
+      "y": 0,
+      "w": 693,
+      "h": 1275
+    },
+    "bigwin_particle__22": {
+      "x": 0,
+      "y": 0,
+      "w": 720,
+      "h": 1444
+    },
+    "bigwin_particle__23": {
+      "x": 1400,
+      "y": 0,
+      "w": 718,
+      "h": 1293
+    },
+    "bigwin_particle__24": {
+      "x": 721,
+      "y": 0,
+      "w": 678,
+      "h": 1417
+    },
+    "bigwin_particle__25": {
+      "x": 2813,
+      "y": 0,
+      "w": 656,
+      "h": 1338
+    },
+    "bigwin_particle__26": {
+      "x": 721,
+      "y": 1418,
+      "w": 687,
+      "h": 1144
+    },
+    "bigwin_particle__27": {
+      "x": 0,
+      "y": 2646,
+      "w": 695,
+      "h": 1124
+    },
+    "bigwin_particle__28": {
+      "x": 3151,
+      "y": 1339,
+      "w": 498,
+      "h": 1192
+    },
+    "bigwin_particle__29": {
+      "x": 2119,
+      "y": 1276,
+      "w": 513,
+      "h": 1260
+    },
+    "bigwin_particle__30": {
+      "x": 2633,
+      "y": 1339,
+      "w": 517,
+      "h": 1170
+    },
+    "bigwin_particle__31": {
+      "x": 3470,
+      "y": 0,
+      "w": 517,
+      "h": 1212
+    },
+    "bigwin_particle__32": {
+      "x": 1442,
+      "y": 2354,
+      "w": 484,
+      "h": 1251
+    },
+    "bigwin_particle__33": {
+      "x": 3359,
+      "y": 2543,
+      "w": 427,
+      "h": 1291
+    },
+    "bigwin_particle__34": {
+      "x": 3650,
+      "y": 1213,
+      "w": 439,
+      "h": 1329
+    },
+    "bigwin_particle__35": {
+      "x": 3988,
+      "y": 0,
+      "w": 394,
+      "h": 984
+    },
+    "bigwin_particle__36": {
+      "x": 1400,
+      "y": 1294,
+      "w": 0,
+      "h": 0
+    },
+    "bigwin_particle__37": {
+      "x": 1400,
+      "y": 1294,
+      "w": 0,
+      "h": 0
+    },
+    "bigwin_particle__38": {
+      "x": 1400,
+      "y": 1294,
+      "w": 0,
+      "h": 0
+    },
+    "bigwin_particle__39": {
+      "x": 1400,
+      "y": 1294,
+      "w": 0,
+      "h": 0
+    },
+    "bigwin_particle__40": {
+      "x": 1400,
+      "y": 1294,
+      "w": 0,
+      "h": 0
+    }
+  }
+}

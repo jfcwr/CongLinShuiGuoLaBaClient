@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="xyj_rotatingskin" width="720" height="1280" xmlns:w="http://ns.egret.com/wing"
+        xmlns:e="http://ns.egret.com/eui" xmlns:game="game.*">
+	<e:Group id="mainGroup" left="0" right="0" height="1560" bottom="0">
+		<e:Group width="720" x="0" height="765" bottom="0">
+			<e:Rect scaleX="1" scaleY="1" fillAlpha="1" strokeAlpha="1" top="0" bottom="0" x="0" width="720"  fillColor="0x282833"/>
+			<e:Group width="720" height="84" x="0" y="0" scaleX="1" scaleY="1">
+				<e:Rect bottom="0" right="0" left="0" top="0"  fillColor="0x31313c"/>
+				<e:Label text="旋转设置" horizontalCenter="0" verticalCenter="0" />
+				<game:Button id="closeButton" interactive="bright" label="" scaleX="1" scaleY="1" x="624.48" verticalCenter="0">
+					<game:skinName>
+						<e:Skin states="up,down,disabled">
+							<e:Image width="100%" height="100%" source="menu_close_button" />
+							<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+						</e:Skin>
+					</game:skinName>
+				</game:Button>
+			</e:Group>
+			<e:Group width="680" height="195" y="108" horizontalCenter="0">
+				<e:Rect anchorOffsetY="0" left="0" right="0" top="0" bottom="1" height="195"  fillColor="0x31313c" width="680"/>
+				<e:Image x="45.000000000000014" y="27" scaleX="1" scaleY="1" height="37" width="37" source="ic_nav_spin_turbo_up"/>
+				<e:Label text="旋转速度" x="102.00000000000001" y="27" size="36" textColor="0xf2f2fc" scaleX="1" scaleY="1"/>
+				<game:Button id="changSuButton" label="常速" width="261" height="85" x="84" y="84" scaleX="1" scaleY="1">
+					<game:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Rect id="bgColor1" width="261" height="85" x="0" y="0" fillColor="0xFFC824" ellipseWidth="10" ellipseHeight="10"/>
+						<e:Rect id="bgColor2" visible="false" fillColor="0x30303D" width="261" height="85" ellipseWidth="10" ellipseHeight="10" strokeWeight="2" strokeColor="0x181829"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="36" textColor="0xF2F2FC"/>
+					</e:Skin>
+					</game:skinName>
+				</game:Button>
+				<game:Button id="jisuButton" label="极速" x="372.00000000000006" y="84" width="261" height="85" scaleX="1" scaleY="1">
+					<game:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Rect id="bgColor1" width="261" visible="false" height="85" x="0" y="0" fillColor="0xFFC824" ellipseWidth="10" ellipseHeight="10"/>
+						<e:Rect id="bgColor2" fillColor="0x30303D" width="261" height="85" ellipseWidth="10" ellipseHeight="10" strokeWeight="2" strokeColor="0x181829"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="36" textColor="0x5C5C5C"/>
+					</e:Skin>
+					</game:skinName>
+				</game:Button>
+			</e:Group>
+			<e:Group width="680" height="195" x="20" y="327" anchorOffsetY="0">
+				<e:Rect anchorOffsetY="0" left="0" right="0" top="0" bottom="1" height="195"  fillColor="0x31313c" width="680"/>
+				<e:Group width="680" height="60" x="0" y="0" anchorOffsetY="0">
+					<e:Image x="45" y="27" source="icon_auto_spin_menu" width="37" height="37"/>
+					<e:Label text="自动旋转" x="107" y="27" size="36" verticalAlign="middle" textAlign="left" textColor="0xf2f2fc"/>
+				</e:Group>
+				<e:Group id="betGroup" width="680" height="100" x="0" y="60" scaleX="1" scaleY="1">
+					<e:Button id="autoBet10" label="10" x="40" y="20.000000000000114" width="145" height="67" name="bet_1" scaleX="1" scaleY="1">
+					<e:skinName>
+						<e:Skin states="up,down,disabled">
+						<e:Rect fillColor="0x393a46" strokeAlpha="1" strokeColor="0x2A2A37" width="145" height="67" strokeWeight="2" ellipseWidth="7" ellipseHeight="7"/>
+						<e:Label id="labelDisplay" name="autoLabel" horizontalCenter="0" verticalCenter="0" size="30" textColor="0x888888"/>
+						<e:Rect id="act" width="142"  x="2" height="4"  y="61" anchorOffsetY="0" strokeColor="0xf7ba65" fillColor="0xf7ba65" visible="false" ellipseWidth="10" ellipseHeight="10"/>
+						<e:Rect width="100%" height="100%" alpha="0"/>
+						</e:Skin>
+					</e:skinName>
+					</e:Button>
+					<game:Button id="autoBet30" label="30" x="145" y="20.000000000000114" width="145" height="67" name="bet_2" scaleX="1" scaleY="1">
+					<game:skinName>
+						<e:Skin states="up,down,disabled">
+						<e:Rect fillColor="0x393a46" strokeAlpha="1" strokeColor="0x2A2A37" width="145" height="67" strokeWeight="2" ellipseWidth="7" ellipseHeight="7"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="30" textColor="0x888888"/>
+						<e:Rect id="act" width="142"  x="2"  height="4" y="61" anchorOffsetY="0" strokeColor="0xf7ba65" fillColor="0xf7ba65" visible="false" ellipseWidth="10" ellipseHeight="10"/>
+						</e:Skin>
+					</game:skinName>
+					</game:Button>
+					<game:Button id="autoBet50" label="50" x="270" y="20.000000000000114" width="145" height="67" name="bet_3" scaleX="1" scaleY="1">
+					<game:skinName>
+						<e:Skin states="up,down,disabled">
+						<e:Rect fillColor="0x393a46" strokeAlpha="1" strokeColor="0x2A2A37" width="145" height="67"  strokeWeight="2" ellipseWidth="7" ellipseHeight="7"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="30" textColor="0x888888"/>
+						<e:Rect id="act" width="142"  x="2" height="4"  y="61" anchorOffsetY="0" strokeColor="0xf7ba65" fillColor="0xf7ba65" visible="false" ellipseWidth="10" ellipseHeight="10"/>
+						</e:Skin>
+					</game:skinName>
+					</game:Button>
+
+					<game:Button id="autoBet100" label="∞" x="0" y="-60" width="145" height="67" name="bet_5" scaleX="1" scaleY="1">
+					<game:skinName>
+						<e:Skin states="up,down,disabled">
+						<e:Rect fillColor="0x393a46" strokeAlpha="1" strokeColor="0x2A2A37" width="145" height="67"  strokeWeight="2" ellipseWidth="7" ellipseHeight="7"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="30" textColor="0x888888"/>
+						<e:Rect id="act" width="142"  x="2" height="4"  y="61" anchorOffsetY="0" strokeColor="0xf7ba65" fillColor="0xf7ba65" visible="false" ellipseWidth="10" ellipseHeight="10"/>
+						</e:Skin>
+					</game:skinName>
+					</game:Button>
+					<e:layout>
+					<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="11" paddingLeft="20" paddingRight="20"/>
+					</e:layout>
+				</e:Group>
+
+
+
+			</e:Group>
+			<game:Button id="startAutoRotatingButton" label="开始自动旋转" width="621" height="85" y="569" scaleX="1" scaleY="1" horizontalCenter="0">
+				<game:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Rect width="621" height="85" x="0" y="0" fillColor="0xFFC824" ellipseWidth="10" ellipseHeight="10"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="36" textColor="0xFFFFFF"/>
+				</e:Skin>
+				</game:skinName>
+			</game:Button>
+		</e:Group>
+	</e:Group>
+</e:Skin>

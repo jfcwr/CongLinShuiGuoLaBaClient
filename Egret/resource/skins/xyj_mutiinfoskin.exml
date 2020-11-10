@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="xyj_mutiinfoskin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:game="game.*">
+	<e:Rect id="rect1" fillColor="0x7a5c8f" scaleX="1" scaleY="1" height="132" verticalCenter="0" horizontalCenter="0"/>
+	<e:Image id="image1" source="spin_base1" scaleX="1" scaleY="1" height="132" verticalCenter="0" horizontalCenter="0"/>
+
+
+	<e:Group id="mainGroup" height="132" horizontalCenter="0" verticalCenter="0">
+		<e:Group id="iconGroup" scaleY="1" anchorOffsetX="0" width="132" height="132" x="290" y="40">
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" horizontalAlign="center"/>
+			</e:layout>
+
+		</e:Group>
+		<e:Group id="descGroup" scaleY="1" anchorOffsetX="0" x="210" y="40" width="132" height="132"
+		        >
+			<e:Image touchEnabled="false" x="80" y="0" width="200" source="infoboard_c" visible="false" />
+			<e:Group id="mutiGroup" width="132" height="132" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0">
+				<e:BitmapLabel text="5" verticalCenter="-40" horizontalCenter="-40"  font="number3_fnt" scaleX="0.2" scaleY="0.2"/>
+				<e:BitmapLabel text="4" verticalCenter="0" horizontalCenter="-40"  font="number3_fnt" scaleX="0.2" scaleY="0.2"/>
+				<e:BitmapLabel text="3" verticalCenter="40" horizontalCenter="-40"  font="number3_fnt" scaleX="0.2" scaleY="0.2"/>
+				<e:BitmapLabel id="muti3" verticalCenter="-40" text="400" left="50" font="number4_fnt"  scaleX="0.6" scaleY="0.6"/>
+				<e:BitmapLabel id="muti2" verticalCenter="0" font="number2_fnt" text="100" left="50"  scaleX="0.6" scaleY="0.6"/>
+				<e:BitmapLabel id="muti1" verticalCenter="40" text="30" left="50"  scaleX="0.6" scaleY="0.6" font="number2_fnt"/>
+			</e:Group>
+			<e:Label id="duobaoLabel" text="3个夺宝符号将触发免费旋转。" verticalCenter="0" verticalAlign="middle" textAlign="center" width="264" size="28" textColor="0xe5c847" horizontalCenter="0"/>
+		</e:Group>
+		<e:layout>
+			<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle" />
+		</e:layout>
+	</e:Group>
+</e:Skin>

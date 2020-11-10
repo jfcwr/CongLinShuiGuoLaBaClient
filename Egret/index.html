@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Egret</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <!--version_start-->
+    <meta name="res-version" content="" />
+    <meta name="thm-version" content="" />
+    <!--version_end-->
+    <style>
+        html,
+        body {
+            -ms-touch-action: none;
+            background: #888888;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+
+    <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件。删除 modules_files 标签后，库文件加载列表将不会变化，请谨慎操作！-->
+    <!--modules_files_start-->
+	<script egret="lib" src="libs/modules/egret/egret.js"></script>
+	<script egret="lib" src="libs/modules/egret/egret.web.js"></script>
+	<script egret="lib" src="libs/modules/socket/socket.js"></script>
+	<script egret="lib" src="libs/modules/game/game.js"></script>
+	<script egret="lib" src="libs/modules/res/res.js"></script>
+	<script egret="lib" src="libs/modules/tween/tween.js"></script>
+	<script egret="lib" src="libs/modules/eui/eui.js"></script>
+	<script egret="lib" src="libs/modules/uniLib/uniLib.js"></script>
+	<script egret="lib" src="libs/modules/dragonBones/dragonBones.js"></script>
+	<script egret="lib" src="pureMvc/bin/pureMvc/pureMvc.js"></script>
+	<script egret="lib" src="libs/modules/particle/particle.js"></script>
+	<script egret="lib" src="libs/modules/pokerClientLib/pokerClientLib.js"></script>
+	<script egret="lib" src="libs/modules/mahjongLobbyLib/mahjongLobbyLib.js"></script>
+	<script egret="lib" src="libs/modules/LabaLib/LabaLib.js"></script>
+	<!--modules_files_end-->
+
+    <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
+    
+
+    <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
+    <!--game_files_start-->
+	<script egret="lib" src="bin-debug/laba/BetGoldView.js"></script>
+	<script egret="lib" src="bin-debug/AssetAdapter.js"></script>
+	<script egret="lib" src="bin-debug/FlyGoldUtils.js"></script>
+	<script egret="lib" src="bin-debug/GoldFountain.js"></script>
+	<script egret="lib" src="bin-debug/PageView.js"></script>
+	<script egret="lib" src="bin-debug/ThemeAdapter.js"></script>
+	<script egret="lib" src="bin-debug/Utils.js"></script>
+	<script egret="lib" src="bin-debug/XYJMain.js"></script>
+	<script egret="lib" src="bin-debug/Atable/ItemMultiplyList.js"></script>
+	<script egret="lib" src="bin-debug/Atable/LabaEffectMultiplyList.js"></script>
+	<script egret="lib" src="bin-debug/Atable/LabaLineList.js"></script>
+	<script egret="lib" src="bin-debug/Atable/MaliResultPool.js"></script>
+	<script egret="lib" src="bin-debug/Atable/MaryOutputIconList.js"></script>
+	<script egret="lib" src="bin-debug/Atable/TableBankerRuleConfigList.js"></script>
+	<script egret="lib" src="bin-debug/Atable/TableGameRuleConfigList.js"></script>
+	<script egret="lib" src="bin-debug/Atable/TableItemConfig.js"></script>
+	<script egret="lib" src="bin-debug/Atable/TableJackpotSpecialSymbolConfig.js"></script>
+	<script egret="lib" src="bin-debug/Atable/TableMaliMultiplyList.js"></script>
+	<script egret="lib" src="bin-debug/Atable/TableSpecialSymbolConfig.js"></script>
+	<script egret="lib" src="bin-debug/data/GameConstant.js"></script>
+	<script egret="lib" src="bin-debug/data/LabaConfig.js"></script>
+	<script egret="lib" src="bin-debug/data/LocalStorage.js"></script>
+	<script egret="lib" src="bin-debug/FallObjectUtis.js"></script>
+	<script egret="lib" src="bin-debug/laba/BigWinPanel.js"></script>
+	<script egret="lib" src="bin-debug/laba/CompensationTableView.js"></script>
+	<script egret="lib" src="bin-debug/laba/DataCenter.js"></script>
+	<script egret="lib" src="bin-debug/laba/EffectLayer.js"></script>
+	<script egret="lib" src="bin-debug/laba/FlyWildIcon.js"></script>
+	<script egret="lib" src="bin-debug/laba/FreeGameIngPanel.js"></script>
+	<script egret="lib" src="bin-debug/laba/FreeGameStart.js"></script>
+	<script egret="lib" src="bin-debug/laba/FreeReultPanel.js"></script>
+	<script egret="lib" src="bin-debug/laba/LabaBelt.js"></script>
+	<script egret="lib" src="bin-debug/laba/LabaGame.js"></script>
+	<script egret="lib" src="bin-debug/laba/LabaMachine.js"></script>
+	<script egret="lib" src="bin-debug/laba/MutiTipsIcon.js"></script>
+	<script egret="lib" src="bin-debug/laba/ResultShow.js"></script>
+	<script egret="lib" src="bin-debug/laba/RotationSetView.js"></script>
+	<script egret="lib" src="bin-debug/laba/RuleView.js"></script>
+	<script egret="lib" src="bin-debug/laba/SgmlHelper.js"></script>
+	<script egret="lib" src="bin-debug/manage/ActionManage.js"></script>
+	<script egret="lib" src="bin-debug/manage/EffectCreate.js"></script>
+	<script egret="lib" src="bin-debug/manage/SoundHand.js"></script>
+	<script egret="lib" src="bin-debug/manage/table.js"></script>
+	<script egret="lib" src="bin-debug/mvc/PokerGameScene.js"></script>
+	<script egret="lib" src="bin-debug/mvc/SHZPokerMediator.js"></script>
+	<!--game_files_end-->
+</head>
+
+<body>
+
+    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player" data-entry-class="XYJMain" data-orientation="portrait" data-scale-mode="fixedWidth" data-frame-rate="60" data-content-width="720" data-content-height="1280" data-show-paint-rect="false" data-multi-fingered="1"
+        data-show-fps="false" data-show-log="false" data-show-fps-style="x:100,y:0,size:22,textColor:0xffffff,bgAlpha:0.9">
+    </div>
+    <script>
+        /**
+         * {
+         * "renderMode":, //引擎渲染模式，"canvas" 或者 "webgl"
+         * "audioType": "" //使用的音频类型，0:默认，1:qq audio，2:web audio，3:audio
+         * }
+         **/
+        ;
+        egret.runEgret({
+            renderMode: "webgl",
+            audioType: 0
+        });
+    </script>
+</body>
+
+</html>

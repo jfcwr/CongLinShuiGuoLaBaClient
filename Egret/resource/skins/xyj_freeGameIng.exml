@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="xyj_freeGameIng" width="720" height="650" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+	<w:Declarations>
+		<tween:TweenGroup id="addTween">
+			<tween:TweenItem target="{activeImage}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="500">
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{image}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="500">
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="500">
+					<tween:props>
+						<e:Object alpha="{0}" scaleX="{1.5}" scaleY="{1.5}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="250">
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{addImage_active}">
+				<tween:Wait duration="500"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}" x="{208}" y="{22}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="500"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+		<tween:TweenGroup id="characterSpin">
+			<tween:TweenItem target="{characterSpin1}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}" scaleX="{0}" scaleY="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="150">
+					<tween:props>
+						<e:Object scaleY="{2.4}" scaleX="{2.4}" alpha="{0.6}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="200">
+					<tween:props>
+						<e:Object alpha="{0.5}" scaleX="{3}" scaleY="{3}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="250">
+					<tween:props>
+						<e:Object alpha="{0.4}" scaleX="{4}" scaleY="{4}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="250">
+					<tween:props>
+						<e:Object scaleX="{6.5}" scaleY="{6}" alpha="{0.2}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="450">
+					<tween:props>
+						<e:Object alpha="{0}" scaleX="{3}" scaleY="{3}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{characterSpin2}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}" scaleX="{0}" scaleY="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="150">
+					<tween:props>
+						<e:Object alpha="{0.8}" scaleX="{0.5}" scaleY="{0.5}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="200">
+					<tween:props>
+						<e:Object alpha="{0.6}" scaleX="{1}" scaleY="{1}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="250">
+					<tween:props>
+						<e:Object alpha="{0.4}" scaleX="{1.5}" scaleY="{1.5}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="300">
+					<tween:props>
+						<e:Object alpha="{0.2}" scaleX="{1.9}" scaleY="{1.9}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="250">
+					<tween:props>
+						<e:Object alpha="{0}" scaleX="{2.5}" scaleY="{2.5}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{characterSpin3}">
+				<tween:Set>
+					<tween:props>
+						<e:Object scaleX="{0}" scaleY="{0}" alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="300">
+					<tween:props>
+						<e:Object alpha="{0.8}" scaleX="{1.8}" scaleY="{1.8}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="300">
+					<tween:props>
+						<e:Object alpha="{0.6}" scaleX="{3.1}" scaleY="{3.1}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="200">
+					<tween:props>
+						<e:Object alpha="{0.8}" scaleX="{4}" scaleY="{4}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="350">
+					<tween:props>
+						<e:Object alpha="{0}" scaleX="{5}" scaleY="{5}"/>
+					</tween:props>
+				</tween:To>
+
+
+			</tween:TweenItem>
+			<tween:TweenItem target="{characterSpin4}">
+				<tween:Wait duration="450"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object scaleX="{1}" scaleY="{1}" x="{75}" y="{-10}" alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="350">
+					<tween:props>
+						<e:Object scaleX="{2}" scaleY="{2}" x="{0}" y="{-180}" alpha="{1}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="300">
+					<tween:props>
+						<e:Object scaleX="{3}" scaleY="{3}" x="{-70}" y="{-380}" alpha="{0.1}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="250">
+					<tween:props>
+						<e:Object alpha="{0}" y="{-400}" scaleX="{4}" scaleY="{4}" x="{-150}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+	</w:Declarations>
+	<e:Group width="720" height="650" horizontalCenter="0" verticalCenter="0">
+		<e:Group id="animGroup" width="2" height="2" scaleX="1" scaleY="1" x="360" y="211">
+			<e:Image id="huangImage" scaleX="8" scaleY="8" touchEnabled="false" alpha="1" source="glow_02_win" x="-300" blendMode="add" y="-180"/>
+			<e:Image id="baiImage" scaleX="8" scaleY="8" touchEnabled="false" source="glow_03_win" blendMode="add" y="-201.3" alpha="0.6" x="-370"/>
+
+
+			<e:Image id="baiImage0" scaleX="7" scaleY="7" touchEnabled="false" blendMode="add" y="-320" source="flare_01_win" x="-420"/>
+
+		</e:Group>
+		<e:Group horizontalCenter="0" y="380" height="300" width="488">
+			<e:Image id="freeWordImage" scaleY="1" touchEnabled="false" scaleX="1" source="free_spin-free_spins_remaining"
+			         left="19" bottom="0" />
+			<e:Group id="progressGroup" y="88" x="62" width="358" height="54">
+				<e:Image  source="bonus_bar_b" verticalCenter="0" left="0" height="54" width="358" />
+				<e:Image id="progressImage" scaleY="1" touchEnabled="false" scaleX="1"
+				          verticalCenter="0" left="0" height="54" width="358" source="bonus_gem_bar_full"/>
+			</e:Group>
+			<e:Image scaleY="1" touchEnabled="false" scaleX="1" source="bonus_bar_a" horizontalCenter="0" top="0"  alpha="1"/>
+			<e:Image id="activeImage" scaleY="1" touchEnabled="false" scaleX="1" horizontalCenter="0" top="17" source="bonus_gem_active"/>
+			<e:Image id="addImage" scaleX="1" scaleY="1" touchEnabled="false" source="plus_2_deactive" horizontalCenter="0"
+			         x="324" top="22" />
+			<e:Image id="image" scaleX="1" scaleY="1" horizontalCenter="0" source="plus_2_active" y="49.5" width="72" height="55" anchorOffsetY="27.5" anchorOffsetX="36" alpha="0"/>
+			<e:BitmapLabel id="freecountBLabel" text="1" anchorOffsetX="0" font="number3_fnt" scaleX="0.7" scaleY="0.7"
+			               bottom="28" x="381" />
+			<e:Image id="lastFreeImage" scaleY="1" touchEnabled="false" scaleX="1" source="free_spin-last_free_spin"
+			         horizontalCenter="0" bottom="20" />
+			<e:Image id="addImage_active" scaleX="1.5" scaleY="1.5" source="plus_2_active" alpha="0" y="149" x="344"/>
+		</e:Group>
+		<e:Group id="spinGrowp" width="297.33" height="226.67" anchorOffsetX="0" anchorOffsetY="0" verticalCenter="0" horizontalCenter="0" visible="false">
+			<e:Image id="characterSpin1" source="spin_glow_b" horizontalCenter="0" verticalCenter="0" blendMode="add" scaleX="0" scaleY="0"/>
+			<e:Image id="characterSpin2" horizontalCenter="0" verticalCenter="0" blendMode="add" source="bigwin_glow_c" scaleX="0" scaleY="0"/>
+			<e:Image id="characterSpin3" horizontalCenter="0" verticalCenter="0" blendMode="add" source="bigwin_glow_b" scaleX="0" scaleY="0"/>
+			<e:Image id="characterSpin4" blendMode="add" source="bonus_vfx" x="88" y="-64" scaleX="0" scaleY="0"/>
+		</e:Group>
+	</e:Group>
+
+
+	<e:Image scaleX="1" scaleY="1" touchEnabled="false" bottom="-15" source="background_main_08" x="0" visible="false" />
+	<e:Label id="tipsLabel" text="" anchorOffsetX="0" width="500" size="40" fontFamily="黑体" textAlign="center"
+	         verticalAlign="middle" height="40" stroke="2" strokeColor="0x593000" textColor="0xf7e5aa" horizontalCenter="0"
+	         verticalCenter="0" />
+</e:Skin>

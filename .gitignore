@@ -1,0 +1,15 @@
+dea
+bin-debug/
+libs/
+.DS_Store
+bin-release/
+.idea
+release/
+release_lobby
+commonRes
+manifest.json
+wingProperties.json
+default.thm.json
+tools
+manifest.json
+labaTools/

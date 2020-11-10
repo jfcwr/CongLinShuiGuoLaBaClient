@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="xyj_gameskin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:game="game.*" xmlns:tween="egret.tween.*" xmlns:xiyouji="xiyouji.*">
+	<w:Declarations>
+		<tween:TweenGroup id="cloud">
+			<tween:TweenItem target="{lcloud}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="500" ease="quintIn">
+					<tween:props>
+						<e:Object  alpha="{1}" x="{0}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{rcloud}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="500" ease="quintIn">
+					<tween:props>
+						<e:Object  alpha="{1}" x="{0}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+		<tween:TweenGroup id="fiveKindAni">
+			<tween:TweenItem target="{five1}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0.5}" scaleX="{2}" scaleY="{2}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="250">
+					<tween:props>
+						<e:Object alpha="{1}" scaleX="{4}" scaleY="{4}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{five2}">
+				<tween:Set>
+					<tween:props>
+						<e:Object scaleX="{1}" scaleY="{1}" alpha="{0.5}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="500">
+					<tween:props>
+						<e:Object alpha="{1}" scaleX="{4}" scaleY="{4}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{five3}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="500">
+					<tween:props>
+						<e:Object alpha="{0.67}" scaleX="{0.8}" scaleY="{0.8}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="250">
+					<tween:props>
+						<e:Object alpha="{1}" scaleX="{1.2}" scaleY="{1.2}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="200">
+					<tween:props>
+						<e:Object alpha="{1}" scaleX="{1}" scaleY="{1}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{five4}">
+				<tween:Set>
+				<tween:props>
+					<e:Object alpha="{0}"/>
+				</tween:props>
+				</tween:Set>
+				<tween:To duration="500">
+					<tween:props>
+						<e:Object scaleX="{0.8}" scaleY="{0.8}" alpha="{0}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="250">
+					<tween:props>
+						<e:Object alpha="{0.5}" scaleX="{1.4}" scaleY="{1.4}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="200">
+				<tween:props>
+					<e:Object alpha="{0}" scaleX="{1.45}" scaleY="{1.45}"/>
+				</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+		<tween:TweenGroup id="fiveKindExitAni" >
+		<tween:TweenItem target="{five1}">
+			<tween:Wait duration="150"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}" scaleX="{4}" scaleY="{4}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="750">
+					<tween:props>
+						<e:Object scaleX="{2}" scaleY="{2}" alpha="{0}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{five2}">
+				<tween:Wait duration="150"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}" scaleX="{4}" scaleY="{4}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="750">
+					<tween:props>
+						<e:Object scaleX="{1}" scaleY="{1}" alpha="{0}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{five3}">
+				<tween:Wait duration="150"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}" scaleX="{1}" scaleY="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="400">
+					<tween:props>
+						<e:Object alpha="{0}" scaleX="{1}" scaleY="{1}"/>
+					</tween:props>
+				</tween:To>
+
+
+			</tween:TweenItem>
+			<tween:TweenItem target="{five4}">
+				<tween:Wait duration="150"/>
+				<tween:Set>
+				<tween:props>
+					<e:Object alpha="{1}" scaleX="{1}" scaleY="{1}"/>
+				</tween:props>
+				</tween:Set>
+				<tween:To duration="400">
+					<tween:props>
+						<e:Object alpha="{0}" scaleX="{1}" scaleY="{1}"/>
+					</tween:props>
+				</tween:To>
+
+
+			</tween:TweenItem>
+		</tween:TweenGroup>
+
+	</w:Declarations>
+	<w:Config id="163714e0f1e" />
+	<e:Image scaleX="1" scaleY="1" touchEnabled="false" left="0" right="0" source="background_png" height="1560"  bottom="0"/>
+	<e:Image scaleX="2" scaleY="2" touchEnabled="false" bottom="1316" source="background_cloud_05" right="0" />
+	<e:Image scaleX="2" scaleY="2" touchEnabled="false" source="background_cloud_04" left="0" bottom="1400" />
+	<e:Image scaleX="2" scaleY="2" touchEnabled="false" source="background_cloud_06" left="0" bottom="1000" />
+	<e:Image id="bg1" source="background_bonus_png" width="720" horizontalCenter="0" height="1560" bottom="0"
+	         scale9Grid="47,53,284,618" visible="false" />
+	<e:Group id="gameRootPanel" height="1280" touchEnabled="false" name="gameRootPanel" width="720" horizontalCenter="0"
+	         bottom="0">
+		<e:Group id="centerGroup" width="720" height="500" y="564" horizontalCenter="0" touchEnabled="false"
+		         touchChildren="false" x="0" scaleX="1" scaleY="1" scrollEnabled="true">
+			<e:Group width="1440" y="280" x="-10">
+				<e:Image id="center_san1" scaleY="1" touchEnabled="false" source="background_main_02_png" scaleX="1" width="720"
+				         y="0" x="0" />
+				<e:Image id="center_san2" scaleY="1" touchEnabled="false" source="background_main_02_png" scaleX="1" width="720"
+				         y="0" x="720" />
+			</e:Group>
+			<e:Group width="1440" y="90" x="0">
+				<e:Image id="center_bg1" scaleY="1" touchEnabled="false" source="background_main_03_png" scaleX="1" width="720"
+				         y="0" x="0" />
+				<e:Image id="center_bg2" scaleY="1" touchEnabled="false" source="background_main_03_png" scaleX="1" width="720"
+				         y="1" x="720" />
+			</e:Group>
+			<e:Group width="1440" y="290" x="0" height="120">
+				<e:Image id="center_top_cao1" scaleX="1" scaleY="1" touchEnabled="false" source="background_main_04" alpha="0.6"
+				         x="0" y="0" width="721" />
+				<e:Image id="center_top_cao2" scaleX="1" scaleY="1" touchEnabled="false" source="background_main_04" alpha="0.6"
+				         x="719" y="0" width="721" />
+			</e:Group>
+			<e:Group width="1440" y="330" x="0" height="120">
+				<e:Image id="center_middle_cao1" touchEnabled="false" source="background_main_06_png" x="0" width="721" y="0"
+				         height="120" blendMode="normal" />
+				<e:Image id="center_middle_cao2" touchEnabled="false" source="background_main_06_png" x="719" width="721" y="0"
+				         height="120" />
+			</e:Group>
+			<e:Group width="1440" y="236" x="0" height="120">
+				<e:Group id="center_yuns" width="1440" y="0" x="0" height="120">
+					<e:Image id="center_top_yun6" scaleX="1" scaleY="1" touchEnabled="false" alpha="0.8" x="14.66" y="13.3"
+					         source="background_cloud_01" anchorOffsetX="0" anchorOffsetY="0" blendMode="normal" />
+					<e:Image id="center_top_yun7" scaleX="1" scaleY="1" touchEnabled="false" source="background_cloud_03" x="275"
+					         y="-60" anchorOffsetX="0" anchorOffsetY="0" blendMode="normal" alpha="0.4" />
+					<e:Image id="center_top_yun8" scaleX="1" scaleY="1" touchEnabled="false" source="background_cloud_01" alpha="0.8"
+					         x="721" y="17" anchorOffsetX="0" blendMode="normal" />
+					<e:Image id="center_top_yun9" scaleX="1" scaleY="1" touchEnabled="false" source="background_cloud_03" alpha="0.4"
+					         x="915" y="-60" anchorOffsetX="0" blendMode="normal" />
+				</e:Group>
+			</e:Group>
+			<e:Group id="characterGroup" width="720" height="500" y="0" x="0">
+				<e:Image id="feature_glow" x="50" y="80" scaleX="1" scaleY="1" source="feature_glow_d" blendMode="add"
+				         visible="false" />
+				<e:Image id="feature_glow_c" x="30" y="100" scaleX="1" scaleY="1" blendMode="add" source="feature_glow_c"
+				         visible="false" />
+			</e:Group>
+			<e:Group width="1440" y="385" x="0" height="305">
+				<e:Image id="center_bottom_cao1" scaleY="1" touchEnabled="false" source="background_main_07" x="0" y="0" width="720"
+				         anchorOffsetY="0" height="305" />
+				<e:Image id="center_bottom_cao2" touchEnabled="false" source="background_main_07" x="719" y="0" width="721"
+				         blendMode="normal" height="305" />
+			</e:Group>
+			<e:Group width="1440" y="394" x="0" height="305" visible="false">
+				<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="background_main_08" x="415" y="56" />
+				<e:Image scaleX="1" scaleY="1" touchEnabled="false" x="227" y="16" source="background_main_09" />
+			</e:Group>
+		</e:Group>
+		<e:Group id="gameGroup" width="710" height="420" scaleX="1" scaleY="1" name="gameGroup" anchorOffsetX="0"
+		         anchorOffsetY="0" horizontalCenter="0" top="21">
+			<e:Image id="rerotateImage" scaleX="1" scaleY="1" touchEnabled="false" width="750" height="480" y="-28.33"
+			         source="feature_reel_glow_a" horizontalCenter="0" blendMode="normal" visible="false" />
+			<e:Scroller id="labaGameScroller" width="660" height="396" anchorOffsetX="0" anchorOffsetY="0" scrollPolicyH="off"
+			            scrollPolicyV="off" horizontalCenter="0" y="12">
+				<e:Group height="396" x="105" anchorOffsetX="0" width="660">
+					<e:Group id="LabaBeltRootGroup" height="396" x="0" y="0" anchorOffsetX="0" width="660" touchChildren="true"
+					         touchEnabled="false">
+						<e:Group scrollEnabled="true" height="400" width="133" x="132" scaleY="-1" y="400" visible="false">
+							<e:Image id="fast_back_whitelight1" scaleX="1.4" scaleY="1" touchEnabled="false" source="fast_back_pattern"
+							         blendMode="add" width="133" height="400" anchorOffsetY="0" y="0" x="-27" />
+						</e:Group>
+						<e:Group scrollEnabled="true" height="400" width="133" x="264" scaleY="-1" y="400" visible="false">
+							<e:Image id="fast_back_whitelight2" scaleX="1.4" scaleY="1" touchEnabled="false" source="fast_back_pattern"
+							         blendMode="add" width="133" height="400" anchorOffsetY="0" y="0" x="-27" />
+						</e:Group>
+						<e:Group scrollEnabled="true" height="400" width="133" x="396" scaleY="-1" y="400" visible="false">
+							<e:Image id="fast_back_whitelight3" touchEnabled="false" blendMode="add" width="133" scaleX="1.4"
+							         source="fast_back_pattern" y="0" height="400" x="-27" scaleY="1" />
+						</e:Group>
+						<e:Group id="belt1Group" x="0" anchorOffsetX="0" scaleX="1" scaleY="1" width="132" height="924" name="belt1Group"
+						         y="-528">
+							<e:Group name="beltIcon11Group" x="0" y="792" width="132" height="132">
+								<e:Image name="Icon11Image" verticalCenter="0" horizontalCenter="0" source="elem1" />
+							</e:Group>
+							<e:Group name="beltIcon12Group" x="0" y="660" width="132" height="132">
+								<e:Image name="Icon12Image" verticalCenter="0" horizontalCenter="0" source="elem5" />
+							</e:Group>
+							<e:Group name="beltIcon13Group" x="0" y="528" width="132" height="132">
+								<e:Image name="Icon13Image" verticalCenter="0" horizontalCenter="0" source="elem3" />
+							</e:Group>
+							<e:Group name="beltIcon14Group" x="0" y="396" width="132" height="132">
+								<e:Image name="Icon14Image" verticalCenter="0" horizontalCenter="0" source="elem1" />
+							</e:Group>
+							<e:Group name="beltIcon15Group" x="0" y="264" width="132" height="132">
+								<e:Image name="Icon15Image" verticalCenter="0" horizontalCenter="0" source="elem1" />
+							</e:Group>
+							<e:Group name="beltIcon16Group" x="0" y="132" width="132" height="132">
+								<e:Image name="Icon16Image" verticalCenter="0" horizontalCenter="0" width="144" height="144" source="elem5" />
+							</e:Group>
+							<e:Group name="beltIcon17Group" x="0" y="0" width="132" height="132">
+								<e:Image name="Icon17Image" verticalCenter="0" horizontalCenter="0" source="elem3" />
+							</e:Group>
+						</e:Group>
+						<e:Group id="belt2Group" height="924" x="132" y="-528" width="132" name="belt2Group">
+							<e:Group name="beltIcon21Group" x="0" y="792" width="132" height="132">
+								<e:Image name="Icon21Image" verticalCenter="0" horizontalCenter="0" source="elem6" />
+							</e:Group>
+							<e:Group name="beltIcon22Group" x="0" y="660" width="132" height="132">
+								<e:Image name="Icon22Image" verticalCenter="0" horizontalCenter="0" source="elem4" />
+							</e:Group>
+							<e:Group name="beltIcon23Group" x="0" y="528" width="132" height="132">
+								<e:Image name="Icon23Image" verticalCenter="0" horizontalCenter="0" source="elem8" />
+							</e:Group>
+							<e:Group name="beltIcon24Group" x="0" y="396" width="132" height="132">
+								<e:Image name="Icon24Image" source="elem1" verticalCenter="0" horizontalCenter="0" />
+							</e:Group>
+							<e:Group name="beltIcon25Group" x="0" y="264" width="132" height="132">
+								<e:Image name="Icon25Image" verticalCenter="0" horizontalCenter="0" source="elem6" />
+							</e:Group>
+							<e:Group name="beltIcon26Group" x="0" y="132" width="132" height="132">
+								<e:Image name="Icon26Image" verticalCenter="0" horizontalCenter="0" source="elem4" />
+							</e:Group>
+							<e:Group name="beltIcon27Group" x="0" y="0" width="132" height="132">
+								<e:Image name="Icon27Image" verticalCenter="0" horizontalCenter="0" source="elem7" />
+							</e:Group>
+						</e:Group>
+						<e:Group id="belt3Group" width="132" height="924" x="264" y="-528" name="belt3Group">
+							<e:Group name="beltIcon31Group" y="792" width="132" height="132" x="0">
+								<e:Image name="Icon31Image" verticalCenter="0" horizontalCenter="0" source="elem10" />
+							</e:Group>
+							<e:Group name="beltIcon32Group" y="660" width="132" height="132" x="0">
+								<e:Image name="Icon32Image" verticalCenter="0" horizontalCenter="0" source="elem8" />
+							</e:Group>
+							<e:Group name="beltIcon33Group" x="0" y="528" width="132" height="132">
+								<e:Image name="Icon33Image" verticalCenter="0" horizontalCenter="0" source="elem9" />
+							</e:Group>
+							<e:Group name="beltIcon34Group" x="0" y="396" width="132" height="132">
+								<e:Image name="Icon34Image" source="elem1" verticalCenter="0" horizontalCenter="0" />
+							</e:Group>
+							<e:Group name="beltIcon35Group" x="0" y="264" width="132" height="132">
+								<e:Image name="Icon35Image" verticalCenter="0" horizontalCenter="0" source="elem10" />
+							</e:Group>
+							<e:Group name="beltIcon36Group" x="0" y="132" width="132" height="132">
+								<e:Image name="Icon36Image" verticalCenter="0" horizontalCenter="0" source="elem8" />
+							</e:Group>
+							<e:Group name="beltIcon37Group" x="0" y="0" width="132" height="132">
+								<e:Image name="Icon37Image" verticalCenter="0" horizontalCenter="0" source="elem9" blendMode="normal" />
+							</e:Group>
+						</e:Group>
+						<e:Group id="belt4Group" width="132" height="924" x="396" y="-528" name="belt4Group">
+							<e:Group name="beltIcon41Group" x="0" y="792" width="132" height="132">
+								<e:Image name="Icon41Image" verticalCenter="0" horizontalCenter="0" source="elem6" />
+							</e:Group>
+							<e:Group name="beltIcon42Group" x="0" y="660" width="132" height="132">
+								<e:Image name="Icon42Image" verticalCenter="0" horizontalCenter="0" source="elem4" />
+							</e:Group>
+							<e:Group name="beltIcon43Group" x="0" y="528" width="132" height="132">
+								<e:Image name="Icon43Image" verticalCenter="0" horizontalCenter="0" source="elem7" />
+							</e:Group>
+							<e:Group name="beltIcon44Group" x="0" y="396" width="132" height="132">
+								<e:Image name="Icon44Image" source="elem1" verticalCenter="0" horizontalCenter="0" />
+							</e:Group>
+							<e:Group name="beltIcon45Group" x="0" y="264" width="132" height="132">
+								<e:Image name="Icon45Image" verticalCenter="0" horizontalCenter="0" source="elem6" />
+							</e:Group>
+							<e:Group name="beltIcon46Group" x="0" y="132" width="132" height="132">
+								<e:Image name="Icon46Image" verticalCenter="0" horizontalCenter="0" source="elem4" />
+							</e:Group>
+							<e:Group name="beltIcon47Group" x="0" y="0" width="132" height="132">
+								<e:Image name="Icon47Image" verticalCenter="0" horizontalCenter="0" source="elem7" />
+							</e:Group>
+						</e:Group>
+						<e:Group id="belt5Group" width="132" height="924" x="528" y="-528" scaleX="1" scaleY="1" name="belt5Group">
+							<e:Group name="beltIcon51Group" x="0" y="792" width="132" height="132">
+								<e:Image name="Icon51Image" source="elem1" verticalCenter="0" horizontalCenter="0" />
+							</e:Group>
+							<e:Group name="beltIcon52Group" x="0" y="660" width="132" height="132">
+								<e:Image name="Icon52Image" verticalCenter="0" horizontalCenter="0" source="elem5" />
+							</e:Group>
+							<e:Group name="beltIcon53Group" x="0" y="528" width="132" height="132">
+								<e:Image name="Icon53Image" verticalCenter="0" horizontalCenter="0" source="elem3" />
+							</e:Group>
+							<e:Group name="beltIcon54Group" x="0" y="396" width="132" height="132">
+								<e:Image name="Icon54Image" source="elem1" verticalCenter="0" horizontalCenter="0" />
+							</e:Group>
+							<e:Group name="beltIcon55Group" x="0" y="264" width="132" height="132">
+								<e:Image name="Icon55Image" verticalCenter="0" horizontalCenter="0" source="elem" />
+							</e:Group>
+							<e:Group name="beltIcon56Group" x="0" y="132" width="132" height="132">
+								<e:Image name="Icon56Image" verticalCenter="0" horizontalCenter="0" source="elem5" />
+							</e:Group>
+							<e:Group name="beltIcon57Group" x="0" y="0" width="132" height="132">
+								<e:Image name="Icon57Image" verticalCenter="0" horizontalCenter="0" source="elem3" />
+							</e:Group>
+						</e:Group>
+						<e:Group id="winElemAnimNotLineGroup" width="660" height="396" scaleX="1" scaleY="1" x="0" y="0" />
+						<e:Rect id="elemAnimMask" fillAlpha="0.3" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
+						        left="0" right="0" top="0" bottom="0" strokeAlpha="0.5" />
+						<e:Rect name="belt1Mask" fillAlpha="0.4" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
+						        width="132" verticalCenter="0" x="0" height="390" />
+						<e:Rect name="belt2Mask" fillAlpha="0.4" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
+						        width="132" verticalCenter="0" x="132" height="390" />
+						<e:Rect name="belt3Mask" fillAlpha="0.4" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
+						        width="132" verticalCenter="0" x="264" height="390" />
+						<!--<e:Rect name="belt4Mask" fillAlpha="0.65" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
+						            width="132" verticalCenter="0" x="396" height="390" />
+						-->
+						<e:Rect name="belt5Mask" fillAlpha="0.4" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
+						        width="132" verticalCenter="0" x="528" height="390" strokeAlpha="1" />
+						<e:Group id="winElemAnimGroup" horizontalCenter="0" verticalCenter="0" width="660" height="396" x="0" y="0"
+						         scaleX="1" scaleY="1" />
+					</e:Group>
+				</e:Group>
+			</e:Scroller>
+			<e:Group id="tipsGroup" width="660" height="396" scaleX="1" scaleY="1" horizontalCenter="0" touchChildren="false"
+			         touchEnabled="false" x="10" y="12">
+				<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.2" strokeColor="0x686666" strokeAlpha="1"
+				        fillColor="0x141414" />
+			</e:Group>
+			<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="spin_base1" width="690" height="416" horizontalCenter="0"
+			         y="1.68" />
+			<e:Group id="highScrollGroup" width="688" height="380" anchorOffsetY="0" touchEnabled="false" touchChildren="false"
+			         visible="false">
+				<e:Group id="BeltHighScoll1" width="110" height="380" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" />
+				<e:Group id="BeltHighScoll2" width="110" height="380" x="137" y="0" anchorOffsetX="0" />
+				<e:Group id="BeltHighScoll3" width="110" height="330" x="274" y="0" anchorOffsetX="0" />
+				<e:Group id="BeltHighScoll4" width="110" height="380" x="411" y="0" />
+				<e:Group id="BeltHighScoll5" width="110" height="380" x="548" y="0" anchorOffsetX="0" />
+			</e:Group>
+			<e:Group id="lineRootGroup" width="660" height="400" anchorOffsetY="0" touchChildren="false" touchEnabled="false"
+			         scrollEnabled="true" verticalCenter="0" horizontalCenter="0">
+				<e:Group id="darkLineGroup" height="400" width="660" touchChildren="false" touchEnabled="false" name="darkLineGroup">
+					
+					<e:Image source="lined1" width="670" x="-5" y="192" name="lined0"  visible="false"/>
+					<e:Image source="lined1" y="55" width="670" x="-5" name="lined1"  visible="false"/>
+					<e:Image source="lined1" width="670" x="-5" y="329" name="lined2"  visible="false"/>
+					<e:Image width="670" source="lined2" x="-4" top="60" name="lined3" visible="false"/>
+					<e:Image width="670" scaleY="-1" source="lined2" x="-5" bottom="60" name="lined4"  visible="false"/>
+					<e:Image source="lined3" width="670" x="-5" top="50" name="lined5" visible="false"/>
+
+					<e:Image source="lined3" width="670" x="-5" bottom="50" scaleY="-1" name="lined6"  visible="false"/>
+					<e:Image width="670" x="-5" top="200" source="lined4" name="lined7" visible="false"/>
+
+					<e:Image source="lined4" width="670" x="-5" bottom="205" scaleY="-1" name="lined8"  visible="false"/>
+					<e:Image source="lined4" width="670" x="-5" top="62" name="lined9" visible="false"/>
+
+					<e:Image source="lined4" width="670" x="-5" bottom="70" scaleY="-1" name="lined10"  visible="false"/>
+					<e:Image source="lined3" width="670" x="-5" scaleY="-1" top="60" name="lined11" visible="false"/>
+
+					<e:Image x="-5" width="670" name="lined12" source="lined3" verticalCenter="84"  visible="false"/>
+
+
+					<e:Image source="lined5" width="670" x="-5" top="60" name="lined13"  visible="false"/>
+					<e:Image bottom="60" scaleY="-1" x="-5" width="670" source="lined5" name="lined14" visible="false"/>
+					<e:Image source="lined6" x="-5" width="670" scaleY="1" verticalCenter="-79.5" name="lined15" visible="false"/>
+					<e:Image source="lined6" scaleY="-1" x="-5" width="670" verticalCenter="80" name="lined16"  visible="false"/>
+
+
+					<e:Image x="-5" width="670" source="lined7" top="60" name="lined17"  visible="false"/>
+					<e:Image x="-5" width="670" source="lined7" scaleY="-1" bottom="60" name="lined18" visible="false"/>
+					<e:Image scaleY="-1" x="-5" width="670" source="lined6" top="52" name="lined19" visible="false"/>
+					<e:Image source="lined6" x="-5" width="670" bottom="52" name="lined20"  visible="false"/>
+					<e:Image x="-5" width="670" source="lined8" scaleY="-1" top="75" name="lined21" visible="false"/>
+
+					<e:Image source="lined8" x="-5" width="670" scaleY="1" bottom="75" name="lined22"  visible="false"/>
+					<e:Image x="-5" width="670" scaleY="-1" source="lined9" verticalCenter="5" name="lined23" visible="false"/>
+
+					<e:Image source="lined9" x="-5" width="670" verticalCenter="5" name="lined24"  visible="false"/>
+					<e:Image x="-5" width="670" source="lined10" top="50" name="lined25" visible="false"/>
+
+					<e:Image source="lined10" x="-5" width="670" scaleY="-1" bottom="35" name="lined26"  visible="false"/>
+					<e:Image x="-5" width="670" source="lined11" top="60" name="lined27" visible="false"/>
+
+					<e:Image source="lined11" x="-5" width="670" scaleY="-1" bottom="50" name="lined28"  visible="false"/>
+
+					<e:Image source="lined11" x="-5" width="670" scaleY="-1" verticalCenter="-56.5" name="lined29"  visible="false"/>
+				</e:Group>
+				<e:Group id="moveLineGroup" width="660" height="400" touchChildren="false" touchEnabled="false" name="moveLineGroup"
+				         scrollEnabled="true">
+					<e:Group id="lightLineGroup" width="660" height="400" touchChildren="false" touchEnabled="false"
+					         name="lightLineGroup">
+						
+						<e:Image source="line1" width="670" x="-5" y="185" name="line0"  visible="false"/>
+						<e:Image source="line1" y="48" width="670" x="-5" name="line1"  visible="false"/>
+						<e:Image source="line1" width="670" x="-5" y="322" name="line2"  visible="false"/>
+						<e:Image width="678" source="line2" x="-8" top="56" name="line3" height="296"  visible="false"/>
+							<e:Image width="678" scaleY="-1" source="line2" x="-9" bottom="55" name="line4" height="298"  visible="false"/>
+						<e:Image source="line3" width="682" x="-11" top="43" name="line5" visible="false"/>
+						<e:Image source="line3" width="684" x="-12" bottom="43" scaleY="-1" name="line6"  visible="false"/>
+						<e:Image width="686" x="-13" top="194" source="line4" name="line7" visible="false"/>
+
+						<e:Image source="line4" width="686" x="-13" bottom="199" scaleY="-1" name="line8"  visible="false"/>
+						<e:Image source="line4" width="684" x="-12" top="55" name="line9" visible="false"/>
+
+						<e:Image width="684" x="-12" source="line4" scaleY="-1" bottom="63" name="line10"  visible="false"/>
+						<e:Image source="line3" width="684" x="-12" scaleY="-1" name="line11" top="53" visible="false"/>
+
+						<e:Image source="line3" width="684" x="-12" scaleY="1" name="line12" verticalCenter="84"  visible="false"/>
+
+
+						<e:Image source="line5" width="684" x="-12" top="54" name="line13"  visible="false"/>
+						<e:Image bottom="54" scaleY="-1" x="-12" width="684" source="line5" name="line14" visible="false"/>
+						<e:Image source="line6" x="-13" width="686" scaleY="1" verticalCenter="-79.5" name="line15" visible="false"/>
+						<e:Image source="line6" scaleY="-1" x="-13" width="686" verticalCenter="80" name="line16"  visible="false"/>
+
+
+						<e:Image x="-12" width="684" source="line7" top="54" name="line17"  visible="false"/>
+						<e:Image x="-12" width="684" source="line7" scaleY="-1" bottom="54" name="line18" visible="false"/>
+						<e:Image scaleY="-1" x="-12" width="684" source="line6" top="46" name="line19" visible="false"/>
+						<e:Image source="line6" x="-12" width="684" bottom="46" name="line20"  visible="false"/>
+						<e:Image x="-12" width="684" source="line8" scaleY="-1" top="68" name="line21" visible="false"/>
+
+						<e:Image source="line8" x="-12" width="684" scaleY="1" bottom="68" name="line22"  visible="false"/>
+						<e:Image x="-12" width="684" scaleY="-1" source="line9" verticalCenter="6" name="line23" visible="false"/>
+
+						<e:Image source="line9" x="-12" width="684" verticalCenter="5" name="line24"  visible="false"/>
+						<e:Image x="-13" width="686" source="line10" top="43" name="line25" height="290" visible="false"/>
+
+						<e:Image source="line10" x="-13" width="686" scaleY="-1" bottom="28" name="line26"  visible="false"/>
+						<e:Image x="-6" width="676" source="line11" top="54" name="line27" height="152" visible="false"/>
+
+						<e:Image x="-6" width="676" source="line11" name="line28" height="152" scaleY="-1" bottom="44"  visible="false"/>
+
+						<e:Image source="line11" x="-7" width="678" scaleY="-1" bottom="181" name="line29" height="152"  visible="false"/>
+					</e:Group>
+				</e:Group>
+			</e:Group>
+			<e:Group height="106" touchEnabled="false" touchChildren="false" x="-5" y="410">
+				<e:Image scaleX="1" scaleY="1" touchEnabled="false" verticalCenter="0" horizontalCenter="0" source="infoboard_c" />
+				<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="infoboard_a" verticalCenter="0" horizontalCenter="0"
+				         x="10" y="10" />
+				<e:Group id="worldGroup" width="628" height="77" anchorOffsetY="0" x="45" anchorOffsetX="0" y="29" visible="false">
+					<e:Image id="TipsImage" scaleX="1" scaleY="1" touchEnabled="false" x="116" source="infoboard-info_1"
+					         verticalCenter="0" />
+				</e:Group>
+				<e:Group id="winAnimBarGroup" width="628" height="100" anchorOffsetY="0" anchorOffsetX="0" y="17"
+				         horizontalCenter="0">
+					<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="glow_01_info" horizontalCenter="1" verticalCenter="-10"
+					         blendMode="add" height="100" width="666" alpha="0.5" />
+					<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="infoboard_b" horizontalCenter="0" x="-55" bottom="0"
+					         width="700" blendMode="normal" visible="false" />
+					<!--<e:Image id="image" scaleX="7" scaleY="6" touchEnabled="false" blendMode="add" source="flare_01_info"
+					             horizontalCenter="0" verticalCenter="0" height="102" scale9Grid="15,8,73,86" />
+					-->
+					<e:Image id="image0" scaleX="7" scaleY="7" touchEnabled="false" blendMode="add" source="flare_02_info"
+					         horizontalCenter="0" verticalCenter="0" />
+					<e:Image scaleX="1" scaleY="1" touchEnabled="false" width="725" height="176" horizontalCenter="0.5"
+					         verticalCenter="-12" blendMode="add" source="infoboard_b_glow_03" visible="false" />
+				</e:Group>
+				<e:Group id="winWorldGroup" width="628" height="77" anchorOffsetY="0" anchorOffsetX="0" y="30" horizontalCenter="0">
+					<e:Image id="winMoneyImage" scaleX="1" scaleY="1" touchEnabled="false" x="116" verticalCenter="0"
+					         source="infoboard-win" />
+					<e:BitmapLabel id="winMoneyLabel" x="-10" y="-10" text="22222222" font="number2_fnt" />
+					<e:layout>
+						<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" />
+					</e:layout>
+				</e:Group>
+				<e:Group id="animGroup" width="720" height="1280" scaleX="1" scaleY="1" horizontalCenter="0" touchChildren="false"
+				         touchEnabled="false" x="-21" y="-434" alpha="0">
+					<e:Image scaleY="5" touchEnabled="false" source="feature_glow_e" horizontalCenter="0" verticalCenter="0" scaleX="5"
+					         blendMode="add" />
+					<e:Image scaleX="1" scaleY="1" touchEnabled="false" horizontalCenter="0" verticalCenter="0"
+					         source="infoboard-info_5" />
+				</e:Group>
+			</e:Group>
+		</e:Group>
+		<e:Group id="iconLineGroup" width="660" height="400" touchChildren="false" touchEnabled="false" name="moveLineGroup"
+		         x="32" y="32" />
+		<e:Group id="centerFreeGroup" width="720" height="500" horizontalCenter="0" x="10" y="564"></e:Group>
+		<e:Group id="artLineRootGroup" height="396" touchEnabled="false" touchChildren="false" anchorOffsetY="0"
+		         anchorOffsetX="0" width="660" horizontalCenter="0" y="30.18" />
+		<e:Group id="downPanel" height="220" anchorOffsetY="0" scaleX="1" scaleY="1" width="720" anchorOffsetX="0"
+		         horizontalCenter="0" bottom="0">
+			<e:Rect x="0" width="720" fillColor="0x1f1b1a" top="0" bottom="0" />
+			<e:Image scaleX="1" scaleY="1" touchEnabled="false" top="0" left="1" right="-1" height="154" source="spin_base" />
+			<e:Group id="betMenuGruop" width="720" height="150" anchorOffsetY="0" x="0" scaleX="1" scaleY="1" y="35">
+				<game:Button id="rotationButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="55" x="77.5"
+				             anchorOffsetX="22.5" anchorOffsetY="22.5">
+					<game:skinName>
+						<e:Skin states="up,down,disabled">
+							<e:Image width="100%" height="100%" source="ic_turbo_spin_turbo_off_in_autospin"
+							         source.down="ic_turbo_spin_turbo_off_in_autospin_up" />
+							<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+						</e:Skin>
+					</game:skinName>
+				</game:Button>
+				<game:Button id="rotationSetButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="40" x="173.5"
+				             anchorOffsetY="24.5" width="49" height="49" anchorOffsetX="24.5">
+					<game:skinName>
+						<e:Skin states="up,down,disabled">
+							<e:Image width="100%" height="100%" source="icon_auto_spin_menu"
+							         source.down="ic_turbo_spin_turbo_off_in_autospin_up" />
+							<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+						</e:Skin>
+					</game:skinName>
+				</game:Button>
+				<e:Label text="旋转设置" x="129" y="77" size="26" textColor="0x605d5c" />
+				<game:Button id="betGoldButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="40" x="550"
+				             anchorOffsetY="24.5" width="49" height="49" anchorOffsetX="24.5">
+					<game:skinName>
+						<e:Skin states="up,down,disabled">
+							<e:Image width="100%" height="100%" source="icon_bet" />
+							<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+						</e:Skin>
+					</game:skinName>
+				</game:Button>
+				<e:Label text="投注" x="478" y="77" size="26" textColor="0x605d5c" />
+				<e:Label id="betNumLabel" text="1.50" x="536" y="78" size="26" textColor="0xcfcece" />
+				<game:Button id="menuListButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="55"
+				             anchorOffsetY="22.5" x="650" width="45" height="45" anchorOffsetX="22.5">
+					<game:skinName>
+						<e:Skin states="up,down,disabled">
+							<e:Image width="100%" height="100%" source="icon_more_menu" />
+							<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+						</e:Skin>
+					</game:skinName>
+				</game:Button>
+				<e:layout>
+					<e:BasicLayout/>
+				</e:layout>
+			</e:Group>
+			<game:Button id="gameRotateButton" interactive="bright" label="" scaleX="1" scaleY="1" enabled="true"
+			             touchEnabled="true" width="107" anchorOffsetX="53.5" anchorOffsetY="50" y="73" height="100" x="360">
+				<game:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="arrow" />
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="-10" size="22" />
+					</e:Skin>
+				</game:skinName>
+			</game:Button>
+			<game:Button id="autoRotateButton" interactive="bright" label="12" touchChildren="false" touchEnabled="true"
+			             scaleX="1" scaleY="1" x="300" y="11.01" width="120" height="122" visible="false">
+				<game:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="auto_spin" />
+						<e:BitmapLabel id="labelDisplay" font="number2_fnt" horizontalCenter="0" verticalCenter="0" />
+					</e:Skin>
+				</game:skinName>
+			</game:Button>
+			<e:Group id="menuListGroup" height="180" width="720" visible="false">
+				<e:Rect id="closeRect" x="0" width="720" fillColor="0x1F1B1A" height="1280" bottom="0" fillAlpha="0" />
+				<e:Rect x="0" width="720" fillColor="0x1F1B1A" height="180" />
+				<e:Group width="720" height="108" y="0">
+					<game:Button id="soundSetButton" interactive="bright" label="" scaleX="1" scaleY="1" width="70" height="70"
+					             anchorOffsetY="54" anchorOffsetX="54" x="120" verticalCenter="0">
+						<game:skinName>
+							<e:Skin states="up,down,disabled">
+								<e:Image width="100%" height="100%" source="ic_nav_medium_sound_on" source.down="ic_nav_medium_sound_off" />
+								<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+							</e:Skin>
+						</game:skinName>
+					</game:Button>
+					<game:Button id="compensationTableButton" interactive="bright" label="" scaleX="1" scaleY="1" width="70"
+					             height="70" anchorOffsetX="54" anchorOffsetY="54" horizontalCenter="-94" verticalCenter="0">
+						<game:skinName>
+							<e:Skin states="up,down,disabled">
+								<e:Image width="100%" height="100%" source="icon_paytable" />
+								<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+							</e:Skin>
+						</game:skinName>
+					</game:Button>
+					<game:Button id="ruleListButton" interactive="bright" label="" scaleX="1" scaleY="1" width="70" height="70"
+					             anchorOffsetX="54" anchorOffsetY="54" horizontalCenter="85" verticalCenter="0">
+						<game:skinName>
+							<e:Skin states="up,down,disabled">
+								<e:Image width="100%" height="100%" source="icon_rule_book" />
+								<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+							</e:Skin>
+						</game:skinName>
+					</game:Button>
+					<game:Button id="backButton" interactive="bright" label="" scaleX="1" scaleY="1" width="90" height="90"
+					             anchorOffsetX="45" anchorOffsetY="45" horizontalCenter="255" verticalCenter="0">
+						<game:skinName>
+							<e:Skin states="up,down,disabled">
+								<e:Image width="100%" height="100%" source="menu_close_button" />
+								<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+							</e:Skin>
+						</game:skinName>
+					</game:Button>
+				</e:Group>
+				<e:Group width="720" height="72" x="0" y="108">
+					<e:Label text="声音" x="60" width="80" textAlign="center" textColor="0x605d5c" size="26" scaleX="1" scaleY="1"
+					         verticalCenter="0" />
+					<e:Label text="赔付表" x="228" textAlign="center" textColor="0x605d5c" size="26" width="80" scaleX="1" scaleY="1"
+					         verticalCenter="0" />
+					<e:Label text="规则" width="80" textAlign="center" size="26" textColor="0x605d5c" horizontalCenter="85" x="296"
+					         scaleX="1" scaleY="1" verticalCenter="0" />
+					<e:Label text="退出" x="576" width="80" textAlign="center" size="26" textColor="0x605D5C" scaleX="1" scaleY="1"
+					         verticalCenter="0" />
+					<e:layout>
+						<e:BasicLayout/>
+					</e:layout>
+				</e:Group>
+			</e:Group>
+			<e:Group id="popGroup" width="720" height="220" touchEnabled="false" visible="false">
+				<e:Rect alpha="0.75" width="720" height="1560" bottom="0" />
+			</e:Group>
+			<e:Group id="moneyBox" width="720" bottom="0" horizontalCenter="0">
+				<e:Image x="10" source="ic_nav_wallet" verticalCenter="0" />
+				<!--<e:Image id="imgHead" anchorOffsetX="0" anchorOffsetY="0" source="ic_nav_wallet" left="0" width="30" height="30"
+				             verticalCenter="0" />
+				-->
+				<e:Label text="余额" x="47" size="33" textColor="0x605d5c" verticalAlign="middle" verticalCenter="0" />
+				<e:Label id="moneyLabel" text="222" x="122" size="33" verticalAlign="middle" verticalCenter="0" textColor="0xcfcece" />
+				<e:Group right="20" verticalCenter="0">
+				<e:Label text="赢奖" x="585" size="33" textColor="0x605D5C" verticalAlign="middle" anchorOffsetX="50"
+				         verticalCenter="0" />
+				<e:Label id="raceObtainGoldLabel" text="12000" size="33" verticalAlign="middle" verticalCenter="0"
+				         textColor="0xcfcece"  right="0"/>
+					<e:layout>
+						<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle" gap="15"/>
+					</e:layout>
+						 </e:Group>
+				<e:layout>
+				
+					<e:BasicLayout/>
+				</e:layout>
+			</e:Group>
+			<!--<e:Label id="nameLabel" text="名字" x="162" y="24.48" fontFamily="SimHei" anchorOffsetX="0" width="184" size="28"
+			             textAlign="left" textColor="0xc1bbfc" visible="false" />
+			-->
+			<!--<e:BitmapLabel id="idLabel" text="1" x="201.7" y="88" visible="false" />
+			-->
+			<!--<e:Group id="groupMenu" width="720" height="200" horizontalCenter="0" anchorOffsetY="0" y="0" visible="false">
+			<game:Button id="helpButton1" interactive="bright" label="" scaleX="1" scaleY="1" y="4" x="3">
+				<game:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="cjsg_commHelp" />
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+					</e:Skin>
+				</game:skinName>
+			</game:Button>
+			<game:Button id="setButton" interactive="bright" label="" scaleX="1" scaleY="1" y="5" x="3">
+				<game:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="cjsg_commSet" />
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+					</e:Skin>
+				</game:skinName>
+			</game:Button>
+			<game:Button id="homeButton" interactive="bright" label="" scaleX="1" scaleY="1" y="90" x="3">
+				<game:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="cjsg_commHome" />
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+					</e:Skin>
+				</game:skinName>
+			</game:Button>
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" />
+			</e:layout>
+		</e:Group>
+		-->
+		<game:Button id="freeRotateButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" touchEnabled="false"
+		             touchChildren="false" x="463" y="171" label="0" visible="false">
+			<game:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:BitmapLabel id="labelDisplay" horizontalCenter="15" verticalCenter="-12" text="10" />
+				</e:Skin>
+			</game:skinName>
+		</game:Button>
+		<game:Button id="fastSettleButton" label="" x="464" y="171" visible="false">
+			<game:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+				</e:Skin>
+			</game:skinName>
+		</game:Button>
+		<!--<e:Group id="autoRotateGroup" width="191" y="-94.57" height="377.33" x="479.22" scaleX="1" scaleY="1"
+			         anchorOffsetY="0" visible="false">
+		<e:Image x="0" y="0" source="cjsg_zd_choice_bg" />
+		<e:Group touchEnabled="true" touchChildren="true" scaleX="1" scaleY="1" name="buttonGroup" width="191" x="0"
+		         height="270" y="10" anchorOffsetY="0">
+			<e:layout>
+				<e:BasicLayout/>
+			</e:layout>
+			<e:Button y="196.67" anchorOffsetX="0" anchorOffsetY="0" x="9">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="cjsg_zd_choice_25" source.down="cjsg_zd_choice_an_25" />
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button y="134" anchorOffsetX="0" anchorOffsetY="0" x="9">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="cjsg_zd_choice_50" source.down="cjsg_zd_choice_an_50" />
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button y="72" anchorOffsetX="0" anchorOffsetY="0" x="9">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="cjsg_zd_choice_100" source.down="cjsg_zd_choice_an_100" />
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button y="9" anchorOffsetX="0" anchorOffsetY="0" x="9">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="cjsg_zd_choice_wx" source.down="cjsg_zd_choice_an_wx" />
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+		</e:Group>
+	</e:Group>
+	-->
+</e:Group>
+<e:Group id="lineTipGroup" width="260" height="80" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0" y="1049.02"
+         visible="false">
+	<e:Image id="lineTipBg" source="Tips" x="0" y="10" height="80" scaleY="0.7" />
+	<e:layout>
+		<e:BasicLayout/>
+	</e:layout>
+</e:Group>
+<!--<game:Button id="backButton" label="退出" horizontalCenter="127" width="90" height="90" verticalCenter="27">
+<e:skinName>
+	<e:Skin states="up,down,disabled">
+		<e:Rect fillColor="0xff00000" width="100%" height="100%" />
+		<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+	</e:Skin>
+</e:skinName>
+</game:Button>
+-->
+<e:Group id="effGroup" width="720" height="1280" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"
+         touchChildren="false" touchEnabled="false"></e:Group>
+		<e:Group id="fiveBox" width="720" height="300" x="0" y="347.66" touchEnabled="false" touchChildren="false">
+			<e:Image id="five1" source="jpg-fivekind_flare_a" scaleX="0" scaleY="0" horizontalCenter="0" verticalCenter="0" blendMode="add"/>
+			<e:Image id="five2" scaleX="0" scaleY="0" horizontalCenter="0" verticalCenter="0" blendMode="add" source="jpg-fivekind_flare_d"/>
+			<e:Image id="five3" scaleX="0" scaleY="0" horizontalCenter="0" verticalCenter="0" blendMode="normal" source="five_of_a_kind-5ofakind"/>
+			<e:Image id="five4" scaleX="0" scaleY="0" horizontalCenter="0" verticalCenter="0" blendMode="normal" source="five_of_a_kind-5ofakind"/>
+		</e:Group>
+
+</e:Group>
+<e:Group id="group_test" width="278" left="0" anchorOffsetY="0" anchorOffsetX="0" bottom="0" height="43" visible="false">
+<e:Label text="*普通*" x="41" y="49" size="25" textColor="0xecff00" />
+<e:Label text=" 免费 " x="51" y="59" size="25" textColor="0xecff00" />
+<e:Label text="玛丽" x="61" y="69" size="25" textColor="0xecff00" />
+<e:layout>
+<e:HorizontalLayout gap="15" />
+</e:layout>
+</e:Group>
+<e:Group top="0" bottom="0" horizontalCenter="0" touchEnabled="false" touchChildren="false" scrollEnabled="true" width="720">
+<e:Image id="lcloud" source="bonus_cloud_a_png" top="0" bottom="0" x="0" width="950"  alpha="0" touchEnabled="false"/>
+<e:Image id="rcloud" top="0" bottom="0" source="bonus_cloud_b_png" width="800"  alpha="0" touchEnabled="false" x="-80"/>
+</e:Group>
+</e:Skin>

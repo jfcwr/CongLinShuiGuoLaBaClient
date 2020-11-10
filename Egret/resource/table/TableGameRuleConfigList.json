@@ -1,0 +1,6 @@
+[
+{"level":1,"name":"初级场","awardRatio":30,"freeGameCount":5,"freeGameCountAppend":5,"freeGameSpecialSymbolNumMax":4,"abModeSwitchRatio":3,"noAwardPinpanProp":2000,"noAward1ColProp":7000,"noAward3ColProp":5000},
+{"level":2,"name":"中级场","awardRatio":30,"freeGameCount":5,"freeGameCountAppend":5,"freeGameSpecialSymbolNumMax":4,"abModeSwitchRatio":3,"noAwardPinpanProp":2000,"noAward1ColProp":7000,"noAward3ColProp":5000},
+{"level":3,"name":"高级场","awardRatio":30,"freeGameCount":5,"freeGameCountAppend":5,"freeGameSpecialSymbolNumMax":4,"abModeSwitchRatio":3,"noAwardPinpanProp":2000,"noAward1ColProp":7000,"noAward3ColProp":5000},
+{"level":4,"name":"精英场","awardRatio":30,"freeGameCount":5,"freeGameCountAppend":5,"freeGameSpecialSymbolNumMax":4,"abModeSwitchRatio":3,"noAwardPinpanProp":2000,"noAward1ColProp":7000,"noAward3ColProp":5000}
+]

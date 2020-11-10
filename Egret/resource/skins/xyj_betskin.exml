@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="xyj_betskin" width="720" height="1280" xmlns:w="http://ns.egret.com/wing"
+        xmlns:e="http://ns.egret.com/eui" xmlns:game="game.*">
+	<e:Group id="mainGroup" height="1560" horizontalCenter="0" bottom="0">
+<e:Group width="720" height="565" x="0"  bottom="0">
+	<e:Rect bottom="0" scaleX="1" scaleY="1" fillColor="0x282833" left="0" right="0" top="0"/>
+	<e:Rect scaleX="1" scaleY="1" width="360" height="85" horizontalCenter="0" y="195" fillColor="0x30303d" strokeWeight="2" strokeColor="0x181829" ellipseWidth="10"/>
+	<e:Label text="投注设置" height="34" textAlign="center" verticalAlign="middle" size="36" y="26" scaleX="1" scaleY="1" horizontalCenter="0"/>
+	<game:Button id="closeButton" interactive="bright" label="" scaleX="1" scaleY="1" x="616" y="23" width="42" height="42">
+		<game:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="menu_close_button"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</game:skinName>
+	</game:Button>
+	<game:Button id="subButton" interactive="bright" label="-" scaleX="1" scaleY="1" x="72" y="195" width="86" height="86">
+		<game:skinName>
+		<e:Skin states="up,down,disabled">
+		<e:Rect width="100%" height="100%" alpha="0"/>
+			<!--<e:Image width="100%" height="100%" source="menu_close_button"/>-->
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="66"/>
+		</e:Skin>
+		</game:skinName>
+	</game:Button>
+	<game:Button id="addButton" interactive="bright" label="+" scaleX="1" scaleY="1" x="568" y="195" height="86" width="86">
+		<game:skinName>
+		<e:Skin states="up,down,disabled">
+		<e:Rect width="100%" height="100%" alpha="0"/>
+			<!--<e:Image width="100%" height="100%" source="menu_close_button"/>-->
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="66"/>
+		</e:Skin>
+		</game:skinName>
+	</game:Button>
+	<e:Label text="投注总额" y="142" scaleX="1" scaleY="1" height="31" size="32" textAlign="center" verticalAlign="middle" horizontalCenter="0"/>
+	<game:Button id="bigBetButton" interactive="bright" label="最大投注" y="369" width="173" height="85" x="32">
+		<game:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Rect fillColor="0x30303d"  strokeColor="0x181829" width="173" height="85" strokeWeight="2" ellipseWidth="10"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="36" textColor="0x8c6e14"/>
+		</e:Skin>
+		</game:skinName>
+	</game:Button>
+	<game:Button id="bigBetClickButton" interactive="bright" label="确定" x="216" y="369" width="461" height="85">
+		<game:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Rect width="420" height="80" x="0" y="0" fillColor="0xffc824" ellipseWidth="10"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="36" textColor="0xffffff"/>
+		</e:Skin>
+		</game:skinName>
+	</game:Button>
+	<e:Label id="allBetNum" text="1.20" x="324" y="220" size="46" textAlign="center" verticalAlign="middle" scaleX="1" scaleY="1" textColor="0xffc824"/>
+</e:Group>
+		<e:Group width="720" height="850" x="0" y="430" visible="false">
+			<e:Rect scaleX="1" scaleY="1" fillColor="0x30303c" left="0" right="0" x="0" fillAlpha="1" strokeAlpha="1" width="720" top="0" bottom="0"/>
+			<e:Group width="720" height="100" x="0" y="0" scaleX="1" scaleY="1">
+				<e:Label text="投注设置" horizontalCenter="0" verticalCenter="0"/>
+
+				<e:Rect width="720" height="2" x="0" bottom="0" fillColor="0x35353f"/>
+			</e:Group>
+			<e:Group width="720" height="100" x="0" y="100" anchorOffsetY="0" anchorOffsetX="0" scaleX="1" scaleY="1" cacheAsBitmap="true">
+				<e:Label text="投注大小" x="32" y="53"/>
+				<e:Label text="投注倍数" x="200" y="35"/>
+				<e:Label text="投注线" x="376" y="34"/>
+				<e:Label text="投注总额" x="572" y="35"/>
+				<e:layout>
+				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" paddingRight="10" paddingLeft="10" gap="65"/>
+				</e:layout>
+			</e:Group>
+			<e:Group id="positionScroller" width="720" height="350" x="0" y="220" scaleX="1" scaleY="1">
+				<e:Label text="0.05" x="60" y="120" textColor="0x9a9a9e"/>
+				<e:Label text="x" x="175" y="120" textColor="0x9A9A9E"/>
+				<e:Scroller id="multipleBetsScroller" width="100" height="320" x="235" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" y="15">
+				<e:Group width="100" anchorOffsetX="0" height="1040" id="singleBetGroup">
+					<e:Label text="-" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-140" y="90" scaleX="1" scaleY="1" textColor="0x9a9a9e"/>
+					<e:Label text="1" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-150" y="80" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="2" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-150" y="80" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="3" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-150" y="80" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="4" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-150" y="80" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="5" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-150" y="80" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="6" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-150" y="80" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="7" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-140" y="90" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="8" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-130" y="100" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="9" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-120" y="110" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="10" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-110" y="120" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="-" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-100" y="130" scaleX="1" scaleY="1" textColor="0x9a9a9e"/>
+					<e:Label text="" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-90" y="140" scaleX="1" scaleY="1" textColor="0x9a9a9e"/>
+					<e:layout>
+					<e:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="0"/>
+					</e:layout>
+				</e:Group>
+				</e:Scroller>
+				<e:Label text="x" x="370" y="120" textColor="0x9a9a9e"/>
+				<e:Label text="30" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" strokeColor="0x593000" verticalCenter="-38" x="440" y="80" scaleX="1" scaleY="1" anchorOffsetY="0" textColor="0x9a9a9e"/>
+				<e:Label text="=" x="520" y="120" textColor="0x9a9a9e"/>
+				<e:Scroller id="totalNumBetsScroller" width="100" height="320" x="570" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" y="15">
+				<e:Group width="100" anchorOffsetX="0" height="1040" id="totalBetGroup">
+					<e:Label text="-" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-90" y="140" scaleX="1" scaleY="1" textColor="0x9a9a9e"/>
+					<e:Label text="1.50" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-150" y="80" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="3.00" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-150" y="80" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="4.50" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-150" y="80" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="6.00" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-150" y="80" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="7.50" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-150" y="80" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="9.00" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-150" y="80" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="10.50" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-140" y="90" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="12.00" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-130" y="100" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="13.50" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-120" y="110" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="15.00" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="-110" y="120" scaleX="1" scaleY="1" textColor="0xffffff"/>
+					<e:Label text="-" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="60" y="290" scaleX="1" scaleY="1" textColor="0x9a9a9e"/>
+					<e:Label text="" anchorOffsetX="0" size="30" fontFamily="黑体" textAlign="center" verticalAlign="middle" height="80" strokeColor="0x593000" horizontalCenter="0" verticalCenter="0" x="70" y="300" scaleX="1" scaleY="1" textColor="0x9a9a9e"/>
+					<e:layout>
+					<e:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="0"/>
+					</e:layout>
+				</e:Group>
+				</e:Scroller>
+				<e:Group width="720" x="0" y="15" scaleX="1" scaleY="1" height="320" touchChildren="false" touchEnabled="false">
+					<e:Rect width="720" height="80" x="0" fillColor="0x2B2B38" top="16" y="-81" scaleX="1" scaleY="1" fillAlpha="0.5"/>
+					<e:Rect width="720" height="2" x="0" fillColor="0x2b2b38" top="0"/>
+					<e:Rect width="720" height="80" x="0" y="0" fillColor="0x34343d" fillAlpha="0" strokeAlpha="1"/>
+					<e:Rect width="720" height="2" x="0" fillColor="0x2B2B38" bottom="0" fillAlpha="1" strokeAlpha="1"/>
+					<e:Rect width="720" height="156" x="0" fillColor="0x2B2B38" top="180" fillAlpha="0.5" y="83" scaleX="1" scaleY="1"/>
+					<e:layout>
+						<e:VerticalLayout gap="0" horizontalAlign="center" verticalAlign="top"/>
+					</e:layout>
+				</e:Group>
+				<e:layout>
+					<e:BasicLayout/>
+				</e:layout>
+			</e:Group>
+			<e:Group width="720" height="100" x="0" scaleX="1" scaleY="1" y="570">
+
+
+				<e:layout>
+				<e:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="10"/>
+				</e:layout>
+			</e:Group>
+
+		</e:Group>
+
+
+
+
+
+
+	</e:Group>
+</e:Skin>

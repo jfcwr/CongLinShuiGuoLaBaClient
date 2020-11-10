@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="xyj_bigwinskin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+	<w:Declarations>
+		<tween:TweenGroup id="ringanim">
+			<tween:TweenItem target="{ringImage1}">
+				<tween:Set>
+					<tween:props>
+						<e:Object rotation="{0}" alpha="{0.5}"  scaleX="{2}" scaleY="{2}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="10000">
+					<tween:props>
+						<e:Object rotation="{90}" alpha="{0.6}" />
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{glowImage4}">
+
+				<tween:Set>
+					<tween:props>
+						<e:Object scaleX="{6}" scaleY="{6}" alpha="{0.4}" rotation="{0}" />
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="10000">
+					<tween:props>
+						<e:Object rotation="{90}" />
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{glowImage5}">
+				<tween:Set>
+					<tween:props>
+						<e:Object rotation="{0}" alpha="{0.5}" scaleX="{6}" scaleY="{6}" />
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="10000">
+					<tween:props>
+						<e:Object rotation="{-90}" />
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{ringImage2}">
+				<tween:Set>
+					<tween:props>
+						<e:Object rotation="{0}" alpha="{0.5}"  scaleX="{2}" scaleY="{2}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="10000">
+					<tween:props>
+						<e:Object rotation="{90}" />
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+		<tween:TweenGroup id="ringanim2">
+			<tween:TweenItem target="{glowImage2}">
+				<tween:Wait duration="2500" />
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}" scaleX="{2}" scaleY="{2}" />
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="1000">
+					<tween:props>
+						<e:Object scaleX="{3}" scaleY="{3}" />
+					</tween:props>
+				</tween:To>
+				<tween:To duration="750">
+					<tween:props>
+						<e:Object scaleX="{4}" scaleY="{4}" />
+					</tween:props>
+				</tween:To>
+				<tween:To duration="750">
+					<tween:props>
+						<e:Object scaleX="{5}" scaleY="{5}" alpha="{0.6}" />
+					</tween:props>
+				</tween:To>
+				<tween:To duration="750">
+					<tween:props>
+						<e:Object scaleX="{6}" scaleY="{6}" alpha="{0.4}" />
+					</tween:props>
+				</tween:To>
+				<tween:To duration="1000">
+					<tween:props>
+						<e:Object alpha="{0.2}" scaleX="{8}" scaleY="{8}" />
+					</tween:props>
+				</tween:To>
+				<tween:To duration="500">
+					<tween:props>
+						<e:Object scaleX="{9}" scaleY="{9}" alpha="{0}" />
+					</tween:props>
+				</tween:To>
+				<tween:Wait duration="2750" />
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}" scaleX="{2}" scaleY="{2}" />
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="750">
+					<tween:props>
+						<e:Object scaleX="{3}" scaleY="{3}" />
+					</tween:props>
+				</tween:To>
+				<tween:To duration="750">
+					<tween:props>
+						<e:Object scaleX="{4}" scaleY="{4}" />
+					</tween:props>
+				</tween:To>
+				<tween:To duration="750">
+					<tween:props>
+						<e:Object scaleX="{5}" scaleY="{5}" alpha="{0.6}" />
+					</tween:props>
+				</tween:To>
+				<tween:To duration="750">
+					<tween:props>
+						<e:Object scaleX="{6}" scaleY="{6}" alpha="{0.4}" />
+					</tween:props>
+				</tween:To>
+				<tween:To duration="750">
+					<tween:props>
+						<e:Object scaleX="{8}" scaleY="{8}" alpha="{0.2}" />
+					</tween:props>
+				</tween:To>
+				<tween:To duration="500">
+					<tween:props>
+						<e:Object scaleX="{9}" scaleY="{9}" alpha="{0}" />
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+		<tween:TweenGroup id="lianhua">
+			<tween:TweenItem target="{cloudImage1}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0.3}" scaleY="{1.1}" scaleX="{1.1}" />
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="1500">
+					<tween:props>
+						<e:Object scaleX="{1.1}" scaleY="{1.1}" alpha="{0.4}" />
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{cloudImage2}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0.5}" scaleX="{1}" scaleY="{1}" />
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="1500">
+					<tween:props>
+						<e:Object scaleX="{1}" scaleY="{1}" alpha="{0.4}" />
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{cloudImage3}">
+				<tween:Set>
+					<tween:props>
+						<e:Object scaleX="{1}" scaleY="{1}" alpha="{0.4}" />
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="1550">
+					<tween:props>
+						<e:Object scaleX="{1}" scaleY="{1}" alpha="{0.4}" />
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{ringImage2}">
+				<tween:Wait duration="800"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}" rotation="{0}"  scaleX="{2}" scaleY="{2}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="1550">
+					<tween:props>
+						<e:Object  scaleX="{2}" scaleY="{2}" alpha="{0.5}" rotation="{0}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="1450">
+					<tween:props>
+						<e:Object  alpha="{0.5}" rotation="{45}" scaleY="{2.4}" scaleX="{2.4}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="1500">
+					<tween:props>
+						<e:Object  rotation="{90}" alpha="{0.2}" scaleX="{2.6}" scaleY="{2.6}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{glowImage1}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0.4}" />
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="1550">
+					<tween:props>
+						<e:Object scaleX="{16}" scaleY="{16}" />
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+		<tween:TweenGroup id="lianhua2">
+			<tween:TweenItem target="{winImage1}">
+				<tween:Wait duration="6750" />
+				<tween:Set>
+					<tween:props>
+						<e:Object scaleX="{1}" scaleY="{1}" alpha="{0.6}" />
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="1000">
+					<tween:props>
+						<e:Object alpha="{0.8}" scaleX="{1.5}" scaleY="{1.5}" />
+					</tween:props>
+				</tween:To>
+				<tween:To duration="750">
+					<tween:props>
+						<e:Object scaleX="{2}" scaleY="{2}" alpha="{0.8}" />
+					</tween:props>
+				</tween:To>
+				<tween:To duration="750">
+					<tween:props>
+						<e:Object scaleX="{2.5}" scaleY="{2.5}" alpha="{0.6}" />
+					</tween:props>
+				</tween:To>
+				<tween:To duration="750">
+					<tween:props>
+						<e:Object scaleX="{3}" scaleY="{3}" alpha="{0.4}" />
+					</tween:props>
+				</tween:To>
+				<tween:To duration="750">
+					<tween:props>
+						<e:Object scaleX="{3.5}" scaleY="{3.5}" alpha="{0.2}" />
+					</tween:props>
+				</tween:To>
+				<tween:To duration="750">
+					<tween:props>
+						<e:Object alpha="{0}" scaleX="{4}" scaleY="{4}" />
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+	</w:Declarations>
+	<e:Group id="normalGoldFlyGroup" width="100%" height="100%" horizontalCenter="0" verticalCenter="0"
+	         touchChildren="false" touchEnabled="false" />
+	<e:Group id="normalEffectGroup" touchChildren="false" touchEnabled="false" scaleX="1" scaleY="1" scrollEnabled="true"
+	         horizontalCenter="0" width="720" top="0" bottom="0">
+		<e:Rect fillAlpha="0.6" left="0" right="0" top="0" bottom="0" />
+		<e:Image id="winImage1" scaleX="3.3" scaleY="3.3" verticalCenter="0" horizontalCenter="0" source="bigwin_glow_c"
+		         alpha="0" blendMode="normal" />
+		<e:Image id="glowImage2" scaleX="5" scaleY="5" verticalCenter="0.5" blendMode="normal"
+		         source="bigwin_glow_b" horizontalCenter="0"  alpha="0"/>
+		<e:Image id="flashImage" scaleX="4" scaleY="4" verticalCenter="0" horizontalCenter="0" blendMode="normal"
+		         source="bigwin_flare_b" alpha="0" />
+		<e:Image id="glowImage1" scaleX="8" scaleY="8" verticalCenter="0" horizontalCenter="0" blendMode="add" alpha="0"
+		         source="bigwin_glow_a" />
+		<e:Image id="ringImage1" scaleX="2.2" scaleY="2.2" verticalCenter="0" horizontalCenter="0" blendMode="add" alpha="0"
+		         source="bigwin_pattern" width="347" height="347" anchorOffsetX="173.5" anchorOffsetY="173.5" />
+		<e:Image id="ringImage2" scaleX="2.2" scaleY="2.2" verticalCenter="0" horizontalCenter="0" blendMode="add"
+		         source="bigwin_pattern" alpha="0" width="347" height="347" anchorOffsetX="173.5" anchorOffsetY="173.5" />
+		<e:Image id="cloudImage3" scaleX="1.3" scaleY="1.3" verticalCenter="0.5" horizontalCenter="24.5" alpha="0"
+		         source="bigwin_cloud_a" width="675" height="675" anchorOffsetX="337.5" anchorOffsetY="337.5" />
+		<e:Image id="cloudImage1" scaleX="1.4" scaleY="1.4" verticalCenter="0" horizontalCenter="0" source="bigwin_cloud_b"
+		         width="755" height="755" anchorOffsetX="377.5" anchorOffsetY="377.5" alpha="0" />
+		<e:Image id="cloudImage2" scaleX="0.9" scaleY="0.9" verticalCenter="0" horizontalCenter="0" source="bigwin_cloud_c"
+		         width="981" height="981" anchorOffsetY="490.5" anchorOffsetX="490.5" alpha="0" />
+		<e:Image id="glowImage3" scaleY="6" verticalCenter="0" horizontalCenter="0" blendMode="normal" alpha="0"
+		         source="bigwin_glow_a" scaleX="6" />
+		<e:Image id="glowImage4" scaleY="3" verticalCenter="0" horizontalCenter="0" blendMode="normal" alpha="0" scaleX="3"
+		         source="bigwin_flare_a" width="234" height="234" anchorOffsetY="117" anchorOffsetX="117" />
+		<e:Image id="glowImage5" scaleY="3" verticalCenter="0" horizontalCenter="0" blendMode="add" scaleX="3" width="234"
+		         height="234" anchorOffsetX="117" anchorOffsetY="117" alpha="0" source="bigwin_flare_a" />
+
+		<e:Rect fillAlpha="0.6" left="0" right="0" top="0" bottom="0" visible="false" />
+		<e:Group id="winTitleGroup" touchChildren="false" touchEnabled="false" horizontalCenter="0" verticalCenter="0"
+		         scaleX="0.8" scaleY="0.8">
+			<e:Image id="winTitleImage" horizontalCenter="0" verticalCenter="0" x="166" y="31" scaleX="0.9" scaleY="0.9"
+			         source="big_win-bw" blendMode="normal" />
+			<e:BitmapLabel id="GoldNumLabel" text="900000" horizontalCenter="0" x="59" scaleX="0.5" scaleY="0.5"
+			               letterSpacing="-10" font="number3_fnt" verticalCenter="0" />
+			<e:layout>
+				<e:VerticalLayout gap="10" horizontalAlign="center" verticalAlign="middle" />
+			</e:layout>
+		</e:Group>
+		<e:Image id="flushImage2" scaleX="4" scaleY="4" verticalCenter="0" horizontalCenter="0" blendMode="add"
+		         source="bigwin_flare_b" visible="false" />
+	</e:Group>
+	<e:Button id="continueBigWinButton" label="" horizontalCenter="0" verticalCenter="347" x="360" y="987" scaleX="1"
+	          scaleY="1" visible="false" />
+</e:Skin>

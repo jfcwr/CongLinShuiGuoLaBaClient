@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="xyj_winscrolliconkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:game="game.*" xmlns:tween="egret.tween.*" width="132" height="132">
+	<w:Declarations>
+		<tween:TweenGroup id="scaleAnim">
+			<tween:TweenItem target="{bg5}">
+				<tween:Set>
+					<tween:props>
+						<e:Object scaleX="{0.5}" scaleY="{0.5}" alpha="{0.5}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="250">
+					<tween:props>
+						<e:Object scaleX="{3.2}" scaleY="{3.2}" alpha="{0.7}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bg1}">
+				<tween:Set>
+					<tween:props>
+						<e:Object scaleX="{0.5}" scaleY="{0.5}" alpha="{0.5}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="250">
+					<tween:props>
+						<e:Object scaleY="{0.9}" scaleX="{0.9}" alpha="{0.7}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bg3}">
+				<tween:Set>
+					<tween:props>
+						<e:Object scaleX="{0.5}" scaleY="{0.5}" alpha="{0.5}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="250">
+					<tween:props>
+						<e:Object scaleX="{2.3}" scaleY="{2.3}" alpha="{0.7}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bg2}">
+				<tween:Set>
+					<tween:props>
+						<e:Object scaleX="{0.5}" scaleY="{0.5}" alpha="{0.5}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="250">
+					<tween:props>
+						<e:Object scaleX="{0.9}" scaleY="{0.9}" alpha="{0.7}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bg0}">
+				<tween:Wait duration="100"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object scaleX="{0.7}" scaleY="{0.7}" alpha="{0.5}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="200">
+					<tween:props>
+						<e:Object scaleX="{0.9}" scaleY="{0.9}" alpha="{0.7}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bg4}">
+				<tween:Wait duration="100"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object scaleX="{0.7}" scaleY="{0.7}" alpha="{0.5}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="200">
+					<tween:props>
+						<e:Object scaleX="{1.1}" scaleY="{1.1}" alpha="{0.7}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="150">
+					<tween:props>
+						<e:Object alpha="{0}" scaleX="{1}" scaleY="{1}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+
+
+
+		</tween:TweenGroup>
+		<tween:TweenGroup id="duobaoScale">
+			<tween:TweenItem target="{duobaoglow}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0.7}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="500">
+					<tween:props>
+						<e:Object scaleX="{1.4}" scaleY="{1.4}" alpha="{0.5}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="150">
+					<tween:props>
+						<e:Object alpha="{0}" scaleX="{1}" scaleY="{1}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{duobaoglow0}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0.7}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="500">
+					<tween:props>
+						<e:Object scaleX="{1.9}" scaleY="{1.9}" alpha="{0.5}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="150">
+					<tween:props>
+						<e:Object scaleY="{1.7}" scaleX="{1.7}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+		<tween:TweenGroup id="changeScale">
+			<tween:TweenItem target="{changeImage}">
+			<tween:To duration="500">
+					<tween:props>
+						<e:Object scaleX="{2.4}" scaleY="{2.4}" alpha="{1}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="250">
+					<tween:props>
+						<e:Object alpha="{0.4}" scaleX="{2.5}" scaleY="{2.5}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="200">
+					<tween:props>
+						<e:Object alpha="{0}" scaleX="{3}" scaleY="{3}"/>
+					</tween:props>
+				</tween:To>
+					</tween:TweenItem>
+		</tween:TweenGroup>
+
+	</w:Declarations>
+	<e:Group id="bgGroup" horizontalCenter="0" verticalCenter="0" width="132" height="132">
+		<e:Image id="bg5" horizontalCenter="0" verticalCenter="0" blendMode="add" scaleX="3.2" width="88" height="88" anchorOffsetX="44" anchorOffsetY="44" scaleY="3.2" source="glow_02_win" alpha="0.8" visible="false"/>
+		<e:Image id="bg1" anchorOffsetY="107.5" anchorOffsetX="107.5" source="feature_glow_b" horizontalCenter="0" verticalCenter="0" width="215" height="215" scaleX="0.9" scaleY="0.9" blendMode="add" alpha="0.8" visible="false"/>
+		<e:Image id="bg3" horizontalCenter="0" verticalCenter="0" blendMode="add" source="glow_03_win" scaleX="2.3" width="88" height="88" anchorOffsetX="44" anchorOffsetY="44" scaleY="2.3" visible="false"/>
+		<e:Image id="bg2" horizontalCenter="0" verticalCenter="0" source="pattern_01_win" blendMode="add"  width="165" height="165" anchorOffsetX="82.5" anchorOffsetY="82.5" scaleX="0.9" scaleY="0.9" visible="false"/>
+		<e:Image id="bg0" horizontalCenter="0" verticalCenter="0" source="pattern_01_win" blendMode="add" width="165" height="165" anchorOffsetX="82.5" anchorOffsetY="82.5" scaleX="0.9" scaleY="0.9" visible="false"/>
+		<e:Image id="bg4" horizontalCenter="0" verticalCenter="0" source="pattern_01_win" blendMode="add" width="165" height="165" anchorOffsetX="82.5" anchorOffsetY="82.5" scaleX="0.9" scaleY="0.9" visible="false"/>
+	</e:Group>
+	<e:Image id="shinningBg" blendMode="add" horizontalCenter="0" verticalCenter="0" alpha="1" source="feature_glow_b" visible="false"/>
+	<e:Image id="duobaoglow" horizontalCenter="0" verticalCenter="0" source="fast_glow_b" blendMode="add" width="158" height="158" anchorOffsetX="79" anchorOffsetY="79"/>
+	<e:Image id="duobaoglow0" horizontalCenter="0" verticalCenter="0" source="fast_glow_c" blendMode="add" width="101" height="92" anchorOffsetX="50.5" anchorOffsetY="46"/>
+	<e:Image id="elemImage"  horizontalCenter="0" verticalCenter="0"  source="elem60"/>
+	<e:Group id="animGroup" width="1" height="1" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0"
+	         horizontalCenter="0" verticalCenter="0" />
+	<e:Image id="changeImage" source="feature_glow_a_monk" blendMode="add" horizontalCenter="0" verticalCenter="0" alpha="0" visible="false"/>
+</e:Skin>

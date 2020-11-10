@@ -1,0 +1,50 @@
+{
+  "15bc90e7691": {
+    "path": "../resource/eui_skins/testEui.ts",
+    "class": "testEui",
+    "parentPath": ""
+  },
+  "15bcbdf571c": {
+    "path": "../resource/eui_skins/testEui.ts",
+    "class": "testEui",
+    "parentPath": ""
+  },
+  "15bcbed210d": {
+    "path": "../resource/eui_skins/euiTest.ts",
+    "class": "euiTest",
+    "parentPath": ""
+  },
+  "15bcbfd64db": {
+    "path": "../resource/eui_skins/testEui.ts",
+    "class": "testEui",
+    "parentPath": ""
+  },
+  "global": {
+    "globalAutoLayerMarkEnable": true,
+    "globalBindingDataTestObj": [],
+    "globalRulerEnable": true,
+    "gridColor": 13179932,
+    "gridEnabled": false,
+    "gridSize": 20
+  },
+  "15da6a9743d": {
+    "bindingDataTestObj": []
+  },
+  "163714e0f1e": {
+    "guideLinesEnabled": false,
+    "backgroundX": 0,
+    "backgroundY": 0,
+    "backgroundWidth": -1,
+    "backgroundHeight": -1,
+    "useBgImage": true,
+    "useBgColor": true,
+    "backgroundAlpha": 100,
+    "bindingDataTestObj": [],
+    "guideLines": [
+      {
+        "type": "v",
+        "pos": -318
+      }
+    ]
+  }
+}
