@@ -1,4 +1,4 @@
-module xiyouji {
+module conglinshuiguo {
 
 
 
@@ -26,7 +26,7 @@ module xiyouji {
 
 		public constructor() {
 			super();
-			this.skinName = new xyj_freeResultskin();
+			this.skinName = new clsg_freeResultskin();
 
 			this.playWinBar()
 			// this.freeGoldFlyGroup.addChild(this.freeWinGoldEffect);

@@ -1,4 +1,4 @@
-module xiyouji {
+module conglinshuiguo {
     enum WinType {
         BIG_WIN = 1,
         HUGE_WIN = 2,
@@ -10,7 +10,7 @@ module xiyouji {
 
         public constructor() {
             super();
-            this.skinName = new xyj_bigwinskin();
+            this.skinName = new clsg_bigwinskin();
             // let v = 0.6
             // let light = 20
             // let colorMaxtrix =

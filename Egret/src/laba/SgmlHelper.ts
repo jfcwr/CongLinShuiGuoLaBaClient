@@ -1,6 +1,6 @@
 // TypeScript file
 
-module xiyouji {
+module conglinshuiguo {
     export class SgmlHelper extends labalib.LabaHelper {
         constructor() {
             super();
@@ -45,7 +45,7 @@ module xiyouji {
          * 当前Wild属性的值，水浒传里“水浒传”类型就是特殊符号.
          */
         public getWildValue(): number {
-            return XYJ_ElemAllType.Wild;
+            return CLSG_ElemAllType.Wild;
         }
 
         protected getResultLineWildCount(datas: Array<Array<number>>, lineIndex: number) {
@@ -160,7 +160,7 @@ module xiyouji {
         * 不能用wild替换的元素,特殊符号可以不用放置这里;
         */
         public getNoWildValues(): Array<number> {
-            return [XYJ_ElemAllType.DuoBao];
+            return [CLSG_ElemAllType.DuoBao];
         }
     }
 }

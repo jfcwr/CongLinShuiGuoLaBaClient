@@ -1,5 +1,5 @@
 // TypeScript file
-module xiyouji {
+module conglinshuiguo {
 	//特效层;
 	export class EffectLayer extends egret.DisplayObjectContainer {
 		private static m_Instance: EffectLayer;

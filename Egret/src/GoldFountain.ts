@@ -1,4 +1,4 @@
-module xiyouji {
+module conglinshuiguo {
     export class GoldFountain extends egret.Sprite {
         private _goldNum: number;
         private _gravity: number;

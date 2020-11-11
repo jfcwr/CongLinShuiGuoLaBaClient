@@ -1,5 +1,5 @@
 
-module xiyouji {
+module conglinshuiguo {
     export enum ScrollType {
         UpScroll = 1,
         DownScroll = 2
@@ -11,7 +11,7 @@ module xiyouji {
     export class AwardScrollIcon extends game.BaseUI {
         constructor() {
             super()
-            this.skinName = new xyj_winscrolliconkin()
+            this.skinName = new clsg_winscrolliconkin()
             this.anchorOffsetX = 132 / 2
             this.anchorOffsetY = 132 / 2
             this.kuangDragon1 = uniLib.DragonUtils.createDragonBoneAnimation("icon_gx")
@@ -186,7 +186,7 @@ module xiyouji {
                 this.mAnimObject.animation.play(null, 0)
                 return
             }
-            if (winElemID == XYJ_ElemAllType.DuoBao) {
+            if (winElemID == CLSG_ElemAllType.DuoBao) {
                 this.duobaoglow0.visible = true
                 this.duobaoglow.visible = true
                 labalib.Utils.PlayTweenGroup(this.duobaoScale, 1)
@@ -206,17 +206,17 @@ module xiyouji {
             this.duobaoglow0.visible = false
             this.duobaoglow.visible = false
             let animInfo = DataCenter.Instance.getElementAnimInfo(winElemID)
-            if (winElemID == XYJ_ElemAllType.Wild || winElemID == XYJ_ElemAllType.DuoBao) {
+            if (winElemID == CLSG_ElemAllType.Wild || winElemID == CLSG_ElemAllType.DuoBao) {
                 animName = "win"
             }
-            if (winElemID != XYJ_ElemAllType.DuoBao && winElemID != XYJ_ElemAllType.Wild) {
+            if (winElemID != CLSG_ElemAllType.DuoBao && winElemID != CLSG_ElemAllType.Wild) {
                 this.bgGroup.visible = true
                 this.kuangDragon2.visible = true
                 this.kuangDragon1.animation.play("gx_0", 1)
                 this.kuangDragon2.animation.play("gx_1", 1)
                 // labalib.Utils.PlayTweenGroup(this.scaleAnim, 1)
             }
-            if (winElemID < XYJ_ElemAllType.ShaSeng) {
+            if (winElemID < CLSG_ElemAllType.ShaSeng) {
                 this.elemImage.visible = true
                 this.elemImage.texture = DataCenter.Instance.getElementTexture(winElemID);
                 egret.Tween.get(this.elemImage).set({ scaleX: 0.9, scaleY: 0.9 }).to({ scaleX: 1 + 0.1, scaleY: 1 + 0.1 }, 300)
@@ -453,7 +453,7 @@ module xiyouji {
          * 添加带子每一段滚动的数据,通过调用多次AddScrollData实现滚动多次...;
          */
         public AddScrollData(scrollinfo: any) {
-            this.mScrollInfoList.push({ beltScrollType: ScrollType.DownScroll, resultType: XYJ_ResultType.NORMAL, realScrollItem: scrollinfo.realScrollItem, speed: scrollinfo.speed });
+            this.mScrollInfoList.push({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: scrollinfo.realScrollItem, speed: scrollinfo.speed });
         }
         public StopEx() {
 
@@ -519,14 +519,14 @@ module xiyouji {
         public mBeltSrcollDatas = []
         public mCurBeltSrcollDataIndex = 0
         public mLastBeltScrollDataIndex = 0
-        public mResultType: XYJ_ResultType
+        public mResultType: CLSG_ResultType
         public GenerateRandomElem() {
-            if (this.mResultType == XYJ_ResultType.FREEIN || this.mResultType == XYJ_ResultType.REROTATEIN) {
-                return Math.randomInteger(XYJ_ElemAllType.J, XYJ_ElemAllType.Wild)
+            if (this.mResultType == CLSG_ResultType.FREEIN || this.mResultType == CLSG_ResultType.REROTATEIN) {
+                return Math.randomInteger(CLSG_ElemAllType.J, CLSG_ElemAllType.Wild)
             }
             if (this.mBeltIndex == 1 || this.mBeltIndex == 5)
-                return Math.randomInteger(XYJ_ElemAllType.J, XYJ_ElemAllType.Wild)
-            return Math.randomInteger(XYJ_ElemAllType.J, XYJ_ElemAllType.DuoBao)
+                return Math.randomInteger(CLSG_ElemAllType.J, CLSG_ElemAllType.Wild)
+            return Math.randomInteger(CLSG_ElemAllType.J, CLSG_ElemAllType.DuoBao)
         }
         public mBeltScrollType: ScrollType
         public set BeltScrollType(scrollType: ScrollType) {

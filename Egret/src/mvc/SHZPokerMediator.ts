@@ -1,4 +1,4 @@
-module xiyouji {
+module conglinshuiguo {
     export class SHZPokerMediator extends puremvc.Mediator {
         public static NAME: string = "SHZPokerMediator";
         public constructor(viewComponent: any) {

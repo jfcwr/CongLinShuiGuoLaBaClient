@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="xyj_mutiinfoskin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+<e:Skin class="clsg_mutiinfoskin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
         xmlns:game="game.*">
 	<e:Rect id="rect1" fillColor="0x7a5c8f" scaleX="1" scaleY="1" height="132" verticalCenter="0" horizontalCenter="0"/>
 	<e:Image id="image1" source="spin_base1" scaleX="1" scaleY="1" height="132" verticalCenter="0" horizontalCenter="0"/>

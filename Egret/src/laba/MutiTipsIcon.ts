@@ -1,4 +1,4 @@
-module xiyouji {
+module conglinshuiguo {
     /**
      * 主角显示对象集合
      */
@@ -22,7 +22,7 @@ module xiyouji {
         constructor() {
             super();
 
-            this.skinName = new xyj_mutiinfoskin();
+            this.skinName = new clsg_mutiinfoskin();
 
             this.initUI()
         }
@@ -68,7 +68,7 @@ module xiyouji {
             console.log("2213xxxxxxxxxzz,", beltIndex)
             this.mutiGroup.visible = false
             this.duobaoLabel.visible = false
-            if (elemID == XYJ_ElemAllType.DuoBao) {
+            if (elemID == CLSG_ElemAllType.DuoBao) {
                 this.width = 132 * 3
                 this.image1.width = 132 * 3
                 this.rect1.width = 132 * 3 - 6

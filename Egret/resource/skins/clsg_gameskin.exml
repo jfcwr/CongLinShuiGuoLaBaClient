@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="xyj_gameskin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui"
-        xmlns:w="http://ns.egret.com/wing" xmlns:game="game.*" xmlns:tween="egret.tween.*" xmlns:xiyouji="xiyouji.*">
+<e:Skin class="clsg_gameskin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:game="game.*" xmlns:tween="egret.tween.*" xmlns:conglinshuiguo="conglinshuiguo.*">
 	<w:Declarations>
 		<tween:TweenGroup id="cloud">
 			<tween:TweenItem target="{lcloud}">
@@ -586,7 +586,7 @@
 				</e:layout>
 			</e:Group>
 			<game:Button id="gameRotateButton" interactive="bright" label="" scaleX="1" scaleY="1" enabled="true"
-			             touchEnabled="true" width="107" anchorOffsetX="53.5" anchorOffsetY="50" y="73" height="100" x="360">
+			             touchEnabled="true" width="107" anchorOffsetX="53.5" anchorOffsetY="50" y="73" height="100" x="360" rotation="0">
 				<game:skinName>
 					<e:Skin states="up,down,disabled">
 						<e:Image width="100%" height="100%" source="arrow" />
@@ -811,7 +811,7 @@
 </e:layout>
 </e:Group>
 <e:Group top="0" bottom="0" horizontalCenter="0" touchEnabled="false" touchChildren="false" scrollEnabled="true" width="720">
-<e:Image id="lcloud" source="bonus_cloud_a_png" top="0" bottom="0" x="0" width="950"  alpha="0" touchEnabled="false"/>
-<e:Image id="rcloud" top="0" bottom="0" source="bonus_cloud_b_png" width="800"  alpha="0" touchEnabled="false" x="-80"/>
+<e:Image id="lcloud" source="bonus_cloud_a_png" top="0" bottom="0" x="0" width="950"  alpha="0" touchEnabled="false" locked="true"/>
+<e:Image id="rcloud" top="0" bottom="0" source="bonus_cloud_b_png" width="800"  alpha="0" touchEnabled="false" x="-80" locked="true"/>
 </e:Group>
 </e:Skin>

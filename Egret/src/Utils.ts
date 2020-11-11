@@ -1,5 +1,5 @@
 // TypeScript file
-module xiyouji {
+module conglinshuiguo {
     export namespace Utils {
         export enum BezierLineType {
             TwoStep = 2,        //二阶贝塞尔曲线 B(t) = (1-t)^2 * P0 + 2*t*(1-t)P1 + t^2 * P2; T=[0,1]  

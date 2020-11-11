@@ -1,5 +1,5 @@
 // TypeScript file
-module xiyouji {
+module conglinshuiguo {
     export class DataCenter extends labalib.LabaDataCenter {
         private mLabaItemMultiplyCfg: table.ItemMultiplyList[];
         private mLabaLineInfoCfg: table.LabaLineList[];
@@ -136,16 +136,16 @@ module xiyouji {
          * 添加所用到的基础的元素表 
          */
         public addBasicElems() {
-            this.addBasicElem(XYJ_ElemAllType.J);
-            this.addBasicElem(XYJ_ElemAllType.Q);
-            this.addBasicElem(XYJ_ElemAllType.K);
-            this.addBasicElem(XYJ_ElemAllType.A);
-            this.addBasicElem(XYJ_ElemAllType.ShaSeng);
-            this.addBasicElem(XYJ_ElemAllType.ZhuBaJie);
-            this.addBasicElem(XYJ_ElemAllType.SunWuKong);
-            this.addBasicElem(XYJ_ElemAllType.TangSeng);
-            this.addBasicElem(XYJ_ElemAllType.Wild);
-            this.addBasicElem(XYJ_ElemAllType.DuoBao);
+            this.addBasicElem(CLSG_ElemAllType.J);
+            this.addBasicElem(CLSG_ElemAllType.Q);
+            this.addBasicElem(CLSG_ElemAllType.K);
+            this.addBasicElem(CLSG_ElemAllType.A);
+            this.addBasicElem(CLSG_ElemAllType.ShaSeng);
+            this.addBasicElem(CLSG_ElemAllType.ZhuBaJie);
+            this.addBasicElem(CLSG_ElemAllType.SunWuKong);
+            this.addBasicElem(CLSG_ElemAllType.TangSeng);
+            this.addBasicElem(CLSG_ElemAllType.Wild);
+            this.addBasicElem(CLSG_ElemAllType.DuoBao);
         }
 
         /**
@@ -236,25 +236,25 @@ module xiyouji {
             }
         }
         public IsFreeGame() {
-            return this.mServerResultDatas.length > 1 && (this.mServerResultDatas[0].isPinpan == XYJ_ResultType.FREETRI
-                || this.mServerResultDatas[0].isPinpan == XYJ_ResultType.FREEIN);
+            return this.mServerResultDatas.length > 1 && (this.mServerResultDatas[0].isPinpan == CLSG_ResultType.FREETRI
+                || this.mServerResultDatas[0].isPinpan == CLSG_ResultType.FREEIN);
         };
 
         public IsRerotateGame() {
-            return DataCenter.Instance.CurServerResultDatas.resultData.isPinpan == XYJ_ResultType.REROTATEIN;
+            return DataCenter.Instance.CurServerResultDatas.resultData.isPinpan == CLSG_ResultType.REROTATEIN;
         }
         public IsTriggerRerotateGame() {
-            return DataCenter.Instance.CurServerResultDatas.resultData.isPinpan == XYJ_ResultType.REROTATETRI;
+            return DataCenter.Instance.CurServerResultDatas.resultData.isPinpan == CLSG_ResultType.REROTATETRI;
         }
         public IsTriggerCurFreeGame() {
-            return DataCenter.Instance.CurServerResultDatas.resultData.isPinpan == XYJ_ResultType.FREETRI;
+            return DataCenter.Instance.CurServerResultDatas.resultData.isPinpan == CLSG_ResultType.FREETRI;
         }
         /**
        * 是否触发的免费游戏;
        */
         public IsTriggerFreeGame() {
-            if (this.mServerResultDatas.length > 1 && (this.mServerResultDatas[0].isPinpan == XYJ_ResultType.FREETRI
-                || this.mServerResultDatas[0].isPinpan == XYJ_ResultType.FREEIN)) {
+            if (this.mServerResultDatas.length > 1 && (this.mServerResultDatas[0].isPinpan == CLSG_ResultType.FREETRI
+                || this.mServerResultDatas[0].isPinpan == CLSG_ResultType.FREEIN)) {
                 return this.mLeftFreeCount == this.mServerResultDatas.length - 1;
             }
             else {
@@ -264,7 +264,7 @@ module xiyouji {
 
         public ChangeElemType() {
             let result = DataCenter.Instance.CurServerResultDatas.resultData
-            let elemtype = [XYJ_ElemAllType.TangSeng, XYJ_ElemAllType.SunWuKong, XYJ_ElemAllType.ZhuBaJie, XYJ_ElemAllType.ShaSeng]
+            let elemtype = [CLSG_ElemAllType.TangSeng, CLSG_ElemAllType.SunWuKong, CLSG_ElemAllType.ZhuBaJie, CLSG_ElemAllType.ShaSeng]
             return elemtype[result.wildNum - 1]
         }
 
@@ -389,7 +389,7 @@ module xiyouji {
 
         public isScatter(elem) {
             // console.log("isScatter,aaa",elem);
-            if (elem == XYJ_ElemAllType.DuoBao) {
+            if (elem == CLSG_ElemAllType.DuoBao) {
                 return true;
             }
             return false;
@@ -503,7 +503,7 @@ module xiyouji {
             for (let item in this["mElemTextures"])
                 for (let i: number = 0; i < this.basicElemsArray.length; i++) {
                     let elem = this.basicElemsArray[i];
-                    if (elem >= XYJ_ElemAllType.ShaSeng && this["mElemTextures"][elem * 10]) {
+                    if (elem >= CLSG_ElemAllType.ShaSeng && this["mElemTextures"][elem * 10]) {
                         this["mElemTextures"][elem * 10].dispose();
                     }
                     this["mElemTextures"][elem].dispose();
@@ -529,7 +529,7 @@ module xiyouji {
                 let elemSourcePath = this.getElementSource(elem);
                 let tex: egret.Texture = RES.getRes(elemSourcePath) as egret.Texture;
                 this["mElemTextures"][elem] = tex;
-                if (elem >= XYJ_ElemAllType.ShaSeng) {
+                if (elem >= CLSG_ElemAllType.ShaSeng) {
                     let elemSpecialSourcePath = this.getElementWildSource(elem);
                     let texSpecil: egret.Texture = RES.getRes(elemSpecialSourcePath) as egret.Texture;
                     this["mElemTextures"][elem * 10] = texSpecil;

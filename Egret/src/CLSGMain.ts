@@ -27,7 +27,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////
 
-class XYJMain extends uniLib.GameDoc {
+class CLSGMain extends uniLib.GameDoc {
     /**
      * 加载进度界面
      * loading process interface
@@ -36,7 +36,7 @@ class XYJMain extends uniLib.GameDoc {
     public constructor(param?: any) {
         super(param);
         egret.ImageLoader.crossOrigin = "anonymous"
-        game.GameViewConfig.mainMediatorName = uniLib.getQualifiedClassName(xiyouji.SHZPokerMediator);
+        game.GameViewConfig.mainMediatorName = uniLib.getQualifiedClassName(conglinshuiguo.SHZPokerMediator);
         if (uniLib.BrowersUtils.GetRequest("cacheres") == "false") {
             RES.web.Html5VersionController.prototype.getVirtualUrl = function (url) {
                 url += "?v=" + Math.random();
@@ -97,17 +97,17 @@ class XYJMain extends uniLib.GameDoc {
     public preLoadEnd(): void {
         uniLib.UIMgr.instance.showProcessBar(null, 2, 100, "正在加载游戏资源...");
         if (uniLib.Global.lobbyMode) {
-            uniLib.ResLoadMgr.instance.load(xiyouji.GameConstant.ResGroup_SC, this.onLoadComplete, this.onItemLoadError, this, null);
+            uniLib.ResLoadMgr.instance.load(conglinshuiguo.GameConstant.ResGroup_SC, this.onLoadComplete, this.onItemLoadError, this, null);
         }
         else {
-            uniLib.ResLoadMgr.instance.load(xiyouji.GameConstant.ResGroup_SC, this.onLoadComplete, this.onItemLoadError, this, null);
+            uniLib.ResLoadMgr.instance.load(conglinshuiguo.GameConstant.ResGroup_SC, this.onLoadComplete, this.onItemLoadError, this, null);
         }
     }
 
     private onLoadComplete() {
         uniLib.UIMgr.instance.showProcessBar(null, 93, 100, "正在加载游戏资源...");
-        // game.Sound.loadSoundGroup("xyj_sound", [], this.startCreateScene, this);
-        game.Sound.loadSoundGroup("xyj_sound", [], () => {
+        // game.Sound.loadSoundGroup("clsg_sound", [], this.startCreateScene, this);
+        game.Sound.loadSoundGroup("clsg_sound", [], () => {
             this.startCreateScene();
         });
     }
@@ -136,8 +136,8 @@ class XYJMain extends uniLib.GameDoc {
         game.DataCache.stageWidth = uniLib.Global.screenWidth;
         game.DataCache.stageHight = uniLib.Global.screenHeight;
         uniLib.UIMgr.instance.hideLoading();
-        uniLib.SceneMgr.instance.changeScene(xiyouji.PokerGameScene);
-        xiyouji.SoundHand.Instance.switchMusicBG();
+        uniLib.SceneMgr.instance.changeScene(conglinshuiguo.PokerGameScene);
+        conglinshuiguo.SoundHand.Instance.switchMusicBG();
         game.Config.InteractiveSoundName = "xyj_btn_click_mp3";
         new ActionManage();
     }

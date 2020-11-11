@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="xyj_winscrolliconkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+<e:Skin class="clsg_winscrolliconkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
         xmlns:game="game.*" xmlns:tween="egret.tween.*" width="132" height="132">
 	<w:Declarations>
 		<tween:TweenGroup id="scaleAnim">

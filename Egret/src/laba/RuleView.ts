@@ -1,5 +1,5 @@
 // TypeScript file
-module xiyouji {
+module conglinshuiguo {
 
 
     //拉霸游戏规则框界面;
@@ -10,7 +10,7 @@ module xiyouji {
 
         constructor() {
             super()
-            this.skinName = new xyj_ruleskin();
+            this.skinName = new clsg_ruleskin();
             this.initUI();
             this.onResize();
 

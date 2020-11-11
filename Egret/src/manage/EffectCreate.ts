@@ -1,4 +1,4 @@
-module xiyouji {
+module conglinshuiguo {
     /**
      * 特效生成器
      */

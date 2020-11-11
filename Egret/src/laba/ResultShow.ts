@@ -1,6 +1,6 @@
 // TypeScript file
 //旋转过程中的表演.
-module xiyouji {
+module conglinshuiguo {
     export class ResultShow extends labalib.ResultShow {
 
         public static get Instance() {

@@ -1,4 +1,4 @@
-module xiyouji {
+module conglinshuiguo {
     /**
      * 主角显示对象集合
      */
@@ -11,7 +11,7 @@ module xiyouji {
         constructor() {
             super();
 
-            this.skinName = new xyj_flywildskin();
+            this.skinName = new clsg_flywildskin();
             this.touchEnabled = false
             this.anchorOffsetX = this.width / 2
             this.anchorOffsetY = this.height / 2

@@ -1,4 +1,4 @@
-module xiyouji {
+module conglinshuiguo {
     export enum FreeInCharacter {
         Monkey = 1,
         Pig = 2,
@@ -32,7 +32,7 @@ module xiyouji {
         private animGroup: eui.Group
         public constructor() {
             super();
-            this.skinName = new xyj_freeGameIng();
+            this.skinName = new clsg_freeGameIng();
             this.InitCharacterDragon()
 
             this.LeftFreeCount = 2

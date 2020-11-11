@@ -1,5 +1,5 @@
 // TypeScript file
-module xiyouji {
+module conglinshuiguo {
 
 
     //旋转设置界面;
@@ -29,7 +29,7 @@ module xiyouji {
         private autoNum: Number = 25                      //自动旋转的轮数
         constructor() {
             super()
-            this.skinName = new xyj_rotatingskin();
+            this.skinName = new clsg_rotatingskin();
             this.initUI();
             // this.onResize();
 

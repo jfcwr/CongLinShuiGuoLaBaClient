@@ -1,4 +1,4 @@
-module xiyouji {
+module conglinshuiguo {
     /**
      * 音效管理类
      */

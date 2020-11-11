@@ -1,5 +1,5 @@
 // TypeScript file
-module xiyouji {
+module conglinshuiguo {
     export class LabaMachine extends labalib.LabaMachine {
 
         constructor(beltParentGroup: eui.Group, lineRoot: eui.Group) {
@@ -538,26 +538,26 @@ module xiyouji {
                 console.error("xxxxxxxxxxxx222222222222222222222", DataCenter.Instance.CurServerResultDatas, DataCenter.Instance.IsFreeGame(), DataCenter.Instance.IsTriggerRerotateGame())
                 for (let i: number = 0; i < DataCenter.Instance.BeltCount; i++) {
                     let beltext = this.mBeltArray[i] as LabaBelt
-                    // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: XYJ_ResultType.NORMAL, realScrollItem: 4, waitTime: i * 100, speed: 250*20 });
+                    // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4, waitTime: i * 100, speed: 250*20 });
 
                     if (DataCenter.Instance.IsTriggerCurFreeGame() || DataCenter.Instance.IsTriggerRerotateGame()) {
                         if (i == 3) {
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: XYJ_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: XYJ_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: XYJ_ResultType.NORMAL, realScrollItem: 0, back: false, waitTime: i * 100, speed: 500 * 7 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 0, back: false, waitTime: i * 100, speed: 500 * 7 * timeScale });
 
-                            // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: XYJ_ResultType.NORMAL, realScrollItem: 4*5, waitTime: i * 100, speed: 250*20 });
+                            // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4*5, waitTime: i * 100, speed: 250*20 });
                             beltext.isHighRotate = true
                         }
                         else
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: XYJ_ResultType.NORMAL, realScrollItem: count[i], back: false, waitTime: i * 100, speed: 200 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], back: false, waitTime: i * 100, speed: 200 * timeScale });
                     }
                     else
                         if (DataCenter.Instance.IsQuickRotate) {
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: XYJ_ResultType.NORMAL, realScrollItem: 10, back: false, waitTime: i * 100, speed: 200 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 10, back: false, waitTime: i * 100, speed: 200 * timeScale });
 
                         } else
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: XYJ_ResultType.NORMAL, realScrollItem: 10 + i * 2, back: false, waitTime: i * 100, speed: 200 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 10 + i * 2, back: false, waitTime: i * 100, speed: 200 * timeScale });
 
                     beltext.ReadyScrollData()
                     beltext.RealStart = true
@@ -669,7 +669,7 @@ module xiyouji {
             let timeScale = DataCenter.Instance.ScrollTimeScale
             for (let i: number = 0; i < DataCenter.Instance.BeltCount; i++) {
                 let beltext = this.mBeltArray[i] as LabaBelt
-                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: XYJ_ResultType.NORMAL, realScrollItem: 2, back: false, waitTime: i * 100, speed: 200 * timeScale });
+                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 2, back: false, waitTime: i * 100, speed: 200 * timeScale });
                 beltext.ReadyScrollData()
                 beltext.RealStart = true
             }

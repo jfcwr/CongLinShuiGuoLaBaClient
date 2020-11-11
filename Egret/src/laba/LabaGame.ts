@@ -3,7 +3,7 @@
 
 
 
-module xiyouji {
+module conglinshuiguo {
 
     enum GameRotateStatus {
         RotateNormal = 1,       //普通旋转(显示长按自动);
@@ -465,7 +465,7 @@ module xiyouji {
         }
 
         public initUI() {
-            this.skinName = new xyj_gameskin()
+            this.skinName = new clsg_gameskin()
             this.raceObtainGoldLabel.text = "";
 
             //添加特效层;
@@ -1540,7 +1540,7 @@ module xiyouji {
                 }
             }
             for (let pos of changePos) {
-                resultdata[pos.row][pos.col] = XYJ_ElemAllType.Wild
+                resultdata[pos.row][pos.col] = CLSG_ElemAllType.Wild
             }
             DataCenter.Instance.ChangeIconWin = changePos
             return changePos
@@ -1606,7 +1606,7 @@ module xiyouji {
                     let scrollIcon = this.mLabaMachine.getBelt(col).GetElementByIndex(row + 1)
                     console.log("convert map resultdata-pinpan: ", resultdata[row][col], "--", scrollIcon.ElemType)
                     if (resultdata[row][col] == changeElem)
-                        resultdata[row][col] = XYJ_ElemAllType.Wild
+                        resultdata[row][col] = CLSG_ElemAllType.Wild
                     if (scrollIcon.ElemType == changeElem) {
                         changePos.push({ row: row, col: col })
                     }
@@ -1700,7 +1700,7 @@ module xiyouji {
             else if (DataCenter.Instance.IsRerotateGame()) {
                 // this.changeScrollIcon(awardFun)
                 let elemChange = DataCenter.Instance.ChangeElemType()
-                // [XYJ_ElemAllType.TangSeng, XYJ_ElemAllType.SunWuKong, XYJ_ElemAllType.ZhuBaJie, XYJ_ElemAllType.ShaSeng]
+                // [CLSG_ElemAllType.TangSeng, CLSG_ElemAllType.SunWuKong, CLSG_ElemAllType.ZhuBaJie, CLSG_ElemAllType.ShaSeng]
                 // 3 2 1 0
                 let convert = [0, 1, 3, 2]
                 console.log("xasdasdqwqwd", elemChange, )
@@ -1773,7 +1773,7 @@ module xiyouji {
             for (let col = 0; col < 5; col++) {
                 for (let row = 0; row < 3; row++) {
                     let scrollIcon = this.mLabaMachine.getBelt(col).GetElementByIndex(row + 1)
-                    if (scrollIcon.ElemType == XYJ_ElemAllType.Wild) {
+                    if (scrollIcon.ElemType == CLSG_ElemAllType.Wild) {
                         let pos = scrollIcon.localToGlobal(scrollIcon.width / 2, scrollIcon.height / 2)
                         globalPosArr.push(pos)
                     }
@@ -2078,7 +2078,7 @@ module xiyouji {
                             let row = - (lineInfo[hitColIndex] - 4) - 1
                             // console.log("row  col lineindex lineInfo", line.LineType, lineInfo, row, hitColIndex, scrollIcon.ElemType)
                             let icon = this.mAwardScrollIcon[row][hitColIndex] as AwardScrollIcon
-                            let showBG = scrollIcon.ElemType == XYJ_ElemAllType.Wild || scrollIcon.ElemType == XYJ_ElemAllType.DuoBao
+                            let showBG = scrollIcon.ElemType == CLSG_ElemAllType.Wild || scrollIcon.ElemType == CLSG_ElemAllType.DuoBao
                             this.winElemAnimGroup.addChild(icon)
                             if (!isPlayFlag[row][hitColIndex]) {
                                 icon.PlayWinAnimation(scrollIcon.ElemType)
@@ -2303,7 +2303,7 @@ module xiyouji {
             console.log("xxxz2311", rest[0][1], rest[1][1], rest[2][1])
             let pos = -1
             for (let i = 2; i >= 0; i--) {
-                if (rest[i][beltIndex - 1] == XYJ_ElemAllType.DuoBao) {
+                if (rest[i][beltIndex - 1] == CLSG_ElemAllType.DuoBao) {
                     pos = i + 1
                     break
                 }

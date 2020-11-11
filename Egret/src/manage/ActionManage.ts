@@ -28,8 +28,8 @@ class ActionManage {
     public static exitGame(): void {
         game.GameData.iskPoker = false;
         egret.Tween.removeAllTweens();
-        RES.destroyRes(xiyouji.GameConstant.ResGroup_SC, false);
-        uniLib.ResUtils.clearResConfigByGroupName([xiyouji.GameConstant.ResGroup_SC]);
+        RES.destroyRes(conglinshuiguo.GameConstant.ResGroup_SC, false);
+        uniLib.ResUtils.clearResConfigByGroupName([conglinshuiguo.GameConstant.ResGroup_SC]);
         game.PokerFunction.exitGame();
         table.clearTable();
         uniLib.GameModuleUtils.ExitGame(false);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="xyj_flywildskin" height="100" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:game="game.*"
+<e:Skin class="clsg_flywildskin" height="100" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:game="game.*"
         width="100">
 	<e:Group id="wildFlyGroup" width="100" height="100" anchorOffsetY="50" anchorOffsetX="50" horizontalCenter="0" verticalCenter="0">
 	<e:Image scaleX="1" scaleY="1" touchEnabled="false" verticalCenter="0" source="bonus_glow_b" blendMode="add" horizontalCenter="0" alpha="0.7"/>

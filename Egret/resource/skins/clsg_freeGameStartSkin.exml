@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="xyj_freeGameStartSkin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui"
+<e:Skin class="clsg_freeGameStartSkin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui"
         xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*" xmlns:game="game.*">
 	<w:Declarations>
 		<tween:TweenGroup id="cloud">

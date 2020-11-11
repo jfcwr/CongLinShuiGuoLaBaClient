@@ -1,5 +1,5 @@
 // TypeScript file
-module xiyouji {
+module conglinshuiguo {
     class PageHelper {
         private mScroller: eui.Scroller;
         private mCallBackTarget: any;
@@ -105,7 +105,7 @@ module xiyouji {
 
         constructor() {
             super()
-            this.skinName = new xyj_compensationTableskin();
+            this.skinName = new clsg_compensationTableskin();
             this.initUI();
             this.onResize();
 

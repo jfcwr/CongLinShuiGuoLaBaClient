@@ -1,4 +1,4 @@
-module xiyouji {
+module conglinshuiguo {
     export class FlyGoldUtils {
         public constructor() {
 

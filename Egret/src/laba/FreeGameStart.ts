@@ -1,6 +1,6 @@
 // TypeScript file
 
-module xiyouji {
+module conglinshuiguo {
     export class FreeGameStart extends game.BaseUI {
         public static m_Instance: FreeGameStart = null;
         private cloud: egret.tween.TweenGroup;
@@ -11,7 +11,7 @@ module xiyouji {
 
         constructor() {
             super();
-            this.skinName = new xyj_freeGameStartSkin();
+            this.skinName = new clsg_freeGameStartSkin();
             this.initUI();
         }
 

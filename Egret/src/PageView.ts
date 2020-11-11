@@ -1,6 +1,6 @@
 // TypeScript file
 
-module xiyouji{
+module conglinshuiguo{
     export class PageView extends eui.Group{
         private mScroller:eui.Scroller;
         private mScrollContainer:eui.Group;

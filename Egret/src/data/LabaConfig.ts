@@ -1,5 +1,5 @@
 // TypeScript file
-module xiyouji {
+module conglinshuiguo {
     //拉霸的常用配置;
     export class LabaConfig {
         //元素编号，元素图片对照表;

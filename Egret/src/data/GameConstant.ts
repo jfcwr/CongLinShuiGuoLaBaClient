@@ -1,7 +1,7 @@
-module xiyouji {
+module conglinshuiguo {
 
 	//水浒传的所有类型.
-	export enum XYJ_ElemAllType {
+	export enum CLSG_ElemAllType {
 		J = 1,
 		Q = 2,
 		K = 3,
@@ -14,7 +14,7 @@ module xiyouji {
 		DuoBao = 10,
 	};
 
-	export enum XYJ_ResultType {
+	export enum CLSG_ResultType {
 		NORMAL = 0,
 		FREEIN = 3,//免费中
 		FREETRI = 1,//触发
@@ -26,7 +26,7 @@ module xiyouji {
 	 * 扑克常量
 	 */
 	export class GameConstant {
-		public static ResGroup_SC = "xyj_preload";
+		public static ResGroup_SC = "clsg_preload";
 		/**
 		 * 门界面Y
 		 */

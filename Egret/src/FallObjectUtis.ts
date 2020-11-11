@@ -1,4 +1,4 @@
-module xiyouji {
+module conglinshuiguo {
     //落雨落金币
     export class FallObjectUtils {
 

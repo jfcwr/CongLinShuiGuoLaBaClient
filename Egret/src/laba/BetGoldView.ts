@@ -1,6 +1,6 @@
 
 // TypeScript file
-module xiyouji {
+module conglinshuiguo {
     //拉霸游戏规则框界面;
     class PositionScroller {
         private mScroller: eui.Scroller;
@@ -130,7 +130,7 @@ module xiyouji {
         private totalBetGroup: eui.Group
         constructor() {
             super()
-            this.skinName = new xyj_betskin();
+            this.skinName = new clsg_betskin();
 
             this.initUI();
         }
