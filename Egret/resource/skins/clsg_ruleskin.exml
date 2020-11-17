@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="clsg_ruleskin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:game="game.*"
         xmlns:w="http://ns.egret.com/wing">
-	<e:Group id="mainGroup" width="720" height="1280" verticalCenter="0" horizontalCenter="0">
+	<e:Group id="mainGroup" width="720" height="1280" horizontalCenter="0" verticalCenter="0">
 		<e:Rect height="100" left="0" right="0" x="0" scaleX="1" scaleY="1" top="0" fillColor="0x282834" />
 		<e:Label text="游戏规则" y="0" scaleX="1" scaleY="1" width="720" height="100" size="45" verticalAlign="middle"
 		         textAlign="center" textColor="0xf7ba65" x="0" />
@@ -15,39 +15,60 @@
 				</e:Skin>
 			</game:skinName>
 		</game:Button>
-		<e:Group height="1180" anchorOffsetX="0" anchorOffsetY="0" left="0" right="0" bottom="0" horizontalCenter="0">
-			<e:Rect left="2" right="-2" scaleX="1" scaleY="1" fillColor="0x30303c" x="0" y="-1" height="1180" />
+		<e:Group anchorOffsetX="0" anchorOffsetY="0" left="0" right="0" horizontalCenter="0" bottom="0" height="1180">
+			<e:Rect left="2" right="-2" scaleX="1" scaleY="1" fillColor="0x30303c" x="0" y="-2.33" height="1180" />
 			<e:Scroller id="ruleScroller" width="720" height="1180" x="0" y="0" anchorOffsetY="0" verticalScrollBar="true">
 				<e:Group id="scrollGroup" width="720">
 
-					<e:Group width="720" x="0" y="0" height="404" cacheAsBitmap="true" anchorOffsetY="0">
-						<e:Label text="重转模式" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle" />
-						<e:Label text="·  当2个夺宝符号出现在第2轴和第3轴的任意位置时（并且第4轴没有出现夺宝符号），重转模式将被触发。" x="30" scaleX="1" scaleY="1" y="120"
+					<e:Group width="720" x="0" y="0" height="1000" cacheAsBitmap="true" anchorOffsetY="0">
+						<e:Label text="水果丛林" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle" />
+						<e:Label text="·  水果丛林是一个5轴3行的视频老虎机游戏，编入了神秘宝箱符号，以及带有粘性符号的免费旋转。" x="30" scaleX="1" scaleY="1" y="113.33"
 						         textAlign="left" width="660" size="25" lineSpacing="10" textColor="0xcccccc" />
-						<e:Label text="·  在重转模式中，玩家将获得一次重新旋转，同时任意一个角色符号（沙悟净符号、猪八戒符号、孙悟空符号或唐三藏符号）将被选中转化为百搭符号。" x="30" y="202" width="660"
+						<e:Label text="·  游戏规定了20条固定中奖线，1到10的投注倍数和0.01到1.00的投注大小。" x="30" y="187.66" width="660"
 						         size="25" lineSpacing="10" textColor="0xcccccc" />
-						<e:Label text="·  夺宝符号不会在重转模式中出现。" x="30" y="320" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC" />
+						<e:Label text="·  投注大小可以在“投注大小”选项中设定。" x="30" y="264.66" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC" />
+						<e:Label text="·  投注倍数可以在“投注倍数”选项中设定。" x="30" y="309" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  投注总额可以在“投注总额”选项中设定。" x="30" y="356.03" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  “现金钱包”用来显示下注者可用的现金余额。" x="30" y="397.69" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  “自动旋转”可以根据玩家所选择的回合数量自动进行游戏。" x="30" y="437.03" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  中奖组合和奖金派发是根据“赔付表”进行的。" x="32" y="509.31" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  只支付每条下注线中赢取最高的奖金。" x="32" y="631.02" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  中奖线奖金按照从最左至右转轴的顺序派发。" x="30" y="672.67" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  不同中奖线上的奖金会被叠加。" x="30" y="710.66" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  所有中奖以现金显示。" x="30" y="747.32" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  —条中奖线所得的奖励等同于显示在“赔付表”上的符号赔付值乘以投注大小和投注倍数。" x="30" y="552.01" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  百搭符号可替代除夺宝符号和神秘宝箱符号外的所有符号。" x="30" y="782.68" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  百搭符号只出现在第2，第3和第4转轴上。" x="30" y="852.35" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  免费旋转模式中投注大小和投注倍数和触发免费旋转模式时的参数保持一致。" x="30" y="893.96" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
 						<e:Rect width="720" height="3" x="0" bottom="0" fillColor="0x282834" />
 					</e:Group>
-					<e:Group width="720" x="0" y="0" cacheAsBitmap="true" height="820" anchorOffsetY="0">
-						<e:Label text="免费旋转模式" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle" />
-						<e:Group width="720" height="720" x="0" scaleX="1" scaleY="1" y="100">
-							<e:Label text="·  当第2、第3、第4轴的任意位置上出现3个夺宝符号时，免费旋转模式将被触发并获得8次免费旋转。" x="30" scaleX="1" scaleY="1" y="20"
+					<e:Group width="720" x="0" y="0" cacheAsBitmap="true" height="350" anchorOffsetY="0">
+						<e:Label text="神秘宝箱模式" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle" />
+						<e:Group width="720" height="250" x="0" scaleX="1" scaleY="1" y="100">
+							<e:Label text="·  神秘宝箱模式可以在主游戏的任何旋转中随机触发。" x="30" scaleX="1" scaleY="1" y="20"
 							         textAlign="left" width="660" size="25" lineSpacing="10" textColor="0xcccccc" />
-							<e:Label text="·  每次免费旋转，任何出现在卷轴上的百搭符号将被收集。" x="30" y="102" width="660" size="25" lineSpacing="10"
+							<e:Label text="·  神秘宝箱模式期间，5至10个神秘宝箱符号会出现在卷轴的任意位置上。" x="30" y="66.03" width="660" size="25" lineSpacing="10"
 							         textColor="0xcccccc" />
-							<e:Label text="·  如果收集了3个百搭符号，则卷轴上的所有唐三藏符号将被转换为百搭符号，并且获得2次免费旋转奖励。" x="30" y="147" width="660" size="25"
+							<e:Label text="·  所有神秘宝箱符号都将揭示随机选择的一个符号(夺宝符号和百搭符号除外），然后支付赢奖。" x="30" y="144.34" width="660" size="25"
 							         lineSpacing="10" textColor="0xCCCCCC" />
-							<e:Label text="·  如果收集了6个百搭符号，则卷轴上的所有唐三藏和孙悟空符号将被转换为百搭符号，并且获得2次免费旋转奖励。" x="30" y="227" width="660" size="25"
-							         lineSpacing="10" textColor="0xCCCCCC" />
-							<e:Label text="·  如果收集了9个百搭符号，则卷轴上的所有唐三藏、孙悟空和猪八戒符号将被转换为百搭符号，并且获得2次免费旋转奖励。" x="30" y="307" width="660" size="25"
-							         lineSpacing="10" textColor="0xCCCCCC" />
-							<e:Label text="·  如果收集了12个百搭符号，则卷轴上的所有唐三藏、孙悟空、猪八戒和沙悟淨符号将被转换为百搭符号，并且获得2次免费旋转奖励。" x="30" y="422" width="660"
-							         size="25" lineSpacing="10" textColor="0xCCCCCC" />
-							<e:Label text="·  当收集到12个百搭符号时，在接下来的免费旋转中，不会收集百搭符号。" x="30" y="537" width="660" size="25" lineSpacing="10"
-							         textColor="0xCCCCCC" />
-							<e:Label text="·  夺宝符号不会在免费旋转模式中出现。" x="30" y="617" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC" />
+
+
+
+
+
 							<e:Rect width="720" height="3" x="0" bottom="0" fillColor="0x282834" />
+						</e:Group>
+					</e:Group>
+					<e:Group width="720" x="10" y="10" cacheAsBitmap="true" height="550" anchorOffsetY="0">
+						<e:Label text="免费旋转模式" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle"/>
+						<e:Group width="720" height="450" x="0" scaleX="1" scaleY="1" y="100">
+						<e:Label text="·  当3、4或5个夺宝符号出现在卷轴的任意位置时，将触发免费旋转模式并分别获得8、10或15次免费旋转。" x="30" scaleX="1" scaleY="1" y="20" textAlign="left" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  当免费旋转开始时，卷轴第三列的中间位置将会出现一个粘性符号，并将持续保留于整场免费旋转。" x="30" y="96.69" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  每次免费旋转，所有粘性符号将揭示随机选择的一个符号(夺宝符号和百搭符号除外)。" x="30" y="172.32" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  当所有卷轴停止旋转时，若卷轴上任意符号与粘性符号相匹配，这些符号将在剩余的免费旋转中被转化为粘性符号。" x="30" y="247" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  免费旋转期间，卷轴上最多可出现15个粘性符号。" x="30" y="323" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label text="·  夺宝符号不会在免费旋转模式中出现。" x="30" y="367.36" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Rect width="720" height="3" x="0" bottom="0" fillColor="0x282834"/>
 						</e:Group>
 					</e:Group>
 					<e:Group width="720" x="0" y="0" cacheAsBitmap="true" height="1055" anchorOffsetY="0">

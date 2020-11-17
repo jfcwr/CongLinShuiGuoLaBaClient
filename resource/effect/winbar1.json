@@ -1,0 +1,85 @@
+{
+  "mc": {
+    "action": {
+      "frameRate": 10,
+      "labels": [
+        {
+          "name": "mc",
+          "frame": 1,
+          "end": 6
+        }
+      ],
+      "events": [],
+      "frames": [
+        {
+          "res": "shinning_b_info_00",
+          "x": -72,
+          "y": -48
+        },
+        {
+          "res": "shinning_b_info_01",
+          "x": -113,
+          "y": -36
+        },
+        {
+          "res": "shinning_b_info_02",
+          "x": -153,
+          "y": -36
+        },
+        {
+          "res": "shinning_b_info_03",
+          "x": -193,
+          "y": -36
+        },
+        {
+          "res": "shinning_b_info_04",
+          "x": -225,
+          "y": -36
+        },
+        {
+          "res": "shinning_b_info_05",
+          "x": -225,
+          "y": -34
+        }
+      ]
+    }
+  },
+  "res": {
+    "shinning_b_info_00": {
+      "x": 307,
+      "y": 259,
+      "w": 144,
+      "h": 98
+    },
+    "shinning_b_info_01": {
+      "x": 0,
+      "y": 346,
+      "w": 226,
+      "h": 86
+    },
+    "shinning_b_info_02": {
+      "x": 0,
+      "y": 259,
+      "w": 306,
+      "h": 86
+    },
+    "shinning_b_info_03": {
+      "x": 0,
+      "y": 172,
+      "w": 386,
+      "h": 86
+    },
+    "shinning_b_info_04": {
+      "x": 0,
+      "y": 0,
+      "w": 450,
+      "h": 86
+    },
+    "shinning_b_info_05": {
+      "x": 0,
+      "y": 87,
+      "w": 450,
+      "h": 84
+    }
+  }
+}

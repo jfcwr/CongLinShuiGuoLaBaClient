@@ -144,12 +144,12 @@
 
 	</w:Declarations>
 	<e:Group id="bgGroup" horizontalCenter="0" verticalCenter="0" width="132" height="132">
-		<e:Image id="bg5" horizontalCenter="0" verticalCenter="0" blendMode="add" scaleX="3.2" width="88" height="88" anchorOffsetX="44" anchorOffsetY="44" scaleY="3.2" source="glow_02_win" alpha="0.8" visible="false"/>
-		<e:Image id="bg1" anchorOffsetY="107.5" anchorOffsetX="107.5" source="feature_glow_b" horizontalCenter="0" verticalCenter="0" width="215" height="215" scaleX="0.9" scaleY="0.9" blendMode="add" alpha="0.8" visible="false"/>
-		<e:Image id="bg3" horizontalCenter="0" verticalCenter="0" blendMode="add" source="glow_03_win" scaleX="2.3" width="88" height="88" anchorOffsetX="44" anchorOffsetY="44" scaleY="2.3" visible="false"/>
-		<e:Image id="bg2" horizontalCenter="0" verticalCenter="0" source="pattern_01_win" blendMode="add"  width="165" height="165" anchorOffsetX="82.5" anchorOffsetY="82.5" scaleX="0.9" scaleY="0.9" visible="false"/>
-		<e:Image id="bg0" horizontalCenter="0" verticalCenter="0" source="pattern_01_win" blendMode="add" width="165" height="165" anchorOffsetX="82.5" anchorOffsetY="82.5" scaleX="0.9" scaleY="0.9" visible="false"/>
-		<e:Image id="bg4" horizontalCenter="0" verticalCenter="0" source="pattern_01_win" blendMode="add" width="165" height="165" anchorOffsetX="82.5" anchorOffsetY="82.5" scaleX="0.9" scaleY="0.9" visible="false"/>
+
+
+
+
+
+
 	</e:Group>
 	<e:Image id="shinningBg" blendMode="add" horizontalCenter="0" verticalCenter="0" alpha="1" source="feature_glow_b" visible="false"/>
 	<e:Image id="duobaoglow" horizontalCenter="0" verticalCenter="0" source="fast_glow_b" blendMode="add" width="158" height="158" anchorOffsetX="79" anchorOffsetY="79"/>

@@ -31,30 +31,30 @@ module conglinshuiguo {
 
         //元素编号，元素动画对照表;
         public static ElementAnimations: { [key: number]: labalib.IAnimInfo } = {
-            1: { Path: "bfsg_elem1", Action: "bfsg_elem1", KeyRate: 12, Scale: 1 },
-            2: { Path: "bfsg_elem2", Action: "bfsg_elem2", KeyRate: 12, Scale: 1 },
-            3: { Path: "bfsg_elem3", Action: "bfsg_elem3", KeyRate: 12, Scale: 1 },
-            4: { Path: "bfsg_elem4", Action: "bfsg_elem4", KeyRate: 12, Scale: 1 },
-            5: { Path: "h_sandy", Action: "bfsg_elem5", KeyRate: 12, Scale: 4.1 },
-            6: { Path: "h_pig", Action: "bfsg_elem6", KeyRate: 12, Scale: 4.1 },
-            7: { Path: "h_monkey", Action: "bfsg_elem7", KeyRate: 12, Scale: 4.1 },
-            8: { Path: "h_monk", Action: "bfsg_elem8", KeyRate: 12, Scale: 4.1 },
-            9: { Path: "s_wild", Action: "bfsg_elem9", KeyRate: 12, Scale: 4.1 },
-            10: { Path: "s_scatter", Action: "bfsg_elem10", KeyRate: 12, Scale: 4.8 },
+            1: { Path: "sym_lanmei", Action: "bfsg_elem1", KeyRate: 12, Scale: 1 },
+            2: { Path: "sym_putao", Action: "bfsg_elem2", KeyRate: 12, Scale: 1 },
+            3: { Path: "sym_yangtao", Action: "bfsg_elem3", KeyRate: 12, Scale: 1 },
+            4: { Path: "sym_pingguo", Action: "bfsg_elem4", KeyRate: 12, Scale: 1 },
+            5: { Path: "sym_xiangjiao", Action: "bfsg_elem5", KeyRate: 12, Scale: 1 },
+            6: { Path: "sym_boluo", Action: "bfsg_elem6", KeyRate: 12, Scale: 1 },
+            7: { Path: "sym_xigua", Action: "bfsg_elem7", KeyRate: 12, Scale: 1 },
+            8: { Path: "s_scatter", Action: "bfsg_elem8", KeyRate: 12, Scale: 1 },
+            9: { Path: "s_wild", Action: "bfsg_elem9", KeyRate: 12, Scale: 0.8 },
+            10: { Path: "s_scatter", Action: "bfsg_elem10", KeyRate: 12, Scale: 1 },
         };
 
         //元素编号，元素动画对照表;
         public static ElementSpecialAnimations: { [key: number]: labalib.IAnimInfo } = {
-            1: { Path: "bfsg_elem1", Action: "bfsg_elem1", KeyRate: 12, Scale: 1 },
-            2: { Path: "bfsg_elem2", Action: "bfsg_elem2", KeyRate: 12, Scale: 1 },
-            3: { Path: "bfsg_elem3", Action: "bfsg_elem3", KeyRate: 12, Scale: 1 },
-            4: { Path: "bfsg_elem4", Action: "bfsg_elem4", KeyRate: 12, Scale: 1 },
-            5: { Path: "s_sandy_wild", Action: "bfsg_elem5", KeyRate: 12, Scale: 1.7 },
-            6: { Path: "s_pig_wild", Action: "bfsg_elem6", KeyRate: 12, Scale: 1.7 },
-            7: { Path: "s_monkey_wild", Action: "bfsg_elem7", KeyRate: 12, Scale: 1.7 },
-            8: { Path: "s_monk_wild", Action: "bfsg_elem8", KeyRate: 12, Scale: 1.7 },
-            9: { Path: "s_wild", Action: "bfsg_elem9", KeyRate: 12, Scale: 4.1 },
-            10: { Path: "s_scatter", Action: "bfsg_elem10", KeyRate: 12, Scale: 4.8 },
+            1: { Path: "sym_lanmei", Action: "bfsg_elem1", KeyRate: 12, Scale: 1 },
+            2: { Path: "sym_putao", Action: "bfsg_elem2", KeyRate: 12, Scale: 1 },
+            3: { Path: "sym_yangtao", Action: "bfsg_elem3", KeyRate: 12, Scale: 1 },
+            4: { Path: "sym_pingguo", Action: "bfsg_elem4", KeyRate: 12, Scale: 1 },
+            5: { Path: "sym_xiangjiao", Action: "bfsg_elem5", KeyRate: 12, Scale: 1 },
+            6: { Path: "sym_boluo", Action: "bfsg_elem6", KeyRate: 12, Scale: 1 },
+            7: { Path: "sym_xigua", Action: "bfsg_elem7", KeyRate: 12, Scale: 1 },
+            8: { Path: "s_scatter", Action: "bfsg_elem8", KeyRate: 12, Scale: 1 },
+            9: { Path: "s_wild", Action: "bfsg_elem9", KeyRate: 12, Scale: 0.8 },
+            10: { Path: "s_scatter", Action: "bfsg_elem10", KeyRate: 12, Scale: 1 },
         };
 
         //中间人物特效;
@@ -83,7 +83,6 @@ module conglinshuiguo {
         public static HighRotate = [
             { Path: "fast3", KeyRate: 40, Scale: 1.6 }, { Path: "fast2", KeyRate: 30, Scale: 1.6, AddBlend: 1 },
             { Path: "fast4", KeyRate: 20, Scale: 1.25, AddBlend: 1 }, { Path: "fast1", KeyRate: 15, Scale: 1, AddBlend: 1 }];
-        public static Rotate1 = { Path: "rotate1", KeyRate: 20, Scale: 1.1, AddBlend: 1, PlayTime: 1 };
         public static Rotate2 = { Path: "rotate2", KeyRate: 20, Scale: 1.2, AddBlend: 1, PlayTime: 1 };
         //图标变化
         public static ChangeIcon = { Path: "rotationbutton1", KeyRate: 5, Scale: 1, AddBlend: 1, PlayTime: 1 };

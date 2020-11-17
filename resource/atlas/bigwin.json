@@ -1,0 +1,95 @@
+{
+  "file": "bigwin.png",
+  "frames": {
+    "bigwin_cloud_a": {
+      "x": 0,
+      "y": 982,
+      "w": 655,
+      "h": 657,
+      "offX": 2,
+      "offY": 0,
+      "sourceW": 675,
+      "sourceH": 675
+    },
+    "bigwin_cloud_b": {
+      "x": 982,
+      "y": 0,
+      "w": 721,
+      "h": 745,
+      "offX": 17,
+      "offY": 10,
+      "sourceW": 755,
+      "sourceH": 755
+    },
+    "bigwin_cloud_c": {
+      "x": 0,
+      "y": 0,
+      "w": 981,
+      "h": 981,
+      "offX": 0,
+      "offY": 0,
+      "sourceW": 981,
+      "sourceH": 981
+    },
+    "bigwin_flare_a": {
+      "x": 1704,
+      "y": 0,
+      "w": 234,
+      "h": 231,
+      "offX": 0,
+      "offY": 0,
+      "sourceW": 234,
+      "sourceH": 234
+    },
+    "bigwin_flare_b": {
+      "x": 982,
+      "y": 746,
+      "w": 218,
+      "h": 128,
+      "offX": 2,
+      "offY": 51,
+      "sourceW": 220,
+      "sourceH": 220
+    },
+    "bigwin_glow_a": {
+      "x": 1939,
+      "y": 0,
+      "w": 104,
+      "h": 121,
+      "offX": 7,
+      "offY": 0,
+      "sourceW": 121,
+      "sourceH": 121
+    },
+    "bigwin_glow_b": {
+      "x": 1704,
+      "y": 232,
+      "w": 155,
+      "h": 155,
+      "offX": 0,
+      "offY": 0,
+      "sourceW": 155,
+      "sourceH": 155
+    },
+    "bigwin_glow_c": {
+      "x": 0,
+      "y": 1640,
+      "w": 311,
+      "h": 311,
+      "offX": 0,
+      "offY": 0,
+      "sourceW": 311,
+      "sourceH": 311
+    },
+    "bigwin_pattern": {
+      "x": 656,
+      "y": 982,
+      "w": 332,
+      "h": 332,
+      "offX": 15,
+      "offY": 15,
+      "sourceW": 347,
+      "sourceH": 347
+    }
+  }
+}

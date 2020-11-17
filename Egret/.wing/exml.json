@@ -20,7 +20,7 @@
     "parentPath": ""
   },
   "global": {
-    "globalAutoLayerMarkEnable": true,
+    "globalAutoLayerMarkEnable": false,
     "globalBindingDataTestObj": [],
     "globalRulerEnable": true,
     "gridColor": 13179932,

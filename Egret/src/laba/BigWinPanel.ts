@@ -54,6 +54,8 @@ module conglinshuiguo {
         private winTitleGroup: eui.Group
         private normalEffectGroup: eui.Group
         public enterBigWinAnim(cb) {
+            this.height = uniLib.Global.screenHeight
+            this.width = uniLib.Global.screenWidth
             GX.PopUpManager.addPopUp(this)
             // this.cloudImage1.visible = true
             // this.cloudImage2.visible = true
@@ -79,9 +81,9 @@ module conglinshuiguo {
             // this.ringImage2.filters = [labalib.Utils.GetGlowFilter(0xFFFF00)];
             // this.ringImage1.filters = [labalib.Utils.GetGlowFilter(0xFFFF00)];
 
-            let part1 = labalib.Utils.PlayMovieAnimInfo(this.normalEffectGroup, LabaConfig.BigWinLiziEffect);
+            let part1 = labalib.Utils.PlayMovieAnimInfo(this.normalEffectGroup, LabaConfig.BigWinLiziEffect,null,true);
             part1.x = part1.x - 10
-            let part2 = labalib.Utils.PlayMovieAnimInfo(this.normalEffectGroup, LabaConfig.BigWinLiziEffect);
+            let part2 = labalib.Utils.PlayMovieAnimInfo(this.normalEffectGroup, LabaConfig.BigWinLiziEffect,null,true);
             part2.x = part2.x + 6
             // game.Timer.clearTimeout(this.mDelayOpenTimer)
             // this.mDelayOpenTimer = game.Timer.setTimeout(() => {

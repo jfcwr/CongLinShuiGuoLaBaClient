@@ -1,0 +1,272 @@
+
+h_sandy.png
+size: 300,300
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cheek_L
+  rotate: false
+  xy: 108, 62
+  size: 40, 26
+  orig: 40, 26
+  offset: 0, 0
+  index: -1
+cheek_R
+  rotate: true
+  xy: 215, 121
+  size: 31, 32
+  orig: 31, 32
+  offset: 0, 0
+  index: -1
+ear_L
+  rotate: false
+  xy: 108, 90
+  size: 51, 26
+  orig: 51, 26
+  offset: 0, 0
+  index: -1
+ear_R
+  rotate: false
+  xy: 175, 122
+  size: 38, 30
+  orig: 38, 30
+  offset: 0, 0
+  index: -1
+eye_ball_L
+  rotate: true
+  xy: 85, 2
+  size: 16, 11
+  orig: 16, 11
+  offset: 0, 0
+  index: -1
+eye_ball_R
+  rotate: true
+  xy: 285, 167
+  size: 15, 12
+  orig: 15, 12
+  offset: 0, 0
+  index: -1
+eye_brow_L
+  rotate: false
+  xy: 2, 2
+  size: 18, 6
+  orig: 18, 6
+  offset: 0, 0
+  index: -1
+eye_brow_R
+  rotate: false
+  xy: 230, 60
+  size: 11, 8
+  orig: 11, 8
+  offset: 0, 0
+  index: -1
+eye_close_L
+  rotate: true
+  xy: 190, 93
+  size: 27, 18
+  orig: 27, 18
+  offset: 0, 0
+  index: -1
+eye_close_R
+  rotate: true
+  xy: 285, 184
+  size: 22, 13
+  orig: 22, 13
+  offset: 0, 0
+  index: -1
+eye_lid_L
+  rotate: false
+  xy: 265, 219
+  size: 17, 12
+  orig: 17, 12
+  offset: 0, 0
+  index: -1
+eye_lid_R
+  rotate: true
+  xy: 230, 70
+  size: 15, 11
+  orig: 15, 11
+  offset: 0, 0
+  index: -1
+eye_pupil_L
+  rotate: false
+  xy: 230, 50
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+eye_pupil_R
+  rotate: false
+  xy: 125, 159
+  size: 7, 7
+  orig: 7, 7
+  offset: 0, 0
+  index: -1
+forearm
+  rotate: false
+  xy: 42, 20
+  size: 47, 40
+  orig: 47, 40
+  offset: 0, 0
+  index: -1
+fx_lightsweep_00
+  rotate: false
+  xy: 91, 28
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+fx_lightsweep_01
+  rotate: false
+  xy: 249, 131
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+fx_lightsweep_02
+  rotate: false
+  xy: 125, 28
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+fx_lightsweep_03
+  rotate: false
+  xy: 159, 28
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+fx_lightsweep_04
+  rotate: false
+  xy: 249, 97
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+fx_lightsweep_05
+  rotate: false
+  xy: 210, 87
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+fx_lightsweep_06
+  rotate: false
+  xy: 196, 53
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+fx_lightsweep_07
+  rotate: false
+  xy: 193, 19
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+hand
+  rotate: false
+  xy: 2, 10
+  size: 38, 50
+  orig: 38, 50
+  offset: 0, 0
+  index: -1
+hat
+  rotate: false
+  xy: 125, 118
+  size: 48, 34
+  orig: 48, 34
+  offset: 0, 0
+  index: -1
+hat_filler
+  rotate: true
+  xy: 108, 118
+  size: 48, 15
+  orig: 48, 15
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 62
+  size: 104, 104
+  orig: 104, 104
+  offset: 0, 0
+  index: -1
+knot
+  rotate: true
+  xy: 68, 2
+  size: 16, 15
+  orig: 16, 15
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: true
+  xy: 249, 165
+  size: 52, 34
+  orig: 52, 34
+  offset: 0, 0
+  index: -1
+nose
+  rotate: false
+  xy: 161, 93
+  size: 27, 23
+  orig: 27, 23
+  offset: 0, 0
+  index: -1
+ring
+  rotate: false
+  xy: 2, 168
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ring_cover
+  rotate: false
+  xy: 134, 219
+  size: 129, 79
+  orig: 129, 79
+  offset: 0, 0
+  index: -1
+scarft
+  rotate: false
+  xy: 134, 154
+  size: 113, 63
+  orig: 113, 63
+  offset: 0, 0
+  index: -1
+scarft_01
+  rotate: false
+  xy: 177, 64
+  size: 17, 27
+  orig: 17, 27
+  offset: 0, 0
+  index: -1
+scarft_02
+  rotate: false
+  xy: 42, 2
+  size: 24, 16
+  orig: 24, 16
+  offset: 0, 0
+  index: -1
+scarft_filler_01
+  rotate: true
+  xy: 150, 62
+  size: 26, 25
+  orig: 26, 25
+  offset: 0, 0
+  index: -1
+scarft_filler_02
+  rotate: false
+  xy: 285, 208
+  size: 13, 23
+  orig: 13, 23
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 265, 233
+  size: 33, 65
+  orig: 33, 65
+  offset: 0, 0
+  index: -1

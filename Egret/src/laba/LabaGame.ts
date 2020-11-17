@@ -13,6 +13,7 @@ module conglinshuiguo {
     enum GameRotateChoose {
         normal = 1,
         rotate = 2,
+        stop = 3
     }
     export enum GameBG {
         normal = 1,
@@ -62,7 +63,6 @@ module conglinshuiguo {
         public gameFreegameButton: game.Button;
         // public skipGoldButton: game.Button;
         public fastSettleButton: game.Button;
-        public lineTipGroup: eui.Group;
         public lineTipBg: eui.Image;
 
         public effectPanel: eui.Group;
@@ -160,18 +160,6 @@ module conglinshuiguo {
 
         //----------
         private gameRotateButton: game.Button;
-        private centerGroup: eui.Group
-        private center_bg1: eui.Image  //山
-        private center_bg2: eui.Image
-        private center_bottom_cao1: eui.Image //中间前面的草
-        private center_bottom_cao2: eui.Image
-        private center_middle_cao1: eui.Image  //中间中间草
-        private center_middle_cao2: eui.Image
-        private center_top_cao1: eui.Image      //中间远处草
-        private center_top_cao2: eui.Image
-        private center_yuns: eui.Group         //中间的云
-        private feature_glow: eui.Image         //动画高亮背景图
-        private feature_glow_c: eui.Image      //选中人物高亮
 
         private centerAnimArr: Array<labalib.Utils.KeyFrameObject> = [];
 
@@ -498,14 +486,16 @@ module conglinshuiguo {
             this.switchBG(GameBG.normal)
             this.centerFreeGroup.addChild(FreeGameIngPanel.Instance)
             this.InitMaskRext()
-            this.InitCharacterAnim()
-            this.initCenterBGTween()
             this.GameRotateButtomTween(GameRotateChoose.normal)
             this.switchTipsImage(1)
             // this.initHitScrollonIcon()
             // this.playWinBarAnim(false)
             this.initLineInfo()
             this.onResize();
+            this.playHelloMonkeyMov();
+            this.playLeafMov();
+            this.playMonkeyMov();
+            this.playMonkeyAfterMov();
 
         }
         private iconLineGroup: eui.Group
@@ -532,6 +522,8 @@ module conglinshuiguo {
             label.font = "number5_fnt"
             label.name = "muti"
             label.horizontalCenter = "0"
+            label.scaleX = 1.7
+            label.scaleY = 1.7
             this.iconLineGroup.addChild(label)
             // label.text = "22222"
             this.hideAllLineTips()
@@ -572,6 +564,8 @@ module conglinshuiguo {
                 this.mAwardScrollIcon.push([])
                 for (let col = 0; col < 5; col++) {
                     let icon = this.mLabaMachine.getBelt(col).GetElementByIndex(row + 1)
+                    icon.scaleX = 0.95;
+                    icon.scaleY = 0.95;
                     let pos1 = icon.localToGlobal(icon.width / 2, icon.height / 2)
                     let pos2 = this.LabaBeltRootGroup.globalToLocal(pos1.x, pos1.y)
                     let scrollicon = new AwardScrollIcon()
@@ -598,79 +592,6 @@ module conglinshuiguo {
         }
 
 
-        // private filter1:Array<any> = [new egret.GlowFilter(0xE7A8FE,1,15,15)];
-        // private filter2:Array<any> = [new egret.GlowFilter(0x90CDFD,1,15,15)];
-        // private playDengPaoTime:number=0;
-        //背景横向移动动画
-        private center_san1: eui.Image
-        private center_san2: eui.Image
-        public initCenterBGTween() {
-            let parent = this.center_bg1.parent
-            egret.Tween.get(parent, { loop: true })
-                .set({ x: 0 })
-                .to({ x: -720 }, 3000 * 40)
-                .call(() => { parent.addChild(this.center_bg1) })
-                .set({ x: 0 })
-                .to({ x: -720 }, 3000 * 40)
-                .call(() => {
-                    parent.addChild(this.center_bg2)
-                })
-
-            let parent5 = this.center_san1.parent
-            egret.Tween.get(parent5, { loop: true })
-                .set({ x: 0 })
-                .to({ x: -720 }, 5000 * 40)
-                .call(() => { parent5.addChild(this.center_san1) })
-                .set({ x: 0 })
-                .to({ x: -720 }, 5000 * 40)
-                .call(() => {
-                    parent5.addChild(this.center_san2)
-                })
-
-
-            let parent1 = this.center_bottom_cao1.parent
-            egret.Tween.get(parent1, { loop: true })
-                .set({ x: 0 })
-                .to({ x: -720 }, 200 * 40)
-                .call(() => { parent1.addChild(this.center_bottom_cao1) })
-                .set({ x: 0 })
-                .to({ x: -720 }, 200 * 40)
-                .call(() => {
-                    parent1.addChild(this.center_bottom_cao2)
-                })
-
-
-            let parent2 = this.center_middle_cao1.parent
-            egret.Tween.get(parent2, { loop: true })
-                .set({ x: 0 })
-                .to({ x: -720 }, 400 * 40)
-                .call(() => { parent2.addChild(this.center_middle_cao1) })
-                .set({ x: 0 })
-                .to({ x: -720 }, 400 * 40)
-                .call(() => {
-                    parent2.addChild(this.center_middle_cao2)
-                })
-
-
-            let parent3 = this.center_top_cao1.parent
-            egret.Tween.get(parent3, { loop: true })
-                .set({ x: 0 })
-                .to({ x: -720 }, 900 * 40)
-                .call(() => { parent3.addChild(this.center_top_cao1) })
-                .set({ x: 0 })
-                .to({ x: -720 }, 900 * 40)
-                .call(() => {
-                    parent3.addChild(this.center_top_cao2)
-                })
-
-            let parent4 = this.center_yuns.parent
-            egret.Tween.get(this.center_yuns, { loop: true })
-                .set({ x: 0 })
-                .to({ x: -720 }, 1000 * 40)
-                .call(() => {
-                    parent4.addChild(this.center_yuns)
-                })
-        }
         //beltindex 第几列   pos 1--上  2--中  3--下
         private fast_back_whitelight1: eui.Image
         private fast_back_whitelight2: eui.Image
@@ -706,17 +627,17 @@ module conglinshuiguo {
                 parent.scaleY = 1
                 parent.y = 0
                 ls[pos - 1].y = 0
-                egret.Tween.get(parent).set({ height: 0 }).to({ height: 400 }, 200)
+                egret.Tween.get(parent).set({ height: 0 }).to({ height: 495 }, 200)
             } else if (pos == 3) {
                 ls[pos - 1].y = 0
                 parent.scaleY = -1
-                parent.y = 400
-                egret.Tween.get(parent).set({ height: 0 }).to({ height: 400 }, 200)
+                parent.y = 495
+                egret.Tween.get(parent).set({ height: 0 }).to({ height: 495 }, 200)
             } else {
                 parent.verticalCenter = "0"
                 ls[pos - 1].verticalCenter = "0"
                 parent.scaleY = 1
-                egret.Tween.get(parent).set({ height: 0 }).to({ height: 400 }, 200)
+                egret.Tween.get(parent).set({ height: 0 }).to({ height: 495 }, 200)
             }
 
         }
@@ -726,7 +647,7 @@ module conglinshuiguo {
             if (type == GameRotateChoose.normal)
                 egret.Tween.get(this.gameRotateButton, { loop: true })
                     .to({ rotation: 360 }, 4000)
-            else
+            else if (type == GameRotateChoose.rotate)
                 if (!DataCenter.Instance['mIsQuickRotate'])
                     egret.Tween.get(this.gameRotateButton, { loop: false })
                         .to({ rotation: 360 * 5 }, 2300).call(() => {
@@ -740,6 +661,13 @@ module conglinshuiguo {
                                 .to({ rotation: 360 }, 4000)
                         })
                 }
+            else
+                egret.Tween.get(this.gameRotateButton, { loop: false })
+                    .to({ rotation: 360  }, 500).call(() => {
+                        egret.Tween.get(this.gameRotateButton, { loop: true })
+                            .to({ rotation: 360 }, 4000)
+                    })
+
         }
         private dengAnimation2: labalib.Utils.KeyFrameObject;
         private characterGroup: eui.Group
@@ -753,13 +681,6 @@ module conglinshuiguo {
             this.worldGroup.parent.addChild(worldGroupMask)
             this.worldGroup.mask = worldGroupMask
 
-            // let centerGroupMask = new eui.Rect()
-            // centerGroupMask.width = this.centerGroup.width
-            // centerGroupMask.height = this.centerGroup.height
-            // centerGroupMask.y = this.centerGroup.y
-            // centerGroupMask.x = this.centerGroup.x
-            // this.centerGroup.parent.addChild(centerGroupMask)
-            // this.centerGroup.mask = centerGroupMask
         }
         private mBeltMaskAnimArr = []
 
@@ -783,79 +704,39 @@ module conglinshuiguo {
                 index++
             }
         }
-        private InitCharacterAnim() {
-            let sandy = labalib.Utils.PlayMovieAnimInfo(this.characterGroup, LabaConfig.CenterSandyEffect);
-            this.centerAnimArr.push(sandy)
-            sandy.x = 100
-            sandy.y = 270
-            this.characterGroup.y = 50
+        private mBarWinDragonIndex:number = 0;
 
-            let pig = labalib.Utils.PlayMovieAnimInfo(this.characterGroup, LabaConfig.CenterPigEffect);
-            this.centerAnimArr.push(pig)
-            pig.x = 310
-            pig.y = 215
-
-            let monk = labalib.Utils.PlayMovieAnimInfo(this.characterGroup, LabaConfig.CenterMonkEffect);
-            this.centerAnimArr.push(monk)
-            monk.x = 465
-            monk.y = 250
-            let monkey = labalib.Utils.PlayMovieAnimInfo(this.characterGroup, LabaConfig.CenterMonkeyEffect);
-            this.centerAnimArr.push(monkey)
-            monkey.x = 580
-            monkey.y = 160
-        }
-
-        //人物跳动动画  1：随机播放两个动画  0：四个一起动
-        private characterJumpAnim(num?: number) {
-            if (DataCenter.Instance.IsFreeGame())
-                return
-            let posindexB = [{ x: 110, y: 270 }, { x: 300, y: 210 }, { x: 465, y: 245 }, { x: 600, y: 150 }]
-            if (num == 1) {
-                let target = []
-                let num1 = Math.floor(Math.random() * 4)
-                target.push(num1)
-                let num2 = Math.floor(Math.random() * 4)
-                if (num1 == num2) {
-                    if (num1 == 3) {
-                        target.push(num1 - 1)
-                    } else {
-                        target.push(num1 + 1)
-                    }
-                } else {
-                    target.push(num2)
-
-                }
-                SoundHand.Instance.playRerotateTwoSound(target)
-                for (let i of target) {
-                    this.centerAnimArr[i].visible = false
-                    let boxa = labalib.Utils.PlayMovieAnimInfo(this.characterGroup, LabaConfig.CenterEffectA[i + 1], () => {
-                        this.centerAnimArr[i].visible = true
-                    }, true);
-                    boxa.x = posindexB[i].x
-                    boxa.y = posindexB[i].y
-                    this.characterGroup.y = 50
-                }
-                target = []
-
-
-            } else {
-                SoundHand.Instance.playRerotateTwoSound([0, 1, 2, 3])
-                for (let i = 0; i < 4; i++) {
-                    this.centerAnimArr[i].visible = false
-                    let boxb = labalib.Utils.PlayMovieAnimInfo(this.characterGroup, LabaConfig.CenterEffectB[i + 1], () => {
-                        this.centerAnimArr[i].visible = true
-                    }, true);
-                    boxb.x = posindexB[i].x
-                    boxb.y = posindexB[i].y
-                    this.characterGroup.y = 50
-                }
-
+        /**
+         * 中间奖框 1小将出现 2小将消失 34 大奖类推
+         */
+        public playWinBarAnim(index: number) {
+            if (!this.mBarWinDragon) {
+                this.mBarWinDragon = uniLib.DragonUtils.createDragonBoneAnimation("hua")
+                this.winAnimBarGroup.addChild(this.mBarWinDragon)
+                // this.winWorldGroup.visible = true;
             }
+            this.mBarWinDragon.visible = true
+            this.mBarWinDragon.animation.stop();
+            if(index==1){
+                this.mBarWinDragonIndex = index;
+                this.mBarWinDragon.animation.play("huaban0", 1)
+            }
+            else if(index==2){
+                this.mBarWinDragon.animation.play("huaban0_1", 1)
+            }
+            else if(index==3){
+                this.mBarWinDragonIndex = index;
+                this.mBarWinDragon.animation.play("huaban1", 1)
+            }
+            else if(index==4){
+                this.mBarWinDragon.animation.play("huaban1_1", 1)
+            }
+            this.mBarWinDragon.x = 308
+            this.mBarWinDragon.y = 17
 
-
-        }
-        public playWinBarAnim(show: boolean) {
-            this.InitWinBarAnim()
+            this.mBarWinDragon.scaleX = 1
+            this.mBarWinDragon.scaleY = 1
+            uniLib.SoundMgr.instance.playSound("scrollgold2_mp3", 1);
         }
         private mBarWinDragon = null
         private WinBarComplete() {
@@ -888,48 +769,6 @@ module conglinshuiguo {
             fiveKind3.scaleY = 1
         }
 
-        public InitWinBarAnim() {
-            if (!this.mBarWinDragon) {
-                this.mBarWinDragon = uniLib.DragonUtils.createDragonBoneAnimation("zhongjiang_kuang")
-                this.winWorldGroup.addChild(this.mBarWinDragon)
-            }
-            this.mBarWinDragon.visible = true
-            this.mBarWinDragon.animation.play("animation", 1)
-            this.mBarWinDragon.x = 308
-            this.mBarWinDragon.y = 25
-
-            this.mBarWinDragon.scaleX = 1.16
-            this.mBarWinDragon.scaleY = 1.2
-            uniLib.SoundMgr.instance.playSound("scrollgold2_mp3", 1);
-            this.characterJumpAnim(1)
-            //边框流动金光
-            // let winBar1 = labalib.Utils.PlayMovieAnimInfo(this.winWorldGroup, LabaConfig.ShiningInfoB, null, true);
-            // winBar1.x = 310
-            // winBar1.y = 20
-            // winBar1.scaleX = 1.58
-            // winBar1.scaleY = 1.6
-
-            // //中间扩散
-            // let winBar2 = labalib.Utils.PlayMovieAnimInfo(this.winWorldGroup, LabaConfig.ShiningInfoWave, null, true);
-            // winBar2.x = 310
-            // winBar2.y = 35
-            // winBar2.scaleX = 1.58
-            // winBar2.scaleY = 1.6
-
-            // //上下散出
-            // let winBar3 = labalib.Utils.PlayMovieAnimInfo(this.winWorldGroup, LabaConfig.ShiningInfoParticle, null, true);
-            // winBar3.x = 310
-            // winBar3.y = -35
-            // winBar3.scaleX = 1.8
-            // winBar3.scaleY = 1.6
-
-            // let winBar3_1 = labalib.Utils.PlayMovieAnimInfo(this.winWorldGroup, LabaConfig.ShiningInfoParticle, null, true);
-            // winBar3_1.x = 310
-            // winBar3_1.y = 110
-            // winBar3_1.scaleX = 1.8
-            // winBar3_1.scaleY = -1.6
-
-        }
 
         public destroyHighRotateAnim() {
             for (let anim of this.mHighRotateAnimArr) {
@@ -975,8 +814,6 @@ module conglinshuiguo {
             objGroup.addChild(this.mRerotateAttackDragon)
 
             egret.Tween.get(this.mRerotateAttackDragon).wait(400).to({ x: 720 }, 300).set({ x: posindex2[index].x, y: posindex2[index].y, visble: false }).call(() => {
-                this.feature_glow.visible = false
-                this.feature_glow_c.visible = false
                 this.mRerotateAttackDragon.animation.play("attack", 1)
                 this.mRerotateAttackDragon.scaleX = '-' + scaleIndex2[index]
                 this.mRerotateAttackDragon.scaleY = scaleIndex2[index]
@@ -987,7 +824,7 @@ module conglinshuiguo {
                 }
             }).wait(500).call(() => {
                 if (index == 3) {
-                    let anim = labalib.Utils.PlayMovieAnimInfo(objGroup, animIndex[index]);
+                    let anim = labalib.Utils.PlayMovieAnimInfo(objGroup, animIndex[index],null,true);
                     anim.y = animPos[index].y
                     anim.x = animPos[index].x
                 }
@@ -1037,7 +874,6 @@ module conglinshuiguo {
                 }
                 egret.Tween.get(this.centerAnimArr[0], { loop: true }).call(() => {
                     uniLib.SoundMgr.instance.playSound("select_mp3", 1)
-                    this.characterBgImgAnim(this.mCurCharacterIndex, false)
                     this.characterGray(this.centerAnimArr[this.mCurCharacterIndex], false)
                     if (this.mCurCharacterIndex == 0)
                         this.characterGray(this.centerAnimArr[3])
@@ -1052,7 +888,6 @@ module conglinshuiguo {
                 egret.Tween.removeTweens(this.centerAnimArr[0])
                 egret.Tween.get(this.centerAnimArr[0], { loop: true }).call(() => {
                     uniLib.SoundMgr.instance.playSound("select_mp3", 1)
-                    this.characterBgImgAnim(this.mCurCharacterIndex, true)
                     this.characterGray(this.centerAnimArr[this.mCurCharacterIndex], false)
                     if (this.mCurCharacterIndex == target) {
                         egret.Tween.removeTweens(this.centerAnimArr[0])
@@ -1070,18 +905,6 @@ module conglinshuiguo {
             }
         }
 
-        public characterBgImgAnim(target?: number, isChoose: boolean = false) {
-            let bgPosition = [{ x: 35, y: 80 }, { x: 195, y: 90 }, { x: 365, y: 60 }, { x: 545, y: 65 }]
-            this.feature_glow.visible = true
-            this.feature_glow.x = bgPosition[target].x
-            this.feature_glow.y = bgPosition[target].y
-            this.feature_glow.blendMode = "add"
-            if (isChoose) {
-                this.feature_glow_c.visible = true
-                this.feature_glow_c.x = bgPosition[target].x
-                this.feature_glow_c.y = bgPosition[target].y
-            }
-        }
         public DestroyCharacterAnim() {
             for (let anim of this.centerAnimArr)
                 labalib.Utils.ObjectPool.Instance.destroyObject(anim)
@@ -1169,39 +992,70 @@ module conglinshuiguo {
             // this.chooseGameRotateButton(GameRotateChoose.rotate);
 
         }
+        private btnLightMov: dragonBones.EgretArmatureDisplay = null;
+        /**
+         * 按钮灯光闪烁
+         */
+        public btnFlashOfLight() {
+            if (!this.btnLightMov) {
+                this.btnLightMov = uniLib.DragonUtils.createDragonBoneAnimation("spin")
+                this.btnLightMov.x = 360;//this.normalGoldFlyGroup.width/2;
+                this.btnLightMov.y = 15;
+                // this.btnLightMov.y = 1.5;//this.normalGoldFlyGroup.height;
+                this.betMenuGruop.addChild(this.btnLightMov);
+                this.btnLightMov.touchEnabled = false;
+            }
+            this.btnLightMov.visible = true;
+            this.btnLightMov.animation.stop();
+            this.btnLightMov.animation.play("spin_0", 1);
+
+        }
         private startRotationTime: number;
 
         public mGameButtonStatus: GameRotateStatus = GameRotateStatus.RotateNormal
         public onRotateButtonByClick(e: egret.Event = null) {
             if (this.mGameButtonStatus == GameRotateStatus.RotateNormal) {
                 if (e && e.target != null) {
-                    let rotate1 = labalib.Utils.PlayMovieAnimInfo(this.betMenuGruop, LabaConfig.Rotate1, null, true);
-                    rotate1.x = 360
-                    rotate1.y = 35
+                    this.btnFlashOfLight();
+                    // let rotate1 = labalib.Utils.PlayMovieAnimInfo(this.betMenuGruop, LabaConfig.Rotate1, null, true);
+                    // rotate1.x = 360
+                    // rotate1.y = 35
 
 
-                    let rotate2 = labalib.Utils.PlayMovieAnimInfo(this.betMenuGruop, LabaConfig.Rotate2, null, true);
-                    rotate2.x = 380
-                    rotate2.y = 40
+                    // let rotate2 = labalib.Utils.PlayMovieAnimInfo(this.betMenuGruop, LabaConfig.Rotate2, null, true);
+                    // rotate2.x = 380
+                    // rotate2.y = 40
                     this.GameRotateButtomTween(GameRotateChoose.rotate)
                 }
                 this.onRotateButton()
                 this.mGameButtonStatus = GameRotateStatus.RotatePause
             }
             else {
-                console.log("xxxxx77777777777777", DataCenter.Instance.IsGetServerMsg)
-
-                if (DataCenter.Instance.IsGetServerMsg && !DataCenter.Instance.IsQuickRotate) {
+                console.log("xxxxx77777777777777 +++++++++++++++++++", DataCenter.Instance.IsGetServerMsg)
+                let specialGame = DataCenter.Instance.IsTriggerCurFreeGame() || DataCenter.Instance.IsTriggerRerotateGame()
+                if (DataCenter.Instance.IsGetServerMsg && !DataCenter.Instance.IsQuickRotate && !specialGame) {
                     game.Timer.clearTimeout(this.mLabaMachine.RealStartTimer)
+                    this.GameRotateButtomTween(GameRotateChoose.stop)
+                    this.mAccFastStopTimes++
+                    if (this.mAccFastStopTimes >= 4 && !DataCenter.Instance.IsQuickRotate) {
+                        GX.Tips.showPopup("检测到您急停的频率很高,是否开启极速旋转模式?", () => {
+                            //确定
+                            this.mAccFastStopTimes = 0
+                            this.rotationButton.currentState = "down"
+                            this.rotationSetButton.currentState = "down"
+                            DataCenter.Instance.IsQuickRotate = true
+                        }, () => {
+
+                            //否定
+                        }, this, true, null, null, null, null, false);
+                    }
                     this.mLabaMachine.doFastStop()
                     this.gameRotateButton.enabled = false
                 }
             }
 
-
-
-
         }
+        public mAccFastStopTimes: number = 0
 
         //普通旋转;
         public onRotateButton(e: egret.Event = null) {
@@ -1540,7 +1394,7 @@ module conglinshuiguo {
                 }
             }
             for (let pos of changePos) {
-                resultdata[pos.row][pos.col] = CLSG_ElemAllType.Wild
+                resultdata[2-pos.row][pos.col] = CLSG_ElemAllType.Wild
             }
             DataCenter.Instance.ChangeIconWin = changePos
             return changePos
@@ -1635,6 +1489,7 @@ module conglinshuiguo {
 
             LabaGame.Instance.playAllHitElemDefaultEffect()
             this.elemAnimMask.visible = true
+            this.switchTipsImage(4, DataCenter.Instance.RaceObtainGold)
             console.log("xxxxxxxxx999999999999999")
             this.mLabaMachine.drawAllLines()
         }
@@ -1664,7 +1519,6 @@ module conglinshuiguo {
                     if (DataCenter.Instance.isBigwin(obtainGold)) {
                         this.bigWinPanel.enterBigWinAnim(() => {
                             this.mBigWinInfo = this.bigWinPanel.playGoldWinType(obtainGold, () => {
-                                this.characterJumpAnim(0)
                                 this.onFinishShowResult()
                             });
                         })
@@ -1699,13 +1553,15 @@ module conglinshuiguo {
             }
             else if (DataCenter.Instance.IsRerotateGame()) {
                 // this.changeScrollIcon(awardFun)
-                let elemChange = DataCenter.Instance.ChangeElemType()
-                // [CLSG_ElemAllType.TangSeng, CLSG_ElemAllType.SunWuKong, CLSG_ElemAllType.ZhuBaJie, CLSG_ElemAllType.ShaSeng]
+                let elemChange = DataCenter.Instance.CurServerResultDatas.resultData.wildNum - 1
+                // [XYJ_ElemAllType.TangSeng, XYJ_ElemAllType.SunWuKong, XYJ_ElemAllType.ZhuBaJie, XYJ_ElemAllType.ShaSeng]
                 // 3 2 1 0
-                let convert = [0, 1, 3, 2]
+                let animIndex = [2, 3, 1, 0]
+                // [XYJ_ElemAllType.TangSeng, XYJ_ElemAllType.SunWuKong, XYJ_ElemAllType.ZhuBaJie, XYJ_ElemAllType.ShaSeng]
+                // let convert = [0, 3, 1, 0]
                 console.log("xasdasdqwqwd", elemChange, )
                 // this.characterChooseAnim(convert[elemChange - 5], true, awardFun)
-                this.characterChooseAnim(0, true, awardFun)
+                this.characterChooseAnim(animIndex[elemChange], true, awardFun)
                 return
             }
             LabaGame.Instance.playWildDuobaoElemDefaultEffect();
@@ -1738,24 +1594,13 @@ module conglinshuiguo {
                 // obj.visible = false
                 retTween = egret.Tween.get(bazierFlyObj)
                 retTween.set({ visible: true, factor: 0 }).to({ scaleX: 2, scaleY: 2 }, 200)
-                    .to({ factor: 1, scaleX: 1.8, scaleY: 1.8 }, 600, egret.Ease.circIn)
+                    .to({ factor: 1, scaleX: 1.8, scaleY: 1.8 }, 800, egret.Ease.circIn)
                     .call(() => {
                         if (obj.parent) {
                             obj.parent.removeChild(obj)
                         }
                     })
 
-                // obj.x = lpos.x
-                // obj.y = lpos.y
-                // obj.visible = false
-                // retTween = egret.Tween.get(obj)
-                // retTween.set({ visible: true }).to({ scaleX: 2, scaleY: 2 }, 200)
-                //     .to({ x: endpos.x, y: endpos.y, scaleX: 1.8, scaleY: 1.8 }, 600, egret.Ease.circIn)
-                //     .call(() => {
-                //         if (obj.parent) {
-                //             obj.parent.removeChild(obj)
-                //         }
-                //     })
             }
             if (retTween == null) {
                 if (cb) cb()
@@ -1905,7 +1750,7 @@ module conglinshuiguo {
             if (isDisPlay)
                 DataCenter.Instance.DisplayRaceGold(raceNo);
             this.raceObtainGoldLabel.text = "" + obtainGold
-            this.switchTipsImage(4, obtainGold)
+            // this.switchTipsImage(4, obtainGold)
         }
         public delayRotateTimer: number
 
@@ -2214,12 +2059,6 @@ module conglinshuiguo {
             // GX.PopUpManager.addPopUp(BetGoldView.Instance, true, GX.PopUpEffect.BOTTOM);
         }
 
-        public setRotationSetButtonBG(isQuick) {
-            console.log("xxasd", this.rotationButton.skin,
-                this.rotationButton.skin["bg"], this.rotationButton.getChildByName("bg"))
-
-            // this.rotationButton.skinName.skin["bg"].source = isQuick ? "icon_auto_spin_menu" : "icon_auto_spin_menu"
-        }
         //点击旋转按钮
         protected onRotationSetButton() {
             this.popGroup.visible = true
@@ -2261,12 +2100,22 @@ module conglinshuiguo {
 
         // 点击菜单按钮
         protected onMenuListButton() {
-            this.menuListGroup.visible = true;
-            egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
-            this.betMenuGruop.visible = false;
+            // if(this.btnLightMov){
+            //     this.btnLightMov.visible = false;
+            //     this.gameRotateButton.touchEnabled = false;
+            // }
+            // this.menuListGroup.visible = true;
+            // egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
+            // this.betMenuGruop.visible = false;
+            //测试
+            this.playWinBarAnim(1)
         }
         // 点击关闭菜单按钮
         protected onCloseMenuButton() {
+            if(this.btnLightMov){
+                this.btnLightMov.visible = true;
+                this.gameRotateButton.touchEnabled = true;
+            }
             this.betMenuGruop.visible = true;
             egret.Tween.get(this.betMenuGruop).set({ y: 185 }).to({ y: 35 }, 200)
             this.menuListGroup.visible = false;
@@ -2314,10 +2163,246 @@ module conglinshuiguo {
             this.playHighDuobaoAnim([{ beltindex: beltIndex, pos: pos }])
             // this["BeltHighScoll" + (beltIndex)].visible = false;
         }
+        private empty() {
+            if (this.helloMonkeyMov){
+                this.helloMonkeyMov.animation.stop();
+                if(this.helloMonkeyMov.parent){
+                    this.helloMonkeyMov.parent.removeChild(this.helloMonkeyMov)
+                }
+                this.helloMonkeyMov.dispose();
+                this.helloMonkeyMov = null;
+            }
+            if (this.stepOnThehelloMonkeyMov) {
+                this.helloMonkeyMov.armature.removeEventListener(dragonBones.EventObject.COMPLETE, this.playHelloMonkeyMov1, this);
+                this.stepOnThehelloMonkeyMov = null;
+            }
+            if (this.stepOnThehelloMonkeyTime) {
+                game.Timer.clearTimeout(this.stepOnThehelloMonkeyTime);
+                this.stepOnThehelloMonkeyTime = null;
+            }
+            if (this.btnLightMov){
+                this.btnLightMov.animation.stop();
+                if(this.btnLightMov.parent){
+                    this.btnLightMov.parent.removeChild(this.btnLightMov)
+                }
+                this.btnLightMov.dispose();
+                this.btnLightMov = null;
+            }
+            if (this.MonkeyMov2){
+                egret.Tween.removeTweens(this.MonkeyMov2)
+                this.MonkeyMov2.animation.stop();
+                if(this.MonkeyMov2.parent){
+                    this.MonkeyMov2.parent.removeChild(this.MonkeyMov2)
+                }
+                this.MonkeyMov2.dispose();
+                this.MonkeyMov2 = null;
+            }
+            if (this.MonkeyMov1){
+                egret.Tween.removeTweens(this.MonkeyMov1)
+                this.MonkeyMov1.animation.stop();
+                if(this.MonkeyMov1.parent){
+                    this.MonkeyMov1.parent.removeChild(this.MonkeyMov1)
+                }
+                this.MonkeyMov1.dispose();
+                this.MonkeyMov1 = null;
+            }
+        }
+        private leafMov1: dragonBones.EgretArmatureDisplay = null;
+        private leafGroup:eui.Group;
+        private leafMov2: dragonBones.EgretArmatureDisplay = null;
+        private playLeafMov() {
+            if (!this.leafMov1) {
+                this.leafMov1 = uniLib.DragonUtils.createDragonBoneAnimation("shuye_1")
+                this.leafGroup.addChild(this.leafMov1);
+                this.leafMov1.animation.play("yezi2_0",0)
+                this.leafMov1.x = 360;
+                this.leafMov1.y = 550;
+
+                this.leafMov2 = uniLib.DragonUtils.createDragonBoneAnimation("shuye_1")
+                this.leafGroup.addChild(this.leafMov2);
+                this.leafMov2.animation.play("yezi2_1",0)
+                this.leafMov2.x = 360;
+                this.leafMov2.y = 500;
+            }
+        }
+
+
+        private MonkeyMov1: dragonBones.EgretArmatureDisplay = null;
+        private MonkeyMov2: dragonBones.EgretArmatureDisplay = null;
+        /**
+         * 前方猴子动画
+         */
+        private playMonkeyMov() {
+            if (!this.MonkeyMov1) {
+                this.MonkeyMov1 = uniLib.DragonUtils.createDragonBoneAnimation("mg_lemur_walk")
+                this.MonkeyMov1.y = 250;
+                this.MonkeyMovGroup.addChild(this.MonkeyMov1);
+                // this.MonkeyMov1.animation.play("yezi2_0",0)
+                // this.MonkeyMov1.x = 360;
+                // this.MonkeyMov1.y = 550;
+            }
+            let random1 = MathUtil.random(1,2);//上方猴子方向
+            let random3 = MathUtil.random(1,2);//猴子初始资源
+            let random2 = MathUtil.random(1,2);//中间是否停顿
+            let randomTime1 = MathUtil.random(3000,6000);//初始移动速度
+            let randomTime2 = MathUtil.random(1000,2000);//停顿后移动速度
+            let randomTime3 = MathUtil.random(1000,2000);//停顿时间
+            let randomTime4 = MathUtil.random(3000,15000);//移动结束后的等待时间
+            let randomTime5 = random3==1?1500:1000;//停顿动画播放时间
+            let movString1 
+            if(random3 == 1){
+               movString1 = random1==1?"right_walk_blink":"left_walk";//猴子方向动画
+            }
+            else{
+                movString1 = random1==1?"right_boxwalk":"left_boxwalk";//猴子方向动画
+            }
+            let MovingPosition1 = random1==1?-100:820;//位置
+            let MovingPosition2 = random1==1?820:-100;
+            let movString2 = ["right_apple","right_coconut","right_starfruit"]
+            let movString3 = ["left_apple","left_coconut","left_starfruit"]
+
+            this.MonkeyMov1.animation.play(movString1,0)
+            egret.Tween.get(this.MonkeyMov1).set({ x: MovingPosition1 }).to({ x:MovingPosition2 }, randomTime1).call(() => {
+                this.MonkeyMov1.animation.stop();
+            }).wait(randomTime4).call(() => {
+                egret.Tween.removeTweens(this.MonkeyMov1);
+                this.playMonkeyMov();
+            });;
+            if(random2 == 1){
+                game.Timer.setTimeout(() => {
+                    egret.Tween.removeTweens(this.MonkeyMov1);
+                    this.MonkeyMov1.animation.stop();
+                    let movString_1;
+                    if(random1 == 1){
+                        if(random3 == 1){
+                            movString_1 = movString2[MathUtil.random(0,2)];
+                        }
+                        else{
+                            movString_1 = "right_boxpause";
+                        }
+                    }
+                    else{
+                        if(random3 == 1){
+                            movString_1 = movString3[MathUtil.random(0,2)];
+                        }
+                        else{
+                            movString_1 = "left_boxpause";
+                        }
+                    }
+                    this.MonkeyMov1.animation.play(movString_1,1)
+                    game.Timer.setTimeout(() => {
+                        this.MonkeyMov1.animation.stop();
+                        this.MonkeyMov1.animation.play(movString1,0)
+                        egret.Tween.get(this.MonkeyMov1).to({ x:MovingPosition2 }, randomTime2).call(() => {
+                            this.MonkeyMov1.animation.stop();
+                        }).wait(randomTime4).call(() => {
+                            egret.Tween.removeTweens(this.MonkeyMov1);
+                            this.playMonkeyMov();
+                        });
+                    }, this, randomTime5)
+                }, this, randomTime3)
+            }
+
+        }
+        private MonkeyMovGroup1:eui.Group;
+        /**
+         * 后方猴子动画
+         */
+        private playMonkeyAfterMov() {
+            if (!this.MonkeyMov2) {
+                this.MonkeyMov2 = uniLib.DragonUtils.createDragonBoneAnimation("mg_lemur_walk")
+                this.MonkeyMov2.y = 250;
+                this.MonkeyMovGroup1.addChild(this.MonkeyMov2);
+            }
+            let random1 = MathUtil.random(1,2);//上方猴子方向
+            let random2 = MathUtil.random(1,2);//哪里到哪里
+            let randomTime1 = MathUtil.random(3000,6000);//初始移动速度
+            let randomTime4 = MathUtil.random(3000,15000);//移动结束后的等待时间
+            let movString1 = random1==1?"right_walk_behind":"left_walk_behind";//猴子方向动画
+            
+            let MovingPosition1 
+            let MovingPosition2 
+            if(random1 == 1){
+                MovingPosition1 = random1==1?-100:420;//位置
+                MovingPosition2 = random1==1?300:820;
+            }
+            else{
+                MovingPosition1 = random1==1?820:300;//位置
+                MovingPosition2 = random1==1?420:-100;
+            }
+
+            this.MonkeyMov2.animation.play(movString1,0)
+            egret.Tween.get(this.MonkeyMov2).set({ x: MovingPosition1 }).to({ x:MovingPosition2 }, randomTime1).call(() => {
+                this.MonkeyMov2.animation.stop();
+            }).wait(randomTime4).call(() => {
+                egret.Tween.removeTweens(this.MonkeyMov2);
+                this.playMonkeyAfterMov();
+            });;
+            
+
+        }
+
+        private helloMonkeyMov: dragonBones.EgretArmatureDisplay = null;
+        private helloMonkeyMovIndex: number = 0;
+        private MonkeyMovGroup:eui.Group;
+        private stepOnThehelloMonkeyMov: any = null;
+        private stepOnThehelloMonkeyTime: any = null;
+        // private stepOnThehelloMonkeyMov: any = null;
+        private playHelloMonkeyMov() {
+            if (!this.helloMonkeyMov) {
+                this.helloMonkeyMov = uniLib.DragonUtils.createDragonBoneAnimation("mg_lemur")
+                this.MonkeyMovGroup.addChild(this.helloMonkeyMov);
+                // this.helloMonkeyMov.scaleX = 2;
+                // this.helloMonkeyMov.scaleY = 2;
+            }
+            if(MathUtil.random(1,2)==1){
+                this.helloMonkeyMov.x = 150;
+                this.helloMonkeyMov.y = 150;
+                this.helloMonkeyMov.scaleX = 1;
+                // this.helloMonkeyMov.scaleY = 1;
+            }
+            else{
+                this.helloMonkeyMov.x = 570;
+                this.helloMonkeyMov.y = 150;
+                this.helloMonkeyMov.scaleX = -1;
+                // this.helloMonkeyMov.scaleY = -1;
+            }
+            this.helloMonkeyMov.animation.play("mid_spawn",1)
+            this.stepOnThehelloMonkeyMov = this.helloMonkeyMov.armature.addEventListener(dragonBones.EventObject.COMPLETE, this.playHelloMonkeyMov1, this);
+            
+        }
+        private playHelloMonkeyMov1() {
+            this.helloMonkeyMovIndex++;
+            if (this.stepOnThehelloMonkeyMov) {
+                this.helloMonkeyMov.armature.removeEventListener(dragonBones.EventObject.COMPLETE, this.playHelloMonkeyMov1, this);
+                this.stepOnThehelloMonkeyMov = null;
+            }
+            let random1 = MathUtil.random(1,3)
+            if(this.helloMonkeyMovIndex==1){
+                this.helloMonkeyMov.animation.play("mid_idle",random1)
+            }
+            else if(this.helloMonkeyMovIndex==2){
+                this.helloMonkeyMov.animation.play("mid_wave",random1)
+            }
+            else if(this.helloMonkeyMovIndex==3){
+                this.helloMonkeyMov.animation.play("mid_idle",random1)
+            }
+            else if(this.helloMonkeyMovIndex==4){
+                this.helloMonkeyMov.animation.play("mid_despawn",1)
+                let random2 = MathUtil.random(3000,15000)
+                this.stepOnThehelloMonkeyTime = game.Timer.setTimeout(() => {
+                    this.stepOnThehelloMonkeyTime = null
+                    this.helloMonkeyMovIndex = 0;
+                    this.playHelloMonkeyMov()
+                }, null, random2)
+            }
+            if(this.helloMonkeyMovIndex<=3){
+                this.stepOnThehelloMonkeyMov = this.helloMonkeyMov.armature.addEventListener(dragonBones.EventObject.COMPLETE, this.playHelloMonkeyMov1, this);
+            }
+        }
 
         public switchBG(type: GameBG) {
             this.bg1.visible = type == GameBG.free
-            this.centerGroup.visible = type == GameBG.normal
             this.centerFreeGroup.visible = type == GameBG.free
 
             this.downPanel.visible = type == GameBG.normal
@@ -2333,7 +2418,7 @@ module conglinshuiguo {
             egret.Tween.removeTweens(this.TipsImage)
             let target = 0
             let moveTween = egret.Tween.get(this.TipsImage, { loop: true })
-            let widthlist = [441, 543, 571, 831, 253, 218, 608]
+            let widthlist = [434, 456, 454, 644, 702, 218, 627]
             let tipsImageSrc = ["infoboard-info_", "infoboard-info_5", "infoboard-info_6", "infoboard-win", "infoboard-total_win"]
             let tipsImageSrcWidth = [253, 218, 82, 122]
             this.TipsImage.y = 35
@@ -2341,8 +2426,20 @@ module conglinshuiguo {
             let parent = this.TipsImage.parent
             this.TipsImage.visible = !((type == switchType.win || type == switchType.winTotal) && obtainGold > 0)
             this.winWorldGroup.visible = ((type == switchType.win || type == switchType.winTotal) && obtainGold > 0)
-            this.winAnimBarGroup.visible = ((type == switchType.win || type == switchType.winTotal) && obtainGold > 0)
+            // this.winAnimBarGroup.visible = ((type == switchType.win || type == switchType.winTotal) && obtainGold > 0)
             this.worldGroup.visible = !((type == switchType.win || type == switchType.winTotal) && obtainGold > 0)
+
+            if(!(((type == switchType.win || type == switchType.winTotal) && obtainGold > 0))){
+                if(this.mBarWinDragonIndex>0){
+                    if(this.mBarWinDragonIndex == 1){
+                        this.playWinBarAnim(2);
+                    }
+                    else{
+                        this.playWinBarAnim(4);
+                    }
+                    this.mBarWinDragonIndex = 0;
+                }
+            }
 
             console.log("xxxxxxxxzzzzzzz ", this.winWorldGroup.visible, this.winAnimBarGroup.visible)
             // if (type != 1) {
@@ -2351,11 +2448,11 @@ module conglinshuiguo {
             // }
 
             if (type == switchType.normal) {
-                let showImageIndex = [1, 2, 7, 3, 4]
+                let showImageIndex = [1, 2, 7, 3, 4,5]
                 for (let idx of showImageIndex) {
                     let posX = (parent.width - widthlist[idx - 1]) / 2
                     let moveWidth = posX > 0 ? posX : 20
-                    if (idx == 4 || idx == 7) {
+                    if (idx == 4 || idx == 7|| idx == 5) {
                         moveTween.set({ x: moveWidth, source: "infoboard-info_" + idx }).wait(300).to({ x: -widthlist[idx - 1] }, 5000)
                     } else {
                         moveTween.set({ x: moveWidth, source: "infoboard-info_" + idx }).wait(5000)
@@ -2381,7 +2478,7 @@ module conglinshuiguo {
                 }
                 let timer = null
                 console.log("xxxxxxxxxas", obtainGold)
-                this.winAnimBarGroup.visible = false
+                // this.winAnimBarGroup.visible = false
                 this.winMoneyLabel.visible = false
                 this.winMoneyImage.visible = false
 
@@ -2398,8 +2495,8 @@ module conglinshuiguo {
                 this.winMoneyLabel.visible = true
                 this.winMoneyImage.visible = true
 
-                this.playWinBarAnim(true)
-                this.winAnimBarGroup.visible = true
+                this.playWinBarAnim(1)
+                // this.winAnimBarGroup.visible = true
             }
             if (type != 1)
                 this.mMaxShowTipsTimer = game.Timer.setTimeout(() => {

@@ -97,7 +97,6 @@ module conglinshuiguo {
 				let img = this.wildImageGroup.getChildAt(i) as eui.Image
 				img.source = "elem" + elemMap[i] + (changeCount > i ? "0" : "")
 			}
-			// this.wildImage.source = "feature_freespins_" + (wildMap[DataCenter.Instance.WildCount - 1] + 1)
 			console.log("xxxxxxx", DataCenter.Instance.WildCount)
 			this.freecountLabel.text = "" + (wildMap[DataCenter.Instance.WildCount - 1] * 2 + 8)
 

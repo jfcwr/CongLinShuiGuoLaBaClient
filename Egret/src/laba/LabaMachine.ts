@@ -58,11 +58,17 @@ module conglinshuiguo {
         public testData2(topdata) {
             topdata.labaStatusInfo.dataList = [{
                 "isFalseFree": 0, "awardMultipleReal": 0, "specialSymbolAward": 0, "awardPoint": 0,
-                "itemIdList": [[6, 1, 5], [3, 10, 1], [2, 10, 3], [7, 4, 5], [1, 6, 8]], "jackpotSpecialSymbolType": 0, "totalValue": 0, "specialSymbolValues": [], "awardMultiple": 5, "specialSymbolNum": 9, "isPinpan": 4
+                "itemIdList": [[6, 1, 5], [3, 10, 1], [2, 10, 3], [7, 4, 5], [1, 6, 8]],
+                "jackpotSpecialSymbolType": 0, "totalValue": 0, "specialSymbolValues": [],
+                "awardMultiple": 5, "specialSymbolNum": 9, "isPinpan": 4
             },
             {
-                "isFalseFree": 0, "awardMultipleReal": 554, "wildNum": 4, "specialSymbolAward": 0, "awardPoint": 554000, "jackpotSpecialSymbolType": 0,
-                "itemIdList": [[3, 3, 3], [3, 3, 3], [5, 5, 5], [6, 3, 8], [5, 6, 7]], "tableIndex": 5, "awardMultiple": 554, "specialSymbolNum": 0, "isPinpan": 5
+                "isFalseFree": 0, "awardMultipleReal": 554, "wildNum": 2, "specialSymbolAward": 0, "awardPoint": 554000, "jackpotSpecialSymbolType": 0,
+                "itemIdList": [[1, 3, 4],
+                [3, 3, 3],
+                [9, 3, 3],
+                [4, 1, 7],
+                [3, 1, 3]], "tableIndex": 5, "awardMultiple": 554, "specialSymbolNum": 0, "isPinpan": 5
             }]
         }
         /**
@@ -81,260 +87,340 @@ module conglinshuiguo {
             // }
         }
         public testData1(topdata) {
-            topdata.labaStatusInfo.dataList = [{
-                "isFalseFree": 0,
-                "awardMultipleReal": 0,
-                "specialSymbolAward": 0,
-                "awardPoint": 0,
-                "itemIdList": [
-                    [3, 1, 6],
-                    [10, 5, 3],
-                    [8, 10, 1],
-                    [10, 4, 1],
-                    [4, 2, 1]
-                ],
-                "jackpotSpecialSymbolType": 0,
-                "totalValue": 0,
-                "specialSymbolValues": [],
-                "awardMultiple": 5,
-                "specialSymbolNum": 9,
-                "isPinpan": 1
-            }, {
-                "isFalseFree": 0,
-                "awardMultipleReal": 45,
-                "wildNum": 3,
-                "specialSymbolAward": 0,
-                "awardPoint": 45000,
-                "itemIdList": [
-                    [1, 1, 8],
-                    [1, 9, 5],
-                    [9, 1, 1],
-                    [5, 4, 5],
-                    [1, 9, 6]
-                ],
-                "jackpotSpecialSymbolType": 0,
-                "tableIndex": 1,
-                "wildCountNum": 3,
-                "awardMultiple": 45.129193181854,
-                "specialSymbolNum": 0,
-                "isPinpan": 3
-            }, {
-                "isFalseFree": 0,
-                "awardMultipleReal": 60,
-                "wildNum": 3,
-                "specialSymbolAward": 0,
-                "awardPoint": 60000,
-                "itemIdList": [
-                    [1, 3, 2],
-                    [5, 7, 1],
-                    [1, 9, 5],
-                    [4, 3, 9],
-                    [9, 2, 3]
-                ],
-                "jackpotSpecialSymbolType": 0,
-                "tableIndex": 2,
-                "wildCountNum": 6,
-                "awardMultiple": 63.264251575989,
-                "specialSymbolNum": 0,
-                "isPinpan": 6
-            }, {
-                "isFalseFree": 0,
-                "awardMultipleReal": 35,
-                "wildNum": 3,
-                "specialSymbolAward": 0,
-                "awardPoint": 35000,
-                "itemIdList": [
-                    [1, 1, 1],
-                    [1, 3, 9],
-                    [6, 5, 9],
-                    [6, 9, 6],
-                    [5, 6, 8]
-                ],
-                "jackpotSpecialSymbolType": 0,
-                "tableIndex": 2,
-                "wildCountNum": 9,
-                "awardMultiple": 35.669311361192,
-                "specialSymbolNum": 0,
-                "isPinpan": 6
-            }, {
-                "isFalseFree": 0,
-                "awardMultipleReal": 60,
-                "wildNum": 2,
-                "specialSymbolAward": 0,
-                "awardPoint": 60000,
-                "itemIdList": [
-                    [4, 3, 9],
-                    [2, 2, 2],
-                    [5, 2, 6],
-                    [3, 2, 9],
-                    [2, 1, 3]
-                ],
-                "jackpotSpecialSymbolType": 0,
-                "tableIndex": 6,
-                "wildCountNum": 11,
-                "awardMultiple": 64,
-                "specialSymbolNum": 0,
-                "isPinpan": 9
-            }, {
-                "isFalseFree": 0,
-                "awardMultipleReal": 47,
-                "wildNum": 3,
-                "specialSymbolAward": 0,
-                "awardPoint": 47000,
-                "itemIdList": [
-                    [1, 1, 1],
-                    [3, 9, 1],
-                    [4, 4, 5],
-                    [9, 1, 9],
-                    [4, 5, 2]
-                ],
-                "jackpotSpecialSymbolType": 0,
-                "tableIndex": 6,
-                "wildCountNum": 14,
-                "awardMultiple": 47,
-                "specialSymbolNum": 0,
-                "isPinpan": 9
-            }, {
-                "isFalseFree": 0,
-                "awardMultipleReal": 45,
-                "wildNum": 3,
-                "specialSymbolAward": 0,
-                "awardPoint": 45000,
-                "itemIdList": [
-                    [6, 3, 1],
-                    [6, 4, 1],
-                    [9, 1, 1],
-                    [1, 9, 5],
-                    [6, 9, 1]
-                ],
-                "jackpotSpecialSymbolType": 0,
-                "tableIndex": 6,
-                "wildCountNum": 17,
-                "awardMultiple": 45.787541183222,
-                "specialSymbolNum": 0,
-                "isPinpan": 9
-            }, {
-                "isFalseFree": 0,
-                "awardMultipleReal": 15,
-                "wildNum": 0,
-                "specialSymbolAward": 0,
-                "awardPoint": 15000,
-                "itemIdList": [
-                    [6, 1, 4],
-                    [4, 8, 2],
-                    [1, 1, 3],
-                    [10, 2, 1],
-                    [6, 4, 6]
-                ],
-                "jackpotSpecialSymbolType": 0,
-                "tableIndex": 6,
-                "wildCountNum": 17,
-                "awardMultiple": 15.041672049124,
-                "specialSymbolNum": 0,
-                "isPinpan": 9
-            }, {
-                "isFalseFree": 0,
-                "awardMultipleReal": 13,
-                "wildNum": 0,
-                "specialSymbolAward": 0,
-                "awardPoint": 13000,
-                "itemIdList": [
-                    [2, 1, 3],
-                    [1, 1, 4],
-                    [1, 10, 6],
-                    [1, 3, 1],
-                    [1, 5, 7]
-                ],
-                "jackpotSpecialSymbolType": 0,
-                "tableIndex": 6,
-                "wildCountNum": 14,
-                "awardMultiple": 14.81360524236,
-                "specialSymbolNum": 0,
-                "isPinpan": 9
-            }, {
-                "isFalseFree": 0,
-                "awardMultipleReal": 52,
-                "wildNum": 0,
-                "specialSymbolAward": 0,
-                "awardPoint": 52000,
-                "itemIdList": [
-                    [1, 1, 2],
-                    [6, 1, 1],
-                    [1, 10, 1],
-                    [7, 6, 1],
-                    [4, 3, 7]
-                ],
-                "jackpotSpecialSymbolType": 0,
-                "tableIndex": 6,
-                "wildCountNum": 14,
-                "awardMultiple": 52.06995004098,
-                "specialSymbolNum": 0,
-                "isPinpan": 9
-            }, {
-                "isFalseFree": 0,
-                "awardMultipleReal": 26,
-                "wildNum": 0,
-                "specialSymbolAward": 0,
-                "awardPoint": 26000,
-                "itemIdList": [
-                    [3, 1, 2],
-                    [4, 1, 7],
-                    [4, 1, 3],
-                    [3, 4, 1],
-                    [6, 6, 1]
-                ],
-                "jackpotSpecialSymbolType": 0,
-                "tableIndex": 6,
-                "wildCountNum": 14,
-                "awardMultiple": 26.752139337799,
-                "specialSymbolNum": 0,
-                "isPinpan": 9
-            }, {
-                "isFalseFree": 0,
-                "awardMultipleReal": 37,
-                "wildNum": 0,
-                "specialSymbolAward": 0,
-                "awardPoint": 37000,
-                "itemIdList": [
-                    [7, 1, 1],
-                    [2, 1, 6],
-                    [3, 1, 2],
-                    [6, 7, 6],
-                    [5, 5, 2]
-                ],
-                "jackpotSpecialSymbolType": 0,
-                "tableIndex": 6,
-                "wildCountNum": 8,
-                "awardMultiple": 37,
-                "specialSymbolNum": 0,
-                "isPinpan": 9
-            }, {
-                "isFalseFree": 0,
-                "awardMultipleReal": 119,
-                "wildNum": 0,
-                "specialSymbolAward": 0,
-                "awardPoint": 119000,
-                "itemIdList": [
-                    [5, 1, 5],
-                    [2, 1, 8],
-                    [7, 1, 7],
-                    [8, 1, 2],
-                    [7, 2, 3]
-                ],
-                "jackpotSpecialSymbolType": 0,
-                "tableIndex": 6,
-                "wildCountNum": 8,
-                "awardMultiple": 119,
-                "specialSymbolNum": 0,
-                "isPinpan": 9
-            }]
+            topdata.labaStatusInfo = <any>{
+                "dataList": [{
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 0,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 0,
+                    "itemIdList": [
+                        [4, 2, 4],
+                        [3, 7, 10],
+                        [2, 10, 3],
+                        [1, 6, 10],
+                        [4, 1, 4]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "totalValue": 0,
+                    "specialSymbolValues": [],
+                    "awardMultiple": 0,
+                    "specialSymbolNum": 9,
+                    "isPinpan": 1
+                }, {
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 130,
+                    "wildNum": 1,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 195000,
+                    "itemIdList": [
+                        [7, 5, 6],
+                        [6, 6, 8],
+                        [6, 2, 6],
+                        [4, 9, 6],
+                        [7, 6, 3]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "tableIndex": 1,
+                    "wildCountNum": 1,
+                    "awardMultiple": 130.5291051971,
+                    "specialSymbolNum": 0,
+                    "isPinpan": 3
+                }, {
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 122,
+                    "wildNum": 1,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 183000,
+                    "itemIdList": [
+                        [1, 1, 9],
+                        [6, 7, 1],
+                        [1, 8, 1],
+                        [1, 1, 1],
+                        [8, 1, 2]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "tableIndex": 1,
+                    "wildCountNum": 2,
+                    "awardMultiple": 122,
+                    "specialSymbolNum": 0,
+                    "isPinpan": 3
+                }, {
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 66,
+                    "wildNum": 2,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 99000,
+                    "itemIdList": [
+                        [2, 9, 4],
+                        [5, 1, 1],
+                        [1, 1, 8],
+                        [7, 9, 1],
+                        [6, 6, 4]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "tableIndex": 2,
+                    "wildCountNum": 4,
+                    "awardMultiple": 67.45011457006,
+                    "specialSymbolNum": 0,
+                    "isPinpan": 6
+                }, {
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 258,
+                    "wildNum": 1,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 387000,
+                    "itemIdList": [
+                        [3, 3, 9],
+                        [3, 3, 3],
+                        [8, 3, 4],
+                        [8, 8, 5],
+                        [2, 1, 6]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "tableIndex": 2,
+                    "wildCountNum": 5,
+                    "awardMultiple": 259,
+                    "specialSymbolNum": 0,
+                    "isPinpan": 6
+                }, {
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 64,
+                    "wildNum": 1,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 96000,
+                    "itemIdList": [
+                        [4, 6, 4],
+                        [9, 8, 3],
+                        [1, 4, 4],
+                        [1, 1, 4],
+                        [5, 4, 2]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "tableIndex": 6,
+                    "wildCountNum": 6,
+                    "awardMultiple": 64,
+                    "specialSymbolNum": 0,
+                    "isPinpan": 9
+                }, {
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 140,
+                    "wildNum": 3,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 210000,
+                    "itemIdList": [
+                        [5, 4, 9],
+                        [2, 2, 2],
+                        [7, 2, 9],
+                        [8, 2, 2],
+                        [2, 9, 1]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "tableIndex": 7,
+                    "wildCountNum": 9,
+                    "awardMultiple": 161.29825559361,
+                    "specialSymbolNum": 0,
+                    "isPinpan": 12
+                }, {
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 130,
+                    "wildNum": 3,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 195000,
+                    "itemIdList": [
+                        [4, 9, 3],
+                        [9, 1, 1],
+                        [9, 3, 2],
+                        [1, 2, 6],
+                        [5, 8, 5]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "tableIndex": 8,
+                    "wildCountNum": 12,
+                    "awardMultiple": 204.76266891157,
+                    "specialSymbolNum": 0,
+                    "isPinpan": 15
+                }, {
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 204,
+                    "wildNum": 0,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 306000,
+                    "itemIdList": [
+                        [4, 3, 3],
+                        [3, 2, 8],
+                        [7, 3, 3],
+                        [4, 3, 4],
+                        [6, 5, 8]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "tableIndex": 8,
+                    "wildCountNum": 12,
+                    "awardMultiple": 204,
+                    "specialSymbolNum": 0,
+                    "isPinpan": 15
+                }, {
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 74,
+                    "wildNum": 0,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 111000,
+                    "itemIdList": [
+                        [5, 3, 1],
+                        [3, 1, 3],
+                        [4, 3, 6],
+                        [2, 3, 2],
+                        [2, 5, 3]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "tableIndex": 8,
+                    "wildCountNum": 12,
+                    "awardMultiple": 74,
+                    "specialSymbolNum": 0,
+                    "isPinpan": 15
+                }, {
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 54,
+                    "wildNum": 0,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 81000,
+                    "itemIdList": [
+                        [6, 3, 1],
+                        [3, 3, 4],
+                        [2, 3, 2],
+                        [3, 4, 4],
+                        [4, 1, 1]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "tableIndex": 8,
+                    "wildCountNum": 12,
+                    "awardMultiple": 54.631670809597,
+                    "specialSymbolNum": 0,
+                    "isPinpan": 15
+                }, {
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 346,
+                    "wildNum": 0,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 519000,
+                    "itemIdList": [
+                        [4, 3, 6],
+                        [3, 2, 4],
+                        [7, 3, 1],
+                        [3, 2, 3],
+                        [1, 3, 3]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "tableIndex": 8,
+                    "wildCountNum": 12,
+                    "awardMultiple": 346,
+                    "specialSymbolNum": 0,
+                    "isPinpan": 15
+                }, {
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 135,
+                    "wildNum": 0,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 202500,
+                    "itemIdList": [
+                        [3, 3, 2],
+                        [3, 3, 3],
+                        [1, 3, 2],
+                        [2, 4, 8],
+                        [2, 6, 6]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "tableIndex": 8,
+                    "wildCountNum": 12,
+                    "awardMultiple": 135,
+                    "specialSymbolNum": 0,
+                    "isPinpan": 15
+                }, {
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 119,
+                    "wildNum": 0,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 178500,
+                    "itemIdList": [
+                        [2, 3, 7],
+                        [3, 3, 8],
+                        [3, 3, 2],
+                        [1, 2, 1],
+                        [3, 5, 3]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "tableIndex": 8,
+                    "wildCountNum": 12,
+                    "awardMultiple": 119,
+                    "specialSymbolNum": 0,
+                    "isPinpan": 15
+                }, {
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 44,
+                    "wildNum": 0,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 66000,
+                    "itemIdList": [
+                        [6, 3, 3],
+                        [3, 1, 1],
+                        [1, 3, 1],
+                        [1, 3, 3],
+                        [3, 3, 5]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "tableIndex": 8,
+                    "wildCountNum": 12,
+                    "awardMultiple": 44,
+                    "specialSymbolNum": 0,
+                    "isPinpan": 15
+                }, {
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 23,
+                    "wildNum": 0,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 34500,
+                    "itemIdList": [
+                        [1, 3, 2],
+                        [3, 2, 3],
+                        [1, 3, 1],
+                        [2, 3, 8],
+                        [3, 2, 3]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "tableIndex": 8,
+                    "wildCountNum": 12,
+                    "awardMultiple": 23,
+                    "specialSymbolNum": 0,
+                    "isPinpan": 15
+                }, {
+                    "isFalseFree": 0,
+                    "awardMultipleReal": 101,
+                    "wildNum": 0,
+                    "specialSymbolAward": 0,
+                    "awardPoint": 151500,
+                    "itemIdList": [
+                        [1, 3, 4],
+                        [3, 3, 3],
+                        [6, 3, 3],
+                        [4, 1, 7],
+                        [3, 1, 3]
+                    ],
+                    "jackpotSpecialSymbolType": 0,
+                    "tableIndex": 8,
+                    "wildCountNum": 12,
+                    "awardMultiple": 101,
+                    "specialSymbolNum": 0,
+                    "isPinpan": 15
+                }],
+                "awardMultiplePool": 0,
+                "isFree": 1
+            }
         }
         public testData3(topdata) {
             let sss = Math.randomInteger(0, 2)
             if (sss == 1)
                 topdata.labaStatusInfo.dataList = [{
-                    "isFalseFree": 0, "awardMultipleReal": 5, "specialSymbolAward": 0, "awardPoint": 0,
-                    "itemIdList": [[6, 1, 5], [3, 10, 1], [2, 1, 3], [7, 10, 5], [1, 6, 8]], "jackpotSpecialSymbolType": 0, "totalValue": 0, "specialSymbolValues": [],
+                    "isFalseFree": 0, "awardMultipleReal": 5, "specialSymbolAward": 0, "awardPoint": 6000000,
+                    "itemIdList": [[1, 5, 5], [1, 10, 1], [1, 7, 3], [7, 10, 5], [5, 7, 8]], "jackpotSpecialSymbolType": 0, "totalValue": 0, "specialSymbolValues": [],
                     "awardMultiple": 5, "specialSymbolNum": 9, "isPinpan": 0
                 }]
             else if (sss == 2)
@@ -346,7 +432,7 @@ module conglinshuiguo {
             else if (sss == 0)
                 topdata.labaStatusInfo.dataList = [{
                     "isFalseFree": 0, "awardMultipleReal": 5, "specialSymbolAward": 0, "awardPoint": 0,
-                    "itemIdList": [[6, 5, 5], [5, 5, 1], [2, 3, 3], [7, 10, 5], [1, 6, 8]], "jackpotSpecialSymbolType": 0, "totalValue": 0, "specialSymbolValues": [],
+                    "itemIdList": [[6, 5, 5], [5, 5, 1], [2, 3, 3], [7, 10, 5], [4, 3, 2]], "jackpotSpecialSymbolType": 0, "totalValue": 0, "specialSymbolValues": [],
                     "awardMultiple": 5, "specialSymbolNum": 9, "isPinpan": 0
                 }]
 
@@ -384,12 +470,16 @@ module conglinshuiguo {
             // }]
             // topData.labaStatusInfo.dataList = [{
             //     "isFalseFree": 0, "awardMultipleReal": 65, "specialSymbolAward": 0, "awardPoint": 20000000,
-            //     "itemIdList": [[6, 2, 3], [6,1, 4], [6, 5, 4], [6, 3, 2], [6, 7,8]], "jackpotSpecialSymbolType": 0, "totalValue": 0, "specialSymbolValues": [],
+            //     "itemIdList": [[6, 6, 6], [6,6, 6], [6, 6, 6], [6, 6, 6], [6, 6,6]], "jackpotSpecialSymbolType": 0, "totalValue": 0, "specialSymbolValues": [],
             //     "awardMultiple": 5, "specialSymbolNum": 9, "isPinpan": 0
             // }]
             // topData.labaStatusInfo.dataList = [{
-            //     "isFalseFree": 0, "awardMultipleReal": 0, "specialSymbolAward": 0, "awardPoint": 0,
-            //     "itemIdList": [[6, 6, 6], [1, 10, 2], [3, 4, 5], [1, 3, 8], [6, 6, 8]], "jackpotSpecialSymbolType": 0, "totalValue": 0, "specialSymbolValues": [],
+            //     "isFalseFree": 0, "awardMultipleReal": 101, "specialSymbolAward": 0, "awardPoint": 5555555,
+            //     "itemIdList": [[1, 3, 4],
+            //     [3, 3, 3],
+            //     [9, 3, 3],
+            //     [4, 1, 7],
+            //     [3, 1, 3]], "jackpotSpecialSymbolType": 0, "totalValue": 0, "specialSymbolValues": [],
             //     "awardMultiple": 5, "specialSymbolNum": 9, "isPinpan": 0
             // }]
             // topData.labaStatusInfo.dataList[0].awardPoint = 5000 / 5 * 326
@@ -617,7 +707,7 @@ module conglinshuiguo {
                     }
 
                     // this.playOneLineAnim(line.LineType)
-                }).wait(2000 )
+                }).wait(2000)
             }
             // return
             let onchange = () => {
@@ -666,10 +756,11 @@ module conglinshuiguo {
             //     let belt = this.mBeltArray[i] as LabaBelt
             //     belt.fastStop()
             // }
+
             let timeScale = DataCenter.Instance.ScrollTimeScale
             for (let i: number = 0; i < DataCenter.Instance.BeltCount; i++) {
                 let beltext = this.mBeltArray[i] as LabaBelt
-                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 2, back: false, waitTime: i * 100, speed: 200 * timeScale });
+                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 0, back: false, waitTime: i * 100, speed: 200 * timeScale });
                 beltext.ReadyScrollData()
                 beltext.RealStart = true
             }

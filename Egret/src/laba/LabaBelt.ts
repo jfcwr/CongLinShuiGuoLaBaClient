@@ -12,27 +12,23 @@ module conglinshuiguo {
         constructor() {
             super()
             this.skinName = new clsg_winscrolliconkin()
-            this.anchorOffsetX = 132 / 2
-            this.anchorOffsetY = 132 / 2
+            this.anchorOffsetX = 142 / 2
+            this.anchorOffsetY = 142 / 2
             this.kuangDragon1 = uniLib.DragonUtils.createDragonBoneAnimation("icon_gx")
             this.bgGroup.addChild(this.kuangDragon1)
-            this.kuangDragon2 = uniLib.DragonUtils.createDragonBoneAnimation("icon_gx")
-            this.addChild(this.kuangDragon2)
+            // this.kuangDragon2 = uniLib.DragonUtils.createDragonBoneAnimation("icon_gx")
+            // this.addChild(this.kuangDragon2)
             this.kuangDragon1.x = 66
             this.kuangDragon1.y = 66
-            this.kuangDragon2.x = 66
-            this.kuangDragon2.y = 66
+            // this.kuangDragon2.x = 66
+            // this.kuangDragon2.y = 66
         }
 
         private kuangDragon1 = null
-        private kuangDragon2 = null
+        // private kuangDragon2 = null
         destroy(): void {
             super.destroy();
             this.StopAnimation()
-            // let filter = new egret.BlurFilter(50, 50);
-            // this.bg1.filters = [filter];
-            // let filter1 = new egret.BlurFilter(50, 50);
-            // this.bg4.filters = [filter];
             if (this.kuangDragon1) {
                 this.kuangDragon1.animation.stop()
                 if (this.kuangDragon1.parent)
@@ -40,13 +36,13 @@ module conglinshuiguo {
                 this.kuangDragon1.dispose()
                 this.kuangDragon1 = null
             }
-            if (this.kuangDragon2) {
-                this.kuangDragon2.animation.stop()
-                if (this.kuangDragon2.parent)
-                    this.kuangDragon2.parent.removeChild(this.kuangDragon2)
-                this.kuangDragon2.dispose()
-                this.kuangDragon2 = null
-            }
+            // if (this.kuangDragon2) {
+            //     this.kuangDragon2.animation.stop()
+            //     if (this.kuangDragon2.parent)
+            //         this.kuangDragon2.parent.removeChild(this.kuangDragon2)
+            //     this.kuangDragon2.dispose()
+            //     this.kuangDragon2 = null
+            // }
         }
         public addUIListener() {
 
@@ -93,6 +89,20 @@ module conglinshuiguo {
                         if (finishCB) finishCB();
                     });
         }
+        private backgroundLight: dragonBones.EgretArmatureDisplay = null;
+        /**
+         * 背景光
+         */
+        public bgMov() {
+            this.backgroundLight = uniLib.DragonUtils.createDragonBoneAnimation("icon_gx")
+            this.backgroundLight.x = 64;
+            this.backgroundLight.y = 60;
+            this.backgroundLight.touchEnabled = false;
+
+            this.backgroundLight.animation.play(null, 0)
+            // this.backgroundLight.blendMode = egret.BlendMode.ADD;
+            this.bgGroup.addChild(this.backgroundLight)
+        }
 
         public Animation_Scale(target, finishCB?: Function, params?: any) {
             let periodTm: number = params && params.periodTm ? params.periodTm : 1000;
@@ -119,7 +129,7 @@ module conglinshuiguo {
             this.mAnimObject = uniLib.DragonUtils.createDragonBoneAnimation(animInfo.Path)
             if (winElemID == 9)
                 animName = "win"
-            this.mAnimObject.animation.play(animName, 1)
+            this.mAnimObject.animation.play(null, 1)
             this.mAnimObject.scaleX = animInfo.Scale
             this.mAnimObject.scaleY = animInfo.Scale
             this.animGroup.addChild(this.mAnimObject)
@@ -130,6 +140,7 @@ module conglinshuiguo {
             }
         }
         public Animation_Dragon(animInfo, animName = null, times = 1) {
+            console.error(animInfo,"这里是什么")
             this.mAnimObject = uniLib.DragonUtils.createDragonBoneAnimation(animInfo.Path)
             this.mAnimObject.animation.play(animName, times)
             this.mAnimObject.scaleX = animInfo.Scale
@@ -159,7 +170,7 @@ module conglinshuiguo {
             // this.duobaoglow0.visible = false
             // this.duobaoglow.visible = false
             this.bgGroup.visible = false
-            this.kuangDragon2.visible = false
+            // this.kuangDragon2.visible = false
             this.elemImage.visible = false
 
             console.log('xasdasdqweq', winElemID, animInfo, this.hashCode)
@@ -179,7 +190,7 @@ module conglinshuiguo {
         public PlayDefautAnimation(winElemID: number, finishCB?: Function, params?: any) {
             let animInfo = DataCenter.Instance.getElementAnimInfo(winElemID)
             this.bgGroup.visible = false
-            this.kuangDragon2.visible = false
+            // this.kuangDragon2.visible = false
             this.changeImage.visible = false
             this.elemImage.visible = false
             if (this.mAnimObject != null) {
@@ -196,7 +207,7 @@ module conglinshuiguo {
         }
         public set BGGroup(visible: boolean) {
             this.bgGroup.visible = visible
-            this.kuangDragon2.visible = visible
+            // this.kuangDragon2.visible = visible
         }
         private changeImage: eui.Image
         public PlayWinAnimation(winElemID: number, finishCB?: Function, params?: any) {
@@ -211,19 +222,19 @@ module conglinshuiguo {
             }
             if (winElemID != CLSG_ElemAllType.DuoBao && winElemID != CLSG_ElemAllType.Wild) {
                 this.bgGroup.visible = true
-                this.kuangDragon2.visible = true
-                this.kuangDragon1.animation.play("gx_0", 1)
-                this.kuangDragon2.animation.play("gx_1", 1)
+                // this.kuangDragon2.visible = true
+                this.kuangDragon1.animation.play(null, 1)
+                // this.kuangDragon2.animation.play(null, 1)
                 // labalib.Utils.PlayTweenGroup(this.scaleAnim, 1)
             }
-            if (winElemID < CLSG_ElemAllType.ShaSeng) {
-                this.elemImage.visible = true
-                this.elemImage.texture = DataCenter.Instance.getElementTexture(winElemID);
-                egret.Tween.get(this.elemImage).set({ scaleX: 0.9, scaleY: 0.9 }).to({ scaleX: 1 + 0.1, scaleY: 1 + 0.1 }, 300)
-                    .set({ scaleX: 1, scaleY: 1 })
-                return
-            }
-            else {
+            // if (winElemID < CLSG_ElemAllType.ShaSeng) {
+            //     this.elemImage.visible = true
+            //     this.elemImage.texture = DataCenter.Instance.getElementTexture(winElemID);
+            //     egret.Tween.get(this.elemImage).set({ scaleX: 0.9, scaleY: 0.9 }).to({ scaleX: 1 + 0.1, scaleY: 1 + 0.1 }, 300)
+            //         .set({ scaleX: 1, scaleY: 1 })
+            //     return
+            // }
+            // else {
                 this.elemImage.visible = false
                 // this.mAnimObject.blendMode="add"
                 if (this.mAnimObject != null) {
@@ -233,7 +244,7 @@ module conglinshuiguo {
                     return
                 }
                 this.Animation_Dragon(animInfo, animName, 1)
-            }
+            // }
 
 
 
@@ -248,7 +259,7 @@ module conglinshuiguo {
             egret.Tween.removeTweens(this.elemImage)
             this.elemImage.visible = false
             this.bgGroup.visible = false
-            this.kuangDragon2.visible = false
+            // this.kuangDragon2.visible = false
             this.isSpecial = false
             this.duobaoglow.visible = false
             this.duobaoglow0.visible = false
@@ -261,6 +272,14 @@ module conglinshuiguo {
                     this.mAnimObject.parent.removeChild(this.mAnimObject)
                 }
                 this.mAnimObject = null
+            }
+            if (this.backgroundLight != null) {
+                this.backgroundLight.animation.stop();
+                if (this.backgroundLight.parent) {
+                    this.backgroundLight.parent.removeChild(this.backgroundLight)
+                }
+                this.backgroundLight.dispose();
+                this.backgroundLight = null
             }
         }
 
@@ -315,7 +334,7 @@ module conglinshuiguo {
             let waittime = [0, 100 * timeScale, 100 * timeScale * 2, 100 * timeScale * 3, 100 * timeScale * 4]
             // let 
             if (!DataCenter.Instance.IsQuickRotate)
-                egret.Tween.get(this.mGroup).wait(waittime[this.mBeltIndex - 1]).to({ y: -528 - 40 }, 200 * timeScale).to({ y: -528 }, 250 / 528 * 40 * timeScale).call(() => {
+                egret.Tween.get(this.mGroup).wait(waittime[this.mBeltIndex - 1]).to({ y: -660 - 40 }, 200 * timeScale).to({ y: -660 }, 250 / 528 * 40 * timeScale).call(() => {
                     egret.Tween.removeTweens(this.mGroup)
                     for (let item of this.mIcons) {
                         item.Blur = true
@@ -328,7 +347,7 @@ module conglinshuiguo {
                     .to({ y: 0 }, 200 * timeScale)
             }
             // else if (this.BeltScrollType == ScrollType.UpScroll)
-            //     egret.Tween.get(this.mGroup).wait(this.mBeltIndex * 50).to({ y: -528 - 60 }, 200).to({ y: -528 }, 250 / 528 * 60).call(() => {
+            //     egret.Tween.get(this.mGroup).wait(this.mBeltIndex * 50).to({ y: -660 - 60 }, 200).to({ y: -660 }, 250 / 528 * 60).call(() => {
             //         egret.Tween.removeTweens(this.mGroup)
             //         egret.Tween.get(this.mGroup, { onChange: this.ScrollUpdateChange, onChangeObj: this, loop: true })
             //             .to({ y: 0 }, 250)
@@ -354,7 +373,7 @@ module conglinshuiguo {
                     this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex + 1],
                     this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex + 2])
                 this.resetBeltPos()
-                this.mGroup.y = -528
+                this.mGroup.y = -660
             }
 
             for (let icon of this.mIcons) {
@@ -447,7 +466,7 @@ module conglinshuiguo {
                 if (this.mCurBeltSrcollDataIndex + i < this.mBeltSrcollDatas.length)
                     this.mIcons[i].ElemType = this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex + i]
             }
-            this.mGroup.y = -528
+            this.mGroup.y = -660
         }
         /**
          * 添加带子每一段滚动的数据,通过调用多次AddScrollData实现滚动多次...;
@@ -558,12 +577,12 @@ module conglinshuiguo {
 
             // this. 滚4挺5
             let nGroupY = this.mGroup.y;
-            let temp = Math.floor((nGroupY + 528) / 132)
+            let temp = Math.floor((nGroupY + 528) / 142)
             if (this.mLastBeltScrollDataIndex != temp) {
                 this.mCurBeltSrcollDataIndex++
                 if (this.RealStart && this.mCurBeltSrcollDataIndex == (this.mRealScrollItem - 3)) {
                     egret.Tween.removeTweens(this.mGroup)
-                    this.mGroup.y = -528 + temp * 132
+                    this.mGroup.y = -660 + temp * 142
                     if (!this.ReadyScrollData()) {
                         for (let item of this.mIcons) {
                             item.Blur = false
@@ -589,7 +608,7 @@ module conglinshuiguo {
             this.mLastBeltScrollDataIndex = temp
             if (this.mGroup.y == 0) {
                 // console.log("xasdasdqwdqwdsad")
-                this.mGroup.y = -528
+                this.mGroup.y = -660
                 if (!this.RealStart) {
                     this.mBeltSrcollDatas.push(this.GenerateRandomElem())
                     this.mBeltSrcollDatas.push(this.GenerateRandomElem())

@@ -49,7 +49,7 @@
 		</e:Skin>
 		</game:skinName>
 	</game:Button>
-	<e:Label id="allBetNum" text="1.20" x="324" y="220" size="46" textAlign="center" verticalAlign="middle" scaleX="1" scaleY="1" textColor="0xffc824"/>
+	<e:Label id="allBetNum" text="1.20" y="214" size="46" textAlign="center" verticalAlign="middle" scaleX="1" scaleY="1" textColor="0xffc824" horizontalCenter="0"/>
 </e:Group>
 		<e:Group width="720" height="850" x="0" y="430" visible="false">
 			<e:Rect scaleX="1" scaleY="1" fillColor="0x30303c" left="0" right="0" x="0" fillAlpha="1" strokeAlpha="1" width="720" top="0" bottom="0"/>
