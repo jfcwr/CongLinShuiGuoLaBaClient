@@ -1,7 +1,7 @@
 @echo off
 pushd %~dp0
 
-set BRANCH=xiyouji
+set BRANCH=conglinshuiguo
 
 upa tools git@github.com:jfcwr/clientTools.git
 
