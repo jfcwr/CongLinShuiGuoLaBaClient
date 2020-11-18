@@ -4,10 +4,10 @@ pushd "%~dp0"
 cd %~d0
 
 set dst=release
-set BRANCH=xiyouji
+set BRANCH=conglinshuiguo
 
 upa tools git@github.com:jfcwr/clientTools.git
-python tools\publish_game.py -b %BRANCH%  -lb guest -dirname "xiyouji" -curmain "XYJMain" -targetmain "XYJMain"
+python tools\publish_game.py -b %BRANCH%  -lb guest -dirname "conglinshuiguo" -curmain "CLSGMain" -targetmain "CLSGMain"
 
 popd
 
