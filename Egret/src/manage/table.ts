@@ -27,12 +27,6 @@ declare module table {
         var $instance: table.TableItemConfig[];
         function instance(): table.TableItemConfig[];
     }
-
-    export module TableSpecialSymbolConfig {
-        var $instance: table.TableSpecialSymbolConfig[];
-        function instance(): table.TableSpecialSymbolConfig[];
-    }
-
     export module LabaEffectMultiplyList {
         var $instance: table.LabaEffectMultiplyList[];
         function instance(): table.LabaEffectMultiplyList[];
@@ -64,7 +58,6 @@ table.clearTable = function (): void {
     table.LabaLineList.$instance = null;
     table.MaliResultPool.$instance = null;
     table.TableItemConfig.$instance = null;
-    table.TableSpecialSymbolConfig.$instance = null;
     table.LabaEffectMultiplyList.$instance = null;
     table.MaryOutputIconList.$instance = null;
     table.TableMaliMultiplyList.$instance = null;
@@ -111,12 +104,6 @@ table.TableItemConfig.instance = function (): table.TableItemConfig[] {
 }
 
 
-table.TableSpecialSymbolConfig.instance = function (): table.TableSpecialSymbolConfig[] {
-    if (table.TableSpecialSymbolConfig.$instance == null) {
-        table.TableSpecialSymbolConfig.$instance = loadTable("TableSpecialSymbolConfig_json");
-    }
-    return table.TableSpecialSymbolConfig.$instance;
-}
 
 table.LabaEffectMultiplyList.instance = function (): table.LabaEffectMultiplyList[] {
     if (table.LabaEffectMultiplyList.$instance == null) {

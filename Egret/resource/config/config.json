@@ -1,6 +1,6 @@
 {
     "LoginUrl": "http://192.168.8.3:9205/httplogin",
-    "GameID": 8546,
+    "GameID": 8548,
     "ZoneID": 302,
     "testUserId": 10,
     "debug": 1,

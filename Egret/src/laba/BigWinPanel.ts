@@ -11,117 +11,181 @@ module conglinshuiguo {
         public constructor() {
             super();
             this.skinName = new clsg_bigwinskin();
-            // let v = 0.6
-            // let light = 20
-            // let colorMaxtrix =
-            //     [v, 0, 0, 0, light,
-            //         0, v, 0, 0, light,
-            //         0, 0, v, 0, light,
-            //         0, 0, 0, 1, light];
-
-            // this.cloudImage1.filters = [new egret.ColorMatrixFilter(colorMaxtrix)]
-
-            // let v1 = 0.6
-            // let light1 = 20
-            // let colorMaxtrix1 =
-            //     [v1, 0, 0, 0, light1,
-            //         0, v1, 0, 0, light1,
-            //         0, 0, v1, 0, light1,
-            //         0, 0, 0, 1, light1];
-
-            // this.cloudImage3.filters = [new egret.ColorMatrixFilter(colorMaxtrix1)]
         }
 
         public addUIListener() {
             this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSkipCurWinType, this);
         }
-        private ringImage1: eui.Image
-        private ringImage2: eui.Image
-        private cloudImage1: eui.Image
-        private cloudImage2: eui.Image
-        private cloudImage3: eui.Image
 
-        private flashImage: eui.Image
-        private glowImage2: eui.Image
-        private glowImage1: eui.Image
-        private glowImage3: eui.Image
-        private glowImage4: eui.Image
-        private glowImage5: eui.Image
-        private ringanim: egret.tween.TweenGroup   //重复一直播
-        private ringanim2: egret.tween.TweenGroup  //红光
-        private lianhua: egret.tween.TweenGroup    //莲花背景 一次
-        private lianhua2: egret.tween.TweenGroup   //文字
         private winTitleGroup: eui.Group
         private normalEffectGroup: eui.Group
+
+        private winMonkeyMov: dragonBones.EgretArmatureDisplay = null;
+        private winLeafMov1: dragonBones.EgretArmatureDisplay = null;
+        private winLeafMov2: dragonBones.EgretArmatureDisplay = null;
+        private winLeafMov3: dragonBones.EgretArmatureDisplay = null;
+        private winLeafMov4: dragonBones.EgretArmatureDisplay = null;
+        private normalGoldFlyGroup:eui.Group;
+
+
         public enterBigWinAnim(cb) {
             this.height = uniLib.Global.screenHeight
             this.width = uniLib.Global.screenWidth
+            this.winTitleGroup.visible = false;
             GX.PopUpManager.addPopUp(this)
-            // this.cloudImage1.visible = true
-            // this.cloudImage2.visible = true
-            // this.cloudImage3.visible = true
-            // this.winTitleGroup.visible = false
-            // this.ringImage1.visible = true
 
             SoundHand.Instance.playBigWinSound()
+            if(!this.winMonkeyMov){
+                this.winMonkeyMov = uniLib.DragonUtils.createDragonBoneAnimation("mgbg_wins_lemur")
+                this.winMonkeyMov.x = 360;
+                this.winMonkeyMov.y = 950;
 
-            // this.flashImage.visible = false
-            // this.glowImage1.visible = false
-            // this.glowImage2.visible = false
-            // this.glowImage3.visible = false
-            // this.glowImage4.visible = false
-            // this.glowImage5.visible = false
+                this.winLeafMov1 = uniLib.DragonUtils.createDragonBoneAnimation("shuye_0")
+                this.winLeafMov1.x = 0;
+                this.winLeafMov1.y = 1280;
+                this.normalGoldFlyGroup.addChild(this.winLeafMov1);
 
-            //    normalEffectGroup
-            // this.rotation
-            // this.alpha
-            // egret.Tween.get(this.cloudImage1).to({ alpha: 0.5 }, 1000)
-            // egret.Tween.get(this.cloudImage2).to({ alpha: 1 }, 1000)
-            // egret.Tween.get(this.cloudImage3).to({ alpha: 0.5 }, 1000)
-            // this.ringImage2.filters = [labalib.Utils.GetGlowFilter(0xFFFF00)];
-            // this.ringImage1.filters = [labalib.Utils.GetGlowFilter(0xFFFF00)];
+                this.winLeafMov2 = uniLib.DragonUtils.createDragonBoneAnimation("shuye_0")
+                this.winLeafMov2.x = 0;
+                this.winLeafMov2.y = 520;
+                this.normalGoldFlyGroup.addChild(this.winLeafMov2);
 
-            let part1 = labalib.Utils.PlayMovieAnimInfo(this.normalEffectGroup, LabaConfig.BigWinLiziEffect,null,true);
-            part1.x = part1.x - 10
-            let part2 = labalib.Utils.PlayMovieAnimInfo(this.normalEffectGroup, LabaConfig.BigWinLiziEffect,null,true);
-            part2.x = part2.x + 6
-            // game.Timer.clearTimeout(this.mDelayOpenTimer)
-            // this.mDelayOpenTimer = game.Timer.setTimeout(() => {
-            // this.flashImage.visible = true
-            // this.glowImage1.visible = true
-            // this.glowImage2.visible = true
-            // this.glowImage3.visible = true
-            // this.glowImage4.visible = true
-            // this.glowImage5.visible = true
-            // this.ringImage1.visible = false
-            // let part = labalib.Utils.PlayMovieAnimInfo(this.normalEffectGroup, LabaConfig.BigWinLiziEffect);
-            // egret.Tween.get(this.ringImage1).set({ scaleX: 2.2, visible: true }).to({ scaleX: 3, scaleY: 3 }, 1500).set({ visible: false })
-            labalib.Utils.PlayTweenGroup(this.lianhua, 1)
-            labalib.Utils.PlayTweenGroup(this.lianhua2, 0)
-            labalib.Utils.PlayTweenGroup(this.ringanim, 0)
-            labalib.Utils.PlayTweenGroup(this.ringanim2, 0)
+                this.winLeafMov3 = uniLib.DragonUtils.createDragonBoneAnimation("shuye_0")
+                this.winLeafMov3.x = 720;
+                this.winLeafMov3.y = 200;
+                this.normalGoldFlyGroup.addChild(this.winLeafMov3);
 
-
-            // egret.Tween.get(this.cloudImage1, { loop: true }).set({ rotation: 0 }).to({ rotation: 360 }, 40000)
-            // egret.Tween.get(this.cloudImage2, { loop: true }).set({ rotation: 0 }).to({ rotation: 360 }, 40000)
-            // egret.Tween.get(this.cloudImage3, { loop: true }).set({ rotation: 0 }).to({ rotation: 360 }, 40000)
-            egret.Tween.get(this.winTitleGroup).set({ scaleX: 0.2, scaleY: 0.2, visible: true }).to({ scaleX: 1, scaleY: 1 }, 600)
-            if (cb) {
-                cb()
+                this.winLeafMov4 = uniLib.DragonUtils.createDragonBoneAnimation("shuye_0")
+                this.winLeafMov4.x = 720;
+                this.winLeafMov4.y = 1280;
+                this.normalGoldFlyGroup.addChild(this.winLeafMov4);
+                this.normalGoldFlyGroup.addChild(this.winMonkeyMov);
             }
+            this.winLeafMov1.animation.play("yezi_0",0)
+            this.winLeafMov2.animation.play("yezi_1",0)
+            this.winLeafMov3.animation.play("yezi_2",0)
+            this.winLeafMov4.animation.play("yezi_3",0)
+            egret.Tween.get(this.winLeafMov1).set({ x:-200 }).to({ x:0 }, 300)
+            egret.Tween.get(this.winLeafMov2).set({ x:-200 }).to({ x:0 }, 300)
+            egret.Tween.get(this.winLeafMov3).set({ x:920 }).to({ x:720 }, 300)
+            egret.Tween.get(this.winLeafMov4).set({ x:920 }).to({ x:720 }, 300)
+            this.winMonkeyMov.animation.play("win_0",1)
+            this.winMonkeyMov.armature.addEventListener(dragonBones.EventObject.COMPLETE, this.winMonkeyMovIdle, this);
+            game.Timer.setTimeout(() => {
+                if (cb)
+                    cb()
+            }, null, 300)
             // }, null, 200)
+        }
+        public winMonkeyMovIdle(){
+            this.winMonkeyMov.armature.removeEventListener(dragonBones.EventObject.COMPLETE, this.winMonkeyMovIdle, this);
+            this.winMonkeyMov.animation.play("win_1",0)
+        }
+        public empty(){
+            if (this.winTitleMov1){
+                this.winTitleMov1.animation.stop();
+                egret.Tween.removeTweens(this.winTitleMov1)
+                if(this.winTitleMov1.parent){
+                    this.winTitleMov1.parent.removeChild(this.winTitleMov1)
+                }
+                this.winTitleMov1.dispose();
+                this.winTitleMov1 = null;
+            }
+            if (this.winTitleMov2){
+                this.winTitleMov2.animation.stop();
+                egret.Tween.removeTweens(this.winTitleMov2)
+                if(this.winTitleMov2.parent){
+                    this.winTitleMov2.parent.removeChild(this.winTitleMov2)
+                }
+                this.winTitleMov2.dispose();
+                this.winTitleMov2 = null;
+            }
+            if (this.winTitleMov3){
+                this.winTitleMov3.animation.stop();
+                egret.Tween.removeTweens(this.winTitleMov3)
+                if(this.winTitleMov3.parent){
+                    this.winTitleMov3.parent.removeChild(this.winTitleMov3)
+                }
+                this.winTitleMov3.dispose();
+                this.winTitleMov3 = null;
+            }
+            if (this.winLightMov1){
+                this.winLightMov1.animation.stop();
+                if(this.winLightMov1.parent){
+                    this.winLightMov1.parent.removeChild(this.winLightMov1)
+                }
+                this.winLightMov1.dispose();
+                this.winLightMov1 = null;
+            }
+            if (this.winLightMov2){
+                this.winLightMov2.animation.stop();
+                if(this.winLightMov2.parent){
+                    this.winLightMov2.parent.removeChild(this.winLightMov2)
+                }
+                this.winLightMov2.dispose();
+                this.winLightMov2 = null;
+            }
+            if (this.winLightMov3){
+                this.winLightMov3.animation.stop();
+                if(this.winLightMov3.parent){
+                    this.winLightMov3.parent.removeChild(this.winLightMov3)
+                }
+                this.winLightMov3.dispose();
+                this.winLightMov3 = null;
+            }
+            if (this.winMonkeyMov){
+                this.winMonkeyMov.animation.stop();
+                if(this.winMonkeyMov.parent){
+                    this.winMonkeyMov.parent.removeChild(this.winMonkeyMov)
+                }
+                this.winMonkeyMov.dispose();
+                this.winMonkeyMov = null;
+            }
+
+            if (this.winLeafMov1){
+                this.winLeafMov1.animation.stop();
+                egret.Tween.removeTweens(this.winLeafMov1)
+                if(this.winLeafMov1.parent){
+                    this.winLeafMov1.parent.removeChild(this.winLeafMov1)
+                }
+                this.winLeafMov1.dispose();
+                this.winLeafMov1 = null;
+            }
+
+            if (this.winLeafMov2){
+                this.winLeafMov2.animation.stop();
+                egret.Tween.removeTweens(this.winLeafMov2)
+                if(this.winLeafMov2.parent){
+                    this.winLeafMov2.parent.removeChild(this.winLeafMov2)
+                }
+                this.winLeafMov2.dispose();
+                this.winLeafMov2 = null;
+            }
+
+            if (this.winLeafMov3){
+                this.winLeafMov3.animation.stop();
+                egret.Tween.removeTweens(this.winLeafMov3)
+                if(this.winLeafMov3.parent){
+                    this.winLeafMov3.parent.removeChild(this.winLeafMov3)
+                }
+                this.winLeafMov3.dispose();
+                this.winLeafMov3 = null;
+            }
+
+            if (this.winLeafMov4){
+                this.winLeafMov4.animation.stop();
+                egret.Tween.removeTweens(this.winLeafMov4)
+                if(this.winLeafMov4.parent){
+                    this.winLeafMov4.parent.removeChild(this.winLeafMov4)
+                }
+                this.winLeafMov4.dispose();
+                this.winLeafMov4 = null;
+            }
+            
+            egret.Tween.removeTweens(this.GoldNumLabel)
         }
         public mDelayOpenTimer: number = 0
         public initTween(value, filter, a) {
-
-            // this.ringImage1.visible = false
-            // egret.Tween.get(this.ringImage1).set({ scaleX: 2.2, visible: true }).to({ scaleX: 3, scaleY: 3 }, 1500).set({ visible: false })
-            // labalib.Utils.PlayTweenGroup(this.ringanim, 0)
-            // labalib.Utils.PlayTweenGroup(this.ringanim2, 0)
-            // egret.Tween.get(this.cloudImage1, { loop: true }).set({ rotation: 0 }).to({ rotation: 360 }, 40000)
-            // egret.Tween.get(this.cloudImage2, { loop: true }).set({ rotation: 0 }).to({ rotation: 360 }, 40000)
-            // egret.Tween.get(this.cloudImage3, { loop: true }).set({ rotation: 0 }).to({ rotation: 360 }, 40000)
-
 
         }
         public removeUIListener() {
@@ -143,7 +207,7 @@ module conglinshuiguo {
         private _mCurPlayWinType: number = 0
         //金币数量标签;
         private GoldNumLabel: eui.BitmapLabel;
-        private winTitleImage: eui.Image
+        // private winTitleImage: eui.Image
         //每个获奖阶段的表现时间
         // private _winTime = [500000, 500000, 500000, 500000, 500000, 500000, 500000];
         private _winTime = [2000, 2000, 2000, 2000, 2000, 3000, 5000];
@@ -161,6 +225,30 @@ module conglinshuiguo {
             for (let i: number = 0; i < scoreList.length; i++) {
                 this._scoreList.push(scoreList[i]);
             }
+        }
+        public winSignOut(cb:any) {
+            egret.Tween.get(this.winLeafMov1).set({ x:0 }).to({ x:-200 }, 300)
+            egret.Tween.get(this.winLeafMov2).set({ x:0 }).to({ x:-200 }, 300)
+            egret.Tween.get(this.winLeafMov3).set({ x:720 }).to({ x:920 }, 300)
+            egret.Tween.get(this.winLeafMov4).set({ x:720 }).to({ x:920 }, 300)
+            this.winMonkeyMov.animation.stop();
+            this.winLeafMov1.animation.stop();
+            this.winLeafMov2.animation.stop();
+            this.winLeafMov3.animation.stop();
+            this.winLeafMov4.animation.stop();
+            this.winMonkeyMov.animation.play("win_2",1)
+            this.winLightMov3.animation.play(this._winTypePaths[2],1)
+            this.winLightMov1.animation.play("gx_3",1)
+            this.winLightMov2.animation.play(this._winTypePaths[2],1)
+            game.Timer.setTimeout(() => {
+                if (cb)
+                    cb()
+                this.winTitleMov3.animation.stop()
+                this.winTitleMov2.alpha = 0;
+                this.winTitleMov1.alpha = 0;
+                this.winTitleMov3.alpha = 0;
+                GX.PopUpManager.removePopUp(this)
+            }, null, 500)
         }
 
         /**
@@ -288,9 +376,10 @@ module conglinshuiguo {
                 }).wait(waitTime)
             }
             bigwinTween.wait(4000).call(() => {
-                if (cb)
-                    cb()
-                GX.PopUpManager.removePopUp(this)
+                this.winSignOut(cb);
+                // if (cb)
+                //     cb()
+                
             })
 
             let stopCB = () => {
@@ -307,6 +396,8 @@ module conglinshuiguo {
                 this._mDelayClosePanelTimer = game.Timer.setTimeout(() => {
                     if (cb)
                         cb()
+                    this.winTitleMov3.animation.stop()
+                    this.winLightMov3.animation.play(this._winTypePaths[2],1)
                     GX.PopUpManager.removePopUp(this)
                 }, null, 1500)
 
@@ -315,13 +406,95 @@ module conglinshuiguo {
         }
 
 
-        // private _mTotal
+        private winTitleMov1: dragonBones.EgretArmatureDisplay = null;
+        private winTitleMov2: dragonBones.EgretArmatureDisplay = null;
+        private winTitleMov3: dragonBones.EgretArmatureDisplay = null;
+        private winLightMov1: dragonBones.EgretArmatureDisplay = null;
+        private winLightMov2: dragonBones.EgretArmatureDisplay = null;
+        private winLightMov3: dragonBones.EgretArmatureDisplay = null;
         /**
          * 播放指定的胜利类型
          */
         public playWinType(winType) {
             this._mCurPlayWinType += 1
-            this.winTitleImage.source = this._winTypeTitlePaths[this._mCurPlayWinType - 1]
+            // this.winTitleImage.source = this._winTypeTitlePaths[this._mCurPlayWinType - 1]
+            if (!this.winTitleMov1) {
+                this.winTitleMov1 = uniLib.DragonUtils.createDragonBoneAnimation("dajiang_logo")
+                this.winTitleMov1.x = 450;
+                this.winTitleGroup.addChild(this.winTitleMov1);
+                this.winTitleMov1.animation.play(this._winTypeTitlePaths[this._mCurPlayWinType - 1],0)
+
+                this.winTitleMov2 = uniLib.DragonUtils.createDragonBoneAnimation("dajiang_logo")
+                this.winTitleMov2.x = 450;
+                this.winTitleGroup.addChild(this.winTitleMov2);
+                this.winTitleMov2.animation.play(this._winTypeTitlePaths[this._mCurPlayWinType],0)
+                this.winTitleMov2.visible = false;
+
+                this.winTitleMov3 = uniLib.DragonUtils.createDragonBoneAnimation("dajiang_logo")
+                this.winTitleMov3.x = 450;
+                this.winTitleGroup.addChild(this.winTitleMov3);
+                this.winTitleMov3.animation.play(this._winTypeTitlePaths[this._mCurPlayWinType+1],0)
+                this.winTitleMov3.visible = false;
+
+                this.winLightMov1 = uniLib.DragonUtils.createDragonBoneAnimation("jiesuan_gx1_1")
+                this.winLightMov1.x = 450;
+                this.winTitleGroup.addChild(this.winLightMov1);
+                this.winLightMov1.animation.play(this._winTypePaths[0],1)
+                // this.winLightMov1.visible = false;
+                this.winLightMov1.animation.timeScale = 3;
+
+                this.winLightMov2 = uniLib.DragonUtils.createDragonBoneAnimation("jiesuan_gx2")
+                this.winLightMov2.x = 450;
+                this.winTitleGroup.addChild(this.winLightMov2);
+                // this.winLightMov2.animation.play(this._winTypePaths[this._mCurPlayWinType-1],1)
+                this.winLightMov2.visible = false;
+                this.winLightMov2.animation.timeScale = 3;
+
+                this.winLightMov3 = uniLib.DragonUtils.createDragonBoneAnimation("jiesuan_gx3")
+                this.winLightMov3.x = 450;
+                this.winTitleGroup.addChild(this.winLightMov3);
+                // this.winLightMov3.animation.play(this._winTypePaths[this._mCurPlayWinType-1],1)
+                this.winLightMov3.visible = false;
+                this.winLightMov3.animation.timeScale = 3;
+            }
+            this.winTitleGroup.visible = true;
+            if(this._mCurPlayWinType == 1){
+                this.winTitleMov3.alpha = 0;
+                // this.winLightMov3.alpha = 0;
+                this.GoldNumLabel.visible = false;
+                egret.Tween.get(this.winTitleMov1).set({ y: -700,alpha: 1,visible:true }).to({ y: 60 }, 330).call(() => {
+                    this.GoldNumLabel.visible = true;
+                    this.winLightMov1.animation.stop();
+                    this.winLightMov1.animation.play(this._winTypePaths[1],0)
+                    egret.Tween.get(this.GoldNumLabel).to({ scaleX: 1.2,scaleY:1.2 }, 150).to({ scaleX: 1,scaleY:1 }, 150)
+                })
+            }
+            else if(this._mCurPlayWinType == 2){
+                this.winLightMov2.visible = true;
+                this.winLightMov2.animation.play(this._winTypePaths[0],1)
+                egret.Tween.get(this.winTitleMov2).set({ y: -700,alpha: 1,visible:true }).to({ y: 60 }, 330).call(() => {
+                    this.winTitleMov1.animation.stop()
+                    this.winLightMov1.animation.stop();
+                    this.winLightMov2.animation.stop();
+                    this.winLightMov1.animation.play("gx_3",1)
+                    this.winLightMov2.animation.play(this._winTypePaths[1],0)
+                    egret.Tween.get(this.winTitleMov1).to({ alpha: 0 }, 300)
+                    egret.Tween.get(this.GoldNumLabel).to({ scaleX: 1.2,scaleY:1.2 }, 150).to({ scaleX: 1,scaleY:1 }, 150)
+                })
+            }
+            else if(this._mCurPlayWinType == 3){
+                this.winLightMov3.visible = true;
+                this.winLightMov3.animation.play(this._winTypePaths[0],1)
+                egret.Tween.get(this.winTitleMov3).set({ y: -700,alpha: 1,visible:true }).to({ y: 60 }, 330).call(() => {
+                    this.winTitleMov2.animation.stop()
+                    this.winLightMov2.animation.stop();
+                    this.winLightMov3.animation.stop();
+                    this.winLightMov2.animation.play(this._winTypePaths[2],1)
+                    this.winLightMov3.animation.play(this._winTypePaths[1],0)
+                    egret.Tween.get(this.winTitleMov2).to({ alpha: 0 }, 300)
+                    egret.Tween.get(this.GoldNumLabel).to({ scaleX: 1.2,scaleY:1.2 }, 150).to({ scaleX: 1,scaleY:1 }, 150)
+                })
+            }
             switch (winType) {
                 case WinType.BIG_WIN:
                     this.playWinType_BigWin()

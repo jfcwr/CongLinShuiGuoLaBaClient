@@ -6,7 +6,7 @@ module conglinshuiguo {
         private mTableGameRuleConfig: table.TableGameRuleConfigList[];
         private mTableItemConfig: table.TableItemConfig[];
         private mLabaMaliResultPoolCfg: table.MaliResultPool[];          //拼盘池
-        private mLabaSpecialSymbolConfig: table.TableSpecialSymbolConfig[]; //特殊符号配置;
+        // private mLabaSpecialSymbolConfig: table.TableSpecialSymbolConfig[]; //特殊符号配置;
         private mLabaEffectResultPoolCfg: table.LabaEffectMultiplyList[];//拉霸特效池;
         // private mMaryOutputIconList: table.MaryOutputIconList[];//小玛丽的外围图标配置;
         private mTableMaliMultiplyList: table.TableMaliMultiplyList[]; //小玛丽的物品赔率;

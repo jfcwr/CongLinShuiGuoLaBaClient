@@ -28,134 +28,8 @@
 				</tween:To>
 			</tween:TweenItem>
 		</tween:TweenGroup>
-		<tween:TweenGroup id="fiveKindAni">
-			<tween:TweenItem target="{five1}">
-				<tween:Set>
-					<tween:props>
-						<e:Object alpha="{0.5}" scaleX="{2}" scaleY="{2}"/>
-					</tween:props>
-				</tween:Set>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object alpha="{1}" scaleX="{4}" scaleY="{4}"/>
-					</tween:props>
-				</tween:To>
-			</tween:TweenItem>
-			<tween:TweenItem target="{five2}">
-				<tween:Set>
-					<tween:props>
-						<e:Object scaleX="{1}" scaleY="{1}" alpha="{0.5}"/>
-					</tween:props>
-				</tween:Set>
-				<tween:To duration="500">
-					<tween:props>
-						<e:Object alpha="{1}" scaleX="{4}" scaleY="{4}"/>
-					</tween:props>
-				</tween:To>
-			</tween:TweenItem>
-			<tween:TweenItem target="{five3}">
-				<tween:Set>
-					<tween:props>
-						<e:Object alpha="{0}"/>
-					</tween:props>
-				</tween:Set>
-				<tween:To duration="500">
-					<tween:props>
-						<e:Object alpha="{0.67}" scaleX="{0.8}" scaleY="{0.8}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object alpha="{1}" scaleX="{1.2}" scaleY="{1.2}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="200">
-					<tween:props>
-						<e:Object alpha="{1}" scaleX="{1}" scaleY="{1}"/>
-					</tween:props>
-				</tween:To>
-			</tween:TweenItem>
-			<tween:TweenItem target="{five4}">
-				<tween:Set>
-				<tween:props>
-					<e:Object alpha="{0}"/>
-				</tween:props>
-				</tween:Set>
-				<tween:To duration="500">
-					<tween:props>
-						<e:Object scaleX="{0.8}" scaleY="{0.8}" alpha="{0}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object alpha="{0.5}" scaleX="{1.4}" scaleY="{1.4}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="200">
-				<tween:props>
-					<e:Object alpha="{0}" scaleX="{1.45}" scaleY="{1.45}"/>
-				</tween:props>
-				</tween:To>
-			</tween:TweenItem>
-		</tween:TweenGroup>
-		<tween:TweenGroup id="fiveKindExitAni" >
-		<tween:TweenItem target="{five1}">
-			<tween:Wait duration="150"/>
-				<tween:Set>
-					<tween:props>
-						<e:Object alpha="{1}" scaleX="{4}" scaleY="{4}"/>
-					</tween:props>
-				</tween:Set>
-				<tween:To duration="750">
-					<tween:props>
-						<e:Object scaleX="{2}" scaleY="{2}" alpha="{0}"/>
-					</tween:props>
-				</tween:To>
-			</tween:TweenItem>
-			<tween:TweenItem target="{five2}">
-				<tween:Wait duration="150"/>
-				<tween:Set>
-					<tween:props>
-						<e:Object alpha="{1}" scaleX="{4}" scaleY="{4}"/>
-					</tween:props>
-				</tween:Set>
-				<tween:To duration="750">
-					<tween:props>
-						<e:Object scaleX="{1}" scaleY="{1}" alpha="{0}"/>
-					</tween:props>
-				</tween:To>
-			</tween:TweenItem>
-			<tween:TweenItem target="{five3}">
-				<tween:Wait duration="150"/>
-				<tween:Set>
-					<tween:props>
-						<e:Object alpha="{0}" scaleX="{1}" scaleY="{1}"/>
-					</tween:props>
-				</tween:Set>
-				<tween:To duration="400">
-					<tween:props>
-						<e:Object alpha="{0}" scaleX="{1}" scaleY="{1}"/>
-					</tween:props>
-				</tween:To>
 
 
-			</tween:TweenItem>
-			<tween:TweenItem target="{five4}">
-				<tween:Wait duration="150"/>
-				<tween:Set>
-				<tween:props>
-					<e:Object alpha="{1}" scaleX="{1}" scaleY="{1}"/>
-				</tween:props>
-				</tween:Set>
-				<tween:To duration="400">
-					<tween:props>
-						<e:Object alpha="{0}" scaleX="{1}" scaleY="{1}"/>
-					</tween:props>
-				</tween:To>
-
-
-			</tween:TweenItem>
-		</tween:TweenGroup>
 
 	</w:Declarations>
 	<w:Config id="163714e0f1e" />
@@ -724,12 +598,13 @@
 -->
 <e:Group id="effGroup" width="720" height="1280" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"
          touchChildren="false" touchEnabled="false"></e:Group>
-		<e:Group id="fiveBox" width="720" height="300" x="0" y="347.66" touchEnabled="false" touchChildren="false">
-			<e:Image id="five1" source="jpg-fivekind_flare_a" scaleX="0" scaleY="0" horizontalCenter="0" verticalCenter="0" blendMode="add"/>
-			<e:Image id="five2" scaleX="0" scaleY="0" horizontalCenter="0" verticalCenter="0" blendMode="add" source="jpg-fivekind_flare_d"/>
-			<e:Image id="five3" scaleX="0" scaleY="0" horizontalCenter="0" verticalCenter="0" blendMode="normal" source="five_of_a_kind-5ofakind"/>
-			<e:Image id="five4" scaleX="0" scaleY="0" horizontalCenter="0" verticalCenter="0" blendMode="normal" source="five_of_a_kind-5ofakind"/>
+		<e:Group id="fiveBox" width="720" height="0" x="0" y="502.2" touchEnabled="false" touchChildren="false">
+
+
+
+
 		</e:Group>
+		<e:Group id="MonkeyMovGroup2" height="0" left="0" right="0" bottom="1280" touchEnabled="false"/>
 
 </e:Group>
 <e:Group id="group_test" width="278" left="0" anchorOffsetY="0" anchorOffsetX="0" bottom="0" height="43" visible="false">
@@ -740,7 +615,7 @@
 <e:HorizontalLayout gap="15" />
 </e:layout>
 </e:Group>
-<e:Group top="0" bottom="0" horizontalCenter="0" touchEnabled="false" touchChildren="false" scrollEnabled="true" width="720" locked="true">
+<e:Group top="0" bottom="0" horizontalCenter="0" touchEnabled="false" touchChildren="false" scrollEnabled="true" width="720" visible="false">
 <e:Image id="lcloud" source="bonus_cloud_a_png" top="0" bottom="0" x="0" width="950"  alpha="0" touchEnabled="false"/>
 <e:Image id="rcloud" top="0" bottom="0" source="bonus_cloud_b_png" width="800"  alpha="0" touchEnabled="false" x="-80"/>
 </e:Group>

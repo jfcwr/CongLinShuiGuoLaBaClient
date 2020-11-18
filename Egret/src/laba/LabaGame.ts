@@ -209,6 +209,7 @@ module conglinshuiguo {
             this.clearAllHitHighlights();
 
             this.destroyHighRotateAnim()
+            this.empty();
 
             if (this.dengAnimation2 != null) {
                 labalib.Utils.ObjectPool.Instance.destroyObject(this.dengAnimation2);
@@ -496,6 +497,7 @@ module conglinshuiguo {
             this.playLeafMov();
             this.playMonkeyMov();
             this.playMonkeyAfterMov();
+            this.playMonkeyAboutMov();
 
         }
         private iconLineGroup: eui.Group
@@ -744,29 +746,23 @@ module conglinshuiguo {
                 this.mBarWinDragon.visible = false
         }
         private fiveBox: eui.Group
-        private fiveKindAni: egret.tween.TweenGroup
-        private fiveKindExitAni: egret.tween.TweenGroup
         public stopPlayFiveKindAnim() {
             this.fiveBox.visible = false
         }
+
+        private fiveKindMov: dragonBones.EgretArmatureDisplay = null;
         public playFiveKindAnim() {
             uniLib.SoundMgr.instance.playSound("wuxinglianzhu_mp3", 1)
-            //五星連珠
+            //五星连珠
             this.fiveBox.visible = true
-            let fiveKind2 = labalib.Utils.PlayMovieAnimInfo(this.fiveBox, LabaConfig.FiveKind2, null, true);
-            fiveKind2.x = 500
-            fiveKind2.y = 150
-            fiveKind2.scaleX = 1.5
-            fiveKind2.scaleY = -1
-            let fiveKind3 = labalib.Utils.PlayMovieAnimInfo(this.fiveBox, LabaConfig.FiveKind2, null, true);
-            labalib.Utils.PlayTweenGroup(this.fiveKindAni, 1, () => {
-                labalib.Utils.PlayTweenGroup(this.fiveKindExitAni, 1, null, true)
-            }, true)
-            let fiveKind1 = labalib.Utils.PlayMovieAnimInfo(this.fiveBox, LabaConfig.FiveKind1)
-            fiveKind3.x = 240
-            fiveKind3.y = 150
-            fiveKind3.scaleX = -1.5
-            fiveKind3.scaleY = 1
+            if(!this.fiveKindMov){
+                this.fiveKindMov = uniLib.DragonUtils.createDragonBoneAnimation("wuxinglianzhu")
+                this.fiveKindMov.x = 360;
+                this.fiveKindMov.touchEnabled = false;
+                this.fiveBox.addChild(this.fiveKindMov);
+                this.fiveKindMov.animation.timeScale = 2;
+            }
+            this.fiveKindMov.animation.play(null,1)
         }
 
 
@@ -1146,9 +1142,9 @@ module conglinshuiguo {
             //Bigwin设置需要的高分等级;
             this.bigWinPanel.HighScoreLists = DataCenter.Instance.getLabaHighScoreList()
             BigWinPanelExt.MAX_WinType = 3
-            this.bigWinPanel.WinTypePaths = "laba_bigMCS,laba_bigMC,laba_megaMC,laba_megaMC,laba_megaMC"
+            this.bigWinPanel.WinTypePaths = "gx_0,gx_1,gx_2"
             this.bigWinPanel.WinTypeSoundPaths = "mlsg_win_1_mp3,mlsg_win_2_mp3,mlsg_win_3_mp3,mlsg_win_3_mp3,mlsg_win_3_mp3"
-            this.bigWinPanel.WinTypeImagePaths = "big_win-bw,big_win-mw,big_win-smw"
+            this.bigWinPanel.WinTypeImagePaths = "dajiang,jujiang,chanjijiang"
 
             //设置滚动速度;
             this.bigWinPanel.CalcScrollTimeCB = {
@@ -2108,7 +2104,9 @@ module conglinshuiguo {
             // egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
             // this.betMenuGruop.visible = false;
             //测试
-            this.playWinBarAnim(1)
+            this.bigWinPanel.enterBigWinAnim(() => {
+                this.bigWinPanel.playGoldWinType(100000)
+            })
         }
         // 点击关闭菜单按钮
         protected onCloseMenuButton() {
@@ -2197,6 +2195,14 @@ module conglinshuiguo {
                 this.MonkeyMov2.dispose();
                 this.MonkeyMov2 = null;
             }
+            if (this.MonkeyMov3){
+                this.MonkeyMov3.animation.stop();
+                if(this.MonkeyMov3.parent){
+                    this.MonkeyMov3.parent.removeChild(this.MonkeyMov3)
+                }
+                this.MonkeyMov3.dispose();
+                this.MonkeyMov3 = null;
+            }
             if (this.MonkeyMov1){
                 egret.Tween.removeTweens(this.MonkeyMov1)
                 this.MonkeyMov1.animation.stop();
@@ -2206,6 +2212,8 @@ module conglinshuiguo {
                 this.MonkeyMov1.dispose();
                 this.MonkeyMov1 = null;
             }
+            this.bigWinPanel.empty();      
+
         }
         private leafMov1: dragonBones.EgretArmatureDisplay = null;
         private leafGroup:eui.Group;
@@ -2229,6 +2237,7 @@ module conglinshuiguo {
 
         private MonkeyMov1: dragonBones.EgretArmatureDisplay = null;
         private MonkeyMov2: dragonBones.EgretArmatureDisplay = null;
+        private MonkeyMov3: dragonBones.EgretArmatureDisplay = null;
         /**
          * 前方猴子动画
          */
@@ -2340,6 +2349,34 @@ module conglinshuiguo {
             });;
             
 
+        }
+
+
+        public MonkeyMovGroup2:eui.Group;
+        /**
+         * 左右两侧猴子动画
+         */
+        private playMonkeyAboutMov() {
+            if (!this.MonkeyMov3) {
+                this.MonkeyMov3 = uniLib.DragonUtils.createDragonBoneAnimation("mg_lemur_popup")
+                this.MonkeyMov3.y = 700;
+                this.MonkeyMov3.touchEnabled = false;
+                this.MonkeyMovGroup2.addChild(this.MonkeyMov3);
+            }
+            let random1 = MathUtil.random(1,2);//上方猴子方向
+            let randomTime4 = MathUtil.random(10000,60000);//移动结束后的等待时间
+            let movString1 = random1==1?"popup_03_left":"popup_03_right";//猴子方向动画
+            
+            if(random1 == 1){
+                this.MonkeyMov3.x = 0;
+            }
+            else{
+                this.MonkeyMov3.x = 720;
+            }
+            this.MonkeyMov3.animation.play(movString1,1)
+            game.Timer.setTimeout(() => {
+                this.playMonkeyAboutMov()
+            }, this, randomTime4)
         }
 
         private helloMonkeyMov: dragonBones.EgretArmatureDisplay = null;
