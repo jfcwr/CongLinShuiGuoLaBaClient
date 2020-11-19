@@ -65,7 +65,7 @@ module conglinshuiguo {
         /**当前每一条线的底注 */
         public get CurLineDizhu() {
             let dizhuList: Array<number> = this.getDizhuList();
-            return dizhuList[this.mDizhuIndex] / 30;
+            return dizhuList[this.mDizhuIndex] / 20;
         }
         public get CurDizhu() {
             return this.getDizhuList()[this.mDizhuIndex]
@@ -291,7 +291,7 @@ module conglinshuiguo {
         public isBigwin(normalObtainGold: number) {
 
             let curDizhu = labalib.LabaDataCenter.Instance.CurDizhu;
-            let perGold = curDizhu / 30;
+            let perGold = curDizhu / 20;
             let obtainNormalMultiply = Math.floor(normalObtainGold / perGold);
 
 

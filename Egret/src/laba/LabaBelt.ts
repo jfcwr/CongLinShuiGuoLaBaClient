@@ -394,6 +394,7 @@ module conglinshuiguo {
             let result = DataCenter.Instance.getResultDatas()
             console.log("xxxxxxxxxxxxxaaa", JSON.stringify(result))
             let cols = [result[0][this.mBeltIndex - 1], result[1][this.mBeltIndex - 1], result[2][this.mBeltIndex - 1]]
+            // let cols = [1, 1, 1]
 
 
             this.mCurBeltSrcollDataIndex = 0

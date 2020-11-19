@@ -220,98 +220,108 @@
 			<e:Group id="lineRootGroup" width="710" height="495" anchorOffsetY="0" touchChildren="false" touchEnabled="false"
 			         scrollEnabled="true" verticalCenter="0" horizontalCenter="0">
 				<e:Group id="darkLineGroup" height="495" width="710" touchChildren="false" touchEnabled="false" name="darkLineGroup">
+					<e:Image source="lined1" y="39.8" width="715" x="-5" name="lined2" visible="false"/>
 					
-					<e:Image source="lined1" width="670" x="-5" y="192" name="lined0"  visible="false"/>
-					<e:Image source="lined1" y="55" width="670" x="-5" name="lined1"  visible="false"/>
-					<e:Image source="lined1" width="670" x="-5" y="329" name="lined2"  visible="false"/>
-					<e:Image width="670" source="lined2" x="-4" top="60" name="lined3" visible="false"/>
-					<e:Image width="670" scaleY="-1" source="lined2" x="-5" bottom="60" name="lined4"  visible="false"/>
-					<e:Image source="lined3" width="670" x="-5" top="50" name="lined5" visible="false"/>
+					<e:Image source="lined1" width="715" x="-5" y="202.61" name="lined1"  visible="false"/>
 
-					<e:Image source="lined3" width="670" x="-5" bottom="50" scaleY="-1" name="lined6"  visible="false"/>
-					<e:Image width="670" x="-5" top="200" source="lined4" name="lined7" visible="false"/>
+					<e:Image source="lined1" width="715" x="-5" y="354.84" name="lined0"  visible="false"/>
+					<e:Image width="715" source="lined2" x="-4" top="83" name="lined4" visible="false"/>
+					<e:Image width="715" scaleY="-1" source="lined2" x="-5" bottom="60" name="lined3"  visible="false"/>
+					<e:Image source="lined3" width="715" x="-5" top="121" name="lined6" visible="false"/>
 
-					<e:Image source="lined4" width="670" x="-5" bottom="205" scaleY="-1" name="lined8"  visible="false"/>
-					<e:Image source="lined4" width="670" x="-5" top="62" name="lined9" visible="false"/>
+					<e:Image source="lined3" width="715" x="-5" bottom="35" scaleY="-1" name="lined5"  visible="false"/>
+					<e:Image width="715" x="-5" top="232" source="lined4" name="lined8" visible="false"/>
 
-					<e:Image source="lined4" width="670" x="-5" bottom="70" scaleY="-1" name="lined10"  visible="false"/>
-					<e:Image source="lined3" width="670" x="-5" scaleY="-1" top="60" name="lined11" visible="false"/>
+					<e:Image source="lined4" width="715" x="-5" bottom="227" scaleY="-1" name="lined7"  visible="false"/>
+					<e:Image source="lined4" width="715" x="-5" top="39" name="lined10" visible="false"/>
 
-					<e:Image x="-5" width="670" name="lined12" source="lined3" verticalCenter="84"  visible="false"/>
+					<e:Image source="lined4" width="715" x="-5" bottom="123" scaleY="-1" name="lined9"  visible="false"/>
+					<e:Image source="lined3" width="715" x="-5" scaleY="-1" top="154" name="lined12" visible="false"/>
 
-
-					<e:Image source="lined5" width="670" x="-5" top="60" name="lined13"  visible="false"/>
-					<e:Image bottom="60" scaleY="-1" x="-5" width="670" source="lined5" name="lined14" visible="false"/>
-					<e:Image source="lined6" x="-5" width="670" scaleY="1" verticalCenter="-79.5" name="lined15" visible="false"/>
-					<e:Image source="lined6" scaleY="-1" x="-5" width="670" verticalCenter="80" name="lined16"  visible="false"/>
+					<e:Image x="-5" width="715" name="lined11" source="lined3" verticalCenter="26.5"  visible="false"/>
+					<e:Image source="lined6" x="-5" width="715" scaleY="1" verticalCenter="-71.5" name="lined14" visible="false"/>
+					<e:Image source="lined6" scaleY="-1" x="-5" width="715" verticalCenter="90.5" name="lined13" visible="false"/>
+					<e:Image scaleY="-1" x="-5" width="715" source="lined6" top="81" name="lined16" visible="false"/>
+					<e:Image source="lined6" x="-5" width="715" bottom="109" name="lined15" visible="false"/>
 
 
-					<e:Image x="-5" width="670" source="lined7" top="60" name="lined17"  visible="false"/>
-					<e:Image x="-5" width="670" source="lined7" scaleY="-1" bottom="60" name="lined18" visible="false"/>
-					<e:Image scaleY="-1" x="-5" width="670" source="lined6" top="52" name="lined19" visible="false"/>
-					<e:Image source="lined6" x="-5" width="670" bottom="52" name="lined20"  visible="false"/>
-					<e:Image x="-5" width="670" source="lined8" scaleY="-1" top="75" name="lined21" visible="false"/>
+					<e:Image source="lined5" width="715" x="-5" top="137" name="lined18"  visible="false"/>
+					<e:Image bottom="102" scaleY="-1" x="-5" width="715" source="lined5" name="lined17" visible="false"/>
 
-					<e:Image source="lined8" x="-5" width="670" scaleY="1" bottom="75" name="lined22"  visible="false"/>
-					<e:Image x="-5" width="670" scaleY="-1" source="lined9" verticalCenter="5" name="lined23" visible="false"/>
 
-					<e:Image source="lined9" x="-5" width="670" verticalCenter="5" name="lined24"  visible="false"/>
-					<e:Image x="-5" width="670" source="lined10" top="50" name="lined25" visible="false"/>
 
-					<e:Image source="lined10" x="-5" width="670" scaleY="-1" bottom="35" name="lined26"  visible="false"/>
-					<e:Image x="-5" width="670" source="lined11" top="60" name="lined27" visible="false"/>
 
-					<e:Image source="lined11" x="-5" width="670" scaleY="-1" bottom="50" name="lined28"  visible="false"/>
+					<e:Image x="-5" width="715" source="lined7" top="159" name="lined19"  scaleY="-1" visible="false"/>
 
-					<e:Image source="lined11" x="-5" width="670" scaleY="-1" verticalCenter="-56.5" name="lined29"  visible="false"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				</e:Group>
 				<e:Group id="moveLineGroup" width="710" height="495" touchChildren="false" touchEnabled="false" name="moveLineGroup"
 				         scrollEnabled="true">
 					<e:Group id="lightLineGroup" width="710" height="495" touchChildren="false" touchEnabled="false"
 					         name="lightLineGroup">
+						<e:Image source="line1" y="32.8" width="715" x="-5" name="line2" visible="false"/>
 						
-						<e:Image source="line1" width="670" x="-5" y="185" name="line0"  visible="false"/>
-						<e:Image source="line1" y="48" width="670" x="-5" name="line1"  visible="false"/>
-						<e:Image source="line1" width="670" x="-5" y="322" name="line2"  visible="false"/>
-						<e:Image width="678" source="line2" x="-8" top="56" name="line3" height="296"  visible="false"/>
-							<e:Image width="678" scaleY="-1" source="line2" x="-9" bottom="55" name="line4" height="298"  visible="false"/>
-						<e:Image source="line3" width="682" x="-11" top="43" name="line5" visible="false"/>
-						<e:Image source="line3" width="684" x="-12" bottom="43" scaleY="-1" name="line6"  visible="false"/>
-						<e:Image width="686" x="-13" top="194" source="line4" name="line7" visible="false"/>
+						<e:Image source="line1" width="715" x="-5" y="195.61" name="line1"  visible="false"/>
 
-						<e:Image source="line4" width="686" x="-13" bottom="199" scaleY="-1" name="line8"  visible="false"/>
-						<e:Image source="line4" width="684" x="-12" top="55" name="line9" visible="false"/>
+						<e:Image source="line1" width="715" x="-5" y="347.84" name="line0"  visible="false"/>
+						<e:Image width="720" source="line2" x="-8" top="79" name="line4" height="296"  visible="false"/>
+							<e:Image width="720" scaleY="-1" source="line2" x="-9" bottom="55" name="line3" height="298"  visible="false"/>
+						<e:Image source="line3" width="725" x="-11" top="114" name="line6" visible="false"/>
+						<e:Image source="line3" width="727" x="-12" bottom="28" scaleY="-1" name="line5"  visible="false"/>
+						<e:Image width="728" x="-13" top="226" source="line4" name="line8" visible="false"/>
 
-						<e:Image width="684" x="-12" source="line4" scaleY="-1" bottom="63" name="line10"  visible="false"/>
-						<e:Image source="line3" width="684" x="-12" scaleY="-1" name="line11" top="53" visible="false"/>
+						<e:Image source="line4" width="728" x="-13" bottom="221" scaleY="-1" name="line7"  visible="false"/>
+						<e:Image source="line4" width="728" x="-12" top="32" name="line10" visible="false"/>
 
-						<e:Image source="line3" width="684" x="-12" scaleY="1" name="line12" verticalCenter="84"  visible="false"/>
+						<e:Image width="728" x="-12" source="line4" scaleY="-1" bottom="116" name="line9"  visible="false"/>
+						<e:Image source="line3" width="728" x="-12" scaleY="-1" name="line12" top="147" visible="false"/>
 
-
-						<e:Image source="line5" width="684" x="-12" top="54" name="line13"  visible="false"/>
-						<e:Image bottom="54" scaleY="-1" x="-12" width="684" source="line5" name="line14" visible="false"/>
-						<e:Image source="line6" x="-13" width="686" scaleY="1" verticalCenter="-79.5" name="line15" visible="false"/>
-						<e:Image source="line6" scaleY="-1" x="-13" width="686" verticalCenter="80" name="line16"  visible="false"/>
+						<e:Image source="line3" width="728" x="-12" scaleY="1" name="line11" verticalCenter="26.5"  visible="false"/>
+						<e:Image source="line6" x="-13" width="728" scaleY="1" verticalCenter="-71.5" name="line14" visible="false"/>
+						<e:Image source="line6" scaleY="-1" x="-13" width="728" verticalCenter="90.5" name="line13" visible="false"/>
+						<e:Image scaleY="-1" x="-12" width="728" source="line6" top="75" name="line16" visible="false"/>
+						<e:Image source="line6" x="-12" width="728" bottom="103" name="line15" visible="false"/>
 
 
-						<e:Image x="-12" width="684" source="line7" top="54" name="line17"  visible="false"/>
-						<e:Image x="-12" width="684" source="line7" scaleY="-1" bottom="54" name="line18" visible="false"/>
-						<e:Image scaleY="-1" x="-12" width="684" source="line6" top="46" name="line19" visible="false"/>
-						<e:Image source="line6" x="-12" width="684" bottom="46" name="line20"  visible="false"/>
-						<e:Image x="-12" width="684" source="line8" scaleY="-1" top="68" name="line21" visible="false"/>
+						<e:Image source="line5" width="728" x="-12" top="143" name="line18"  height="276" visible="false"/>
+						<e:Image scaleY="-1" x="-13.52" width="728" source="line5" name="line17" y="387.08" visible="false"/>
 
-						<e:Image source="line8" x="-12" width="684" scaleY="1" bottom="68" name="line22"  visible="false"/>
-						<e:Image x="-12" width="684" scaleY="-1" source="line9" verticalCenter="6" name="line23" visible="false"/>
 
-						<e:Image source="line9" x="-12" width="684" verticalCenter="5" name="line24"  visible="false"/>
-						<e:Image x="-13" width="686" source="line10" top="43" name="line25" height="290" visible="false"/>
 
-						<e:Image source="line10" x="-13" width="686" scaleY="-1" bottom="28" name="line26"  visible="false"/>
-						<e:Image x="-6" width="676" source="line11" top="54" name="line27" height="152" visible="false"/>
 
-						<e:Image x="-6" width="676" source="line11" name="line28" height="152" scaleY="-1" bottom="44"  visible="false"/>
+						<e:Image x="0.16" width="705" source="line7" name="line19"  y="438.79" scaleY="-1" visible="false"/>
 
-						<e:Image source="line11" x="-7" width="678" scaleY="-1" bottom="181" name="line29" height="152"  visible="false"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 					</e:Group>
 				</e:Group>
 			</e:Group>

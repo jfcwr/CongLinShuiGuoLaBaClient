@@ -503,7 +503,7 @@ module conglinshuiguo {
         private iconLineGroup: eui.Group
         private mLineTipsInfoArr = []
         public initLineInfo() {
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < 20; i++) {
                 let group = new eui.Group()
                 let img = new eui.Image("badge")
                 group.addChild(img)
@@ -539,14 +539,15 @@ module conglinshuiguo {
         }
         public showOneLineTips(index, gpos, point) {
             // let gpos=line.localToGlobal(0,line)
+            // conglinshuiguo.LabaGame.Instance["mLabaMachine"].testShowLine(0)
             let pos = this.iconLineGroup.globalToLocal(gpos.x, gpos.y)
-            if ((index - 1) % 2 == 0)
+            if ((index - 1) <= 7||(index - 1) == 10)
                 this.mLineTipsInfoArr[index].x = pos.x + 2
             else
-                this.mLineTipsInfoArr[index].x = pos.x + 670
-            let special = [15, 16, 19, 20, 21, 22, 23, 24, 28]
+                this.mLineTipsInfoArr[index].x = pos.x + 700
+            let special = [13,14,15,16,17,18,19, 20, 21, 22, 23, 24, 28]
             let posmap = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                0, 0, 0, 0, 0, 200, 210, 0, 0, 60,
+                0, 0, 0, 274, 250, 380, 82, 115, 420, 302,
                 342, 70, 315, 196, 210, 0, 0, 0, 220, 0]
             this.mLineTipsInfoArr[index].y = pos.y
             if (special.indexOf(index) != -1)
@@ -557,7 +558,7 @@ module conglinshuiguo {
             label.text = "" + point
             let labely = SgmlHelper.Instance.getLineInfo(index)[2]
             // console.log("sdasdpow", labely)
-            label.y = 80 + (3 - labely) * 130
+            label.y = 80 + (3-labely) * 130
             // this.
         }
         private winElemAnimGroup: eui.Group
@@ -733,6 +734,7 @@ module conglinshuiguo {
             else if(index==4){
                 this.mBarWinDragon.animation.play("huaban1_1", 1)
             }
+            this.playMonkeyAboutMov(true)
             this.mBarWinDragon.x = 308
             this.mBarWinDragon.y = 17
 
@@ -763,6 +765,44 @@ module conglinshuiguo {
                 this.fiveKindMov.animation.timeScale = 2;
             }
             this.fiveKindMov.animation.play(null,1)
+        }
+        private mysteryMov: dragonBones.EgretArmatureDisplay = null;
+        private mysteryMov1: dragonBones.EgretArmatureDisplay = null;
+        /**
+         * 神秘模式动物出现
+         */
+        public mysteryMode() {
+            if(!this.mysteryMov){
+                this.mysteryMov = uniLib.DragonUtils.createDragonBoneAnimation("mg_lemur_popup")
+                this.mysteryMov.x = 360;
+                this.mysteryMov.y = 240;
+                this.mysteryMov.touchEnabled = false;
+                this.MonkeyMovGroup.addChild(this.mysteryMov);
+
+                this.mysteryMov1 = uniLib.DragonUtils.createDragonBoneAnimation("bg_lemurflip_1")
+                this.mysteryMov1.x = 360;
+                this.mysteryMov1.y = 290;
+                this.mysteryMov1.touchEnabled = false;
+                this.MonkeyMovGroup.addChild(this.mysteryMov1);
+            }
+            this.mysteryMov.animation.play("popup_03_bottom",1)
+            this.mysteryMov.armature.addEventListener(dragonBones.EventObject.COMPLETE, this.playMysteryMode, this);
+            // this.mysteryMov1.animation.play("paoxiangzi",0)
+            this.mysteryMov.visible = true;
+            this.mysteryMov1.visible = false;
+        }
+        public playMysteryMode() {
+            this.mysteryMov.armature.removeEventListener(dragonBones.EventObject.COMPLETE, this.playMysteryMode, this);
+            this.mysteryMov.visible = false;
+            this.mysteryMov1.visible = true;
+            this.mysteryMov1.animation.play("paoxiangzi",1)
+            this.mysteryMov1.armature.addEventListener(dragonBones.EventObject.COMPLETE, this.stopMysteryMode, this);
+        }
+        public stopMysteryMode() {
+            this.mysteryMov1.armature.removeEventListener(dragonBones.EventObject.COMPLETE, this.stopMysteryMode, this);
+            this.mysteryMov.visible = true;
+            this.mysteryMov1.visible = false;
+            this.mysteryMov1.animation.play("paoxiangzi",1)
         }
 
 
@@ -1217,7 +1257,7 @@ module conglinshuiguo {
             let idx = 0;
             let betOffset = DataCenter.Instance.getBetOffset();
             for (idx = cpdizhulist.length - 1; idx >= 0; idx--) {
-                if ((money * betOffset) >= cpdizhulist[idx] * 30) {
+                if ((money * betOffset) >= cpdizhulist[idx] * 20) {
                     break;
                 }
             }
@@ -1915,7 +1955,7 @@ module conglinshuiguo {
                         let lineInfo = SgmlHelper.Instance.getLineInfo(line.LineType);
                         for (let j: number = 0; j < line.ConnectCount; j++) {
                             let hitColIndex = j;
-                            let scrollIcon = this.mLabaMachine.getBelt(hitColIndex).GetElementByIndex(4 - lineInfo[hitColIndex]);
+                            let scrollIcon = this.mLabaMachine.getBelt(hitColIndex).GetElementByIndex(4-lineInfo[hitColIndex]);
                             let row = - (lineInfo[hitColIndex] - 4) - 1
                             // console.log("row  col lineindex lineInfo", line.LineType, lineInfo, row, hitColIndex, scrollIcon.ElemType)
                             let icon = this.mAwardScrollIcon[row][hitColIndex] as AwardScrollIcon
@@ -1925,8 +1965,6 @@ module conglinshuiguo {
                                 icon.PlayWinAnimation(scrollIcon.ElemType)
                                 isPlayFlag[row][hitColIndex] = true
                             }
-
-
                         }
                     }
                 }
@@ -1950,11 +1988,15 @@ module conglinshuiguo {
                     for (let i: number = 0; i < lines.length; i++) {
                         let line = lines[i];
                         let lineInfo = SgmlHelper.Instance.getLineInfo(line.LineType);
-                        if (line.LineType == lineIndex)
+                        // conglinshuiguo.SgmlHelper.Instance.getLineInfo(0)
+                        
+                        if (line.LineType == lineIndex){
+                            
                             for (let j: number = 0; j < line.ConnectCount; j++) {
                                 let hitColIndex = j;
-                                let scrollIcon = this.mLabaMachine.getBelt(hitColIndex).GetElementByIndex(4 - lineInfo[hitColIndex]);
+                                let scrollIcon = this.mLabaMachine.getBelt(hitColIndex).GetElementByIndex(4-lineInfo[hitColIndex]);
                                 let row = - (lineInfo[hitColIndex] - 4) - 1
+                                // let row = (lineInfo[hitColIndex])-1
                                 // if (!isPlayFlag[row][hitColIndex]) {
                                 let isChange = false
                                 for (let pos of changePos) {
@@ -1969,6 +2011,7 @@ module conglinshuiguo {
                                 // }
 
                             }
+                        }
                     }
                 }
             }
@@ -2104,9 +2147,10 @@ module conglinshuiguo {
             // egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
             // this.betMenuGruop.visible = false;
             //测试
-            this.bigWinPanel.enterBigWinAnim(() => {
-                this.bigWinPanel.playGoldWinType(100000)
-            })
+            this.mysteryMode();
+            // this.bigWinPanel.enterBigWinAnim(() => {
+            //     this.bigWinPanel.playGoldWinType(100000)
+            // })
         }
         // 点击关闭菜单按钮
         protected onCloseMenuButton() {
@@ -2353,28 +2397,47 @@ module conglinshuiguo {
 
 
         public MonkeyMovGroup2:eui.Group;
+        private MonkeyMov3Time:number = null;
         /**
-         * 左右两侧猴子动画
+         * 左右上三方猴子动画
          */
-        private playMonkeyAboutMov() {
+        private playMonkeyAboutMov(index:boolean = false) {
             if (!this.MonkeyMov3) {
                 this.MonkeyMov3 = uniLib.DragonUtils.createDragonBoneAnimation("mg_lemur_popup")
                 this.MonkeyMov3.y = 700;
                 this.MonkeyMov3.touchEnabled = false;
-                this.MonkeyMovGroup2.addChild(this.MonkeyMov3);
             }
-            let random1 = MathUtil.random(1,2);//上方猴子方向
             let randomTime4 = MathUtil.random(10000,60000);//移动结束后的等待时间
-            let movString1 = random1==1?"popup_03_left":"popup_03_right";//猴子方向动画
-            
-            if(random1 == 1){
-                this.MonkeyMov3.x = 0;
+            let movString1
+            if(!index){
+                let random1 = MathUtil.random(1,3);//上方猴子方向
+                if(random1 == 1){
+                    this.MonkeyMov3.x = 0;
+                    this.MonkeyMov3.y = 700;
+                    movString1 = "popup_03_left";//猴子方向动画
+                    this.MonkeyMovGroup2.addChild(this.MonkeyMov3);
+                }
+                
+                else{
+                    this.MonkeyMov3.x = 720;
+                    this.MonkeyMov3.y = 700;
+                    movString1 = "popup_03_right";//猴子方向动画
+                    this.MonkeyMovGroup2.addChild(this.MonkeyMov3);
+                }
             }
             else{
-                this.MonkeyMov3.x = 720;
+                if(this.MonkeyMov3Time){
+                    game.Timer.clearTimeout(this.MonkeyMov3Time)
+                    this.MonkeyMov3Time = null;
+                }
+                this.MonkeyMov3.x = 360;
+                this.MonkeyMov3.y = 240;
+                movString1 = "popup_03_bottom";//猴子方向动画
+                this.MonkeyMovGroup.addChild(this.MonkeyMov3);
             }
+            
             this.MonkeyMov3.animation.play(movString1,1)
-            game.Timer.setTimeout(() => {
+            this.MonkeyMov3Time = game.Timer.setTimeout(() => {
                 this.playMonkeyAboutMov()
             }, this, randomTime4)
         }
@@ -2520,7 +2583,7 @@ module conglinshuiguo {
                 this.winMoneyImage.visible = false
 
                 this.winMoneyLabel.text = GX.GoldFormat(DataCenter.Instance.RaceObtainGold, true, true, true)
-                let muti = DataCenter.Instance.RaceObtainGold * 30 / DataCenter.Instance.CurDizhu
+                let muti = DataCenter.Instance.RaceObtainGold * 20 / DataCenter.Instance.CurDizhu
                 if (!DataCenter.Instance.isBigwin(DataCenter.Instance.RaceObtainGold) && muti > 60) {
                     console.log("ssssssssssddddddddw")
                     uniLib.SoundMgr.instance.playSound("scrollgold_mp3", 1);

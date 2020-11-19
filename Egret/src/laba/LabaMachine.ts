@@ -18,21 +18,21 @@ module conglinshuiguo {
             this.moveLineGroup = this.mLineRoot.getChildByName("moveLineGroup") as eui.Group
             this.lightLineGroup = this.moveLineGroup.getChildByName("lightLineGroup") as eui.Group
 
-            //  for (let i = 0; i < 30; i++) {
-            //     this.showLine(i, true)
-            // }
         }
         public testShowLine(index) {
             this.showLine(index, true)
             let lineimg = this.darkLineGroup.getChildByName("lined" + index)
             let pos = lineimg.localToGlobal(0, 0)
             LabaGame.Instance.showOneLineTips(index, pos, 2321)
+
+            LabaGame.Instance.playAllHitElemDefaultEffect(null, index)
         }
+        // conglinshuiguo.LabaGame.Instance["mLabaMachine"].testShowLine(0)
         // private mMoveGroup: eui.Group
         private darkLineGroup: eui.Group
         private lightLineGroup: eui.Group
         private moveLineGroup: eui.Group
-
+m
 
         /**
          * 重新实现发送押注协议，因为这里需要发送多少条线;
@@ -475,11 +475,11 @@ module conglinshuiguo {
             // }]
             // topData.labaStatusInfo.dataList = [{
             //     "isFalseFree": 0, "awardMultipleReal": 101, "specialSymbolAward": 0, "awardPoint": 5555555,
-            //     "itemIdList": [[1, 3, 4],
+            //     "itemIdList": [[3, 3, 3],
             //     [3, 3, 3],
-            //     [9, 3, 3],
-            //     [4, 1, 7],
-            //     [3, 1, 3]], "jackpotSpecialSymbolType": 0, "totalValue": 0, "specialSymbolValues": [],
+            //     [3, 3, 3],
+            //     [3, 3, 3],
+            //     [3, 3, 3]], "jackpotSpecialSymbolType": 0, "totalValue": 0, "specialSymbolValues": [],
             //     "awardMultiple": 5, "specialSymbolNum": 9, "isPinpan": 0
             // }]
             // topData.labaStatusInfo.dataList[0].awardPoint = 5000 / 5 * 326
@@ -502,7 +502,8 @@ module conglinshuiguo {
             // topData.labaStatusInfo.dataList = dddArrr;
 
             super.onMsg_GameStateUpdate(data, topData)
-            DataCenter.Instance.IsGetServerMsg = true
+            DataCenter.Instance.IsGetServerMsg = true;
+
 
             console.log("serverResult", JSON.stringify(data))
             console.log("serverResult", JSON.stringify(topData))
@@ -675,7 +676,7 @@ module conglinshuiguo {
             // console.log("ddasdqwd", lines)
             for (let line of lines) {
                 // console.log("test testline muti line.LineType", line.LineType, SgmlHelper.Instance.getLineInfo(line.LineType))
-                for (let i = 0; i < 30; i++) {
+                for (let i = 0; i < 20; i++) {
                     if (i == line.LineType) {
                         this.showLine(i, true)
                         let lineimg = this.darkLineGroup.getChildByName("lined" + i)
@@ -694,20 +695,17 @@ module conglinshuiguo {
                     LabaGame.Instance.playAllHitElemDefaultEffect(null, line.LineType)
                     LabaGame.Instance.hideAllLineTips()
                     LabaGame.Instance.stopPlayFiveKindAnim()
-                    for (let i = 0; i < 30; i++) {
+                    for (let i = 0; i < 20; i++) {
                         this.showLine(i, i == line.LineType)
                         if (i == line.LineType) {
                             let lineimg = this.darkLineGroup.getChildByName("lined" + i)
                             let pos = lineimg.localToGlobal(0, 0)
-                            // console.log("test testline muti line.LineType", line.LineType, totalMuti, totalPoint, line.Multiply)
                             LabaGame.Instance.showOneLineTips(i, pos, totalPoint / totalMuti * line.Multiply)
                             if (line.ConnectCount == 5)
                                 LabaGame.Instance.playFiveKindAnim()
                         }
                     }
-
-                    // this.playOneLineAnim(line.LineType)
-                }).wait(2000)
+                }).wait(2500)
             }
             // return
             let onchange = () => {
@@ -743,7 +741,7 @@ module conglinshuiguo {
         */
         public clearResultLines() {
 
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < 20; i++) {
                 this.showLine(i, false)
             }
             console.log("enter clearResultLines")
