@@ -178,7 +178,6 @@ module conglinshuiguo {
         }
 
         protected onPageChanged(pageIndex: number) {
-            console.log("index---", pageIndex, "--")
             this.curIndex = pageIndex;
 
         }

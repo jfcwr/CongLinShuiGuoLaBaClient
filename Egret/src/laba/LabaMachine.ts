@@ -445,12 +445,37 @@ m
         }
         public onMsg_GameStateUpdate(data, topData) {
 
+            let mysteriousData = LabaGame.Instance.mysteriousData;
+            let itemIdListIcon =null;
+            if(topData.labaStatusInfo.dataList.length == 2){
+                for(let i = 0;i<5;++i){
+                    for(let j = 0;j<3;++j){
+                        if(topData.labaStatusInfo.dataList[0].itemIdList[i][j] == 0){
+                            mysteriousData[i][j] = topData.labaStatusInfo.dataList[1].itemIdList[i][j];
+                        }
+                        else{
+                            mysteriousData[i][j] = 0;
+                        }
+                    }
+                }
+                topData.labaStatusInfo.dataList[0] = topData.labaStatusInfo.dataList[1];
+                LabaGame.Instance.mysteryMode()
+            }
+            else{
+                mysteriousData = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
+            }
+            // if(topData.labaStatusInfo.dataList.length == 2){
+            //     for(let item of topData.labaStatusInfo.dataList[0].itemIdList){
+
+            //     }
+            //     topData.labaStatusInfo.dataList[0].itemIdList = topData.labaStatusInfo.dataList[1].itemIdList;
+            // }
             // topData.labaStatusInfo.dataList.clear()
             // topData.labaStatusInfo.dataList.push({
             //     jackpotSpecialSymbolType: 0, specialSymbolAward: 0, specialSymbolNum: 0, awardMultiple: 1,
             //     isFalseFree: 0, isPinpan: 0, awardPoint: 0, awardMultipleReal: 326,
             // });
-            // }]   console.log("xasdasdqw ", topData)
+            // }]   
             // topData.labaStatusInfo.dataList = [{
             //     "isFalseFree": 0, "awardMultipleReal": 0, "specialSymbolAward": 0, "awardPoint":6000,
             //     "itemIdList": [[6, 1, 5], [6, 8, 1], [6, 1, 3], [7, 10, 5], [1, 6, 8]], "jackpotSpecialSymbolType": 0, "totalValue": 0, 
@@ -505,8 +530,6 @@ m
             DataCenter.Instance.IsGetServerMsg = true;
 
 
-            console.log("serverResult", JSON.stringify(data))
-            console.log("serverResult", JSON.stringify(topData))
             game.Timer.clearTimeout(this.RealStartTimer)
             // this.RealStartTimer = game.Timer.setTimeout(() => { this.doEnterRotate(true) }, null, 400 )
             if (!DataCenter.Instance.IsQuickRotate)
@@ -606,7 +629,6 @@ m
         protected startGameByResult(serverResult: labalib.IServerBetResult) {
             DataCenter.Instance.CurServerResultDatas = serverResult
             super.startGameByResult(serverResult)
-            console.log("xxxxxxxx", DataCenter.Instance.getResultDatas())
         }
         public doEnterRotate(isGetServerResponse: boolean = false) {
             if (!isGetServerResponse) {
@@ -643,12 +665,18 @@ m
                         else
                             beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], back: false, waitTime: i * 100, speed: 200 * timeScale });
                     }
-                    else
-                        if (DataCenter.Instance.IsQuickRotate) {
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 10, back: false, waitTime: i * 100, speed: 200 * timeScale });
+                    else{
+                        if(DataCenter.Instance.IsMysticalGame()){
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 60+i*2, back: false, waitTime: i * 100, speed: 200 * timeScale });
+                        }
+                        else{
+                            if (DataCenter.Instance.IsQuickRotate) {
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 10, back: false, waitTime: i * 100, speed: 200 * timeScale });
 
-                        } else
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 10 + i * 2, back: false, waitTime: i * 100, speed: 200 * timeScale });
+                            } else
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 10 + i * 2, back: false, waitTime: i * 100, speed: 200 * timeScale });
+                        }
+                    }
 
                     beltext.ReadyScrollData()
                     beltext.RealStart = true
@@ -667,15 +695,14 @@ m
         public drawAllLines() {
             let resultData = DataCenter.Instance.getResultDatas();
             // resultData = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]]
+            console.error(resultData,"这里是数据")
             let result = SgmlHelper.Instance.getResultAllLinesAndMultipy(resultData);
             // let 
             let totalPoint = DataCenter.Instance.CurServerResultDatas.resultData.awardPoint
             let totalMuti = DataCenter.Instance.CurServerResultDatas.resultData.awardMultipleReal
             let lines = result.LineInfos;
             LabaGame.Instance.hideAllLineTips()
-            // console.log("ddasdqwd", lines)
             for (let line of lines) {
-                // console.log("test testline muti line.LineType", line.LineType, SgmlHelper.Instance.getLineInfo(line.LineType))
                 for (let i = 0; i < 20; i++) {
                     if (i == line.LineType) {
                         this.showLine(i, true)
@@ -732,7 +759,6 @@ m
             if (visible)
                 uniLib.SoundMgr.instance.playSound("xian_mp3", 1);
             this.darkLineGroup.getChildByName("lined" + linetype).visible = visible
-            // console.log("lineshow ", linetype)
             this.lightLineGroup.getChildByName("line" + linetype).visible = visible
             // this.lightLineGroup.getChildByName("line" + linetype).blendMode = "add"
         }
@@ -744,7 +770,6 @@ m
             for (let i = 0; i < 20; i++) {
                 this.showLine(i, false)
             }
-            console.log("enter clearResultLines")
             // this.flashLineGroup.visible = false
         }
 

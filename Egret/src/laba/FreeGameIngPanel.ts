@@ -300,7 +300,6 @@ module conglinshuiguo {
             for (let i = FreeInCharacter.Monk; i <= FreeInCharacter.Sandy; i++) {
                 this.mCharacterPosOffset[i] = {}
                 let animinfo = LabaConfig.FreeInCharacterDragons[i]
-                console.log("xxxasd", animinfo, LabaConfig.FreeInCharacterDragons)
                 this.mCharacterPosOffset[i][Direct.down] = { x: animinfo.Down.x, y: animinfo.Down.y }
                 this.mCharacterPosOffset[i][Direct.up] = { x: animinfo.Up.x, y: animinfo.Up.y }
                 this.mCharacterPosOffset[i][Direct.left] = { x: animinfo.Left.x, y: animinfo.Left.y }

@@ -16,8 +16,9 @@ module conglinshuiguo {
 
 	export enum CLSG_ResultType {
 		NORMAL = 0,
+		MYSTICAL = 1,//神秘
 		FREEIN = 3,//免费中
-		FREETRI = 1,//触发
+		FREETRI = 2,//触发
 		REROTATETRI = 4,//玛丽触发
 		REROTATEIN = 5,//玛丽中
 	}

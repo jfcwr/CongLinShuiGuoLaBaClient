@@ -149,7 +149,6 @@ module conglinshuiguo {
                     this.mCurBetButton.skin["labelDisplay"].textColor = '0xFFC824'
                     this.mCurBetButton.skin["act"].visible = true
                     this.autoNum = rotateList[rotateList.length - i - 1]
-                    console.log("autoNumxx", this.autoNum)
                 }
                 else {
                     btn.skin["labelDisplay"].textColor = '0xA2A3B0'
@@ -172,7 +171,6 @@ module conglinshuiguo {
                 this.mCurBetButton.skin["labelDisplay"].textColor = '0xFFC824'
                 this.mCurBetButton.skin["act"].visible = true
             }
-            console.log("e.trage", e.target)
             this.autoNum = Number(str[1])
         }
 

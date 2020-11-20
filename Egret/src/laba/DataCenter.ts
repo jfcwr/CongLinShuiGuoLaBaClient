@@ -239,7 +239,12 @@ module conglinshuiguo {
             return this.mServerResultDatas.length > 1 && (this.mServerResultDatas[0].isPinpan == CLSG_ResultType.FREETRI
                 || this.mServerResultDatas[0].isPinpan == CLSG_ResultType.FREEIN);
         };
-
+        /**
+         * 神秘模式触发
+         */
+        public IsMysticalGame() {
+            return DataCenter.Instance.CurServerResultDatas.resultData.isPinpan == CLSG_ResultType.MYSTICAL;
+        }
         public IsRerotateGame() {
             return DataCenter.Instance.CurServerResultDatas.resultData.isPinpan == CLSG_ResultType.REROTATEIN;
         }
@@ -328,7 +333,6 @@ module conglinshuiguo {
          */
         public getNoAwardArray(param?: labalib.IServerRaceResult): Array<Array<number>> {
             let itemIdList = param ? param["itemIdList"] : null;
-            console.log("testdasd: ", JSON.stringify(param))
             DataCenter.Instance.WildCount = 0
             if (param && param["wildCountNum"]) {
                 DataCenter.Instance.WildCount = param["wildCountNum"]
@@ -353,7 +357,6 @@ module conglinshuiguo {
          */
         public getResultByPool(multiply: number, param?: labalib.IServerRaceResult): Array<Array<number>> {
             let itemIdList = param ? param["itemIdList"] : null;
-            console.log("testdasd: ", JSON.stringify(param))
             let ret = null;
             if (itemIdList) {
                 ret = labalib.Utils.getLineArrayByItemIdList(itemIdList);
@@ -372,9 +375,7 @@ module conglinshuiguo {
             if (param && param["wildCountNum"]) {
                 DataCenter.Instance.WildCount = param["wildCountNum"]
             }
-            console.log("xxxxxxxxxxxxxxas ", ret)
             let result = [ret[2], ret[1], ret[0]]
-            console.log("xxxxxxxxxxxxxxas ", result)
             return result;
         }
 
@@ -388,7 +389,6 @@ module conglinshuiguo {
         }
 
         public isScatter(elem) {
-            // console.log("isScatter,aaa",elem);
             if (elem == CLSG_ElemAllType.DuoBao) {
                 return true;
             }
@@ -445,7 +445,6 @@ module conglinshuiguo {
                 }
                 if (loopCount > 100) {
                     console.error("InvalidPath.., resultData:" + JSON.stringify(resultData));
-                    uniLib.Console.log("Invalid Path. generate 100 times and not generate dst file..., Multiply:" + oldMultiply + " resultData:" + JSON.stringify(resultData));
                     return newResultData;
                 }
                 loopCount = loopCount + 1;

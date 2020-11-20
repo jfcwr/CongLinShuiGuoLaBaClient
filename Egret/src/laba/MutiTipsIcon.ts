@@ -65,7 +65,6 @@ module conglinshuiguo {
         private rect1: eui.Rect
         private image1: eui.Image
         public showIcon(beltIndex: number, posXY: egret.Point, elemID: number) {
-            console.log("2213xxxxxxxxxzz,", beltIndex)
             this.mutiGroup.visible = false
             this.duobaoLabel.visible = false
             if (elemID == CLSG_ElemAllType.DuoBao) {

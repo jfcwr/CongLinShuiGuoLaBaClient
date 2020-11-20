@@ -74,7 +74,6 @@ module conglinshuiguo {
 		}
 
 		public destroyBarAnim() {
-			console.log('destroy----------------')
 			for (let anim of this.winTotalAnimArr) {
 				labalib.Utils.ObjectPool.Instance.destroyObject(anim)
 			}
@@ -97,10 +96,8 @@ module conglinshuiguo {
 				let img = this.wildImageGroup.getChildAt(i) as eui.Image
 				img.source = "elem" + elemMap[i] + (changeCount > i ? "0" : "")
 			}
-			console.log("xxxxxxx", DataCenter.Instance.WildCount)
 			this.freecountLabel.text = "" + (wildMap[DataCenter.Instance.WildCount - 1] * 2 + 8)
 
-			console.log("xxxxxxxxxxxaaaaaa free ", DataCenter.Instance.FreeAccObtainGold)
 
 			this.mStopScrollCB = labalib.Utils.scrollNumber(this.winLabel, 0, DataCenter.Instance.FreeAccObtainGold, 1000, () => {
 				labalib.Utils.PlayTweenGroup(this.totalGlow, 1)

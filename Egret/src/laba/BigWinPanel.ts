@@ -336,7 +336,6 @@ module conglinshuiguo {
                     break;
                 }
             }
-            console.log("JSON.", JSON.stringify(this._scoreList))
             egret.log("call playGoldWinType, obtainGold:", obtainGold, " showWinTypeCount:", showWinTypeCount, " obtainNormalMultiply:", obtainNormalMultiply);
 
             if (showWinTypeCount == 0) {
@@ -370,7 +369,6 @@ module conglinshuiguo {
                     }
                     if (obtainGold < toGold)
                         toGold = obtainGold
-                    console.log("playbigwin from:", fromGold, " toGold:", toGold, " winidx:", winidx, waitTime)
                     scrollNumberInfo = labalib.Utils.scrollNumber(this.GoldNumLabel, fromGold, toGold, waitTime);
                     uniLib.SoundMgr.instance.playSound("freescroll_mp3", 1)
                 }).wait(waitTime)

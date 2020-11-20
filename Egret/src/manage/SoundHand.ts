@@ -132,12 +132,10 @@ module conglinshuiguo {
             for (let i of target) {
                 uniLib.SoundMgr.instance.playSound(soundList[i], 1);
             }
-            console.log("xxxxx2222222xxxxx222222222222")
         }
 
         public playRerotatejumUPSound(target: number) {
             let soundList = ["shanshengattack_mp3", "pigattack_mp3", "tangsengattack_mp3", "houziattack_mp3"]
-            console.log("xxxxx2222222xxxxx33333333333")
             uniLib.SoundMgr.instance.playSound(soundList[target], 1);
 
         }

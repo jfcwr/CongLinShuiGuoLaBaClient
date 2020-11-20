@@ -45,7 +45,7 @@
 	<e:Group id="MonkeyMovGroup" height="0" width="720" horizontalCenter="0" bottom="1280" touchEnabled="false"/>
 	<e:Group id="gameRootPanel" height="1280" touchEnabled="false" name="gameRootPanel" width="720" horizontalCenter="0"
 	         bottom="0">
-		<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="clsg_iconBg" y="338" fillMode="repeat" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0"/>
+		<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="clsg_iconBg" y="338" fillMode="repeat" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" locked="true"/>
 
 		<e:Group id="gameGroup" width="710" height="495" scaleX="1" scaleY="1" name="gameGroup" anchorOffsetX="0"
 		         anchorOffsetY="0" horizontalCenter="0" top="381">
@@ -327,7 +327,8 @@
 			</e:Group>
 
 		</e:Group>
-		<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="background_png" bottom="-84" width="720" horizontalCenter="0" height="1280"/>
+		<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="background_png" bottom="-84" width="720" horizontalCenter="0" height="1280" locked="true"/>
+		<e:Group id="mysteriousBoxGroup" width="710" height="495" horizontalCenter="0" touchEnabled="false" top="381"/>
 		<e:Group height="106" touchEnabled="false" touchChildren="false" x="-5" y="259">
 			<e:Group id="worldGroup" width="628" height="77" anchorOffsetY="0" x="45" anchorOffsetX="0" y="29">
 			<e:Image id="TipsImage" scaleX="1" scaleY="1" touchEnabled="false" x="116" source="infoboard-info_1" verticalCenter="0"/>

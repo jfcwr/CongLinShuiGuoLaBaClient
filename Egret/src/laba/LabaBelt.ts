@@ -125,7 +125,6 @@ module conglinshuiguo {
             let animName = params && params.name ? params.name : null
 
             let animInfo = specialWild ? DataCenter.Instance.getSpecialElementAnimInfo(winElemID) : DataCenter.Instance.getElementAnimInfo(winElemID)
-            // console.log("eeeessss", winElemID, specialWild, animInfo)
             this.mAnimObject = uniLib.DragonUtils.createDragonBoneAnimation(animInfo.Path)
             if (winElemID == 9)
                 animName = "win"
@@ -140,7 +139,6 @@ module conglinshuiguo {
             }
         }
         public Animation_Dragon(animInfo, animName = null, times = 1) {
-            console.error(animInfo,"这里是什么")
             this.mAnimObject = uniLib.DragonUtils.createDragonBoneAnimation(animInfo.Path)
             this.mAnimObject.animation.play(animName, times)
             this.mAnimObject.scaleX = animInfo.Scale
@@ -173,7 +171,6 @@ module conglinshuiguo {
             // this.kuangDragon2.visible = false
             this.elemImage.visible = false
 
-            console.log('xasdasdqweq', winElemID, animInfo, this.hashCode)
             if (this.mAnimObject != null) {
                 this.mAnimObject.animation.play(null, 0)
                 return
@@ -211,7 +208,6 @@ module conglinshuiguo {
         }
         private changeImage: eui.Image
         public PlayWinAnimation(winElemID: number, finishCB?: Function, params?: any) {
-            console.log("xasdqweqweqw ", winElemID, this.hashCode)
             let animName = null
             this.changeImage.visible = false
             this.duobaoglow0.visible = false
@@ -263,7 +259,6 @@ module conglinshuiguo {
             this.isSpecial = false
             this.duobaoglow.visible = false
             this.duobaoglow0.visible = false
-            console.log("destrotototoasd", this.hashCode)
             if (this.mAnimObject != null) {
                 egret.Tween.removeTweens(this.mAnimObject)
                 this.mAnimObject.animation.stop();
@@ -305,16 +300,13 @@ module conglinshuiguo {
 
         }
         public onClickShowIconInfo(e: egret.TouchEvent) {
-            console.log("ssdsaaaaaaaa:", e.target)
             let scrollicon = e.target.parent.getChildAt(0) as labalib.ScrollIcon
             MutiTipsIcon.Instance.showIcon(this.mBeltIndex, scrollicon.localToGlobal(scrollicon.width / 2, scrollicon.height / 2), scrollicon.ElemType)
-            console.log("ssdsaaaaaaaa:", scrollicon)
         }
         public SetScrollData(datas: Array<number>, totalTime: number, scrollToIndex?: number, scrollFromToIndex?: number): void {
             super.SetScrollData(datas, totalTime, scrollToIndex, scrollFromToIndex);
         }
         public StartEx_Normal() {
-            console.log("call ext", this.mBeltIndex)
             this.clearLastGameAnim()
             this.clearLastGameParam()
             // for (let item of this.mIcons) {
@@ -368,23 +360,14 @@ module conglinshuiguo {
 
 
             if (this.mBeltSrcollDatas.length > 0) {
-                console.log("dddasdsdqwdd111111 beltindex", this.mBeltIndex,
-                    this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex],
-                    this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex + 1],
-                    this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex + 2])
                 this.resetBeltPos()
                 this.mGroup.y = -660
             }
 
-            for (let icon of this.mIcons) {
-                console.log("zzzzzzzzzzzzz", icon.ElemType)
-            }
-            console.log("before this.beltindex scrollSpeed:", this.mBeltIndex, JSON.stringify(this.mBeltSrcollDatas))
+           
 
 
-            if (this.mBeltIndex == 3) {
-                console.log("xasdasdqwqw2222222222322222", JSON.stringify(this.mScrollInfoList))
-            }
+           
             this.mScrollInfoExt = this.mScrollInfoList.splice(0, 1)
             this.BeltScrollType = this.mScrollInfoExt[0].beltScrollType
             this.mResultType = this.mScrollInfoExt[0].resultType
@@ -392,7 +375,6 @@ module conglinshuiguo {
             let scrollSpeed = this.mScrollInfoExt[0].speed ? this.mScrollInfoExt[0].speed : 250
 
             let result = DataCenter.Instance.getResultDatas()
-            console.log("xxxxxxxxxxxxxaaa", JSON.stringify(result))
             let cols = [result[0][this.mBeltIndex - 1], result[1][this.mBeltIndex - 1], result[2][this.mBeltIndex - 1]]
             // let cols = [1, 1, 1]
 
@@ -443,11 +425,7 @@ module conglinshuiguo {
 
             this.RealScrollItem = this.mBeltSrcollDatas.length
 
-            console.log("this.beltindex scrollSpeed:", this.mBeltIndex, JSON.stringify(this.mBeltSrcollDatas), this.mRealScrollItem, scrollSpeed, JSON.stringify(this.mScrollInfoExt[0]))
 
-            for (let item of this.mIcons) {
-                console.log("xxxxxxx beltindex", this.mBeltIndex, item.ElemType)
-            }
             let waittime = 1000
 
             if (this.mScrollInfoList.length == 1 && this.isHighRotate) {
@@ -483,7 +461,6 @@ module conglinshuiguo {
                 item.Blur = false
                 item.ElemType = item.ElemType
             }
-            console.log("xxxxxz222333333333")
             labalib.EventManager.Instance.dispatchEvent(labalib.LabaBaseEvent.BeltRotateEndEx, {
                 "beltIndex": this.mBeltIndex,
                 "speed": 10,
@@ -491,17 +468,11 @@ module conglinshuiguo {
                 "stageRevertIndex": 1
             });
             if (this.mBeltSrcollDatas.length > 0) {
-                console.log("dddasdsdqwdd beltindex StopEx", this.mBeltIndex,
-                    this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex],
-                    this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex + 1],
-                    this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex + 2])
                 this.resetBeltPos()
             }
             //  return
             DataCenter.Instance.SetBeltStatus(true, this.mBeltIndex - 1)
 
-            console.log("this.beltindex:", this.mBeltIndex, this.GetElementByIndex(1).ElemType, this.GetElementByIndex(2).ElemType, this.GetElementByIndex(3).ElemType)
-            console.log("stopex:", this.mCurBeltSrcollDataIndex, JSON.stringify(this.mBeltSrcollDatas))
             if (this.mScrollInfoList.length == 0 && this.isHighRotate) {
                 LabaGame.Instance.SetHighAnim(false)
             }
@@ -518,11 +489,6 @@ module conglinshuiguo {
         public clearLastGameParam() {
 
             if (this.mBeltSrcollDatas.length > 0) {
-                console.log("dddasdsdqwdd beltindex", this.mBeltIndex,
-                    this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex],
-                    this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex + 1],
-                    this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex + 2])
-
                 this.resetBeltPos()
             }
             this.mCurBeltSrcollDataIndex = 0
@@ -608,7 +574,6 @@ module conglinshuiguo {
 
             this.mLastBeltScrollDataIndex = temp
             if (this.mGroup.y == 0) {
-                // console.log("xasdasdqwdqwdsad")
                 this.mGroup.y = -660
                 if (!this.RealStart) {
                     this.mBeltSrcollDatas.push(this.GenerateRandomElem())
