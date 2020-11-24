@@ -638,11 +638,27 @@ m
                     DataCenter.Instance.SetBeltStatus(false, i)
                     let beltext = this.mBeltArray[i] as LabaBelt
                     beltext.StartEx_Normal();
-                    beltext.isHighRotate = false
+                    beltext.isHighRotate = null
                 }
                 labalib.EventManager.Instance.dispatchEvent(labalib.LabaBaseEvent.LabaMachineEnterRotating);
             }
             else {
+                let itemIdList_ = DataCenter.Instance.CurServerResultDatas.itemIdList;
+                let jiaSuIndex = 0;
+                let jiaSuNumber = 0;
+                for(let i =0;i<5;++i){
+                    for(let j =0;j<3;++j){
+                        if(itemIdList_[i][j] == 8){
+                            jiaSuIndex++;
+                            break;
+                        }
+                    }
+                    if(jiaSuIndex == 2){
+                        jiaSuNumber = i;
+                        break;
+                    }
+                }
+                // console.error(jiaSuNumber,"这里是什么")
                 // return
                 let timeScale = DataCenter.Instance.ScrollTimeScale
                 let count = [10, 12, 14, 17, 19]
@@ -654,13 +670,37 @@ m
                     // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4, waitTime: i * 100, speed: 250*20 });
 
                     if (DataCenter.Instance.IsTriggerCurFreeGame() || DataCenter.Instance.IsTriggerRerotateGame()) {
-                        if (i == 3) {
+                        if ((i == 3&&jiaSuNumber==2)||(i == 2&&jiaSuNumber==1)||(i == 4&&jiaSuNumber==3)) {
                             beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
                             beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
                             beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 0, back: false, waitTime: i * 100, speed: 500 * 7 * timeScale });
 
                             // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4*5, waitTime: i * 100, speed: 250*20 });
-                            beltext.isHighRotate = true
+                            beltext.isHighRotate = i;
+                        }
+                        else if((i == 3&&jiaSuNumber==1)||(i == 4&&jiaSuNumber==2)){
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 0, back: false, waitTime: i * 100, speed: 500 * 7 * timeScale });
+
+                            // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4*5, waitTime: i * 100, speed: 250*20 });
+                            beltext.isHighRotate = i;
+
+                        }
+                        else if(i == 4&&jiaSuNumber==1){
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 0, back: false, waitTime: i * 100, speed: 500 * 7 * timeScale });
+
+                            // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4*5, waitTime: i * 100, speed: 250*20 });
+                            beltext.isHighRotate = i;
+
                         }
                         else
                             beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], back: false, waitTime: i * 100, speed: 200 * timeScale });
@@ -727,6 +767,7 @@ m
                         if (i == line.LineType) {
                             let lineimg = this.darkLineGroup.getChildByName("lined" + i)
                             let pos = lineimg.localToGlobal(0, 0)
+                            console.log("ccccccc",line.Multiply)
                             LabaGame.Instance.showOneLineTips(i, pos, totalPoint / totalMuti * line.Multiply)
                             if (line.ConnectCount == 5)
                                 LabaGame.Instance.playFiveKindAnim()

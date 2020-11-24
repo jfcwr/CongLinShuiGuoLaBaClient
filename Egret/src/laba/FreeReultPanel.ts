@@ -115,8 +115,6 @@ module conglinshuiguo {
 			// monkey.y = 160
 			this.mAutoCloseTimer = game.Timer.setTimeout(() => {
 				this.stopAppear()
-				
-
 				if (this.mStopScrollCB) {
 					this.mStopScrollCB.stopCB()
 				}
@@ -124,7 +122,7 @@ module conglinshuiguo {
 					this.mFinishCB()
 				}
 				LabaGame.Instance.switchBG(GameBG.normal)
-			}, null, 400000);
+			}, null, 4000);
 		}
 		
 		private winMonkeyMov: dragonBones.EgretArmatureDisplay = null;
@@ -188,9 +186,26 @@ module conglinshuiguo {
 			egret.Tween.get(this.torchImage2).set({ x:740 }).to({ x:638 }, 300)
 			egret.Tween.get(this.torchImage1).set({ x:-100 }).to({ x:0 }, 300).call(() => {
 				if(!this.torchMov1){
-					
+					this.torchMov1 = uniLib.DisplayUtils.createMovieClicp("clsg_huoMov");
+					this.freeGoldFlyGroup.addChild(this.torchMov1);
+					this.torchMov1.blendMode = egret.BlendMode.ADD;
+					this.torchMov1.x = 40;
+					this.torchMov1.y = 430;
+					this.torchMov1.scaleX = 2;
+					this.torchMov1.scaleY = 2;
 
+					this.torchMov2 = uniLib.DisplayUtils.createMovieClicp("clsg_huoMov");
+					this.freeGoldFlyGroup.addChild(this.torchMov2);
+					this.torchMov2.blendMode = egret.BlendMode.ADD;
+					this.torchMov2.x = 680;
+					this.torchMov2.y = 435;
+					this.torchMov2.scaleX = 2;
+					this.torchMov2.scaleY = 2;
 				}
+				this.torchMov1.visible = true;
+				this.torchMov2.visible = true;
+				this.torchMov1.gotoAndPlay(0,-1);
+				this.torchMov2.gotoAndPlay(0,-1)
 
 			});
 
@@ -260,6 +275,12 @@ module conglinshuiguo {
 			this.playCopperFly(false);
 			egret.Tween.removeTweens(this.lightImage1)
 			egret.Tween.removeTweens(this.lightImage2)
+			if(this.torchMov1){
+                this.torchMov1.stop();
+                this.torchMov2.stop();
+                this.torchMov1.visible = false
+                this.torchMov2.visible = false
+            }
 			
             egret.Tween.get(this.winLeafMov1).set({ x:0 }).to({ x:-200 }, 300)
             egret.Tween.get(this.winLeafMov2).set({ x:0 }).to({ x:-200 }, 300)
@@ -271,7 +292,7 @@ module conglinshuiguo {
             this.winLeafMov3.animation.stop();
             this.winLeafMov4.animation.stop();
             this.winMonkeyMov.animation.play("exit",1)
-            LabaGame.Instance.playFreeMov();
+            // LabaGame.Instance.playFreeMov();
             game.Timer.setTimeout(() => {
 				LabaGame.Instance.freemGroup.removeChild(FreeReultPanel.Instance);
             }, null, 500)

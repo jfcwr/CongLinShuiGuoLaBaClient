@@ -345,7 +345,7 @@ module conglinshuiguo {
             //             .to({ y: 0 }, 250)
             //     })
         }
-        public isHighRotate: boolean = false
+        public isHighRotate: number = null
         public mScrollInfoExt: any = null
         // private mGroupTweenHandler: egret.Tween
         /**
@@ -427,12 +427,16 @@ module conglinshuiguo {
 
 
             let waittime = 1000
+            console.error(this.mScrollInfoList.length,"这里是",this.isHighRotate)
 
             if (this.mScrollInfoList.length == 1 && this.isHighRotate) {
                 for (let icon of this.mIcons) {
                     icon.Blur = false
                 }
-                LabaGame.Instance.SetHighAnim(true)
+                if(!LabaGame.Instance.playJiaSu){
+                    LabaGame.Instance.playJiaSu = true;
+                    LabaGame.Instance.SetHighAnim(true,this.isHighRotate)
+                }
             }
             egret.Tween.get(this.mGroup, { onChange: this.ScrollUpdateChange, onChangeObj: this, loop: true })
                 .to({ y: 0 }, scrollSpeed)
@@ -474,7 +478,15 @@ module conglinshuiguo {
             DataCenter.Instance.SetBeltStatus(true, this.mBeltIndex - 1)
 
             if (this.mScrollInfoList.length == 0 && this.isHighRotate) {
-                LabaGame.Instance.SetHighAnim(false)
+                if(this.isHighRotate == 4){
+
+                    LabaGame.Instance.SetHighAnim(false)
+                    LabaGame.Instance.playJiaSu = true;
+                }
+                else{
+                    LabaGame.Instance.SetHighAnim(true,this.isHighRotate+1)
+                }
+
             }
         }
 
@@ -630,8 +642,16 @@ module conglinshuiguo {
                 }
             this.resetBeltPos()
             DataCenter.Instance.SetBeltStatus(true, this.mBeltIndex - 1)
+            console.error("这里走不走 我不带子")
             if (this.mScrollInfoList.length == 0 && this.isHighRotate) {
-                LabaGame.Instance.SetHighAnim(false)
+                if(this.isHighRotate == 4){
+
+                    LabaGame.Instance.SetHighAnim(false)
+                }
+                else{
+                    LabaGame.Instance.SetHighAnim(true,this.isHighRotate)
+                }
+
             }
             labalib.EventManager.Instance.dispatchEvent(labalib.LabaBaseEvent.BeltRotateEndEx, {
                 "beltIndex": this.mBeltIndex,

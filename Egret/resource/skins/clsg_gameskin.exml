@@ -164,17 +164,13 @@
 						<e:Image id="freeBgImage" source="glow_reel_free" width="710" height="495" y="0" x="0" scale9Grid="40,35,244,210" visible="false"/>
 						<e:Rect id="elemAnimMask" fillAlpha="0.3" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
 						        left="0" right="0" top="0" bottom="0" strokeAlpha="0.5" />
-						<e:Rect name="belt1Mask" fillAlpha="0.4" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
-						        width="142" verticalCenter="0" x="0" height="495" />
-						<e:Rect name="belt2Mask" fillAlpha="0.4" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
-						        width="142" verticalCenter="0" x="142" height="495" />
-						<e:Rect name="belt3Mask" fillAlpha="0.4" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
-						        width="142" verticalCenter="0" x="284" height="495" />
+
+
+
 						<!--<e:Rect name="belt4Mask" fillAlpha="0.65" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
 						            width="132" verticalCenter="0" x="396" height="390" />
 						-->
-						<e:Rect name="belt5Mask" fillAlpha="0.4" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
-						        width="142" verticalCenter="0" x="426" height="495" strokeAlpha="1" />
+
 						<e:Group id="winElemAnimGroup" horizontalCenter="0" verticalCenter="0" width="710" height="495" x="0" y="0"
 						         scaleX="1" scaleY="1" />
 					</e:Group>
@@ -304,7 +300,7 @@
 			</e:Group>
 
 		</e:Group>
-		<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="background_png" bottom="-84" width="720" horizontalCenter="0" height="1280"/>
+		<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="background_png" bottom="-84" width="720" horizontalCenter="0" height="1280" locked="true"/>
 		<e:Group id="mysteriousBoxGroup" width="710" height="495" horizontalCenter="0" touchEnabled="false" top="381"/>
 		<e:Group height="106" touchEnabled="false" touchChildren="false" x="-5" y="259">
 			<e:Group id="worldGroup" width="628" height="77" anchorOffsetY="0" x="45" anchorOffsetX="0" y="29">

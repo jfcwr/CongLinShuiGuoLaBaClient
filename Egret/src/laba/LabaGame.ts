@@ -273,19 +273,21 @@ module conglinshuiguo {
 
             this.initHitScrollonIcon()
 
-            let dragon1 = uniLib.DragonUtils.createDragonBoneAnimation("jiasu")
-            dragon1.animation.play("jiasu_2", 0)
-            this.LabaBeltRootGroup.addChild(dragon1)
-            dragon1.y = 200
+            // let dragon1 = uniLib.DragonUtils.createDragonBoneAnimation("jiasu")
+            // dragon1.animation.play("jiasu_2", 0)
+            // this.LabaBeltRootGroup.addChild(dragon1)
+            // dragon1.y = 200
+            let jiaSu1 = uniLib.DisplayUtils.createMovieClicp("clsg_jiaSuMov");
+            this.freeIconGroup.addChild(jiaSu1);
+            jiaSu1.blendMode = egret.BlendMode.ADD;
+            jiaSu1.play(-1);
+            jiaSu1.scaleX = 1.5;
+            jiaSu1.scaleY = 1.5;
+            jiaSu1.y = 250;
+            this.mHighRotateAnimArr.push(jiaSu1)
             this.LabaBeltRootGroup.addChild(this.LabaBeltRootGroup.getChildByName("belt4Group"))
 
-            let dragon2 = uniLib.DragonUtils.createDragonBoneAnimation("jiasu")
-            dragon2.animation.play("jiasu_1", 0)
-            this.LabaBeltRootGroup.addChild(dragon2)
-
-            dragon2.y = -25
-            this.mHighRotateAnimArr.push(dragon1)
-            this.mHighRotateAnimArr.push(dragon2)
+            // this.mHighRotateAnimArr.push(dragon2)
 
             // this.LabaBeltRootGroup
             // this.InitHighAnim()
@@ -1015,21 +1017,23 @@ module conglinshuiguo {
 
         }
         private mBeltMaskAnimArr = []
+        public playJiaSu:boolean = false;
 
-        public SetHighAnim(visible: boolean) {
-            for (let i = 1; i <= 5; i++) {
-                if (i != 4) {
-                    let mask = this.LabaBeltRootGroup.getChildByName("belt" + i + "Mask")
-                    mask.visible = visible
-                }
-            }
+        public SetHighAnim(visible: boolean,column:number = 0) {
+            console.error(visible,"这里执行几次")
+            // for (let i = 1; i <= 5; i++) {
+            //     if (i != 4) {
+            //         let mask = this.LabaBeltRootGroup.getChildByName("belt" + i + "Mask")
+            //         mask.visible = visible
+            //     }
+            // }
 
             if (visible) {
                 uniLib.SoundMgr.instance.playSound("kuaisu_mp3", 1)
             }
             // let pos = [462, 462, 462, 530, 400, 680, 250]
-            let pos = [462, 462, 530, 400, 680, 250]
-            let index = 0
+            let pos = [345, 495, 635, 400, 680, 250]
+            let index = column==0?0:column-2;
             for (let item of this.mHighRotateAnimArr) {
                 item.visible = visible
                 item.x = pos[index]
@@ -1270,8 +1274,8 @@ module conglinshuiguo {
 
         public destroyHighRotateAnim() {
             for (let anim of this.mHighRotateAnimArr) {
-                anim.animation.stop();
-                anim.dispose();
+                anim.stop();
+                // anim.dispose();
                 if (anim.parent) {
                     anim.parent.removeChild(anim)
                 }
@@ -2472,20 +2476,21 @@ module conglinshuiguo {
         private gameRotateImage:eui.Image;
         // 点击菜单按钮
         protected onMenuListButton() {
-            if(this.btnLightMov){
-                this.btnLightMov.visible = false;
-            }
-            this.gameRotateButton.visible = false;
-            this.gameRotateImage.visible = false;
-            this.menuListGroup.visible = true;
-            egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
-            this.betMenuGruop.visible = false;
+            // if(this.btnLightMov){
+            //     this.btnLightMov.visible = false;
+            // }
+            // this.gameRotateButton.visible = false;
+            // this.gameRotateImage.visible = false;
+            // this.menuListGroup.visible = true;
+            // egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
+            // this.betMenuGruop.visible = false;
             //测试
             // this.mysteryMode();
             // this.freeStickMov();
             // FreeReultPanel.Instance.showFreeEnd(() => {
 
             //     })
+            this.SetHighAnim(true);
             // this.bigWinPanel.enterBigWinAnim(() => {
             //     // this.bigWinPanel.playGoldWinType(100000)
             // })
