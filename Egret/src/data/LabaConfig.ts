@@ -83,7 +83,7 @@ module conglinshuiguo {
         public static HighRotate = [
             { Path: "fast3", KeyRate: 40, Scale: 1.6 }, { Path: "fast2", KeyRate: 30, Scale: 1.6, AddBlend: 1 },
             { Path: "fast4", KeyRate: 20, Scale: 1.25, AddBlend: 1 }, { Path: "fast1", KeyRate: 15, Scale: 1, AddBlend: 1 }];
-        public static Rotate2 = { Path: "rotate2", KeyRate: 20, Scale: 1.2, AddBlend: 1, PlayTime: 1 };
+        public static Rotate2 = { Path: "rotate2", KeyRate: 20, Scale: 1.2, AddBlend: 0, PlayTime: 1 };
         //图标变化
         public static ChangeIcon = { Path: "rotationbutton1", KeyRate: 5, Scale: 1, AddBlend: 1, PlayTime: 1 };
 

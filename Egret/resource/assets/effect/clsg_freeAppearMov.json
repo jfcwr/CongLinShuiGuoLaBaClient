@@ -1,0 +1,129 @@
+{
+  "mc": {
+    "action": {
+      "frameRate": 10,
+      "labels": [
+        {
+          "name": "mc",
+          "frame": 1,
+          "end": 10
+        }
+      ],
+      "events": [],
+      "frames": [
+        {
+          "res": "freespin_vfx_b_00",
+          "x": -270,
+          "y": -213
+        },
+        {
+          "res": "freespin_vfx_b_01",
+          "x": -270,
+          "y": -213
+        },
+        {
+          "res": "freespin_vfx_b_02",
+          "x": -270,
+          "y": -213
+        },
+        {
+          "res": "freespin_vfx_b_03",
+          "x": -270,
+          "y": -213
+        },
+        {
+          "res": "freespin_vfx_b_04",
+          "x": -270,
+          "y": -213
+        },
+        {
+          "res": "freespin_vfx_b_05",
+          "x": -270,
+          "y": -213
+        },
+        {
+          "res": "freespin_vfx_b_06",
+          "x": -270,
+          "y": -213
+        },
+        {
+          "res": "freespin_vfx_b_07",
+          "x": -270,
+          "y": -213
+        },
+        {
+          "res": "freespin_vfx_b_08",
+          "x": -270,
+          "y": -213
+        },
+        {
+          "res": "freespin_vfx_b_09",
+          "x": -228,
+          "y": -213
+        }
+      ]
+    }
+  },
+  "res": {
+    "freespin_vfx_b_00": {
+      "x": 0,
+      "y": 0,
+      "w": 540,
+      "h": 426
+    },
+    "freespin_vfx_b_01": {
+      "x": 0,
+      "y": 427,
+      "w": 540,
+      "h": 426
+    },
+    "freespin_vfx_b_02": {
+      "x": 541,
+      "y": 0,
+      "w": 540,
+      "h": 426
+    },
+    "freespin_vfx_b_03": {
+      "x": 541,
+      "y": 427,
+      "w": 540,
+      "h": 426
+    },
+    "freespin_vfx_b_04": {
+      "x": 1082,
+      "y": 0,
+      "w": 540,
+      "h": 426
+    },
+    "freespin_vfx_b_05": {
+      "x": 1082,
+      "y": 427,
+      "w": 540,
+      "h": 426
+    },
+    "freespin_vfx_b_06": {
+      "x": 0,
+      "y": 854,
+      "w": 540,
+      "h": 426
+    },
+    "freespin_vfx_b_07": {
+      "x": 0,
+      "y": 1281,
+      "w": 540,
+      "h": 426
+    },
+    "freespin_vfx_b_08": {
+      "x": 541,
+      "y": 854,
+      "w": 540,
+      "h": 426
+    },
+    "freespin_vfx_b_09": {
+      "x": 541,
+      "y": 1281,
+      "w": 498,
+      "h": 376
+    }
+  }
+}

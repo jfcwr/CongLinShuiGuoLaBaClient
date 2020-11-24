@@ -1,0 +1,415 @@
+{
+  "mc": {
+    "action": {
+      "frameRate": 10,
+      "labels": [
+        {
+          "name": "mc",
+          "frame": 1,
+          "end": 36
+        }
+      ],
+      "events": [],
+      "frames": [
+        {
+          "res": "win_leaf_particle_00",
+          "x": -3,
+          "y": 0
+        },
+        {
+          "res": "win_leaf_particle_01",
+          "x": -15,
+          "y": -9
+        },
+        {
+          "res": "win_leaf_particle_02",
+          "x": -20,
+          "y": -15
+        },
+        {
+          "res": "win_leaf_particle_03",
+          "x": -26,
+          "y": -19
+        },
+        {
+          "res": "win_leaf_particle_04",
+          "x": -30,
+          "y": -23
+        },
+        {
+          "res": "win_leaf_particle_05",
+          "x": -33,
+          "y": -27
+        },
+        {
+          "res": "win_leaf_particle_06",
+          "x": -37,
+          "y": -30
+        },
+        {
+          "res": "win_leaf_particle_07",
+          "x": -39,
+          "y": -34
+        },
+        {
+          "res": "win_leaf_particle_08",
+          "x": -41,
+          "y": -39
+        },
+        {
+          "res": "win_leaf_particle_09",
+          "x": -43,
+          "y": -43
+        },
+        {
+          "res": "win_leaf_particle_10",
+          "x": -44,
+          "y": -46
+        },
+        {
+          "res": "win_leaf_particle_11",
+          "x": -45,
+          "y": -49
+        },
+        {
+          "res": "win_leaf_particle_12",
+          "x": -47,
+          "y": -52
+        },
+        {
+          "res": "win_leaf_particle_13",
+          "x": -48,
+          "y": -53
+        },
+        {
+          "res": "win_leaf_particle_14",
+          "x": -48,
+          "y": -54
+        },
+        {
+          "res": "win_leaf_particle_15",
+          "x": -48,
+          "y": -56
+        },
+        {
+          "res": "win_leaf_particle_16",
+          "x": -49,
+          "y": -45
+        },
+        {
+          "res": "win_leaf_particle_17",
+          "x": -49,
+          "y": -47
+        },
+        {
+          "res": "win_leaf_particle_18",
+          "x": -49,
+          "y": -48
+        },
+        {
+          "res": "win_leaf_particle_19",
+          "x": -50,
+          "y": -50
+        },
+        {
+          "res": "win_leaf_particle_20",
+          "x": -50,
+          "y": -52
+        },
+        {
+          "res": "win_leaf_particle_21",
+          "x": -51,
+          "y": -53
+        },
+        {
+          "res": "win_leaf_particle_22",
+          "x": -51,
+          "y": -53
+        },
+        {
+          "res": "win_leaf_particle_23",
+          "x": -51,
+          "y": -55
+        },
+        {
+          "res": "win_leaf_particle_24",
+          "x": -51,
+          "y": -55
+        },
+        {
+          "res": "win_leaf_particle_25",
+          "x": -51,
+          "y": -55
+        },
+        {
+          "res": "win_leaf_particle_26",
+          "x": -52,
+          "y": -56
+        },
+        {
+          "res": "win_leaf_particle_27",
+          "x": -52,
+          "y": -56
+        },
+        {
+          "res": "win_leaf_particle_28",
+          "x": -23,
+          "y": -55
+        },
+        {
+          "res": "win_leaf_particle_29",
+          "x": -21,
+          "y": -55
+        },
+        {
+          "res": "win_leaf_particle_30",
+          "x": -20,
+          "y": -54
+        },
+        {
+          "res": "win_leaf_particle_31",
+          "x": 4,
+          "y": -54
+        },
+        {
+          "res": "win_leaf_particle_32",
+          "x": 5,
+          "y": -54
+        },
+        {
+          "res": "win_leaf_particle_33",
+          "x": 5,
+          "y": -53
+        },
+        {
+          "res": "win_leaf_particle_34",
+          "x": 5,
+          "y": -53
+        },
+        {
+          "res": "win_leaf_particle_35",
+          "x": 6,
+          "y": -52
+        }
+      ]
+    }
+  },
+  "res": {
+    "win_leaf_particle_00": {
+      "x": 251,
+      "y": 335,
+      "w": 31,
+      "h": 23
+    },
+    "win_leaf_particle_01": {
+      "x": 87,
+      "y": 473,
+      "w": 43,
+      "h": 33
+    },
+    "win_leaf_particle_02": {
+      "x": 169,
+      "y": 450,
+      "w": 54,
+      "h": 49
+    },
+    "win_leaf_particle_03": {
+      "x": 251,
+      "y": 277,
+      "w": 66,
+      "h": 57
+    },
+    "win_leaf_particle_04": {
+      "x": 244,
+      "y": 362,
+      "w": 74,
+      "h": 65
+    },
+    "win_leaf_particle_05": {
+      "x": 412,
+      "y": 184,
+      "w": 82,
+      "h": 72
+    },
+    "win_leaf_particle_06": {
+      "x": 0,
+      "y": 427,
+      "w": 86,
+      "h": 79
+    },
+    "win_leaf_particle_07": {
+      "x": 0,
+      "y": 259,
+      "w": 91,
+      "h": 87
+    },
+    "win_leaf_particle_08": {
+      "x": 100,
+      "y": 289,
+      "w": 74,
+      "h": 94
+    },
+    "win_leaf_particle_09": {
+      "x": 102,
+      "y": 188,
+      "w": 79,
+      "h": 100
+    },
+    "win_leaf_particle_10": {
+      "x": 403,
+      "y": 84,
+      "w": 83,
+      "h": 99
+    },
+    "win_leaf_particle_11": {
+      "x": 316,
+      "y": 0,
+      "w": 86,
+      "h": 99
+    },
+    "win_leaf_particle_12": {
+      "x": 105,
+      "y": 89,
+      "w": 90,
+      "h": 98
+    },
+    "win_leaf_particle_13": {
+      "x": 182,
+      "y": 188,
+      "w": 92,
+      "h": 84
+    },
+    "win_leaf_particle_14": {
+      "x": 294,
+      "y": 100,
+      "w": 95,
+      "h": 87
+    },
+    "win_leaf_particle_15": {
+      "x": 196,
+      "y": 89,
+      "w": 97,
+      "h": 89
+    },
+    "win_leaf_particle_16": {
+      "x": 0,
+      "y": 347,
+      "w": 99,
+      "h": 79
+    },
+    "win_leaf_particle_17": {
+      "x": 0,
+      "y": 177,
+      "w": 101,
+      "h": 81
+    },
+    "win_leaf_particle_18": {
+      "x": 403,
+      "y": 0,
+      "w": 101,
+      "h": 83
+    },
+    "win_leaf_particle_19": {
+      "x": 212,
+      "y": 0,
+      "w": 103,
+      "h": 85
+    },
+    "win_leaf_particle_20": {
+      "x": 0,
+      "y": 89,
+      "w": 104,
+      "h": 87
+    },
+    "win_leaf_particle_21": {
+      "x": 0,
+      "y": 0,
+      "w": 105,
+      "h": 88
+    },
+    "win_leaf_particle_22": {
+      "x": 106,
+      "y": 0,
+      "w": 105,
+      "h": 88
+    },
+    "win_leaf_particle_23": {
+      "x": 344,
+      "y": 188,
+      "w": 67,
+      "h": 89
+    },
+    "win_leaf_particle_24": {
+      "x": 182,
+      "y": 273,
+      "w": 68,
+      "h": 88
+    },
+    "win_leaf_particle_25": {
+      "x": 175,
+      "y": 362,
+      "w": 68,
+      "h": 87
+    },
+    "win_leaf_particle_26": {
+      "x": 275,
+      "y": 188,
+      "w": 68,
+      "h": 88
+    },
+    "win_leaf_particle_27": {
+      "x": 100,
+      "y": 384,
+      "w": 68,
+      "h": 88
+    },
+    "win_leaf_particle_28": {
+      "x": 319,
+      "y": 278,
+      "w": 38,
+      "h": 87
+    },
+    "win_leaf_particle_29": {
+      "x": 358,
+      "y": 278,
+      "w": 36,
+      "h": 87
+    },
+    "win_leaf_particle_30": {
+      "x": 412,
+      "y": 257,
+      "w": 34,
+      "h": 86
+    },
+    "win_leaf_particle_31": {
+      "x": 390,
+      "y": 100,
+      "w": 10,
+      "h": 73
+    },
+    "win_leaf_particle_32": {
+      "x": 487,
+      "y": 84,
+      "w": 9,
+      "h": 73
+    },
+    "win_leaf_particle_33": {
+      "x": 497,
+      "y": 84,
+      "w": 9,
+      "h": 72
+    },
+    "win_leaf_particle_34": {
+      "x": 497,
+      "y": 157,
+      "w": 8,
+      "h": 71
+    },
+    "win_leaf_particle_35": {
+      "x": 92,
+      "y": 259,
+      "w": 7,
+      "h": 71
+    }
+  }
+}

@@ -2,155 +2,44 @@
 <e:Skin class="clsg_freeResultskin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui"
         xmlns:w="http://ns.egret.com/wing" xmlns:game="game.*" xmlns:tween="egret.tween.*">
 	<w:Declarations>
-		<tween:TweenGroup id="totalGlow">
-			<tween:TweenItem target="{glow1}">
-				<tween:Set>
-					<tween:props>
-						<e:Object scaleX="{0.5}" scaleY="{0.5}" alpha="{0}"/>
-					</tween:props>
-				</tween:Set>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object alpha="{1}" scaleX="{4}" scaleY="{4}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{8}" scaleY="{8}" alpha="{1}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object alpha="{1}" scaleX="{12}" scaleY="{12}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{16}" scaleY="{16}" alpha="{1}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{20}" scaleY="{20}" alpha="{0}"/>
-					</tween:props>
-				</tween:To>
-			</tween:TweenItem>
-			<tween:TweenItem target="{glow2}">
-				<tween:Set>
-					<tween:props>
-						<e:Object scaleX="{0.5}" scaleY="{0.5}" alpha="{0}"/>
-					</tween:props>
-				</tween:Set>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{0.5}" scaleY="{0.5}" alpha="{0}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{4}" scaleY="{4}" alpha="{1}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{8}" scaleY="{8}" alpha="{1}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{12}" scaleY="{12}" alpha="{1}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{16}" scaleY="{16}" alpha="{1}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{20}" scaleY="{20}" alpha="{0}"/>
-					</tween:props>
-				</tween:To>
-			</tween:TweenItem>
-			<tween:TweenItem target="{glow3}">
-				<tween:Set>
-					<tween:props>
-						<e:Object scaleX="{0.5}" scaleY="{0.5}" alpha="{0}"/>
-					</tween:props>
-				</tween:Set>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{0.5}" scaleY="{0.5}" alpha="{0}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{0.5}" scaleY="{0.5}" alpha="{0}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{4}" scaleY="{4}" alpha="{1}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{8}" scaleY="{8}" alpha="{1}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{12}" scaleY="{12}" alpha="{1}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{16}" scaleY="{16}" alpha="{1}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{20}" scaleY="{20}" alpha="{0}"/>
-					</tween:props>
-				</tween:To>
-			</tween:TweenItem>
-		</tween:TweenGroup>
+
 	</w:Declarations>
-	<e:Image id="imgBonus" source="total_bg_png" height="1560" horizontalCenter="0" width="720" bottom="0" />
+	<e:Image id="imgBonus" source="total_bg_png" height="1560" horizontalCenter="0" width="720" bottom="0"  visible="false"/>
+	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.8"/>
 	<e:Group id="totalWin" width="720" height="1280" x="0" y="0">
-		<e:Image id="glow1" scaleX="1" scaleY="1" source="total_glow" blendMode="add" verticalCenter="58" horizontalCenter="0"/>
-		<e:Image id="glow2" scaleX="1" scaleY="1" source="total_glow" blendMode="add" verticalCenter="55" horizontalCenter="0"/>
-		<e:Image id="glow3" scaleX="1" scaleY="1" source="total_glow" blendMode="add" verticalCenter="56" horizontalCenter="0"/>
+
+
+
 	</e:Group>
 	<e:Group id="freeGoldFlyGroup" width="720" height="1280" touchChildren="false" touchEnabled="false" bottom="0"
 	         horizontalCenter="0">
-		<e:Image scaleX="1.2" scaleY="1.2" source="crane_b" y="165.38" x="371.22"  anchorOffsetX="0" width="154.43" anchorOffsetY="0" height="154.8"/>
-		<e:Image scaleX="1.4" scaleY="1.4" source="crane_c" horizontalCenter="-212" verticalCenter="401.5"  anchorOffsetX="0" width="107.01" anchorOffsetY="0" height="116.67"/>
-		<e:Image scaleX="1.4" scaleY="1.4" source="crane_d" horizontalCenter="251" verticalCenter="353.5"  anchorOffsetX="0" width="117.45" anchorOffsetY="0" height="139.09"/>
-		<e:Image scaleX="1" scaleY="1" source="crane_a" x="19.24" y="212.34" />
-		<e:Image scaleX="1.4" scaleY="1.4" source="crane_e" horizontalCenter="149.5" verticalCenter="528.5"  anchorOffsetX="0" width="163.38" anchorOffsetY="0" height="149.05"/>
-		<e:Image scaleX="4.5" scaleY="4" source="total_flare_a" blendMode="add" y="528" horizontalCenter="0"/>
+		<e:Image id="lightImage1" source="solid_c_bw" y="399.88" scaleX="1" scaleY="1" horizontalCenter="0" blendMode="add" alpha="1" anchorOffsetX="54" anchorOffsetY="27.5"/>
+		<e:Image scaleX="6" scaleY="6" source="solid_a_total" x="50" y="450" blendMode="add"/>
+		<e:Image id="torchImage1" scaleX="2" scaleY="2" source="fire_stick_l" verticalCenter="0" x="-100"/>
+		<e:Image id="torchImage2" scaleX="2" scaleY="2" verticalCenter="0" source="fire_stick_r" x="740"/>
+
+
+
+
+
+
 	</e:Group>
 
-	<e:Group width="720" height="502" touchChildren="true" touchEnabled="true" horizontalCenter="0" verticalCenter="0">
+	<e:Group width="720" height="502" touchChildren="true" touchEnabled="true" horizontalCenter="0" verticalCenter="-384">
 		<e:Group id="wildImageGroup" y="0" horizontalCenter="0.5">
-			<e:Image scaleX="1" scaleY="1" horizontalCenter="166.5" verticalCenter="-35" x="-55.00000000000006" y="6"
-			         source="elem80" />
-			<e:Image scaleX="1" scaleY="1" horizontalCenter="166.5" verticalCenter="-35" x="-45.00000000000006" y="16"
-			         source="elem70" />
-			<e:Image scaleX="1" scaleY="1" horizontalCenter="166.5" verticalCenter="-35" x="-35.00000000000006" y="26"
-			         source="elem6" />
-			<e:Image scaleX="1" scaleY="1" horizontalCenter="166.5" verticalCenter="-35" x="-25.000000000000057" y="36"
-			         source="elem5" />
+
+
+
+
 			<e:layout>
 				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="-5" />
 			</e:layout>
 		</e:Group>
 		<e:Group y="152.99" horizontalCenter="0">
 			<e:BitmapLabel id="freecountLabel" text="12" scaleX="1.25" scaleY="1.25" horizontalCenter="-155.5"
-			               verticalCenter="-4" font="number2_fnt" x="-165.00000000000003" y="7" />
+			               verticalCenter="-4" font="number2_fnt" x="-165.00000000000003" y="7"  visible="false"/>
 			<e:Image scaleX="1" scaleY="1" horizontalCenter="166.5" verticalCenter="-35" source="total_win-free_spins"
-			         x="-55.00000000000006" y="6" />
+			         x="-55.00000000000006" y="6"  visible="false"/>
 			<e:layout>
 				<e:HorizontalLayout horizontalAlign="center" verticalAlign="top" />
 			</e:layout>
@@ -158,7 +47,7 @@
 		<e:Image scaleX="1" scaleY="1" y="242.4" source="total_win-total_win" horizontalCenter="0.5" />
 		<e:BitmapLabel id="winLabel" text="59.44" scaleX="0.6" scaleY="0.6" verticalCenter="198" font="number3_fnt"
 		               horizontalCenter="-0.5" />
-		<game:Button id="getMoneyButton" interactive="bright" label="" scaleX="1" scaleY="1" y="663.64" width="343" height="91"
+		<game:Button id="getMoneyButton" interactive="bright" label="" scaleX="1" scaleY="1" y="861.64" width="343" height="91"
 		             anchorOffsetX="171.5" anchorOffsetY="45.5" horizontalCenter="0.5">
 			<game:skinName>
 				<e:Skin states="up,down,disabled">
@@ -168,6 +57,7 @@
 				</e:Skin>
 			</game:skinName>
 		</game:Button>
+		<e:Image id="lightImage2" source="solid_c_bw" y="387" scaleX="1" scaleY="1" horizontalCenter="0" blendMode="add" alpha="0" anchorOffsetX="54" anchorOffsetY="27.5" x="-71.99999999999997"/>
 	</e:Group>
 
 

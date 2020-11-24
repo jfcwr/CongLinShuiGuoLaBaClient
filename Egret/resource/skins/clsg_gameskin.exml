@@ -2,32 +2,7 @@
 <e:Skin class="clsg_gameskin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui"
         xmlns:w="http://ns.egret.com/wing" xmlns:game="game.*" xmlns:tween="egret.tween.*" xmlns:conglinshuiguo="conglinshuiguo.*">
 	<w:Declarations>
-		<tween:TweenGroup id="cloud">
-			<tween:TweenItem target="{lcloud}">
-				<tween:Set>
-					<tween:props>
-						<e:Object alpha="{0}"/>
-					</tween:props>
-				</tween:Set>
-				<tween:To duration="500" ease="quintIn">
-					<tween:props>
-						<e:Object  alpha="{1}" x="{0}"/>
-					</tween:props>
-				</tween:To>
-			</tween:TweenItem>
-			<tween:TweenItem target="{rcloud}">
-				<tween:Set>
-					<tween:props>
-						<e:Object alpha="{0}"/>
-					</tween:props>
-				</tween:Set>
-				<tween:To duration="500" ease="quintIn">
-					<tween:props>
-						<e:Object  alpha="{1}" x="{0}"/>
-					</tween:props>
-				</tween:To>
-			</tween:TweenItem>
-		</tween:TweenGroup>
+
 
 
 
@@ -35,8 +10,8 @@
 	<w:Config id="163714e0f1e" />
 	<e:Image scaleX="1" scaleY="1" touchEnabled="false" left="0" right="0" height="1560"  bottom="0" source="background_a_png"/>
 	<e:Group id="MonkeyMovGroup1" height="0" width="720" horizontalCenter="0" bottom="1280" touchEnabled="false" x="10" y="10"/>
-	<e:Image touchEnabled="false" bottom="984" source="mg_temple" scaleX="1" scaleY="1" horizontalCenter="0"/>
-	<e:Image touchEnabled="false" bottom="1036" horizontalCenter="0" source="logo_on_temple"/>
+	<e:Image id="menImage" touchEnabled="false" bottom="984" source="mg_temple" scaleX="1" scaleY="1" horizontalCenter="0"/>
+	<e:Image id="gameNameImage" touchEnabled="false" bottom="1036" horizontalCenter="0" source="logo_on_temple"/>
 
 	<e:Image scaleX="2" scaleY="2" touchEnabled="false" bottom="1316" source="background_cloud_05" right="0" />
 	<e:Image scaleX="2" scaleY="2" touchEnabled="false" source="background_cloud_04" left="0" bottom="1400" />
@@ -46,11 +21,12 @@
 	<e:Group id="gameRootPanel" height="1280" touchEnabled="false" name="gameRootPanel" width="720" horizontalCenter="0"
 	         bottom="0">
 		<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="clsg_iconBg" y="338" fillMode="repeat" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" locked="true"/>
+		<e:Group id="freeIconGroup" top="381" width="710" height="495" horizontalCenter="0" touchEnabled="false"/>
 
 		<e:Group id="gameGroup" width="710" height="495" scaleX="1" scaleY="1" name="gameGroup" anchorOffsetX="0"
 		         anchorOffsetY="0" horizontalCenter="0" top="381">
 			<e:Image id="rerotateImage" scaleX="1" scaleY="1" touchEnabled="false" width="750" height="480" y="-28.33"
-			         source="feature_reel_glow_a" horizontalCenter="0" blendMode="normal" visible="false" />
+			         source="feature_reel_glow_a" horizontalCenter="0" blendMode="normal"  visible="false"/>
 			<e:Scroller id="labaGameScroller" anchorOffsetX="0" anchorOffsetY="0" scrollPolicyH="off"
 			            scrollPolicyV="off" width="710" height="495" y="0" horizontalCenter="0">
 				<e:Group height="495" x="105" anchorOffsetX="0" width="710">
@@ -185,6 +161,7 @@
 							</e:Group>
 						</e:Group>
 						<e:Group id="winElemAnimNotLineGroup" width="710" height="495" scaleX="1" scaleY="1" x="0" y="0" />
+						<e:Image id="freeBgImage" source="glow_reel_free" width="710" height="495" y="0" x="0" scale9Grid="40,35,244,210" visible="false"/>
 						<e:Rect id="elemAnimMask" fillAlpha="0.3" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
 						        left="0" right="0" top="0" bottom="0" strokeAlpha="0.5" />
 						<e:Rect name="belt1Mask" fillAlpha="0.4" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
@@ -327,7 +304,7 @@
 			</e:Group>
 
 		</e:Group>
-		<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="background_png" bottom="-84" width="720" horizontalCenter="0" height="1280" locked="true"/>
+		<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="background_png" bottom="-84" width="720" horizontalCenter="0" height="1280"/>
 		<e:Group id="mysteriousBoxGroup" width="710" height="495" horizontalCenter="0" touchEnabled="false" top="381"/>
 		<e:Group height="106" touchEnabled="false" touchChildren="false" x="-5" y="259">
 			<e:Group id="worldGroup" width="628" height="77" anchorOffsetY="0" x="45" anchorOffsetX="0" y="29">
@@ -348,8 +325,10 @@
 			</e:Group>
 		</e:Group>
 		<e:Group id="leafGroup" width="720" height="1280" y="0" x="0" touchEnabled="false">
-			<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="infoboard_mask_a" y="198.36000000000004" left="0" x="0"/>
-			<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="infoboard_mask_b" right="0" y="227.70000000000002" x="589"/>
+			<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="infoboard_mask_a" y="198" x="0"/>
+			<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="infoboard_mask_b" y="228" x="589"/>
+			<e:Image id="torchImage1" scaleX="1.5" scaleY="1.5" touchEnabled="false" y="198" x="0" source="fire_stick_l" visible="false"/>
+			<e:Image id="torchImage2" scaleX="1.5" scaleY="1.5" touchEnabled="false" y="198" x="657.67" source="fire_stick_r" visible="false"/>
 		</e:Group>
 		<e:Group id="iconLineGroup" width="710" height="495" touchChildren="false" touchEnabled="false" name="moveLineGroup"
 		         x="5" y="381" />
@@ -359,7 +338,7 @@
 		<e:Group id="downPanel" height="220" anchorOffsetY="0" scaleX="1" scaleY="1" width="720" anchorOffsetX="0"
 		         horizontalCenter="0" bottom="0">
 			<e:Rect x="0" width="720" top="0" bottom="0"  fillColor="0x000000" fillAlpha="0.5"/>
-			<e:Image scaleX="1.2" scaleY="1.2" touchEnabled="false" top="-39" source="spin_base"  horizontalCenter="0"/>
+			<e:Image id="gameRotateImage" scaleX="1.2" scaleY="1.2" touchEnabled="false" top="-39" source="spin_base"  horizontalCenter="0"/>
 			<e:Group id="betMenuGruop" width="720" height="150" anchorOffsetY="0" x="0" scaleX="1" scaleY="1" y="35">
 				<game:Button id="rotationButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="55" x="77.5"
 				             anchorOffsetX="22.5" anchorOffsetY="22.5">
@@ -425,8 +404,8 @@
 				</game:skinName>
 			</game:Button>
 			<e:Group id="menuListGroup" height="180" width="720" visible="false">
-				<e:Rect id="closeRect" x="0" width="720" fillColor="0x1F1B1A" height="1280" bottom="0" fillAlpha="0" />
-				<e:Rect x="0" width="720" fillColor="0x1F1B1A" height="180" />
+				<e:Rect id="closeRect" x="0" width="720" height="1280" bottom="0" fillAlpha="0"  strokeAlpha="0" fillColor="0x000000"/>
+				<e:Rect x="0" width="720" height="180"  fillColor="0x000000" fillAlpha="0.8" visible="false"/>
 				<e:Group width="720" height="108" y="0">
 					<game:Button id="soundSetButton" interactive="bright" label="" scaleX="1" scaleY="1" width="70" height="70"
 					             anchorOffsetY="54" anchorOffsetX="54" x="120" verticalCenter="0">
@@ -488,12 +467,12 @@
 				             verticalCenter="0" />
 				-->
 				<e:Label text="余额" x="47" size="33" textColor="0x605d5c" verticalAlign="middle" verticalCenter="0" />
-				<e:Label id="moneyLabel" text="222" x="122" size="33" verticalAlign="middle" verticalCenter="0" textColor="0xcfcece" />
+				<e:Label id="moneyLabel" text="222" x="122" size="24" verticalAlign="middle" verticalCenter="0" textColor="0xcfcece" />
 				<e:Group right="20" verticalCenter="0">
 				<e:Label text="赢奖" x="585" size="33" textColor="0x605D5C" verticalAlign="middle" anchorOffsetX="50"
 				         verticalCenter="0" />
-				<e:Label id="raceObtainGoldLabel" text="12000" size="33" verticalAlign="middle" verticalCenter="0"
-				         textColor="0xcfcece"  right="0"/>
+				<e:Label id="raceObtainGoldLabel" text="1200" size="24" verticalAlign="middle" verticalCenter="0.5"
+				         textColor="0xcfcece"  right="1"/>
 					<e:layout>
 						<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle" gap="15"/>
 					</e:layout>
@@ -626,8 +605,11 @@
 <e:HorizontalLayout gap="15" />
 </e:layout>
 </e:Group>
-<e:Group top="0" bottom="0" horizontalCenter="0" touchEnabled="false" touchChildren="false" scrollEnabled="true" width="720" visible="false">
-<e:Image id="lcloud" source="bonus_cloud_a_png" top="0" bottom="0" x="0" width="950"  alpha="0" touchEnabled="false"/>
-<e:Image id="rcloud" top="0" bottom="0" source="bonus_cloud_b_png" width="800"  alpha="0" touchEnabled="false" x="-80"/>
-</e:Group>
+	<e:Group id="freemGroup" width="720" height="1280" touchEnabled="false" horizontalCenter="0" verticalCenter="0">
+	</e:Group>
+	<e:Group width="720" height="1280" y="0" horizontalCenter="0" touchEnabled="false">
+		<e:Image id="maskImage1" source="background_b_png" touchEnabled="false" scaleX="1" scaleY="1" top="-3" bottom="3" left="720" x="720.0000000000001" y="-3"/>
+		<e:Image id="maskImage2" source="background_b_png" touchEnabled="false" scaleX="1" scaleY="1" top="0" bottom="0" anchorOffsetX="1" left="-1453" x="-1453" y="0"/>
+	</e:Group>
+
 </e:Skin>

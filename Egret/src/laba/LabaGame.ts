@@ -163,12 +163,12 @@ module conglinshuiguo {
 
         private centerAnimArr: Array<labalib.Utils.KeyFrameObject> = [];
 
-        private cloud: egret.tween.TweenGroup;
+        // private cloud: egret.tween.TweenGroup;
 
         private bg1: eui.Image
         private bg2: eui.Image
-        private lcloud: eui.Image
-        private rcloud: eui.Image
+        // private lcloud: eui.Image
+        // private rcloud: eui.Image
         private centerFreeGroup: eui.Group
         private TipsImage: eui.Image
         public betNumLabel: eui.Label
@@ -179,6 +179,11 @@ module conglinshuiguo {
         private animGroup: eui.Group
 
         public mysteriousData: any = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
+        private maskImage1:eui.Image;
+        private maskImage2:eui.Image;
+        public freemGroup:eui.Group;
+
+
         //----------
         public static get Instance() {
             if (this.m_Instance == null)
@@ -447,7 +452,10 @@ module conglinshuiguo {
             this.adaptationHeight();
             this.adaptationWidth();
 
+            // this.maskImage1.x = uniLib.Global.screenWidth/2+360;
 
+            // this.maskImage2.x = 0;
+            // this.maskImage2.width = (uniLib.Global.screenWidth-720)/2;
 
         }
 
@@ -532,6 +540,320 @@ module conglinshuiguo {
             // label.text = "22222"
             this.hideAllLineTips()
             this.iconLineGroup.name = "iconLineGroup"
+        }
+
+        private MonkeyFreeMov1: dragonBones.EgretArmatureDisplay = null;
+        private lightFreeMov: dragonBones.EgretArmatureDisplay = null;
+        private menImage:eui.Image;
+        private gameNameImage:eui.Image;
+        private freeBgImage:eui.Image;
+        private torchImage1:eui.Image;
+        private torchImage2:eui.Image;
+        private torchMov1:egret.MovieClip = null;
+        private torchMov2:egret.MovieClip = null;
+
+
+        /**
+         * 初始替换免费动画
+         */
+        public playFreeMov() {
+            this.MonkeyMov1.visible = false;
+            this.MonkeyMov2.visible = false;
+            this.MonkeyMov3.visible = false;
+            this.helloMonkeyMov.visible = false;
+            this.gameNameImage.visible = false;
+            this.freeBgImage.visible = true;
+            this.freeBgImage.blendMode = egret.BlendMode.ADD
+            this.menImage.source = "bg_temple";
+            this.playMonkeyFreeMov();
+
+            this.torchImage1.visible = true;
+            this.torchImage2.visible = true;
+            this.leafMov1.visible = false;
+            this.leafMov2.visible = false;
+
+            if (!this.torchMov1) {
+                this.torchMov1 = uniLib.DisplayUtils.createMovieClicp("clsg_huoMov");
+                this.leafGroup.addChild(this.torchMov1);
+                this.torchMov1.blendMode = egret.BlendMode.ADD;
+                this.torchMov1.x = 40;
+                this.torchMov1.y = 135;
+                this.torchMov1.scaleX = 1.5;
+                this.torchMov1.scaleY = 1.5;
+
+                this.torchMov2 = uniLib.DisplayUtils.createMovieClicp("clsg_huoMov");
+                this.leafGroup.addChild(this.torchMov2);
+                this.torchMov2.blendMode = egret.BlendMode.ADD;
+                this.torchMov2.x = 680;
+                this.torchMov2.y = 135;
+                this.torchMov2.scaleX = 1.5;
+                this.torchMov2.scaleY = 1.5;
+            }
+            if (!this.lightFreeMov) {
+                this.lightFreeMov = uniLib.DragonUtils.createDragonBoneAnimation("bg_guang")
+                this.lightFreeMov.x = 360;
+                this.lightFreeMov.y = 720;
+                this.MonkeyMovGroup.addChild(this.lightFreeMov);
+            }
+            this.lightFreeMov.animation.play(null,0)
+            this.torchMov1.visible = true;
+            this.torchMov2.visible = true;
+            this.torchMov1.gotoAndPlay(0,-1);
+            this.torchMov2.gotoAndPlay(0,-1)
+
+        }
+        /**
+         * 停止免费动画
+         */
+        public stopFreeMov() {
+            // conglinshuiguo.LabaGame.Instance.stopFreeMov()
+            this.MonkeyMov1.visible = true;
+            this.MonkeyMov2.visible = true;
+            this.MonkeyMov3.visible = true;
+            this.helloMonkeyMov.visible = true;
+            this.gameNameImage.visible = true;
+            this.freeBgImage.visible = false;
+            this.freeBgImage.blendMode = null;
+            this.menImage.source = "mg_temple";
+            this.leafMov1.visible = true;
+            this.leafMov2.visible = true;
+            if (this.MonkeyFreeMov1){
+                egret.Tween.removeTweens(this.MonkeyFreeMov1)
+                this.MonkeyFreeMov1.animation.stop();
+                if(this.MonkeyFreeMov1.parent){
+                    this.MonkeyFreeMov1.parent.removeChild(this.MonkeyFreeMov1)
+                }
+                this.MonkeyFreeMov1.dispose();
+                this.MonkeyFreeMov1 = null;
+            }
+            if (this.lightFreeMov){
+                this.lightFreeMov.animation.stop();
+                if(this.lightFreeMov.parent){
+                    this.lightFreeMov.parent.removeChild(this.lightFreeMov)
+                }
+                this.lightFreeMov.dispose();
+                this.lightFreeMov = null;
+            }
+            if(this.torchMov1){
+                this.torchMov1.stop();
+                this.torchMov2.stop();
+                this.torchMov1.visible = false
+                this.torchMov2.visible = false
+            }
+
+            this.torchImage1.visible = false;
+            this.torchImage2.visible = false;
+
+            for(let item of this.stickMovBg){
+                if(item.parent){
+                    item.parent.removeChild(item)
+                }
+                item = null;
+            }
+            this.stickMovBg = [];
+            for(let item of this.bombShuYe){
+                item.stop();
+                if(item.parent){
+                    item.parent.removeChild(item)
+                }
+                item = null;
+            }
+            this.bombShuYe = [];
+            if (this.stickMov){
+                this.stickMov.stop();
+                if(this.stickMov.parent){
+                    this.stickMov.parent.removeChild(this.stickMov)
+                }
+                this.stickMov = null;
+            }
+
+        }
+        /**
+         * 替换上方三只猴子
+         */
+        public playMonkeyFreeMov(direction:boolean = true) {
+            if (this.MonkeyFreeMov1){
+                egret.Tween.removeTweens(this.MonkeyFreeMov1)
+                this.MonkeyFreeMov1.animation.stop();
+                if(this.MonkeyFreeMov1.parent){
+                    this.MonkeyFreeMov1.parent.removeChild(this.MonkeyFreeMov1)
+                }
+                this.MonkeyFreeMov1.dispose();
+                this.MonkeyFreeMov1 = null;
+            }
+            let stringMov = ["bg_lemur_A","bg_lemur_B","bg_lemur_C"]
+            let action = stringMov[MathUtil.random(0,2)];
+            this.MonkeyFreeMov1 = uniLib.DragonUtils.createDragonBoneAnimation(action)
+            this.MonkeyFreeMov1.y = 310;
+            this.MonkeyFreeMov1.scaleX = 1.5;
+            this.MonkeyFreeMov1.scaleY = 1.5;
+            this.MonkeyMovGroup.addChild(this.MonkeyFreeMov1);
+            this.MonkeyFreeMov1.animation.play(null,0)
+            let playX = direction?-100:820;
+            let endX = direction?820:-100;
+            egret.Tween.get(this.MonkeyFreeMov1).set({ x: playX }).to({ x:endX }, 4000).call(() => {
+                this.playMonkeyFreeMov(!direction)
+            })
+        }
+        private stickMov:egret.MovieClip = null;
+        private freeIconGroup:eui.Group;
+        private stickMovBg:eui.Image[] = [];
+        private freeIconBg:any = [];
+        
+
+        /**
+         * 粘图案动画
+         */
+        public freeStickMov() {
+            if(this.stickMovBg.length>0){
+                return;
+            }
+            // if (!this.stickMov) {
+            this.freeIconBg = [[0,0,0],[0,0,0],[0,1,0],[0,0,0],[0,0,0]]
+            let stickMov = uniLib.DisplayUtils.createMovieClicp("clsg_freeAppearMov");
+            this.mysteriousBoxGroup.addChild(stickMov);
+            stickMov.blendMode = egret.BlendMode.ADD;
+            stickMov.x = 355;
+            stickMov.y = 250;
+            stickMov.scaleX = 1.5;
+            stickMov.scaleY = 1.5;
+            stickMov.frameRate = 20;
+                // stickMov.y = 135;
+            // }
+            this.stickMovBg = [];
+            let lvYeMov;
+            // let stickMovBg;
+            let stickBg;
+            stickMov.play(1);
+
+            let icon1 = this.elemPos[1][2];
+            let stickMovBg1 = new eui.Image("glow_c_mystery");
+            stickMovBg1.x = icon1.x;
+            stickMovBg1.y = icon1.y;
+            stickMovBg1.scaleX = 0;
+            stickMovBg1.scaleY = 0;
+            stickMovBg1.anchorOffsetX = 88/2;
+            stickMovBg1.anchorOffsetY = 88/2;
+            this.mysteriousBoxGroup.addChild(stickMovBg1);
+
+            let stickMovBg2 = new eui.Image("solid_c");
+            stickMovBg2.blendMode = egret.BlendMode.ADD;
+            stickMovBg2.x = icon1.x;
+            stickMovBg2.y = icon1.y;
+            stickMovBg2.scaleX = 0;
+            stickMovBg2.scaleY = 0;
+            stickMovBg2.anchorOffsetX = 114/2;
+            stickMovBg2.anchorOffsetY = 117/2;
+            this.mysteriousBoxGroup.addChild(stickMovBg2);
+
+            egret.Tween.get(stickMovBg1).to({ scaleX:3,scaleY:3 }, 300);
+            egret.Tween.get(stickMovBg2).to({ scaleX:3,scaleY:3 }, 300).call(() => {
+                lvYeMov = uniLib.DisplayUtils.createMovieClicp("dot_particle");
+                this.mysteriousBoxGroup.addChild(lvYeMov);
+                lvYeMov.x = icon1.x;
+                lvYeMov.y = icon1.y;
+                lvYeMov.scaleX = 1.5;
+                lvYeMov.scaleY = 1.5;
+                lvYeMov.frameRate = 20;
+                lvYeMov.play(1);
+                this.stickMov = uniLib.DisplayUtils.createMovieClicp("freespin_vfx_a");
+                this.mysteriousBoxGroup.addChild(this.stickMov);
+                // this.stickMov.blendMode = egret.BlendMode.ADD;
+                this.stickMov.x = icon1.x;
+                this.stickMov.y = icon1.y;
+                this.stickMov.scaleX = 0;
+                this.stickMov.scaleY = 0;
+                this.stickMov.play(-1);
+
+                stickBg = new eui.Image("free_frame_a");
+                stickBg.anchorOffsetX = 185/2;
+                stickBg.anchorOffsetY = 211/2;
+                this.stickMovBg.push(stickBg);
+                this.mysteriousBoxGroup.addChild(stickBg);
+                stickBg.x = icon1.x;
+                stickBg.y = icon1.y;
+                stickBg.scaleX = 0;
+                stickBg.scaleY = 0;
+                egret.Tween.get(this.stickMov).to({ scaleX:2,scaleY:2 }, 100);
+                egret.Tween.get(stickBg).to({ scaleX:1,scaleY:1 }, 100).call(() => {
+                    stickMovBg1.parent.removeChild(stickMovBg1);
+                    stickMovBg2.parent.removeChild(stickMovBg2);
+                    stickMov.stop();
+                    stickMov.parent.removeChild(stickMov)
+                });
+            });
+            game.Timer.setTimeout(() => {
+                lvYeMov.stop();
+                lvYeMov.parent.removeChild(lvYeMov);
+                this.freeIconGroup.addChild(this.stickMov)
+                this.freeIconGroup.addChild(stickBg)
+            }, null, 1000);
+        }
+        private bombShuYe:egret.MovieClip[] = [];
+        /**
+         * 开始粘连
+         */
+        public itStartsToStick() {
+            // this.stickMovBg
+            // conglinshuiguo.LabaGame.Instance.itStartsToStick();
+
+            let icon1 = this.elemPos[1][2];
+            let stickBg = new eui.Image("frame_glow_free");
+            stickBg.anchorOffsetX = 56/2;
+            stickBg.anchorOffsetY = 65/2;
+            stickBg.blendMode = egret.BlendMode.ADD;
+            this.mysteriousBoxGroup.addChild(stickBg);
+            stickBg.x = icon1.x;
+            stickBg.y = icon1.y;
+            stickBg.scaleX = 3.5;
+            stickBg.scaleY = 3.5;
+            let icon = this.mLabaMachine.getBelt(2).GetElementByIndex(2);
+            let ElemType = icon.ElemType;
+            egret.Tween.get(icon).set({ scaleX:0.95,scaleY:0.95}).to({ scaleX:1.2,scaleY:1.2 }, 100).wait(50)
+            .to({ scaleX:0.95,scaleY:0.95 }, 100)
+            egret.Tween.get(stickBg).to({ scaleX:5,scaleY:5,alpha:0 }, 100).wait(150).call(() => {
+                stickBg.parent.removeChild(stickBg);
+                if(this.stickMovBg.length>1){
+                    for(let item = 1; item<this.stickMovBg.length;++item){
+                        egret.Tween.get(this.stickMovBg[item]).set({ scaleX:1,scaleY:1}).to({ scaleX:0.8,scaleY:0.8 }, 100).wait(50).call(() => {
+                            let stickMov = this.bombShuYe[item-1];
+                            stickMov.gotoAndPlay(0,1);
+                        })
+                        .to({ scaleX:1,scaleY:1 }, 100)
+                    }
+                }
+                for(let i = 0;i<5;++i){
+                    for(let j = 0;j<3;++j){
+                        let icon1 = this.mLabaMachine.getBelt(i).GetElementByIndex(3-j);
+                        if(this.freeIconBg[i][j]==0&&icon1.ElemType == ElemType){
+                            let elemPos = this.elemPos[2-j][i];
+                            this.freeIconBg[i][j] = 1;
+                            let stickBg1 = new eui.Image("free_frame_b");
+                            stickBg1.anchorOffsetX = 185/2;
+                            stickBg1.anchorOffsetY = 211/2;
+                            this.freeIconGroup.addChild(stickBg1);
+                            stickBg1.x = elemPos.x;
+                            stickBg1.y = elemPos.y;
+                            stickBg1.scaleX = 1;
+                            stickBg1.scaleY = 1;
+                            egret.Tween.get(stickBg1).set({ scaleX:1,scaleY:1}).to({ scaleX:0.8,scaleY:0.8 }, 100).wait(50).call(() => {
+                                let stickMov = uniLib.DisplayUtils.createMovieClicp("dot_particle");
+                                this.mysteriousBoxGroup.addChild(stickMov);
+                                // stickMov.blendMode = egret.BlendMode.ADD;
+                                stickMov.x = elemPos.x;
+                                stickMov.y = elemPos.y;
+                                stickMov.frameRate = 20;
+                                stickMov.scaleX = 2;
+                                stickMov.scaleY = 2;
+                                stickMov.play(1);
+                                this.bombShuYe.push(stickMov);
+                                })
+                            .to({ scaleX:1,scaleY:1 }, 100)
+                            this.stickMovBg.push(stickBg1);
+                        }
+                    }
+                }
+            });
         }
         public hideAllLineTips() {
             for (let item of this.mLineTipsInfoArr) {
@@ -1513,6 +1835,7 @@ module conglinshuiguo {
                     clearGoldlabelFunc();
                 }
                 else if (DataCenter.Instance.isFirstFreeGame()) {
+                    this.freeStickMov();
                     SoundHand.Instance.PlaySoundOnce(ShzSound.FreeStartSound);
                     clearGoldlabelFunc();
                 }
@@ -1569,51 +1892,9 @@ module conglinshuiguo {
         }
 
         public changeScrollIcon(cb: Function = null) {
-            let changePos = this.getFreeGameChangePos()
-            if (changePos.length == 0) {
                 if (cb) {
                     cb()
                 }
-                return
-            }
-            let particlePath = "js_hitPoint";
-            let startPosGlobal = FreeGameIngPanel.Instance.getAnimGroupGlobalPos()
-            let startPosStart = this.artLineRootGroup.globalToLocal(startPosGlobal.x, startPosGlobal.y)
-            let partRes = labalib.Utils.PlayParticle(this.artLineRootGroup, particlePath, { x: 0, y: 0 });
-            partRes.particleObj.emitterX = startPosStart.x;
-            partRes.particleObj.emitterY = startPosStart.y
-            partRes.particleObj.blendMode = "add"
-            egret.Tween.removeTweens(partRes.particleObj);
-            let partTw = egret.Tween.get(partRes.particleObj);
-            console.error("start select wild startmove changePos:", changePos)
-            let lastTw = 0
-            for (let pos of changePos) {
-                let scrollIcon = this.mLabaMachine.getBelt(pos.col).GetElementByIndex(pos.row + 1)
-                let targetGlobalPos = scrollIcon.localToGlobal(scrollIcon.width / 2, scrollIcon.height / 2)
-                let targetPos = this.artLineRootGroup.globalToLocal(targetGlobalPos.x, targetGlobalPos.y)
-
-                partTw.to({ emitterX: targetPos.x, emitterY: targetPos.y }, 200)
-                    .call(() => {
-                        uniLib.SoundMgr.instance.playSound("freestar_mp3", 1)
-                        let icon = this.mAwardScrollIcon[pos.row][pos.col]
-                        this.winElemAnimNotLineGroup.addChild(icon)
-                        icon.PlayChangeAnimation(scrollIcon.ElemType)
-                    }).wait(200)
-                if (lastTw == changePos.length - 1) {
-                    partTw.call(() => {
-                        partRes.stopCB()
-                    })
-                }
-                lastTw++
-            }
-
-            partTw.wait(2000).call(() => {
-                // partRes.stopCB();
-                console.error("start select wild endmove-------", cb)
-                if (cb) {
-                    cb()
-                }
-            })
         }
         public changeScrollIcon2(cb: Function = null) {
             let wildMap = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4]
@@ -1737,120 +2018,49 @@ module conglinshuiguo {
         private mFlyWildIconList = []
 
 
-        public FlyWildIconAnim(flypos = [], cb = null): egret.Tween {
-            let localPos = FreeGameIngPanel.Instance.getWildFlyPos()
-            let retTween = null
-            let endpos = this.globalToLocal(localPos.x, localPos.y)
-            if (flypos.length > 0)
-                uniLib.SoundMgr.instance.playSound("wild_mp3", 1);
-            for (let pos of flypos) {
-                let lpos = this.globalToLocal(pos.x, pos.y)
-                let obj = new FlyWildIcon()
-                this.addChild(obj)
+        // public FlyWildIconAnim(flypos = [], cb = null): egret.Tween {
+        //     let localPos = FreeGameIngPanel.Instance.getWildFlyPos()
+        //     let retTween = null
+        //     let endpos = this.globalToLocal(localPos.x, localPos.y)
+        //     if (flypos.length > 0)
+        //         uniLib.SoundMgr.instance.playSound("wild_mp3", 1);
+        //     for (let pos of flypos) {
+        //         let lpos = this.globalToLocal(pos.x, pos.y)
+        //         let obj = new FlyWildIcon()
+        //         this.addChild(obj)
 
-                let bazierFlyObj = new Utils.BezierObject(obj)
-                let alpha = Math.randomInteger(0, 1) == 0 ? 1 : -1
-                bazierFlyObj.setTwoStepParam(lpos, endpos, { x: (lpos.x + endpos.x) / 2 + Math.randomInteger(70, 100) * alpha, y: (lpos.y + endpos.y) / 2 })
+        //         let bazierFlyObj = new Utils.BezierObject(obj)
+        //         let alpha = Math.randomInteger(0, 1) == 0 ? 1 : -1
+        //         bazierFlyObj.setTwoStepParam(lpos, endpos, { x: (lpos.x + endpos.x) / 2 + Math.randomInteger(70, 100) * alpha, y: (lpos.y + endpos.y) / 2 })
 
-                obj.x = lpos.x
-                obj.y = lpos.y
-                // obj.visible = false
-                retTween = egret.Tween.get(bazierFlyObj)
-                retTween.set({ visible: true, factor: 0 }).to({ scaleX: 2, scaleY: 2 }, 200)
-                    .to({ factor: 1, scaleX: 1.8, scaleY: 1.8 }, 800, egret.Ease.circIn)
-                    .call(() => {
-                        if (obj.parent) {
-                            obj.parent.removeChild(obj)
-                        }
-                    })
+        //         obj.x = lpos.x
+        //         obj.y = lpos.y
+        //         // obj.visible = false
+        //         retTween = egret.Tween.get(bazierFlyObj)
+        //         retTween.set({ visible: true, factor: 0 }).to({ scaleX: 2, scaleY: 2 }, 200)
+        //             .to({ factor: 1, scaleX: 1.8, scaleY: 1.8 }, 800, egret.Ease.circIn)
+        //             .call(() => {
+        //                 if (obj.parent) {
+        //                     obj.parent.removeChild(obj)
+        //                 }
+        //             })
 
-            }
-            if (retTween == null) {
-                if (cb) cb()
-                return retTween
-            }
-            retTween.wait(500).call(() => {
-                if (cb) cb()
-            })
-            return retTween
-        }
+        //     }
+        //     if (retTween == null) {
+        //         if (cb) cb()
+        //         return retTween
+        //     }
+        //     retTween.wait(500).call(() => {
+        //         if (cb) cb()
+        //     })
+        //     return retTween
+        // }
         public selectWildElem(cb = null) {
-            // playGetWildAnim  的第二个参数时间特指开始变化图标的总时间花费
-            let globalPosArr = []
-            let localPosArr = []
-            for (let col = 0; col < 5; col++) {
-                for (let row = 0; row < 3; row++) {
-                    let scrollIcon = this.mLabaMachine.getBelt(col).GetElementByIndex(row + 1)
-                    if (scrollIcon.ElemType == CLSG_ElemAllType.Wild) {
-                        let pos = scrollIcon.localToGlobal(scrollIcon.width / 2, scrollIcon.height / 2)
-                        globalPosArr.push(pos)
-                    }
-                }
-            }
-            let totalWildCount = FreeGameIngPanel.Instance.ProgressValue
-            console.error("start select wild special ", JSON.stringify(globalPosArr), totalWildCount)
-            if (globalPosArr.length == 0 || totalWildCount >= 12) {
-                if (totalWildCount >= 3)
-                    FreeGameIngPanel.Instance.playGetWildAnim(FreeInCharacterDragonType.SCALE, 3000, () => {
-                        console.error("start select wild special222222222222")
-                        this.changeScrollIcon(cb)
-                    })
-                else
-                    this.changeScrollIcon(cb)
-                return
-            }
-
-
-            let FirstflyPosArr = []
-            let NextflyPosArr = []
-            let isNextArr = false
-            for (let pos of globalPosArr) {
-                if (!isNextArr)
-                    FirstflyPosArr.push(pos)
-                else
-                    NextflyPosArr.push(pos)
-                FreeGameIngPanel.Instance.ProgressValue = FreeGameIngPanel.Instance.ProgressValue + 1
-
-                if (FreeGameIngPanel.Instance.ProgressValue % 3 == 0) {
-                    isNextArr = true
-                }
-            }
-            console.error("start select wild ", JSON.stringify(FirstflyPosArr), " nextarr:", JSON.stringify(NextflyPosArr))
-            if (isNextArr) {
-                this.FlyWildIconAnim(FirstflyPosArr, () => {
-                    FreeGameIngPanel.Instance.Progress = 3
-                    FreeGameIngPanel.Instance.playGetWildAnim(FreeInCharacterDragonType.CHANGE_ROTATE, 500, () => {
-                        FreeGameIngPanel.Instance.Progress = 0
-                        if (NextflyPosArr.length != 0 && FreeGameIngPanel.Instance.ProgressValue >= 12) {
-                            FreeGameIngPanel.Instance.playGetWildAnim(FreeInCharacterDragonType.SCALE, 3000, () => {
-                                this.changeScrollIcon(cb)
-                            })
-                            return
-                        }
-                        if (NextflyPosArr.length != 0)
-                            this.FlyWildIconAnim(NextflyPosArr, () => {
-                                FreeGameIngPanel.Instance.Progress = FreeGameIngPanel.Instance.Progress
-                                FreeGameIngPanel.Instance.playGetWildAnim(FreeInCharacterDragonType.WIN, 3000, () => {
-                                    this.changeScrollIcon(cb)
-                                })
-                            })
-                        else
-                            FreeGameIngPanel.Instance.playGetWildAnim(FreeInCharacterDragonType.SCALE, 3000, () => {
-                                this.changeScrollIcon(cb)
-                            })
-                    })
-                })
-            }
-            else {
-                this.FlyWildIconAnim(FirstflyPosArr, () => {
-                    FreeGameIngPanel.Instance.Progress = FreeGameIngPanel.Instance.Progress
-                    FreeGameIngPanel.Instance.playGetWildAnim(FreeInCharacterDragonType.WIN, 3000, () => {
-                        this.changeScrollIcon(cb)
-                    })
-                })
-            }
-
-
+            this.itStartsToStick();
+            game.Timer.setTimeout(() => {
+                this.changeScrollIcon(cb)
+            }, null, 1500)
+            return
         }
 
 
@@ -1866,6 +2076,8 @@ module conglinshuiguo {
                     this.mIsFreeGameIng = true;
                 }
                 else if (DataCenter.Instance.IsFreeGameEnd()) {
+                    console.error("这里是结束")
+                    // this.stopFreeMov();
                     this.doFreeEnd()
                     this.doRefreshGoldDisplay()
                 }
@@ -1941,6 +2153,7 @@ module conglinshuiguo {
             console.error("zzzzzzzzzzz  doFreeEnd     z")
             game.Timer.clearTimeout(this.doFreeEndDelayTimer)
             this.doFreeEndDelayTimer = game.Timer.setTimeout(() => {
+                this.stopFreeMov();
                 FreeReultPanel.Instance.showFreeEnd(() => {
                     SoundHand.Instance.endLabaBg()
                     SoundHand.Instance.switchMusicBG()
@@ -1988,29 +2201,30 @@ module conglinshuiguo {
 
 
         }
-        public nextDoTimer: number = 0
         public doFreeTrigger() {
-            game.Timer.clearTimeout(this.nextDoTimer)
-            this.nextDoTimer = game.Timer.setTimeout(() => {
+            // this.nextDoTimer = game.Timer.setTimeout(() => {
                 SoundHand.Instance.endLabaBg()
                 SoundHand.Instance.switchMusicBG(false)
                 FreeGameIngPanel.Instance.LeftFreeCount = 8
-                labalib.Utils.PlayTweenGroup(this.cloud, 1, () => {
+                // labalib.Utils.PlayTweenGroup(this.cloud, 1, () => {
 
-                    this.lcloud.alpha = 0
-                    this.rcloud.alpha = 0
-                    FreeGameStart.Instance.Show(() => {
-                        this.mGameButtonStatus = GameRotateStatus.RotatePause
-                        this.gameRotateButton.enabled = true
-                        this.doNormal()
-                    })
-                    this.switchBG(GameBG.free)
+                    // this.lcloud.alpha = 0
+                    // this.rcloud.alpha = 0
+            //     this.bigWinPanel.enterBigWinAnim(() => {
+            //     // this.bigWinPanel.playGoldWinType(100000)
+            // })
+                FreeGameStart.Instance.Show(() => {
+                    this.mGameButtonStatus = GameRotateStatus.RotatePause
+                    this.gameRotateButton.enabled = true
+                    this.doNormal()
                 })
+                this.switchBG(GameBG.free)
+                // })
 
                 // this.lcloud.visible = true
                 // this.rcloud.visible = true
 
-            }, null, 2000)
+            // }, null, 2000)
 
 
         }
@@ -2254,27 +2468,35 @@ module conglinshuiguo {
             }
         }
 
+
+        private gameRotateImage:eui.Image;
         // 点击菜单按钮
         protected onMenuListButton() {
-            // if(this.btnLightMov){
-            //     this.btnLightMov.visible = false;
-            //     this.gameRotateButton.touchEnabled = false;
-            // }
-            // this.menuListGroup.visible = true;
-            // egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
-            // this.betMenuGruop.visible = false;
+            if(this.btnLightMov){
+                this.btnLightMov.visible = false;
+            }
+            this.gameRotateButton.visible = false;
+            this.gameRotateImage.visible = false;
+            this.menuListGroup.visible = true;
+            egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
+            this.betMenuGruop.visible = false;
             //测试
-            this.mysteryMode();
+            // this.mysteryMode();
+            // this.freeStickMov();
+            // FreeReultPanel.Instance.showFreeEnd(() => {
+
+            //     })
             // this.bigWinPanel.enterBigWinAnim(() => {
-            //     this.bigWinPanel.playGoldWinType(100000)
+            //     // this.bigWinPanel.playGoldWinType(100000)
             // })
         }
         // 点击关闭菜单按钮
         protected onCloseMenuButton() {
             if(this.btnLightMov){
                 this.btnLightMov.visible = true;
-                this.gameRotateButton.touchEnabled = true;
             }
+            this.gameRotateButton.visible = true;
+            this.gameRotateImage.visible = true;
             this.betMenuGruop.visible = true;
             egret.Tween.get(this.betMenuGruop).set({ y: 185 }).to({ y: 35 }, 200)
             this.menuListGroup.visible = false;
@@ -2327,6 +2549,23 @@ module conglinshuiguo {
                 }
                 this.helloMonkeyMov.dispose();
                 this.helloMonkeyMov = null;
+            }
+            if (this.MonkeyFreeMov1){
+                egret.Tween.removeTweens(this.MonkeyFreeMov1)
+                this.MonkeyFreeMov1.animation.stop();
+                if(this.MonkeyFreeMov1.parent){
+                    this.MonkeyFreeMov1.parent.removeChild(this.MonkeyFreeMov1)
+                }
+                this.MonkeyFreeMov1.dispose();
+                this.MonkeyFreeMov1 = null;
+            }
+            if (this.lightFreeMov){
+                this.lightFreeMov.animation.stop();
+                if(this.lightFreeMov.parent){
+                    this.lightFreeMov.parent.removeChild(this.lightFreeMov)
+                }
+                this.lightFreeMov.dispose();
+                this.lightFreeMov = null;
             }
             if (this.stepOnThehelloMonkeyMov) {
                 this.helloMonkeyMov.armature.removeEventListener(dragonBones.EventObject.COMPLETE, this.playHelloMonkeyMov1, this);
@@ -2404,9 +2643,6 @@ module conglinshuiguo {
                 this.MonkeyMov1 = uniLib.DragonUtils.createDragonBoneAnimation("mg_lemur_walk")
                 this.MonkeyMov1.y = 250;
                 this.MonkeyMovGroup.addChild(this.MonkeyMov1);
-                // this.MonkeyMov1.animation.play("yezi2_0",0)
-                // this.MonkeyMov1.x = 360;
-                // this.MonkeyMov1.y = 550;
             }
             let random1 = MathUtil.random(1,2);//上方猴子方向
             let random3 = MathUtil.random(1,2);//猴子初始资源
@@ -2616,7 +2852,7 @@ module conglinshuiguo {
         }
 
         public switchBG(type: GameBG) {
-            this.bg1.visible = type == GameBG.free
+            // this.bg1.visible = type == GameBG.free
             this.centerFreeGroup.visible = type == GameBG.free
 
             this.downPanel.visible = type == GameBG.normal

@@ -308,7 +308,7 @@ module conglinshuiguo {
 
             if (obtainGold == 0) {
                 // this.visible = false;
-                if (cb) cb();
+                this.winSignOut(cb);
                 return { stopCB: null, totalTm: 0, noBigWin: true };
             }
 
@@ -316,7 +316,7 @@ module conglinshuiguo {
             if (otherParam) {
                 egret.log("otherParam:" + JSON.stringify(otherParam));
             }
-            let defaultLineCount: number = labalib.LabaDataCenter.Instance.AwardRatio;
+            let defaultLineCount: number = 20//labalib.LabaDataCenter.Instance.AwardRatio;
 
             let normalObtainGold: number = obtainGold;
             //显示控件.
@@ -338,10 +338,11 @@ module conglinshuiguo {
             }
             egret.log("call playGoldWinType, obtainGold:", obtainGold, " showWinTypeCount:", showWinTypeCount, " obtainNormalMultiply:", obtainNormalMultiply);
 
-            if (showWinTypeCount == 0) {
-                if (cb) cb();
-                return { stopCB: null, totalTm: 0, noBigWin: true };
-            }
+            // if (showWinTypeCount == 0) {
+            //     console.error("免费直接退出1")
+            //     this.winSignOut(cb);
+            //     return { stopCB: null, totalTm: 0, noBigWin: true };
+            // }
 
 
 
@@ -392,8 +393,7 @@ module conglinshuiguo {
                 }
                 game.Timer.clearTimeout(this._mDelayClosePanelTimer)
                 this._mDelayClosePanelTimer = game.Timer.setTimeout(() => {
-                    if (cb)
-                        cb()
+                    this.winSignOut(cb);
                     this.winTitleMov3.animation.stop()
                     this.winLightMov3.animation.play(this._winTypePaths[2],1)
                     GX.PopUpManager.removePopUp(this)

@@ -2,68 +2,33 @@
 <e:Skin class="clsg_freeGameStartSkin" width="720"  xmlns:e="http://ns.egret.com/eui"
         xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*" xmlns:game="game.*">
 	<w:Declarations>
-		<tween:TweenGroup id="cloud">
-			<tween:TweenItem target="{lcloud}">
-				<tween:Set>
-					<tween:props>
-						<e:Object alpha="{1}"/>
-					</tween:props>
-				</tween:Set>
-				<tween:To duration="1000" ease="quintIn">
-					<tween:props>
-						<e:Object alpha="{0}" x="{-180}" />
-					</tween:props>
-				</tween:To>
-			</tween:TweenItem>
-			<tween:TweenItem target="{rcloud}">
-				<tween:Set>
-					<tween:props>
-						<e:Object alpha="{1}"/>
-					</tween:props>
-				</tween:Set>
-				<tween:To duration="1000" ease="quintIn">
-					<tween:props>
-						<e:Object alpha="{0}" x="{180}" />
-					</tween:props>
-				</tween:To>
-			</tween:TweenItem>
-		</tween:TweenGroup>
+
 		<tween:TweenGroup id="startBtnLight">
-			<tween:TweenItem target="{startBtnLight1}">
-				<tween:Set/>
-				<tween:To duration="250">
+			<tween:TweenItem target="{startButton0}">
+				<tween:Set>
 					<tween:props>
-						<e:Object scaleX="{2.5}"/>
+						<e:Object alpha="{1}" scaleX="{1}" scaleY="{1}"/>
 					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
+				</tween:Set>
+				<tween:To duration="500">
 					<tween:props>
-						<e:Object alpha="{0}" scaleX="{3}"/>
-					</tween:props>
-				</tween:To>
-			</tween:TweenItem>
-			<tween:TweenItem target="{startBtnLight2}">
-				<tween:To duration="1000"/>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{2.5}"/>
-					</tween:props>
-				</tween:To>
-				<tween:To duration="250">
-					<tween:props>
-						<e:Object scaleX="{3.2}" alpha="{0}"/>
+						<e:Object alpha="{0}" scaleX="{1.5}" scaleY="{1.5}"/>
 					</tween:props>
 				</tween:To>
 			</tween:TweenItem>
+
+
 		</tween:TweenGroup>
 
 	</w:Declarations>
-	<e:Image id="bgimage" source="bonus_loading_png" left="0" right="0" height="1560" bottom="0" scale9Grid="94,1210,568,312"/>
+	<e:Image id="bgimage" left="0" right="0" height="1560" bottom="0" scale9Grid="94,1210,568,312" source="bonus_loading_jpg" alpha="0"/>
+	<e:Group id="movGroup" width="720" height="1280" touchEnabled="false" horizontalCenter="0" verticalCenter="0">
+	</e:Group>
 	<e:Group id="gameRoot" width="720" height="1280" touchEnabled="false" horizontalCenter="0" verticalCenter="0">
-		<e:Image source="transition_to_fs-free_spins_won" horizontalCenter="0.5" verticalCenter="-260"/>
-		<e:Image verticalCenter="244" source="transition_to_fs-bonus_loading_text" horizontalCenter="0.5"/>
-		<e:BitmapLabel id="leftCountLabel" y="499.7" text="8" font="number3_fnt" horizontalCenter="0.5"/>
-		<game:Button id="startButton" interactive="bright" label="" scaleX="1" scaleY="1" x="360.5" y="1062.5" width="343" height="91" anchorOffsetX="171.5" anchorOffsetY="45.5">
+		<e:Image horizontalCenter="-18" verticalCenter="-503.5" source="free_spin-last_free_spin"/>
+		<e:Image verticalCenter="132.5" source="transition_to_fs-bonus_loading_text" horizontalCenter="0.5"/>
+		<e:BitmapLabel id="leftCountLabel" y="267.16" text="8" font="number3_fnt" horizontalCenter="0"/>
+		<game:Button id="startButton" interactive="bright" label="" scaleX="1" scaleY="1" x="360.5" y="950.38" width="343" height="91" anchorOffsetX="171.5" anchorOffsetY="45.5">
 		<game:skinName>
 			<e:Skin states="up,down,disabled">
 			<e:Image horizontalCenter="0" verticalCenter="0" source="btn"/>
@@ -72,16 +37,24 @@
 			</e:Skin>
 		</game:skinName>
 		</game:Button>
-		<e:Group width="520" height="150" y="989" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0" touchEnabled="false" touchChildren="false" visible="false">
-		<e:Image id="startBtnLight1" source="bonus_button_glow_b" scaleX="2.3" anchorOffsetX="0" anchorOffsetY="0" blendMode="add" scaleY="2.3" horizontalCenter="0" verticalCenter="0"/>
-		<e:Image id="startBtnLight2" source="bonus_button_glow_b" scaleX="2.3" anchorOffsetX="0" anchorOffsetY="0" blendMode="add" scaleY="2.3" horizontalCenter="0" verticalCenter="0"/>
+		<e:Group width="520" height="150" y="876.88" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0" touchEnabled="false" touchChildren="false">
+
+			<game:Button id="startButton0" interactive="bright" label="" scaleX="1" scaleY="1" width="343" height="91" anchorOffsetX="171.5" anchorOffsetY="45.5" horizontalCenter="0" verticalCenter="0" alpha="0" touchEnabled="false">
+				<game:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image horizontalCenter="0" verticalCenter="0" source="btn"/>
+					<e:Image horizontalCenter="0" verticalCenter="0" source="transition_to_fs-start"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</game:skinName>
+			</game:Button>
 		</e:Group>
-		<e:Group id="loadGroup" touchEnabled="false" horizontalCenter="1" verticalCenter="421.5" anchorOffsetX="0" anchorOffsetY="0">
+		<e:Group id="loadGroup" touchEnabled="false" horizontalCenter="1" verticalCenter="310" anchorOffsetX="0" anchorOffsetY="0">
 		<e:Image id="loadImg" source="loading" scaleX="1.2" scaleY="1.2" horizontalCenter="0" verticalCenter="0" width="107" height="100" anchorOffsetY="50" anchorOffsetX="53.5"/>
 		<e:BitmapLabel id="timeLabel" text="0" horizontalCenter="0" verticalCenter="0" font="number2_fnt"/>
 		</e:Group>
 	</e:Group>
-	<e:Image id="lcloud" source="bonus_cloud_a_png" top="0" bottom="0" x="0" width="950" alpha="1"/>
-	<e:Image id="rcloud" top="0" bottom="0" source="bonus_cloud_b_png" x="-80" width="800" alpha="1"/>
+	<e:Image id="lcloud" source="bonus_cloud_a_png" top="0" bottom="0" x="0" width="950" alpha="1" visible="false"/>
+	<e:Image id="rcloud" top="0" bottom="0" source="bonus_cloud_b_png" x="-80" width="800" alpha="1" visible="false"/>
 
 </e:Skin>
