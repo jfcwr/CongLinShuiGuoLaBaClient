@@ -1020,7 +1020,6 @@ module conglinshuiguo {
         public playJiaSu:boolean = false;
 
         public SetHighAnim(visible: boolean,column:number = 0) {
-            console.error(visible,"这里执行几次")
             // for (let i = 1; i <= 5; i++) {
             //     if (i != 4) {
             //         let mask = this.LabaBeltRootGroup.getChildByName("belt" + i + "Mask")
@@ -2476,21 +2475,21 @@ module conglinshuiguo {
         private gameRotateImage:eui.Image;
         // 点击菜单按钮
         protected onMenuListButton() {
-            // if(this.btnLightMov){
-            //     this.btnLightMov.visible = false;
-            // }
-            // this.gameRotateButton.visible = false;
-            // this.gameRotateImage.visible = false;
-            // this.menuListGroup.visible = true;
-            // egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
-            // this.betMenuGruop.visible = false;
+            if(this.btnLightMov){
+                this.btnLightMov.visible = false;
+            }
+            this.gameRotateButton.visible = false;
+            this.gameRotateImage.visible = false;
+            this.menuListGroup.visible = true;
+            egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
+            this.betMenuGruop.visible = false;
             //测试
             // this.mysteryMode();
             // this.freeStickMov();
             // FreeReultPanel.Instance.showFreeEnd(() => {
 
             //     })
-            this.SetHighAnim(true);
+            // this.SetHighAnim(true);
             // this.bigWinPanel.enterBigWinAnim(() => {
             //     // this.bigWinPanel.playGoldWinType(100000)
             // })
