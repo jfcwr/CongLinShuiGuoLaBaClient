@@ -165,7 +165,6 @@ module conglinshuiguo {
 
         // private cloud: egret.tween.TweenGroup;
 
-        private bg1: eui.Image
         private bg2: eui.Image
         // private lcloud: eui.Image
         // private rcloud: eui.Image

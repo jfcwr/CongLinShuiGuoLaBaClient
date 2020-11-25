@@ -55,8 +55,6 @@ module conglinshuiguo {
         // private scaleAnim: egret.tween.TweenGroup
 
         // 背景光可旋转
-        // private bg1: eui.Image
-        // private bg2: eui.Image
         private animGroup: eui.Group
         protected mAllScale: number = 1;
         private elemImage: eui.Image
