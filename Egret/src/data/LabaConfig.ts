@@ -57,60 +57,15 @@ module conglinshuiguo {
             10: { Path: "s_scatter", Action: "bfsg_elem10", KeyRate: 12, Scale: 1 },
         };
 
-        //中间人物特效;
-        public static CenterPigEffect = { Path: "pig1", KeyRate: 14, Scale: .8 };
-        public static CenterMonkeyEffect = { Path: "monkey1", KeyRate: 14, Scale: .9 };
-        public static CenterMonkEffect = { Path: "monk1", KeyRate: 14, Scale: .9 };
-        public static CenterSandyEffect = { Path: "sandy1", KeyRate: 14, Scale: .8 };
-        //中间人物跳起来特效 --  普通中奖
 
-        public static CenterEffectA: { [key: number]: labalib.IAnimInfo } = {
-            1: { Path: "sandya", KeyRate: 14, Scale: 1.1, PlayTime: 1 },
-            2: { Path: "piga", KeyRate: 14, Scale: 1.1, PlayTime: 1 },
-            3: { Path: "monka", KeyRate: 14, Scale: 1.2, PlayTime: 1 },
-            4: { Path: "monkeya", KeyRate: 14, Scale: 1.2, PlayTime: 1 },
-        };
-        //中大奖
-        public static CenterEffectB: { [key: number]: labalib.IAnimInfo } = {
-            1: { Path: "sandyb", KeyRate: 14, Scale: 1.1, PlayTime: 1 },
-            2: { Path: "pigb", KeyRate: 14, Scale: 1.1, PlayTime: 1 },
-            3: { Path: "monkb", KeyRate: 14, Scale: 1.2, PlayTime: 1 },
-            4: { Path: "monkeyb", KeyRate: 14, Scale: 1.2, PlayTime: 1 },
-        };
-
-        //猴子吹气
-        public static MonkeyChuiqi = { Path: "monkey_chuiqi", KeyRate: 5, Scale: 1, AddBlend: 1, PlayTime: 1 };
-        public static HighRotate = [
-            { Path: "fast3", KeyRate: 40, Scale: 1.6 }, { Path: "fast2", KeyRate: 30, Scale: 1.6, AddBlend: 1 },
-            { Path: "fast4", KeyRate: 20, Scale: 1.25, AddBlend: 1 }, { Path: "fast1", KeyRate: 15, Scale: 1, AddBlend: 1 }];
         public static Rotate2 = { Path: "rotate2", KeyRate: 20, Scale: 1.2, AddBlend: 0, PlayTime: 1 };
-        //图标变化
-        public static ChangeIcon = { Path: "rotationbutton1", KeyRate: 5, Scale: 1, AddBlend: 1, PlayTime: 1 };
 
-        //重转变换图标rerotate
-        public static Rerotate1 = { Path: "rerotate", KeyRate: 15, Scale: 1, AddBlend: 1, PlayTime: 1 };
-        //八戒和沙僧攻击
-        public static Attack = { Path: "attack", KeyRate: 5, Scale: -1, AddBlend: 1 };
-
-        //中间中奖框
-        public static ShiningInfoB = { Path: "winbar1", KeyRate: 20, Scale: 1.2, AddBlend: 1, PlayTime: 1 };
-        public static ShiningInfoWave = { Path: "winbar2", KeyRate: 20, Scale: 1.2, AddBlend: 1, PlayTime: 1 };
-        public static ShiningInfoParticle = { Path: "winbar3", KeyRate: 16, Scale: 1.2, AddBlend: 1, PlayTime: 1 };
-        public static ShiningInfoflare = { Path: "winbar4", KeyRate: 20, Scale: 1.2, AddBlend: 1, PlayTime: 1 };
-        //免费总赢得散光
-        public static TotalFlare = { Path: "totalwin1", KeyRate: 15, Scale: 1, AddBlend: 1 }
-        // public static TotalXingxing = { Path: "totalwin2", KeyRate: 5, Scale: 1 }
-
-        //五星连珠
-        public static FiveKind1 = { Path: "fiveKind1", KeyRate: 20, Scale: 2.5, AddBlend: 1 , PlayTime: 1};
-        public static FiveKind2 = { Path: "fiveKind2", KeyRate: 20, Scale: 1, AddBlend: 1 , PlayTime: 1};
 
        
-        //免费游戏进度条动画
-        public static FreeInProgressEffect = { Path: "btn1", KeyRate: 10, Scale: 1 };
-        // bigwin 粒子特效
-        public static BigWinLiziEffect = { Path: "bigwin1", KeyRate: 10, Scale: 0.8, AddBlend: 1, PlayTime: 1 };
-        public static BigWinLiziEffect2 = { Path: "bigwin_partice", KeyRate: 10, Scale: 1, AddBlend: 1, PlayTime: 1 };
+        
+
+
+       
 
         //命中后的公共特效;
         public static RotateElemEffect = { Path: "elem_effect", KeyRate: 5, Scale: 0.7 };

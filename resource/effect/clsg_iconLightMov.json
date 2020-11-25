@@ -1,0 +1,228 @@
+{
+  "mc": {
+    "action": {
+      "frameRate": 10,
+      "labels": [
+        {
+          "name": "mc",
+          "frame": 1,
+          "end": 19
+        }
+      ],
+      "events": [],
+      "frames": [
+        {
+          "res": "freespin_vfx_a_00",
+          "x": -87,
+          "y": -91
+        },
+        {
+          "res": "freespin_vfx_a_01",
+          "x": -86,
+          "y": -92
+        },
+        {
+          "res": "freespin_vfx_a_02",
+          "x": -86,
+          "y": -92
+        },
+        {
+          "res": "freespin_vfx_a_03",
+          "x": -85,
+          "y": -90
+        },
+        {
+          "res": "freespin_vfx_a_04",
+          "x": -85,
+          "y": -90
+        },
+        {
+          "res": "freespin_vfx_a_05",
+          "x": -86,
+          "y": -90
+        },
+        {
+          "res": "freespin_vfx_a_06",
+          "x": -86,
+          "y": -91
+        },
+        {
+          "res": "freespin_vfx_a_07",
+          "x": -86,
+          "y": -91
+        },
+        {
+          "res": "freespin_vfx_a_08",
+          "x": -86,
+          "y": -91
+        },
+        {
+          "res": "freespin_vfx_a_09",
+          "x": -86,
+          "y": -92
+        },
+        {
+          "res": "freespin_vfx_a_10",
+          "x": -86,
+          "y": -92
+        },
+        {
+          "res": "freespin_vfx_a_11",
+          "x": -86,
+          "y": -92
+        },
+        {
+          "res": "freespin_vfx_a_12",
+          "x": -86,
+          "y": -92
+        },
+        {
+          "res": "freespin_vfx_a_13",
+          "x": -86,
+          "y": -92
+        },
+        {
+          "res": "freespin_vfx_a_14",
+          "x": -86,
+          "y": -91
+        },
+        {
+          "res": "freespin_vfx_a_15",
+          "x": -86,
+          "y": -93
+        },
+        {
+          "res": "freespin_vfx_a_16",
+          "x": -86,
+          "y": -93
+        },
+        {
+          "res": "freespin_vfx_a_17",
+          "x": -86,
+          "y": -93
+        },
+        {
+          "res": "freespin_vfx_a_18",
+          "x": -87,
+          "y": -93
+        }
+      ]
+    }
+  },
+  "res": {
+    "freespin_vfx_a_00": {
+      "x": 175,
+      "y": 0,
+      "w": 174,
+      "h": 184
+    },
+    "freespin_vfx_a_01": {
+      "x": 523,
+      "y": 0,
+      "w": 172,
+      "h": 184
+    },
+    "freespin_vfx_a_02": {
+      "x": 346,
+      "y": 187,
+      "w": 172,
+      "h": 184
+    },
+    "freespin_vfx_a_03": {
+      "x": 519,
+      "y": 372,
+      "w": 172,
+      "h": 182
+    },
+    "freespin_vfx_a_04": {
+      "x": 346,
+      "y": 557,
+      "w": 172,
+      "h": 182
+    },
+    "freespin_vfx_a_05": {
+      "x": 173,
+      "y": 744,
+      "w": 172,
+      "h": 182
+    },
+    "freespin_vfx_a_06": {
+      "x": 696,
+      "y": 0,
+      "w": 172,
+      "h": 184
+    },
+    "freespin_vfx_a_07": {
+      "x": 519,
+      "y": 187,
+      "w": 172,
+      "h": 184
+    },
+    "freespin_vfx_a_08": {
+      "x": 692,
+      "y": 185,
+      "w": 172,
+      "h": 184
+    },
+    "freespin_vfx_a_09": {
+      "x": 0,
+      "y": 374,
+      "w": 172,
+      "h": 184
+    },
+    "freespin_vfx_a_10": {
+      "x": 173,
+      "y": 374,
+      "w": 172,
+      "h": 184
+    },
+    "freespin_vfx_a_11": {
+      "x": 0,
+      "y": 559,
+      "w": 172,
+      "h": 184
+    },
+    "freespin_vfx_a_12": {
+      "x": 346,
+      "y": 372,
+      "w": 172,
+      "h": 184
+    },
+    "freespin_vfx_a_13": {
+      "x": 173,
+      "y": 559,
+      "w": 172,
+      "h": 184
+    },
+    "freespin_vfx_a_14": {
+      "x": 0,
+      "y": 744,
+      "w": 172,
+      "h": 184
+    },
+    "freespin_vfx_a_15": {
+      "x": 0,
+      "y": 187,
+      "w": 172,
+      "h": 186
+    },
+    "freespin_vfx_a_16": {
+      "x": 173,
+      "y": 187,
+      "w": 172,
+      "h": 186
+    },
+    "freespin_vfx_a_17": {
+      "x": 350,
+      "y": 0,
+      "w": 172,
+      "h": 186
+    },
+    "freespin_vfx_a_18": {
+      "x": 0,
+      "y": 0,
+      "w": 174,
+      "h": 186
+    }
+  }
+}

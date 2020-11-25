@@ -491,11 +491,11 @@ module conglinshuiguo {
                     }
                 }
             }
-            // for (let i = 0;i< this.mIcons.length;i++) {
-            //     if(i>=3){
-            //         this.mIcons[i].ElemType = 1;
-            //     }
-            // }
+            for (let i = 0;i< this.mIcons.length;i++) {
+                if(i>=3){
+                    this.mIcons[i].ElemType = 1;
+                }
+            }
 
             // LabaGame.Instance.mLabaMachine.getBelt(i).GetElementByIndex(3-j)
             // labalib.LabaMachine.mBeltArray

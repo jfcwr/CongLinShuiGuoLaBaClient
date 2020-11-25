@@ -38,46 +38,17 @@ module conglinshuiguo {
 		removeUIListener(): void {
 			this.getMoneyButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onGetMoneyButton, this);
 		}
-		private winTotalAnimArr = []
+		// private winTotalAnimArr = []
 
 		public playWinBar() {
 			this.totalWin.visible = true
-			let totalFlare = labalib.Utils.PlayMovieAnimInfo(this.totalWin, LabaConfig.TotalFlare);
-			totalFlare.x = 170
-			totalFlare.y = 1000
-			totalFlare.scaleX = 3.5
-			totalFlare.scaleY = 3
-			this.winTotalAnimArr.push(totalFlare)
-
-			let totalFlare1 = labalib.Utils.PlayMovieAnimInfo(this.totalWin, LabaConfig.TotalFlare);
-			totalFlare1.x = 550
-			totalFlare1.y = 1000
-			totalFlare1.scaleX = -3.5
-			totalFlare1.scaleY = 3
-			this.winTotalAnimArr.push(totalFlare1)
-
-			let totalFlare2 = labalib.Utils.PlayMovieAnimInfo(this.totalWin, LabaConfig.TotalFlare);
-			totalFlare2.x = 170
-			totalFlare2.y = 300
-			totalFlare2.scaleX = 3.5
-			totalFlare2.scaleY = -3
-			this.winTotalAnimArr.push(totalFlare2)
-
-			let totalFlare3 = labalib.Utils.PlayMovieAnimInfo(this.totalWin, LabaConfig.TotalFlare);
-			totalFlare3.x = 550
-			totalFlare3.y = 300
-			totalFlare3.scaleX = -3.5
-			totalFlare3.scaleY = -3
-			this.winTotalAnimArr.push(totalFlare3)
-
-
 		}
 
 		public destroyBarAnim() {
-			for (let anim of this.winTotalAnimArr) {
-				labalib.Utils.ObjectPool.Instance.destroyObject(anim)
-			}
-			this.winTotalAnimArr = []
+			// for (let anim of this.winTotalAnimArr) {
+			// 	labalib.Utils.ObjectPool.Instance.destroyObject(anim)
+			// }
+			// this.winTotalAnimArr = []
 		}
 		private wildImageGroup: eui.Group
 		private mFinishCB: any = null

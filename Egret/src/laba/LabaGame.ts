@@ -300,14 +300,14 @@ module conglinshuiguo {
             // this.mHighRotateAnimArr.push(high5)
             // this.mHighRotateAnimArr.push(high6)
 
-            let posdd = [196, 330, 464]
-            for (let i = 0; i < 3; i++) {
-                let high3 = labalib.Utils.PlayMovieAnimInfo(this.LabaBeltRootGroup, LabaConfig.HighRotate[2]);
-                this.mBeltMaskAnimArr.push(high3)
-                high3.x = posdd[i]
-                high3.visible = false
-                this.LabaBeltRootGroup.addChildAt(high3, 0)
-            }
+            // let posdd = [196, 330, 464]
+            // for (let i = 0; i < 3; i++) {
+            //     let high3 = labalib.Utils.PlayMovieAnimInfo(this.LabaBeltRootGroup, LabaConfig.HighRotate[2]);
+            //     this.mBeltMaskAnimArr.push(high3)
+            //     high3.x = posdd[i]
+            //     high3.visible = false
+            //     this.LabaBeltRootGroup.addChildAt(high3, 0)
+            // }
             this.SetHighAnim(false)
         }
         private mHighRotateAnimArr = []
@@ -1402,14 +1402,6 @@ module conglinshuiguo {
             if (this.mGameButtonStatus == GameRotateStatus.RotateNormal) {
                 if (e && e.target != null) {
                     this.btnFlashOfLight();
-                    // let rotate1 = labalib.Utils.PlayMovieAnimInfo(this.betMenuGruop, LabaConfig.Rotate1, null, true);
-                    // rotate1.x = 360
-                    // rotate1.y = 35
-
-
-                    // let rotate2 = labalib.Utils.PlayMovieAnimInfo(this.betMenuGruop, LabaConfig.Rotate2, null, true);
-                    // rotate2.x = 380
-                    // rotate2.y = 40
                     this.GameRotateButtomTween(GameRotateChoose.rotate)
                 }
                 this.onRotateButton()

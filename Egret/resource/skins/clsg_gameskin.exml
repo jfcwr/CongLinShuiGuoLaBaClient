@@ -16,7 +16,7 @@
 	<e:Image scaleX="2" scaleY="2" touchEnabled="false" bottom="1316" source="background_cloud_05" right="0" />
 	<e:Image scaleX="2" scaleY="2" touchEnabled="false" source="background_cloud_04" left="0" bottom="1400" />
 	<e:Image scaleX="2" scaleY="2" touchEnabled="false" source="background_cloud_06" left="0" bottom="1000"  visible="false"/>
-	<e:Image id="bg1" source="background_bonus_png" width="720" horizontalCenter="0" height="1560" bottom="0" scale9Grid="47,53,284,618" visible="false"/>
+	<e:Image id="bg1" source="" width="720" horizontalCenter="0" height="1560" bottom="0" scale9Grid="47,53,284,618" visible="false"/>
 	<e:Group id="MonkeyMovGroup" height="0" width="720" horizontalCenter="0" bottom="1280" touchEnabled="false"/>
 	<e:Group id="gameRootPanel" height="1280" touchEnabled="false" name="gameRootPanel" width="720" horizontalCenter="0"
 	         bottom="0">

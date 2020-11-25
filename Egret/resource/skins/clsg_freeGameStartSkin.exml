@@ -54,7 +54,7 @@
 		<e:BitmapLabel id="timeLabel" text="0" horizontalCenter="0" verticalCenter="0" font="number2_fnt"/>
 		</e:Group>
 	</e:Group>
-	<e:Image id="lcloud" source="bonus_cloud_a_png" top="0" bottom="0" x="0" width="950" alpha="1" visible="false"/>
-	<e:Image id="rcloud" top="0" bottom="0" source="bonus_cloud_b_png" x="-80" width="800" alpha="1" visible="false"/>
+	<e:Image id="lcloud" source="" top="0" bottom="0" x="0" width="950" alpha="1" visible="false"/>
+	<e:Image id="rcloud" top="0" bottom="0" source="" x="-80" width="800" alpha="1" visible="false"/>
 
 </e:Skin>
