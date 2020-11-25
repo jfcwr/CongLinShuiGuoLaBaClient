@@ -6,7 +6,7 @@
 	</w:Declarations>
 	<e:Image id="imgBonus" source="" height="1560" horizontalCenter="0" width="720" bottom="0"  visible="false"/>
 	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.8"/>
-	<e:Group id="totalWin" width="720" height="1280" x="0" y="0">
+	<e:Group id="totalWin" width="720" height="1280" x="0" bottom="0">
 
 
 
@@ -25,7 +25,7 @@
 
 	</e:Group>
 
-	<e:Group width="720" height="502" touchChildren="true" touchEnabled="true" horizontalCenter="0" verticalCenter="-384">
+	<e:Group width="720" height="502" touchChildren="true" touchEnabled="true" horizontalCenter="0" bottom="773">
 		<e:Group id="wildImageGroup" y="0" horizontalCenter="0.5">
 
 

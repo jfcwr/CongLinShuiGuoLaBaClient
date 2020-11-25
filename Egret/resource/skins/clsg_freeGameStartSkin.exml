@@ -21,10 +21,10 @@
 		</tween:TweenGroup>
 
 	</w:Declarations>
-	<e:Image id="bgimage" left="0" right="0" height="1560" bottom="0" scale9Grid="94,1210,568,312" source="bonus_loading_jpg" alpha="0"/>
-	<e:Group id="movGroup" width="720" height="1280" touchEnabled="false" horizontalCenter="0" verticalCenter="0">
+	<e:Image id="bgimage" bottom="0" scale9Grid="94,1210,568,312" source="bonus_loading_jpg" alpha="1" width="720" x="0" top="0"/>
+	<e:Group id="movGroup" width="720" height="1280" touchEnabled="false" horizontalCenter="0" bottom="140">
 	</e:Group>
-	<e:Group id="gameRoot" width="720" height="1280" touchEnabled="false" horizontalCenter="0" verticalCenter="0">
+	<e:Group id="gameRoot" width="720" height="1280" touchEnabled="false" horizontalCenter="0" bottom="140">
 		<e:Image horizontalCenter="-18" verticalCenter="-503.5" source="free_spin-last_free_spin"/>
 		<e:Image verticalCenter="132.5" source="transition_to_fs-bonus_loading_text" horizontalCenter="0.5"/>
 		<e:BitmapLabel id="leftCountLabel" y="267.16" text="8" font="number3_fnt" horizontalCenter="0"/>
