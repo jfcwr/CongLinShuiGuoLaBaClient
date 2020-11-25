@@ -106,47 +106,37 @@ module conglinshuiguo {
         //     this.isPlayBg = true;
         // }
 
-        private mCurSoundBG: string = ""
-        public switchMusicBG(isNormal: boolean = true) {
-            if (this.isPlayBg) {
-                return;
-            }
-            let musicPath = isNormal ? "xyj_bgm_mp3" : "freebg_mp3"
-            this.mCurSoundBG = musicPath
+        private mCurSoundBG: string = "xyj_bgm_mp3"
+        public switchMusicBG(isNormal: number = 0) {
+            //背景音效
+            // if (this.isPlayBg) {
+            //     return;
+            // }
+            let musicPath = ["xyj_bgm_mp3", "freebg_mp3", "bigwin_mp3" , "freeBg1_mp3"]
+            this.mCurSoundBG = musicPath[isNormal]
             uniLib.SoundMgr.instance.stopBgMusic();
-            uniLib.SoundMgr.instance.playBgMusic([musicPath]);
-            this.isPlayBg = true;
+            uniLib.SoundMgr.instance.playBgMusic([musicPath[isNormal]]);
+            // this.isPlayBg = true;
         }
-        public PlayLabaGb() {
-            uniLib.SoundMgr.instance.playBgMusic([this.mCurSoundBG]);
-            this.isPlayBg = true;
-        }
+        // public PlayLabaGb() {
+        //     uniLib.SoundMgr.instance.playBgMusic([this.mCurSoundBG]);
+        //     this.isPlayBg = true;
+        // }
         public endLabaBg() {
             uniLib.SoundMgr.instance.stopBgMusic();
-            this.isPlayBg = false;
+            // this.isPlayBg = false;
         }
 
-        //四个随机两个
-        public playRerotateTwoSound(target: any) {
-            let soundList = ["tangse1_mp3", "tangshen2_mp3", "tangshen3_mp3", "tangshen4_mp3"]
-            for (let i of target) {
-                uniLib.SoundMgr.instance.playSound(soundList[i], 1);
-            }
+        //中间猴子出来3个随机
+        public playRerotateTwoSound() {
+            let soundList = ["tangshen2_mp3", "tangshen3_mp3", "tangshen4_mp3"]
+            // for (let i=0;i<target; i++) {
+            uniLib.SoundMgr.instance.playSound(soundList[MathUtil.random(0,2)], 1);
+            // }
         }
 
-        public playRerotatejumUPSound(target: number) {
-            let soundList = ["shanshengattack_mp3", "pigattack_mp3", "tangsengattack_mp3", "houziattack_mp3"]
-            uniLib.SoundMgr.instance.playSound(soundList[target], 1);
 
-        }
-        public playBigWinSound() {
-            uniLib.SoundMgr.instance.playSound("bigwin1_mp3", 1, 0, () => {
-                uniLib.SoundMgr.instance.playSound("bigwin2_mp3", 1, 0, () => {
-                    this.PlayLabaGb()
-                })
-            })
-            this.endLabaBg()
-        }
+        // }
         //--------------------------------
         public PlaySoundOnce(soundPath: string, cb?: Function) {
             uniLib.SoundMgr.instance.playSound(soundPath, 1, 0, cb);
@@ -288,6 +278,115 @@ module conglinshuiguo {
             // uniLib.SoundMgr.instance.playSound("bfsg_free_time_win_mp3", 1);
             uniLib.SoundMgr.instance.playSound("bfsg_freegameend_loop_mp3", 1)
         }
+        /**
+         * 按钮旋转音效
+         */
+        public playBtnRotateSound() {
+            uniLib.SoundMgr.instance.playSound("ws_btnRotate_mp3", 1);
+        }
+
+        /**
+         * bigwin字体跳动music先放这里
+         */
+        public playbigwinSound() {
+            uniLib.SoundMgr.instance.playSound("bigwin_mp3", 1);
+        }
+        /**
+         * bigwin猴子中间出来时
+         */
+        public playbigwinMonkeySound() {
+            uniLib.SoundMgr.instance.playSound("clsg_sound1_mp3", 1);
+        }
+        /**
+         * bigwin停止滚动
+         */
+        public playbigwinStopSound() {
+            uniLib.SoundMgr.instance.playSound("bigwinStop_mp3", 1);
+        }
+
+        /**
+         * 百搭跳动
+         */
+        public playBaiDaSound() {
+            uniLib.SoundMgr.instance.playSound("baiDa_mp3", 1);
+        }
+        /**
+         * 夺宝停止
+         */
+        public playDuoBaoStopSound() {
+            uniLib.SoundMgr.instance.playSound("duoBaoStop_mp3", 1);
+        }
+        /**
+         * 滑动停止
+         */
+        public playHuaDongStopSound() {
+            uniLib.SoundMgr.instance.playSound("huaDongStop_mp3", 1);
+        }
+        /**
+         * 免费开始按钮 领取按钮
+         */
+        public playFreebtnSound() {
+            uniLib.SoundMgr.instance.playSound("freebtn_mp3", 1);
+        }
+        /**
+         * 免费其他粘连图案跳动
+         */
+        public playFreeIcon2Sound() {
+            uniLib.SoundMgr.instance.playSound("freeIcon2_mp3", 1);
+        }
+        /**
+         * 免费游戏结算金额跑完包红叶子时
+         */
+        public playFreeStopSound() {
+            uniLib.SoundMgr.instance.playSound("freeStop_mp3", 1);
+        }
+        /**
+         * 免费中间图案出现时和跳动时
+         */
+        public playFreeIcon1Sound() {
+            uniLib.SoundMgr.instance.playSound("freeIcon1_mp3", 1);
+        }
+        /**
+         * 免费准备音效背景音效3(music)
+         */
+        public playFreeBg1Sound() {
+            uniLib.SoundMgr.instance.playSound("freeBg1_mp3", 1);
+        }
+        /**
+         * 神秘箱子出现
+         */
+        public playMysticalSound() {
+            uniLib.SoundMgr.instance.playSound("mystical_mp3", 1);
+        }
+        /**
+         * 神秘箱子爆开
+         */
+        public playMysticalBoomSound() {
+            uniLib.SoundMgr.instance.playSound("mysticalBoom_mp3", 1);
+        }
+        private slowStop:egret.SoundChannel = null;
+        /**
+         * 滑动音效(无夺宝)
+         */
+        public playSlowStopSound() {
+            this.slowStop = uniLib.SoundMgr.instance.playSound("ws_slowStop_mp3", 1);
+        }
+        /**
+         * 滑动音效停止
+         */
+        public stopSlowStopSound() {
+            if(this.slowStop){
+                this.slowStop.stop();
+                this.slowStop = null;
+            }
+        }
+        /**
+         * 左右两侧猴子出来神秘模式出来也要
+         */
+        public playMonkeyAboutSound() {
+            uniLib.SoundMgr.instance.playSound("monkeyAbout_mp3", 1);
+        }
+
 
     }
 }

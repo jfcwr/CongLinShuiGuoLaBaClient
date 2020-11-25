@@ -8,7 +8,7 @@
 
 	</w:Declarations>
 	<w:Config id="163714e0f1e" />
-	<e:Image scaleX="1" scaleY="1" touchEnabled="false" left="0" right="0" height="1560"  bottom="0" source="background_a_png"/>
+	<e:Image id="bgImage" scaleX="1" scaleY="1" touchEnabled="false" left="0" right="0" height="1560"  bottom="0" source="background_a_png"/>
 	<e:Group id="MonkeyMovGroup1" height="0" width="720" horizontalCenter="0" bottom="1280" touchEnabled="false" x="10" y="10"/>
 	<e:Image id="menImage" touchEnabled="false" bottom="984" source="mg_temple" scaleX="1" scaleY="1" horizontalCenter="0"/>
 	<e:Image id="gameNameImage" touchEnabled="false" bottom="1036" horizontalCenter="0" source="logo_on_temple"/>

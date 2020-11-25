@@ -218,6 +218,8 @@ module conglinshuiguo {
          */
         public playCopperFly(addOrRem:boolean = true) {
             if(!this.copperTime&&addOrRem){
+				SoundHand.Instance.playFreeStopSound();
+				SoundHand.Instance.endLabaBg();
                 this.copperTime = game.Timer.setInterval(()=>{
 					for(let i = 0;i<MathUtil.random(2,5);++i){
 						let iconMovie = new eui.Image("particle_g");
@@ -303,6 +305,7 @@ module conglinshuiguo {
 			if (this.mStopScrollCB) {
 				this.mStopScrollCB.stopCB()
 			}
+			SoundHand.Instance.playFreebtnSound();
 			egret.Tween.removeTweens(this.winLabel)
 			this.winLabel.text = DataCenter.Instance.FreeAccObtainGold + ""
 			game.Timer.clearTimeout(this.mDelayCloseTimer)

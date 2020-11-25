@@ -75,7 +75,6 @@ module conglinshuiguo {
          */
         public set DizhuIndex(dizhuIndex: number) {
             if (dizhuIndex < 0 || dizhuIndex > this.MaxDizhuIndex) {
-                console.error("Invalid DizhuIndex:" + dizhuIndex);
                 return;
             }
             this.mDizhuIndex = dizhuIndex;
@@ -444,7 +443,6 @@ module conglinshuiguo {
                     return newResultData;
                 }
                 if (loopCount > 100) {
-                    console.error("InvalidPath.., resultData:" + JSON.stringify(resultData));
                     return newResultData;
                 }
                 loopCount = loopCount + 1;

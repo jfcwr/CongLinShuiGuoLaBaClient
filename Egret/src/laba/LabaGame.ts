@@ -439,7 +439,6 @@ module conglinshuiguo {
                 if (this.mIsRotating == false && !DataCenter.Instance.IsRerotateGame() && !DataCenter.Instance.IsFreeGame())
                     this.onFinishShowResult();
             }
-            console.error("onSocketOpen");
         }
 
         private onSendBetTimeout() {
@@ -553,6 +552,8 @@ module conglinshuiguo {
         private torchImage2:eui.Image;
         private torchMov1:egret.MovieClip = null;
         private torchMov2:egret.MovieClip = null;
+        private bgImage:eui.Image;
+
 
 
         /**
@@ -561,7 +562,8 @@ module conglinshuiguo {
         public playFreeMov() {
             this.MonkeyMov1.visible = false;
             this.MonkeyMov2.visible = false;
-            this.MonkeyMov3.visible = false;
+            this.bgImage.source = "background_c_png";
+            // this.MonkeyMov3.visible = false;
             this.helloMonkeyMov.visible = false;
             this.gameNameImage.visible = false;
             this.freeBgImage.visible = true;
@@ -611,7 +613,8 @@ module conglinshuiguo {
             // conglinshuiguo.LabaGame.Instance.stopFreeMov()
             this.MonkeyMov1.visible = true;
             this.MonkeyMov2.visible = true;
-            this.MonkeyMov3.visible = true;
+            // this.MonkeyMov3.visible = true;
+            this.bgImage.source = "background_a_png";
             this.helloMonkeyMov.visible = true;
             this.gameNameImage.visible = true;
             this.freeBgImage.visible = false;
@@ -710,6 +713,7 @@ module conglinshuiguo {
             if(this.stickMovBg.length>0){
                 return;
             }
+            SoundHand.Instance.playFreeIcon1Sound()
             // if (!this.stickMov) {
             this.freeIconBg = [[0,0,0],[0,0,0],[0,1,0],[0,0,0],[0,0,0]]
             let stickMov = uniLib.DisplayUtils.createMovieClicp("clsg_freeAppearMov");
@@ -801,6 +805,7 @@ module conglinshuiguo {
 
             let icon1 = this.elemPos[1][2];
             let stickBg = new eui.Image("frame_glow_free");
+            SoundHand.Instance.playFreeIcon1Sound()
             stickBg.anchorOffsetX = 56/2;
             stickBg.anchorOffsetY = 65/2;
             stickBg.blendMode = egret.BlendMode.ADD;
@@ -814,6 +819,7 @@ module conglinshuiguo {
             egret.Tween.get(icon).set({ scaleX:0.95,scaleY:0.95}).to({ scaleX:1.2,scaleY:1.2 }, 100).wait(50)
             .to({ scaleX:0.95,scaleY:0.95 }, 100)
             egret.Tween.get(stickBg).to({ scaleX:5,scaleY:5,alpha:0 }, 100).wait(150).call(() => {
+                SoundHand.Instance.playFreeIcon2Sound()
                 stickBg.parent.removeChild(stickBg);
                 if(this.stickMovBg.length>1){
                     for(let item = 1; item<this.stickMovBg.length;++item){
@@ -948,7 +954,6 @@ module conglinshuiguo {
 
 
             for (let param of params) {
-                uniLib.SoundMgr.instance.playSound("quanzhou_mp3", 1)
                 this.anim(param.beltindex, param.pos)
                 this.mBeltMaskAnimArr[param.beltindex - 2].visible = true
             }
@@ -1053,20 +1058,23 @@ module conglinshuiguo {
             this.mBarWinDragon.visible = true
             this.mBarWinDragon.animation.stop();
             if(index==1){
+                SoundHand.Instance.playRerotateTwoSound()
                 this.mBarWinDragonIndex = index;
                 this.mBarWinDragon.animation.play("huaban0", 1)
+                this.playMonkeyAboutMov(true)
             }
             else if(index==2){
                 this.mBarWinDragon.animation.play("huaban0_1", 1)
             }
             else if(index==3){
+                this.playMonkeyAboutMov(true)
+                SoundHand.Instance.playRerotateTwoSound()
                 this.mBarWinDragonIndex = index;
                 this.mBarWinDragon.animation.play("huaban1", 1)
             }
             else if(index==4){
                 this.mBarWinDragon.animation.play("huaban1_1", 1)
             }
-            this.playMonkeyAboutMov(true)
             this.mBarWinDragon.x = 308
             this.mBarWinDragon.y = 17
 
@@ -1143,6 +1151,7 @@ module conglinshuiguo {
                 this.mysteryMov.touchEnabled = false;
                 this.MonkeyMovGroup.addChild(this.mysteryMov);
             }
+            SoundHand.Instance.playMonkeyAboutSound()
             this.mysteryMov.visible = true;
             this.mysteryMov.animation.play("long_flip",1)
             game.Timer.setTimeout(() => {
@@ -1151,7 +1160,6 @@ module conglinshuiguo {
         }
         public MysteriousBox() {
             let mysteriousData = LabaGame.Instance.mysteriousData;//动画抛箱子时间1.3秒
-            console.error(mysteriousData,"神秘模式")
             let numberBox = 0;
             // let ElemType = null;
             let jumpPont = [];
@@ -1201,6 +1209,7 @@ module conglinshuiguo {
                 }
             }
             let timeWait = Math.ceil(1300/numberBox);
+            SoundHand.Instance.playMysticalSound();
             for(let playIndex =0;playIndex< this.MysteriousBoxMov.length;++playIndex){
                 game.Timer.setTimeout(() => {
                     // let point1 = jumpPont[playIndex].localToGlobal();
@@ -1210,6 +1219,7 @@ module conglinshuiguo {
                 }, null, timeWait*playIndex);
             }
             game.Timer.setTimeout(() => {
+                SoundHand.Instance.playMysticalBoomSound();
                 for(let item of this.MysteriousBoxMov){
                     item.animation.play(null,1)
                 }
@@ -1282,129 +1292,8 @@ module conglinshuiguo {
             }
             this.mHighRotateAnimArr = []
         }
-        private mRerotateAttackDragon = null
-		/**
-		 * 添加动画
-		 */
-        private onAdddonghuaEff(index: number, objGroup: any, cb = null) {
-            //存动画数组
-            let dragonIndex = ["mg_feature_sandy", "mg_feature_pig", "mg_feature_monk", "mg_feature_monkey"]
-            let animIndex = [null, null, null, LabaConfig.MonkeyChuiqi]
-            let animPos = [{ x: 635, y: 300 }, { x: 635, y: 300 }, { x: 635, y: 300 }, { x: 410, y: 230 }]
-            let scaleIndex = [.9, .8, .6, 1]
-            let scaleIndex2 = [0.9, 0.8, 1.2, 1]
-            let posindex1 = [{ x: 110, y: 940 }, { x: 280, y: 945 }, { x: 470, y: 980 }, { x: 635, y: 905 }]
-            let posindex2 = [{ x: 550, y: 500 }, { x: 600, y: 460 }, { x: 540, y: 500 }, { x: 610, y: 400 }]
-            let posindex3 = [{ x: 100, y: 270 }, { x: 310, y: 215 }, { x: 465, y: 250 }, { x: 580, y: 160 }]
-            if (this.mRerotateAttackDragon) {
-                egret.Tween.removeTweens(this.mRerotateAttackDragon)
-                this.mRerotateAttackDragon.animation.stop();
-                this.mRerotateAttackDragon.dispose();
-                if (this.mRerotateAttackDragon.parent) {
-                    this.mRerotateAttackDragon.parent.removeChild(this.mRerotateAttackDragon)
-                }
-                this.mRerotateAttackDragon = null
-            }
-            this.mRerotateAttackDragon = uniLib.DragonUtils.createDragonBoneAnimation(dragonIndex[index])
-            this.mRerotateAttackDragon.animation.play("exit", 1)
-            this.mRerotateAttackDragon.y = posindex1[index].y
-            this.mRerotateAttackDragon.x = posindex1[index].x
-            this.mRerotateAttackDragon.scaleX = scaleIndex[index]
-            this.mRerotateAttackDragon.scaleY = scaleIndex[index]
-            this.mRerotateAttackDragon.animation.timeScale = 1
-            objGroup.addChild(this.mRerotateAttackDragon)
 
-            egret.Tween.get(this.mRerotateAttackDragon).wait(400).to({ x: 720 }, 300).set({ x: posindex2[index].x, y: posindex2[index].y, visble: false }).call(() => {
-                this.mRerotateAttackDragon.animation.play("attack", 1)
-                this.mRerotateAttackDragon.scaleX = '-' + scaleIndex2[index]
-                this.mRerotateAttackDragon.scaleY = scaleIndex2[index]
-                this.mRerotateAttackDragon.animation.timeScale = 0.8
-                SoundHand.Instance.playRerotatejumUPSound(index)
-                for (let item of this.centerAnimArr) {
-                    this.characterGray(item, false)
-                }
-            }).wait(500).call(() => {
-                if (index == 3) {
-                    let anim = labalib.Utils.PlayMovieAnimInfo(objGroup, animIndex[index],null,true);
-                    anim.y = animPos[index].y
-                    anim.x = animPos[index].x
-                }
-            }).wait(300).call(() => {
-                this.changeScrollIcon2()
-            }).wait(1500).call(() => {
-                this.centerAnimArr[index].x = 0
-                this.centerAnimArr[index].visible = true
-                if (this.mRerotateAttackDragon) {
-                    egret.Tween.removeTweens(this.mRerotateAttackDragon)
-                    this.mRerotateAttackDragon.animation.stop();
-                    this.mRerotateAttackDragon.dispose();
-                    if (this.mRerotateAttackDragon.parent) {
-                        this.mRerotateAttackDragon.parent.removeChild(this.mRerotateAttackDragon)
-                    }
-
-                    this.mRerotateAttackDragon = null
-                }
-                egret.Tween.get(this.centerAnimArr[index]).to({ x: posindex3[index].x }, 2000).set({ x: posindex3[index].x, y: posindex3[index].y })
-                this.switchTipsImage(1)
-                if (cb) {
-                    cb()
-                }
-
-            })
-
-        }
-
-        public characterGray(obj: any, gray: boolean = true) {
-            let v = 0.1
-            let colorMaxtrix =
-                [v, 0, 0, 0, 0,
-                    0, v, 0, 0, 0,
-                    0, 0, v, 0, 0,
-                    0, 0, 0, 1, 0];
-            if (gray)
-                obj.filters = [new egret.ColorMatrixFilter(colorMaxtrix)]
-            else
-                obj.filters = []
-        }
-        public mCurCharacterIndex = 0
-        // 选中人物 从0开始
-        public characterChooseAnim(target?: number, startStop: boolean = false, cb = null) {
-            if (!startStop) {
-                for (let item of this.centerAnimArr) {
-                    this.characterGray(item)
-                }
-                egret.Tween.get(this.centerAnimArr[0], { loop: true }).call(() => {
-                    uniLib.SoundMgr.instance.playSound("select_mp3", 1)
-                    this.characterGray(this.centerAnimArr[this.mCurCharacterIndex], false)
-                    if (this.mCurCharacterIndex == 0)
-                        this.characterGray(this.centerAnimArr[3])
-                    else
-                        this.characterGray(this.centerAnimArr[this.mCurCharacterIndex - 1])
-                    this.mCurCharacterIndex++
-                    if (this.mCurCharacterIndex == 4)
-                        this.mCurCharacterIndex = 0
-                }).wait(200)
-            }
-            else {
-                egret.Tween.removeTweens(this.centerAnimArr[0])
-                egret.Tween.get(this.centerAnimArr[0], { loop: true }).call(() => {
-                    uniLib.SoundMgr.instance.playSound("select_mp3", 1)
-                    this.characterGray(this.centerAnimArr[this.mCurCharacterIndex], false)
-                    if (this.mCurCharacterIndex == target) {
-                        egret.Tween.removeTweens(this.centerAnimArr[0])
-                        this.onAdddonghuaEff(target, this.effGroup, cb);
-                        this.centerAnimArr[target].visible = false
-                    }
-                    if (this.mCurCharacterIndex == 0)
-                        this.characterGray(this.centerAnimArr[3])
-                    else
-                        this.characterGray(this.centerAnimArr[this.mCurCharacterIndex - 1])
-                    this.mCurCharacterIndex++
-                    if (this.mCurCharacterIndex == 4)
-                        this.mCurCharacterIndex = 0
-                }).wait(200)
-            }
-        }
+        
 
         public DestroyCharacterAnim() {
             for (let anim of this.centerAnimArr)
@@ -1450,7 +1339,6 @@ module conglinshuiguo {
         //     }
         // }
         // public setLinePot(index) {
-        //     // console.error("setlinepot,", index);
         //     this.linePotGroup0.getChildByName("line" + (index + 1)).visible = true
         //     this.linePotGroup1.getChildByName("line" + (index + 1)).visible = true
 
@@ -1515,6 +1403,7 @@ module conglinshuiguo {
 
         public mGameButtonStatus: GameRotateStatus = GameRotateStatus.RotateNormal
         public onRotateButtonByClick(e: egret.Event = null) {
+            SoundHand.Instance.playBtnRotateSound();
             if (this.mGameButtonStatus == GameRotateStatus.RotateNormal) {
                 if (e && e.target != null) {
                     this.btnFlashOfLight();
@@ -1559,7 +1448,6 @@ module conglinshuiguo {
 
         //普通旋转;
         public onRotateButton(e: egret.Event = null) {
-            console.error("ssdasdqw onRotateButton")
             // this.playWinBarAnim(false)
 
 
@@ -1609,7 +1497,6 @@ module conglinshuiguo {
 
         //刷新旋转按钮状态;
         public refreshRotateButtonStatus() {
-            // console.error("refreshRotateButtonStatus");
             // this.mIsAutoRotating = this.mLeftRotateCount > 0 || this.mLeftRotateCount == -1;
             // let enableFlag = (this.IsAutoRotating == false && this.mIsRotating == false && !this.mIsFreeGameIng && !this.mIsInMarigame);
             // this.gameRotateButton.enabled = this.IsAutoRotating == false && !this.mIsRotating && !this.mIsFreeGameIng && !this.mIsInReRotategame
@@ -1622,7 +1509,6 @@ module conglinshuiguo {
             this.menuListButton.enabled = this.IsAutoRotating == false && !this.mIsRotating && !this.mIsFreeGameIng && !this.mIsInReRotategame
             if (this.IsAutoRotating) {
 
-                // console.error("refreshRotateButtonStatus111");
                 // this.chooseGameRotateButton(GameRotateChoose.autorotate);
                 let text = this.mLeftRotateCount == -1 ? "∞" : this.mLeftRotateCount.toString()
                 this.autoRotateButton.label = text;
@@ -1839,7 +1725,7 @@ module conglinshuiguo {
                 }
                 else if (DataCenter.Instance.isFirstFreeGame()) {
                     this.freeStickMov();
-                    SoundHand.Instance.PlaySoundOnce(ShzSound.FreeStartSound);
+                    // SoundHand.Instance.PlaySoundOnce(ShzSound.FreeStartSound);
                     clearGoldlabelFunc();
                 }
             }
@@ -1963,7 +1849,6 @@ module conglinshuiguo {
                     // return
                     // this.elemAnimMask.visible = true
                     // this.mLabaMachine.drawAllLines()
-                    console.error("call onEnterShowResult ")
                     if (DataCenter.Instance.isBigwin(obtainGold)) {
                         this.bigWinPanel.enterBigWinAnim(() => {
                             this.mBigWinInfo = this.bigWinPanel.playGoldWinType(obtainGold, () => {
@@ -1981,7 +1866,6 @@ module conglinshuiguo {
 
             if (DataCenter.Instance.IsFreeGame()) {
                 if (!DataCenter.Instance.IsTriggerFreeGame()) {
-                    console.error("entershow free select wild", this.mmmmm)
                     this.selectWildElem(awardFun)
 
                     return
@@ -2008,7 +1892,8 @@ module conglinshuiguo {
                 // [XYJ_ElemAllType.TangSeng, XYJ_ElemAllType.SunWuKong, XYJ_ElemAllType.ZhuBaJie, XYJ_ElemAllType.ShaSeng]
                 // let convert = [0, 3, 1, 0]
                 // this.characterChooseAnim(convert[elemChange - 5], true, awardFun)
-                this.characterChooseAnim(animIndex[elemChange], true, awardFun)
+                awardFun();
+                // this.characterChooseAnim(animIndex[elemChange], true, awardFun)
                 return
             }
             LabaGame.Instance.playWildDuobaoElemDefaultEffect();
@@ -2026,7 +1911,6 @@ module conglinshuiguo {
         //     let retTween = null
         //     let endpos = this.globalToLocal(localPos.x, localPos.y)
         //     if (flypos.length > 0)
-        //         uniLib.SoundMgr.instance.playSound("wild_mp3", 1);
         //     for (let pos of flypos) {
         //         let lpos = this.globalToLocal(pos.x, pos.y)
         //         let obj = new FlyWildIcon()
@@ -2079,7 +1963,6 @@ module conglinshuiguo {
                     this.mIsFreeGameIng = true;
                 }
                 else if (DataCenter.Instance.IsFreeGameEnd()) {
-                    console.error("这里是结束")
                     // this.stopFreeMov();
                     this.doFreeEnd()
                     this.doRefreshGoldDisplay()
@@ -2153,7 +2036,6 @@ module conglinshuiguo {
             this.mIsFreeGameIng = false;
             this.mIsRotating = false;
             this.refreshRotateButtonStatus();
-            console.error("zzzzzzzzzzz  doFreeEnd     z")
             game.Timer.clearTimeout(this.doFreeEndDelayTimer)
             this.doFreeEndDelayTimer = game.Timer.setTimeout(() => {
                 this.stopFreeMov();
@@ -2164,7 +2046,6 @@ module conglinshuiguo {
                     this.mIsRotating = false;
                     this.mGameButtonStatus = GameRotateStatus.RotateNormal
                     this.gameRotateButton.enabled = true
-                    console.error("zzzzzzzzzzz  doFreeEnd  showFreeEnd   z")
                     if (this.IsAutoRotating)
                         this.doNormal()
                 })
@@ -2189,7 +2070,6 @@ module conglinshuiguo {
         }
         public doReRotateTrigger() {
             egret.Tween.removeTweens(this.animGroup)
-            uniLib.SoundMgr.instance.playSound("chongzhuan_mp3", 1);
             egret.Tween.get(this.animGroup).set({ alpha: 0, y: -450 }).to({ y: -434, alpha: 1 }, 700).wait(1000).
                 call(() => {
                     this.mGameButtonStatus = GameRotateStatus.RotatePause
@@ -2197,7 +2077,7 @@ module conglinshuiguo {
                     this.doNormal(false)
                     this.rerotateImage.visible = true
                     this.switchTipsImage(2)
-                    this.characterChooseAnim(1, false)
+                    // this.characterChooseAnim(1, false)
                 }).to({ alpha: 0 }, 700)
 
             // this.playRerotateWord()
@@ -2207,7 +2087,7 @@ module conglinshuiguo {
         public doFreeTrigger() {
             // this.nextDoTimer = game.Timer.setTimeout(() => {
                 SoundHand.Instance.endLabaBg()
-                SoundHand.Instance.switchMusicBG(false)
+                SoundHand.Instance.switchMusicBG(1)
                 FreeGameIngPanel.Instance.LeftFreeCount = 8
                 // labalib.Utils.PlayTweenGroup(this.cloud, 1, () => {
 
@@ -2276,7 +2156,6 @@ module conglinshuiguo {
                 isPlayFlag[pos.row][pos.col] = true
             }
 
-            // console.error("sssssssssdqwwwwwww  :", JSON.stringify(isPlayFlag))
             if (lines.length > 0) {
                 this.winElemAnimNotLineGroup.parent.addChild(this.winElemAnimNotLineGroup)
                 this.elemAnimMask.parent.addChild(this.elemAnimMask)
@@ -2510,7 +2389,6 @@ module conglinshuiguo {
         public onBeltRotateBegin(param) {
             let beltIndex = param.beltIndex;
             let speed = param.speed * 1000;
-            // console.error("onBeltRotateBegin,", beltIndex, speed);
             // this["BeltHighScoll" + (beltIndex)].visible = true;
             // let outAnim = labalib.Utils.PlayMovieAnimInfo(this.mOutGridIcons[this.mCurAroundIndex].Root.parent, LabaConfig.MaliElemEffect);
 
@@ -2765,6 +2643,7 @@ module conglinshuiguo {
             let movString1
             if(!index){
                 let random1 = MathUtil.random(1,3);//上方猴子方向
+                SoundHand.Instance.playMonkeyAboutSound()
                 if(random1 == 1){
                     this.MonkeyMov3.x = 0;
                     this.MonkeyMov3.y = 700;
@@ -2936,7 +2815,6 @@ module conglinshuiguo {
                 this.winMoneyLabel.text = GX.GoldFormat(DataCenter.Instance.RaceObtainGold, true, true, true)
                 let muti = DataCenter.Instance.RaceObtainGold * 20 / DataCenter.Instance.CurDizhu
                 if (!DataCenter.Instance.isBigwin(DataCenter.Instance.RaceObtainGold) && muti > 60) {
-                    uniLib.SoundMgr.instance.playSound("scrollgold_mp3", 1);
                     labalib.Utils.scrollNumber(this.winMoneyLabel, 0, DataCenter.Instance.RaceObtainGold, 2400, () => {
                         // uniLib.SoundMgr.instance.playSound("scrollgold2_mp3", 1);
                     })

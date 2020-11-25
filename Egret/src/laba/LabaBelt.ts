@@ -112,7 +112,6 @@ module conglinshuiguo {
             egret.Tween.get(target).to({ scaleX: maxScale, scaleY: maxScale }, ((maxScale - curScale) / (maxScale - minScale)) * 0.5 * periodTm)
                 .to({ scaleX: minScale, scaleY: minScale }, periodTm / 2)
                 .to({ scaleX: curScale, scaleY: curScale }, ((curScale - minScale) / (maxScale - minScale) * 0.5 * periodTm)).call(() => {
-                    // console.error("xasdasdqw", finishCB)
                     if (finishCB)
                         finishCB();
                 });
@@ -139,6 +138,9 @@ module conglinshuiguo {
             }
         }
         public Animation_Dragon(animInfo, animName = null, times = 1) {
+            if(animInfo.Path == "s_wild"){
+                SoundHand.Instance.playBaiDaSound();
+            }
             this.mAnimObject = uniLib.DragonUtils.createDragonBoneAnimation(animInfo.Path)
             this.mAnimObject.animation.play(animName, times)
             this.mAnimObject.scaleX = animInfo.Scale
@@ -427,7 +429,6 @@ module conglinshuiguo {
 
 
             let waittime = 1000
-            console.error(this.mScrollInfoList.length,"这里是",this.isHighRotate)
 
             if (this.mScrollInfoList.length == 1 && this.isHighRotate) {
                 for (let icon of this.mIcons) {
@@ -458,6 +459,8 @@ module conglinshuiguo {
             this.mScrollInfoList.push({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: scrollinfo.realScrollItem, speed: scrollinfo.speed });
         }
         public StopEx() {
+            SoundHand.Instance.playHuaDongStopSound()
+            SoundHand.Instance.stopSlowStopSound();
 
             egret.Tween.removeTweens(this.mGroup)
 
@@ -475,11 +478,24 @@ module conglinshuiguo {
                 this.resetBeltPos()
             }
             //  return
-            DataCenter.Instance.SetBeltStatus(true, this.mBeltIndex - 1)
+            DataCenter.Instance.SetBeltStatus(true, this.mBeltIndex - 1);
+            // DataCenter.Instance.CurServerResultDatas
+            if(this.isHighRotate){
+                for(let item of DataCenter.Instance.CurServerResultDatas.itemIdList[this.isHighRotate]){
+                    if(item == 8){
+                        SoundHand.Instance.playDuoBaoStopSound();
+                        break;
+                    }
+                }
+            }
+            // LabaGame.Instance.mLabaMachine.getBelt(i).GetElementByIndex(3-j)
+            // labalib.LabaMachine.mBeltArray
+            // [this.mBeltIndex]
+            // for(){
 
+            // }
             if (this.mScrollInfoList.length == 0 && this.isHighRotate) {
                 if(this.isHighRotate == 4){
-
                     LabaGame.Instance.SetHighAnim(false)
                     LabaGame.Instance.playJiaSu = true;
                 }
@@ -642,7 +658,6 @@ module conglinshuiguo {
                 }
             this.resetBeltPos()
             DataCenter.Instance.SetBeltStatus(true, this.mBeltIndex - 1)
-            console.error("这里走不走 我不带子")
             if (this.mScrollInfoList.length == 0 && this.isHighRotate) {
                 if(this.isHighRotate == 4){
 

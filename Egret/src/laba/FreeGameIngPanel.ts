@@ -96,7 +96,6 @@ module conglinshuiguo {
                 cb()
             }
             // game.Timer.clearTimeout(this.mFinishCBDelayTimer)
-            // console.error(dragonType,"这和sjosjem,1")
             // switch (dragonType) {
             //     case FreeInCharacterDragonType.CHANGE_ROTATE:
             //         this.ChangeGoldDragon()
@@ -121,7 +120,6 @@ module conglinshuiguo {
         // }
         // public ChangeGoldDragon() {
         //     //背景动画
-        //     uniLib.SoundMgr.instance.playSound("freegold_mp3", 1)
         //     this.animGroup.addChild(this.mCharacterDragonObjectArr[this.FrontDragonType])
         //     let animInfo = LabaConfig.FreeInCharacterDragons[this.FrontDragonType]
         //     this.mCharacterDragonObjectArr[this.FrontDragonType].animation.stop()
@@ -133,7 +131,6 @@ module conglinshuiguo {
         public ScaleDragon() {
 
             // let scaleTweenArr = []
-            // console.error("testalpha bug:", this.mCharacterState)
             // for (let key in this.mCharacterState) {
             //     if (this.mCharacterState[key] == true) {
             //         let animInfo = LabaConfig.FreeInCharacterDragons[key]
@@ -144,7 +141,6 @@ module conglinshuiguo {
             //     // else {
             //     //     // this.alpha=0.4
             //     //     this.mCharacterDragonObjectArr[key].alpha = 0.4
-            //     //     console.error("testalpha bug set 0.4:", key)
             //     // }
             // }
             // if (scaleTweenArr.length != 0)
@@ -171,7 +167,6 @@ module conglinshuiguo {
             //     for (let tw of scaleTweenArr) {
             //         tw.twHandler.wait(this.mFinishCBDelay).to({ scaleX: tw.scale, scaleY: tw.scale }, 500).call(() => {
             //             for (let key in this.mCharacterDragonObjectArr) {
-            //                 console.error("testalpha bug set 1:", key)
             //                 this.mCharacterDragonObjectArr[key].alpha = 1
             //             }
             //         })
@@ -181,7 +176,6 @@ module conglinshuiguo {
         public RotateDragon(Init: boolean = false) {
             // if (!Init)
             //     this.FrontDragonType = (this.FrontDragonType + 1) % 4
-            // console.error("testfreeingame FrontDragonType:", this.FrontDragonType)
             // let pos = [Direct.down, Direct.right, Direct.up, Direct.left]
             // this.animGroup.addChild(this.mCharacterDragonObjectArr[(this.FrontDragonType + 2) % 4])
             // this.animGroup.addChild(this.mCharacterDragonObjectArr[(this.FrontDragonType + 1) % 4])
@@ -259,7 +253,6 @@ module conglinshuiguo {
         }
         private mCharacterPosOffset = {}
         public ResetCharacterDragon() {
-            console.error("sdsxxxxxxxxxxxxxxxxxx")
             this.FrontDragonType = 0
             this.mCharacterState = {}
             this.ProgressValue = 0
@@ -335,8 +328,6 @@ module conglinshuiguo {
             // )
             // this.progressImage.width = iamgewild[value]
             // this.progressAnim.x = animWild[value]
-            // uniLib.SoundMgr.instance.playSound("progress_mp3", 1)
-            // console.error("testfreeingame set  Progress:", value)
         }
         public set ProgressValue(value: number) {
             this.mProgressValue = value
@@ -346,7 +337,6 @@ module conglinshuiguo {
         }
         public get Progress() {
             let valueCover = [0, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
-            console.error("testfreeingame get  Progress:", this.mProgressValue)
             if (this.mProgressValue > 12)
                 return this.mProgressValue
             return valueCover[this.mProgressValue]

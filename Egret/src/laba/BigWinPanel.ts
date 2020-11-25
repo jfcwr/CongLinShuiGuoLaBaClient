@@ -34,7 +34,7 @@ module conglinshuiguo {
             this.winTitleGroup.visible = false;
             GX.PopUpManager.addPopUp(this)
 
-            SoundHand.Instance.playBigWinSound()
+            // SoundHand.Instance.playBigWinSound()
             if(!this.winMonkeyMov){
                 this.winMonkeyMov = uniLib.DragonUtils.createDragonBoneAnimation("mgbg_wins_lemur")
                 this.winMonkeyMov.x = 360;
@@ -70,6 +70,7 @@ module conglinshuiguo {
             egret.Tween.get(this.winLeafMov3).set({ x:920 }).to({ x:720 }, 300)
             egret.Tween.get(this.winLeafMov4).set({ x:920 }).to({ x:720 }, 300)
             this.winMonkeyMov.animation.play("win_0",1)
+            SoundHand.Instance.playbigwinMonkeySound();
             this.winMonkeyMov.armature.addEventListener(dragonBones.EventObject.COMPLETE, this.winMonkeyMovIdle, this);
             game.Timer.setTimeout(() => {
                 if (cb)
@@ -339,7 +340,6 @@ module conglinshuiguo {
             egret.log("call playGoldWinType, obtainGold:", obtainGold, " showWinTypeCount:", showWinTypeCount, " obtainNormalMultiply:", obtainNormalMultiply);
 
             // if (showWinTypeCount == 0) {
-            //     console.error("免费直接退出1")
             //     this.winSignOut(cb);
             //     return { stopCB: null, totalTm: 0, noBigWin: true };
             // }
@@ -370,8 +370,16 @@ module conglinshuiguo {
                     }
                     if (obtainGold < toGold)
                         toGold = obtainGold
-                    scrollNumberInfo = labalib.Utils.scrollNumber(this.GoldNumLabel, fromGold, toGold, waitTime);
-                    uniLib.SoundMgr.instance.playSound("freescroll_mp3", 1)
+                    scrollNumberInfo = labalib.Utils.scrollNumber(this.GoldNumLabel, fromGold, toGold, waitTime,()=>{
+                        SoundHand.Instance.playbigwinStopSound()
+                        if(DataCenter.Instance.IsFreeGame()){
+                            SoundHand.Instance.switchMusicBG(1)
+                        }
+                        else{
+                            SoundHand.Instance.switchMusicBG(0)
+                        }
+                    });
+                    SoundHand.Instance.switchMusicBG(2)
                 }).wait(waitTime)
             }
             bigwinTween.wait(4000).call(() => {
@@ -386,6 +394,7 @@ module conglinshuiguo {
                     scrollNumberInfo.stopCB();
                 }
                 egret.Tween.removeTweens(bigwinTween)
+                
                 //还有没有播放完毕的金币类型;
                 if (this._mCurPlayWinType < showWinTypeCount) {
                     this.playWinType(showWinTypeCount);

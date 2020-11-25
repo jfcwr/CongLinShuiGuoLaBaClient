@@ -604,7 +604,6 @@ m
                     GX.Tips.showPopup("金币不足")
                     labalib.EventManager.ResetButtonStatusEvent.call();
                 }
-                console.error("InvalidPath, curState:", this.mFsm.getState(), " cannot startRotate..");
                 return;
             }
             let serverResult = DataCenter.Instance.getServerBetResult();
@@ -633,7 +632,6 @@ m
         public doEnterRotate(isGetServerResponse: boolean = false) {
             if (!isGetServerResponse) {
 
-                console.error("xxxxxxxxxxxx1111111111111111")
                 for (let i: number = 0; i < DataCenter.Instance.BeltCount; i++) {
                     DataCenter.Instance.SetBeltStatus(false, i)
                     let beltext = this.mBeltArray[i] as LabaBelt
@@ -658,13 +656,12 @@ m
                         break;
                     }
                 }
-                // console.error(jiaSuNumber,"这里是什么")
+                SoundHand.Instance.playSlowStopSound();
                 // return
                 let timeScale = DataCenter.Instance.ScrollTimeScale
                 let count = [10, 12, 14, 17, 19]
                 if (DataCenter.Instance.IsQuickRotate)
                     count = [20, 24, 28, 34, 40]
-                console.error("xxxxxxxxxxxx222222222222222222222", DataCenter.Instance.CurServerResultDatas, DataCenter.Instance.IsFreeGame(), DataCenter.Instance.IsTriggerRerotateGame())
                 for (let i: number = 0; i < DataCenter.Instance.BeltCount; i++) {
                     let beltext = this.mBeltArray[i] as LabaBelt
                     // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4, waitTime: i * 100, speed: 250*20 });
@@ -735,7 +732,6 @@ m
         public drawAllLines() {
             let resultData = DataCenter.Instance.getResultDatas();
             // resultData = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]]
-            console.error(resultData,"这里是数据")
             let result = SgmlHelper.Instance.getResultAllLinesAndMultipy(resultData);
             // let 
             let totalPoint = DataCenter.Instance.CurServerResultDatas.resultData.awardPoint

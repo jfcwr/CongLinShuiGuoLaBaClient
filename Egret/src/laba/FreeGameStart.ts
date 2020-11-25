@@ -29,6 +29,7 @@ module conglinshuiguo {
         private winLeafMov4: dragonBones.EgretArmatureDisplay = null;
         private movGroup:eui.Group;
         public stopAppear() {
+            SoundHand.Instance.switchMusicBG(1)
             egret.Tween.get(this.bgimage).set({ alpha: 1 }).to({ alpha: 0 }, 300);
             egret.Tween.get(this.winLeafMov1).set({ x:0 }).to({ x:-200 }, 300)
             egret.Tween.get(this.winLeafMov2).set({ x:0 }).to({ x:-200 }, 300)
@@ -99,6 +100,7 @@ module conglinshuiguo {
         }
 
         public playAppear() {
+            SoundHand.Instance.switchMusicBG(3)
             egret.Tween.get(this.bgimage).set({ alpha: 0 }).to({ alpha: 1 }, 300);
             if(!this.winMonkeyMov){
                 this.winMonkeyMov = uniLib.DragonUtils.createDragonBoneAnimation("mgbg_wins_lemur")
@@ -161,6 +163,7 @@ module conglinshuiguo {
         }
         private gameRoot: eui.Group
         public onStartButton() {
+            SoundHand.Instance.playFreebtnSound();
             this.startButton.enabled = false;
             game.Timer.clearTimeout(this.mAutoCloseTimer)
             //星星动画
@@ -234,9 +237,11 @@ module conglinshuiguo {
                 // this.rcloud.visible = true
                 this.gameRoot.visible = false
                 this.bgimage.visible = false
+                SoundHand.Instance.switchMusicBG(1)
                 // labalib.Utils.PlayTweenGroup(this.cloud, 1, () => {
                     // GX.PopUpManager.removePopUp(FreeGameStart.Instance)
-                    LabaGame.Instance.freemGroup.removeChild(FreeGameStart.Instance);
+                    // LabaGame.Instance.freemGroup.removeChild(FreeGameStart.Instance);
+                    this.stopAppear();
                     if (this.mFinishCB) {
                         this.mFinishCB()
                     }

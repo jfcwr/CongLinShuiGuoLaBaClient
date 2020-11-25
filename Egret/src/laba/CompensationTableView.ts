@@ -44,7 +44,6 @@ module conglinshuiguo {
             let dstPage: number = Math.floor(curScrollH / this.mScrollWidth + 0.5 + this.scrolloffset);
             let dstScrollH: number = dstPage * this.mScrollWidth;
             let self = this;
-            // uniLib.SoundMgr.instance.playSound("bfsg_rule_turn_page_mp3", 1);
             egret.Tween.get(this.mScroller.viewport).to({ scrollH: dstScrollH }, (Math.abs(dstScrollH - curScrollH) / this.mScrollSpeed) * 500, egret.Ease.getPowOut(2)).call(() => {
                 self.mScroller.touchEnabled = true;
             });
@@ -54,7 +53,6 @@ module conglinshuiguo {
             let dstScrollH: number = page * this.mScrollWidth;
             let self = this;
             let curScrollH: number = this.mScroller.viewport.scrollH;
-            // uniLib.SoundMgr.instance.playSound("bfsg_rule_turn_page_mp3", 1);
             egret.Tween.get(this.mScroller.viewport).to({ scrollH: dstScrollH }, (Math.abs(this.mScrollWidth) / this.mScrollSpeed) * 500, egret.Ease.getPowOut(2)).call(() => {
                 self.mScroller.touchEnabled = true;
             });
