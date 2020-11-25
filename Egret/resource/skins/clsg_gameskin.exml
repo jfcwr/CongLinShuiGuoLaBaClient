@@ -13,9 +13,9 @@
 	<e:Image id="menImage" touchEnabled="false" bottom="984" source="mg_temple" scaleX="1" scaleY="1" horizontalCenter="0"/>
 	<e:Image id="gameNameImage" touchEnabled="false" bottom="1036" horizontalCenter="0" source="logo_on_temple"/>
 
-	<e:Image scaleX="2" scaleY="2" touchEnabled="false" bottom="1316" source="background_cloud_05" right="0" />
-	<e:Image scaleX="2" scaleY="2" touchEnabled="false" source="background_cloud_04" left="0" bottom="1400" />
-	<e:Image scaleX="2" scaleY="2" touchEnabled="false" source="background_cloud_06" left="0" bottom="1000"  visible="false"/>
+	<e:Image scaleX="2" scaleY="2" touchEnabled="false" bottom="1316" source="" right="0" />
+	<e:Image scaleX="2" scaleY="2" touchEnabled="false" source="" left="0" bottom="1400" />
+	<e:Image scaleX="2" scaleY="2" touchEnabled="false" source="" left="0" bottom="1000"  visible="false"/>
 	<e:Image id="bg1" source="" width="720" horizontalCenter="0" height="1560" bottom="0" scale9Grid="47,53,284,618" visible="false"/>
 	<e:Group id="MonkeyMovGroup" height="0" width="720" horizontalCenter="0" bottom="1280" touchEnabled="false"/>
 	<e:Group id="gameRootPanel" height="1280" touchEnabled="false" name="gameRootPanel" width="720" horizontalCenter="0"
@@ -26,23 +26,23 @@
 		<e:Group id="gameGroup" width="710" height="505" scaleX="1" scaleY="1" name="gameGroup" anchorOffsetX="0"
 		         anchorOffsetY="0" horizontalCenter="0" top="375">
 			<e:Image id="rerotateImage" scaleX="1" scaleY="1" touchEnabled="false" width="750" height="480" y="-28.33"
-			         source="feature_reel_glow_a" horizontalCenter="0" blendMode="normal"  visible="false"/>
+			         source="" horizontalCenter="0" blendMode="normal"  visible="false"/>
 			<e:Scroller id="labaGameScroller" anchorOffsetX="0" anchorOffsetY="0" scrollPolicyH="off"
 			            scrollPolicyV="off" width="710" height="505" y="0" horizontalCenter="0">
 				<e:Group height="505" x="105" anchorOffsetX="0" width="710">
 					<e:Group id="LabaBeltRootGroup" height="505" x="0" y="0" anchorOffsetX="0" width="710" touchChildren="true"
 					         touchEnabled="false">
 						<e:Group scrollEnabled="true" height="505" width="142" x="142" scaleY="-1" y="505" visible="false">
-							<e:Image id="fast_back_whitelight1" scaleX="1.4" scaleY="1" touchEnabled="false" source="fast_back_pattern"
+							<e:Image id="fast_back_whitelight1" scaleX="1.4" scaleY="1" touchEnabled="false" source=""
 							         blendMode="add" width="142" height="505" anchorOffsetY="0" y="0"  x="-22"/>
 						</e:Group>
 						<e:Group scrollEnabled="true" height="505" width="142" x="284" scaleY="-1" y="505" visible="false">
-							<e:Image id="fast_back_whitelight2" scaleX="1.4" scaleY="1" touchEnabled="false" source="fast_back_pattern"
+							<e:Image id="fast_back_whitelight2" scaleX="1.4" scaleY="1" touchEnabled="false" source=""
 							         blendMode="add" width="142" height="505" anchorOffsetY="0" y="0"  x="-28"/>
 						</e:Group>
 						<e:Group scrollEnabled="true" height="505" width="142" x="426" scaleY="-1" y="505" visible="false">
 							<e:Image id="fast_back_whitelight3" touchEnabled="false" blendMode="add" scaleX="1.4"
-							         source="fast_back_pattern" scaleY="1"  width="142" height="505" y="0" x="-28"/>
+							         source="" scaleY="1"  width="142" height="505" y="0" x="-28"/>
 						</e:Group>
 						<e:Group id="belt1Group" x="0" anchorOffsetX="0" scaleX="1" scaleY="1" width="142" height="1155" name="belt1Group"
 						         y="-652">

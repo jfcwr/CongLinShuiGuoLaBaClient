@@ -23,7 +23,6 @@ module conglinshuiguo {
 
 
 
-        // addImage plus_2_active
         private freecountBLabel: eui.BitmapLabel
         private lastFreeImage: eui.Image
         private freeWordImage: eui.Image
@@ -171,32 +170,8 @@ module conglinshuiguo {
         // baiImage0
         private mProgressValue: number
         public set Progress(value: number) {
-            // if (!this.progressAnim) {
-            //     this.progressAnim = labalib.Utils.PlayMovieAnimInfo(this.progressGroup, LabaConfig.FreeInProgressEffect);
-            //     this.progressAnim.blendMode = "add"
-            //     // this.blendMode
-            // }
-            // let imagesrc = ["bonus_gem_bar_1", "bonus_gem_bar_1", "bonus_gem_bar_2", "bonus_gem_bar_full"]
-            // let iamgewild = [0, 120, 250, 358]
-            // let animWild = [0, 86, 215, 340]
-            // if (value == 0) {
-            //     // this.progressAnim.visible = false
-            //     this.progressImage.visible = false
-            //     this.progressAnim.x = animWild[value]
-            //     this.progressImage.width = iamgewild[value]
-            //     return
-            // }
-            // this.progressImage.source = imagesrc[value]
-            // this.progressAnim.visible = false
-            // this.progressImage.visible = true
-            // egret.Tween.get(this.progressImage).to({ width: iamgewild[value] }, 300).call(
-            //     () => {
-            //         this.progressAnim.visible = true
-            //         this.progressAnim.x = animWild[value]
-            //     }
-            // )
-            // this.progressImage.width = iamgewild[value]
-            // this.progressAnim.x = animWild[value]
+            
+           
         }
         public set ProgressValue(value: number) {
             this.mProgressValue = value

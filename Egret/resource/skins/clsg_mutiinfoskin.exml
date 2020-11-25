@@ -19,7 +19,7 @@
 		</e:Group>
 		<e:Group id="descGroup" scaleY="1" anchorOffsetX="0" x="210" y="40" width="132" height="132"
 		        >
-			<e:Image touchEnabled="false" x="80" y="0" width="200" source="infoboard_c"  visible="false"/>
+			<e:Image touchEnabled="false" x="80" y="0" width="200" source=""  visible="false"/>
 			<e:Group id="mutiGroup" width="132" height="132" scaleX="1" scaleY="1" horizontalCenter="-18" verticalCenter="0">
 				<e:BitmapLabel text="5" verticalCenter="-40" horizontalCenter="-40"  font="number3_fnt" scaleX="0.2" scaleY="0.2"/>
 				<e:BitmapLabel text="4" verticalCenter="0" horizontalCenter="-40"  font="number3_fnt" scaleX="0.2" scaleY="0.2"/>

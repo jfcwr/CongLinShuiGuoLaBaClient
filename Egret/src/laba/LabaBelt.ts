@@ -164,13 +164,7 @@ module conglinshuiguo {
         public PlayChangeAnimation(winElemID: number, finishCB?: Function, params?: any) {
             this.Special = true
             let animInfo = DataCenter.Instance.getSpecialElementAnimInfo(winElemID)
-            // this.changeImage.visible = true
-            // let src = ["feature_glow_a_sandy", "feature_glow_a_pig", "feature_glow_a_monkey", "feature_glow_a_monk"]
-            // this.changeImage.source = src[winElemID - 5]
-            // this.duobaoglow0.visible = false
-            // this.duobaoglow.visible = false
             this.bgGroup.visible = false
-            // this.kuangDragon2.visible = false
             this.elemImage.visible = false
 
             if (this.mAnimObject != null) {

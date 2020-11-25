@@ -70,7 +70,7 @@ module conglinshuiguo {
 			}
 
 
-			this.freecountLabel.text = "" + (wildMap[DataCenter.Instance.WildCount - 1] * 2 + 8)
+			// this.freecountLabel.text = "" + (wildMap[DataCenter.Instance.WildCount - 1] * 2 + 8)
 
 
 			this.mStopScrollCB = labalib.Utils.scrollNumber(this.winLabel, 0, DataCenter.Instance.FreeAccObtainGold, 1000, () => {
