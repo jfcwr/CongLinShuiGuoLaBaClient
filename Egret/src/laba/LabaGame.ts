@@ -2369,9 +2369,9 @@ module conglinshuiguo {
 
             //     })
             // this.SetHighAnim(true);
-            this.bigWinPanel.enterBigWinAnim(() => {
-                this.bigWinPanel.playGoldWinType(100000)
-            })
+            // this.bigWinPanel.enterBigWinAnim(() => {
+            //     this.bigWinPanel.playGoldWinType(100000)
+            // })
         }
         // 点击关闭菜单按钮
         protected onCloseMenuButton() {
