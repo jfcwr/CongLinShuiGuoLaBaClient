@@ -138,7 +138,7 @@ class CLSGMain extends uniLib.GameDoc {
         uniLib.UIMgr.instance.hideLoading();
         uniLib.SceneMgr.instance.changeScene(conglinshuiguo.PokerGameScene);
         conglinshuiguo.SoundHand.Instance.switchMusicBG();
-        game.Config.InteractiveSoundName = "xyj_btn_click_mp3";
+        game.Config.InteractiveSoundName = "clsg_btn_click_mp3";
         new ActionManage();
     }
 

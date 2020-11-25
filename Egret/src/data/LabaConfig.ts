@@ -105,34 +105,7 @@ module conglinshuiguo {
         public static FiveKind1 = { Path: "fiveKind1", KeyRate: 20, Scale: 2.5, AddBlend: 1 , PlayTime: 1};
         public static FiveKind2 = { Path: "fiveKind2", KeyRate: 20, Scale: 1, AddBlend: 1 , PlayTime: 1};
 
-        //免费游戏过程人物特效;
-        public static FreeInCharacterDragons: { [key: number]: any } = {
-            // 3: { Path: "_bonusgame_sandy", Win: "base_win", Change: "base_to_gold", Normal: "base_idlefade", Gold: "gold_idle", Scale: 2, Down: { x: 2, y: 370, s: 1.6 }, Right: { x: 180, y: 300, s: 1.6 }, Up: { x: 0, y: 250, s: 1.6 }, Left: { x: -180, y: 310, s: 1.6 } },
-            // 2: { Path: "_bonusgame_pig", Win: "base_win", Change: "base_to_gold", Normal: "base_idlefade", Gold: "gold_idle", Scale: 2, Left: { x: -180, y: 320, s: 1.7 }, Down: { x: 0, y: 390, s: 1.7 }, Right: { x: 190, y: 320, s: 1.7 }, Up: { x: 2, y: 250, s: 1.7 } },
-            // 1: { Path: "_bonusgame_monkey", Win: "base_win", Change: "base_to_gold", Normal: "base_idlefade", Gold: "gold_idle", Up: { x: 2, y: 285, s: 1.8 }, Left: { x: -180, y: 340, s: 1.8 }, Down: { x: 0, y: 420, s: 1.8 }, Right: { x: 214, y: 345, s: 1.8 } },
-            // 0: { Path: "_bonusgame_monk", Win: "base_win", Change: "base_to_gold", Normal: "base_idlefade", Gold: "gold_idle", Scale: 2, Right: { x: 190, y: 265, s: 1.9 }, Up: { x: 0, y: 200, s: 1.9 }, Left: { x: -180, y: 265, s: 1.7 }, Down: { x: 5, y: 340, s: 1.9 } },
-
-            3: {
-                Path: "_bonusgame_sandy", Win: "base_win", Change: "base_to_gold", Normal: "base_idlefade", Gold: "gold_idle",
-                Scale: 2, Down: { x: 2, y: 370, s: 1.6 }, Right: { x: 180, y: 305, s: 1.5 },
-                Up: { x: 0, y: 250, s: 1.6 }, Left: { x: -180, y: 310, s: 1.6 }
-            },
-            2: {
-                Path: "_bonusgame_pig", Win: "base_win", Change: "base_to_gold", Normal: "base_idlefade", Gold: "gold_idle",
-                Scale: 2, Left: { x: -180, y: 320, s: 1.7 }, Down: { x: 0, y: 390, s: 1.7 },
-                Right: { x: 190, y: 320, s: 1.7 }, Up: { x: 2, y: 250, s: 1.6 }
-            },
-            1: {
-                Path: "_bonusgame_monkey", Win: "base_win", Change: "base_to_gold", Normal: "base_idlefade", Gold: "gold_idle",
-                Up: { x: 40, y: 250, s: 1.8 }, Left: { x: -180, y: 340, s: 1.8 },
-                Down: { x: 0, y: 405, s: 1.8 }, Right: { x: 214, y: 345, s: 1.8 }
-            },
-            0: {
-                Path: "_bonusgame_monk", Win: "base_win", Change: "base_to_gold", Normal: "base_idlefade", Gold: "gold_idle",
-                Scale: 2, Right: { x: 190, y: 265, s: 1.9 }, Up: { x: 0, y: 180, s: 1.9 },
-                Left: { x: -180, y: 265, s: 1.5 }, Down: { x: 5, y: 340, s: 1.7 }
-            },
-        };
+       
         //免费游戏进度条动画
         public static FreeInProgressEffect = { Path: "btn1", KeyRate: 10, Scale: 1 };
         // bigwin 粒子特效

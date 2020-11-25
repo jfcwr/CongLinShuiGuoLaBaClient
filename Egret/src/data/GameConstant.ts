@@ -9,9 +9,9 @@ module conglinshuiguo {
 		ShaSeng = 5,
 		ZhuBaJie = 6,
 		SunWuKong = 7,
-		TangSeng = 8,
+		DuoBao = 8,
 		Wild = 9,
-		DuoBao = 10,
+		TangSeng = 10,
 	};
 
 	export enum CLSG_ResultType {

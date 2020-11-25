@@ -70,17 +70,6 @@ module conglinshuiguo {
 
         // private mCharacterDragonObjectArr: { [key: number]: dragonBones.EgretArmatureDisplay } = {}
         public destroyCharacterDragon() {
-            // for (let key in LabaConfig.FreeInCharacterDragons) {
-            //     let dragonObj = this.mCharacterDragonObjectArr[key]
-            //     if (dragonObj) {
-            //         dragonObj.animation.stop()
-            //         if (dragonObj.parent)
-            //             dragonObj.parent.removeChild(dragonObj)
-            //         dragonObj.dispose()
-            //         dragonObj = null
-            //     }
-            // }
-            // this.mCharacterDragonObjectArr = {}
         }
         // private mFinishCB: any = null
         private mCharacterState = {}
@@ -111,67 +100,11 @@ module conglinshuiguo {
         // private mFinishCBDelayTimer: number = 0
         private mFinishCBDelay: number = 0
         private mFinishCB: Function = null
-        // public GetWildDragon() {
-        //     this.animGroup.addChild(this.mCharacterDragonObjectArr[this.FrontDragonType])
-        //     let animInfo = LabaConfig.FreeInCharacterDragons[this.FrontDragonType]
-        //     this.mCharacterDragonObjectArr[this.FrontDragonType].animation.stop()
-        //     this.mCharacterDragonObjectArr[this.FrontDragonType].animation.play(animInfo.Win, 1)
-        //     this.mCharacterDragonObjectArr[this.FrontDragonType].addEventListener(egret.Event.COMPLETE, this.DragonCompleteWin, this)
-        // }
-        // public ChangeGoldDragon() {
-        //     //背景动画
-        //     this.animGroup.addChild(this.mCharacterDragonObjectArr[this.FrontDragonType])
-        //     let animInfo = LabaConfig.FreeInCharacterDragons[this.FrontDragonType]
-        //     this.mCharacterDragonObjectArr[this.FrontDragonType].animation.stop()
-        //     this.mCharacterDragonObjectArr[this.FrontDragonType].animation.play(animInfo.Change, 1)
-        //     this.mCharacterDragonObjectArr[this.FrontDragonType].addEventListener(egret.Event.COMPLETE, this.DragonCompleteChange, this)
-        //     this.mCharacterState[this.FrontDragonType] = true
-        //     // this.Progress = 0
-        // }
         public ScaleDragon() {
 
-            // let scaleTweenArr = []
-            // for (let key in this.mCharacterState) {
-            //     if (this.mCharacterState[key] == true) {
-            //         let animInfo = LabaConfig.FreeInCharacterDragons[key]
-            //         let scaleTween = egret.Tween.get(this.mCharacterDragonObjectArr[key])
-            //         scaleTween.to({ scaleX: animInfo.Down.s + 0.2, scaleY: animInfo.Down.s + 0.2 }, 500).wait(400)
-            //         scaleTweenArr.push({ twHandler: scaleTween, scale: animInfo.Down.s })
-            //     }
-            //     // else {
-            //     //     // this.alpha=0.4
-            //     //     this.mCharacterDragonObjectArr[key].alpha = 0.4
-            //     // }
-            // }
-            // if (scaleTweenArr.length != 0)
-            //     for (let key in this.mCharacterState) {
-            //         if (this.mCharacterState[key] != true) {
-            //             this.mCharacterDragonObjectArr[key].alpha = 0.4
-            //         }
-            //     }
-            // if (scaleTweenArr.length == 0) {
                 if (this.mFinishCB) {
-                    // if (this.mFinishCBDelay != 0)
-                    //     this.mFinishCBDelayTimer = game.Timer.setTimeout(() => { this.mFinishCB() }, null, this.mFinishCBDelay)
-                    // else
                         this.mFinishCB()
                 }
-            // } 
-            // else {
-            //     scaleTweenArr[0].twHandler.call(() => {
-
-            //         if (this.mFinishCB) {
-            //             this.mFinishCB()
-            //         }
-            //     })
-            //     for (let tw of scaleTweenArr) {
-            //         tw.twHandler.wait(this.mFinishCBDelay).to({ scaleX: tw.scale, scaleY: tw.scale }, 500).call(() => {
-            //             for (let key in this.mCharacterDragonObjectArr) {
-            //                 this.mCharacterDragonObjectArr[key].alpha = 1
-            //             }
-            //         })
-            //     }
-            // }
         }
         public RotateDragon(Init: boolean = false) {
             // if (!Init)
@@ -213,37 +146,9 @@ module conglinshuiguo {
         public set FrontDragonType(value: number) {
             this.mFrontDragonType = value
         }
-        // public mWinNextToScaleTimerDelay: number = 0
         public DragonCompleteWin(e: egret.Event) {
-            // let animInfo = LabaConfig.FreeInCharacterDragons[this.mFrontDragonType]
-            // e.target.removeEventListener(egret.Event.COMPLETE, this.DragonCompleteWin, this)
-            // e.target.animation.stop()
-            // e.target.animation.play(animInfo.Normal, 0)
-            // game.Timer.clearTimeout(this.mWinNextToScaleTimerDelay)
-            // this.mWinNextToScaleTimerDelay = game.Timer.setTimeout(() => {
-                // this.ScaleDragon()
-            // }, null, 600)
         }
         public DragonCompleteChange(e: egret.Event) {
-            // let animInfo = LabaConfig.FreeInCharacterDragons[this.mFrontDragonType]
-            // e.target.removeEventListener(egret.Event.COMPLETE, this.DragonCompleteChange, this)
-            // e.target.animation.stop()
-            // e.target.animation.play(animInfo.Gold, 0)
-            // egret.Tween.get(this.addImage_active).set({ alpha: 1, scaleX: 1, scaleY: 1, x: 208, y: 22 })
-            //     .to({ x: 344, y: 149, alpha: 0 }, 800).call(() => {
-            //         this.LeftFreeCount = this.LeftFreeCount + 2
-            //         if (this.mProgressValue < 12)
-            //             this.RotateDragon()
-            //         else {
-            //             if (this.mFinishCB) {
-            //                 if (this.mFinishCBDelay != 0)
-            //                     this.mFinishCBDelayTimer = game.Timer.setTimeout(this.mFinishCB, this, this.mFinishCBDelay)
-            //                 else
-            //                     this.mFinishCB()
-            //             }
-            //         }
-            //     })
-
         }
         public clearLastAnim() {
             // game.Timer.clearTimeout(this.mFinishCBDelayTimer)
@@ -259,44 +164,8 @@ module conglinshuiguo {
             this.Progress = 0
             this.LeftFreeCount = 8
             this.mFinishCB = null
-            // this.mFinishCBDelay = 0
-            // game.Timer.clearTimeout(this.mFinishCBDelayTimer)
-            // game.Timer.clearTimeout(this.mWinNextToScaleTimerDelay)
-
-            // for (let key in this.mCharacterDragonObjectArr) {
-            //     let animInfo = LabaConfig.FreeInCharacterDragons[key]
-            //     let obj = this.mCharacterDragonObjectArr[key]
-            //     obj.removeEventListener(egret.Event.COMPLETE, this.DragonCompleteChange, this)
-            //     obj.removeEventListener(egret.Event.COMPLETE, this.DragonCompleteWin, this)
-            //     obj.animation.stop()
-            //     obj.animation.play(animInfo.Normal, 0)
-            //     this.mCharacterState[key] = false
-            //     egret.Tween.removeTweens(obj)
-            // }
-            // this.RotateDragon(true)
-            // this.animGroup.addChild(this.mCharacterDragonObjectArr[this.FrontDragonType])
         }
         public InitCharacterDragon() {
-            // [Direct.down, Direct.right, Direct.up, Direct.left]
-            // for (let i = FreeInCharacter.Monk; i <= FreeInCharacter.Sandy; i++) {
-            //     this.mCharacterPosOffset[i] = {}
-            //     let animinfo = LabaConfig.FreeInCharacterDragons[i]
-            //     this.mCharacterPosOffset[i][Direct.down] = { x: animinfo.Down.x, y: animinfo.Down.y }
-            //     this.mCharacterPosOffset[i][Direct.up] = { x: animinfo.Up.x, y: animinfo.Up.y }
-            //     this.mCharacterPosOffset[i][Direct.left] = { x: animinfo.Left.x, y: animinfo.Left.y }
-            //     this.mCharacterPosOffset[i][Direct.right] = { x: animinfo.Right.x, y: animinfo.Right.y }
-            // }
-
-            // for (let key in LabaConfig.FreeInCharacterDragons) {
-            //     let animInfo = LabaConfig.FreeInCharacterDragons[key]
-            //     let animDragon = uniLib.DragonUtils.createDragonBoneAnimation(animInfo.Path)
-            //     animDragon.scaleX = animInfo.Down.s
-            //     animDragon.scaleY = animInfo.Down.s
-            //     animDragon.anchorOffsetX = animDragon.width / 2
-            //     animDragon.anchorOffsetY = animDragon.height / 2
-            //     // this.animGroup.addChild(animDragon)
-            //     this.mCharacterDragonObjectArr[key] = animDragon
-            // }
             this.ResetCharacterDragon()
         }
         // baiImage0

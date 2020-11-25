@@ -151,8 +151,8 @@ module conglinshuiguo {
         // private bg4: eui.Image
 
 
-        private duobaoScale: egret.tween.TweenGroup
-        private changeScale: egret.tween.TweenGroup
+        // private duobaoScale: egret.tween.TweenGroup
+        // private changeScale: egret.tween.TweenGroup
         // 
         private isSpecial: boolean
         public set Special(is: boolean) {
@@ -164,9 +164,9 @@ module conglinshuiguo {
         public PlayChangeAnimation(winElemID: number, finishCB?: Function, params?: any) {
             this.Special = true
             let animInfo = DataCenter.Instance.getSpecialElementAnimInfo(winElemID)
-            this.changeImage.visible = true
-            let src = ["feature_glow_a_sandy", "feature_glow_a_pig", "feature_glow_a_monkey", "feature_glow_a_monk"]
-            this.changeImage.source = src[winElemID - 5]
+            // this.changeImage.visible = true
+            // let src = ["feature_glow_a_sandy", "feature_glow_a_pig", "feature_glow_a_monkey", "feature_glow_a_monk"]
+            // this.changeImage.source = src[winElemID - 5]
             // this.duobaoglow0.visible = false
             // this.duobaoglow.visible = false
             this.bgGroup.visible = false
@@ -177,30 +177,30 @@ module conglinshuiguo {
                 this.mAnimObject.animation.play(null, 0)
                 return
             }
-            labalib.Utils.PlayTweenGroup(this.changeScale, 1)
+            // labalib.Utils.PlayTweenGroup(this.changeScale, 1)
             this.Animation_Dragon(animInfo, null, 0)
             egret.Tween.get(this.mAnimObject).set({ scaleX: 0.2, scaleY: 0.2 })
                 .to({ scaleX: animInfo.Scale + 0.1, scaleY: animInfo.Scale + 0.1 }, 400)
                 .set({ scaleX: animInfo.Scale, scaleY: animInfo.Scale })
         }
 
-        private duobaoglow: eui.Image
-        private duobaoglow0: eui.Image
+        // private duobaoglow: eui.Image
+        // private duobaoglow0: eui.Image
         public PlayDefautAnimation(winElemID: number, finishCB?: Function, params?: any) {
             let animInfo = DataCenter.Instance.getElementAnimInfo(winElemID)
             this.bgGroup.visible = false
             // this.kuangDragon2.visible = false
-            this.changeImage.visible = false
+            // this.changeImage.visible = false
             this.elemImage.visible = false
             if (this.mAnimObject != null) {
                 this.mAnimObject.animation.play(null, 0)
                 return
             }
-            if (winElemID == CLSG_ElemAllType.DuoBao) {
-                this.duobaoglow0.visible = true
-                this.duobaoglow.visible = true
-                labalib.Utils.PlayTweenGroup(this.duobaoScale, 1)
-            }
+            // if (winElemID == CLSG_ElemAllType.DuoBao) {
+            //     this.duobaoglow0.visible = true
+            //     this.duobaoglow.visible = true
+            //     // labalib.Utils.PlayTweenGroup(this.duobaoScale, 1)
+            // }
             this.Animation_Dragon(animInfo, null, 0)
 
         }
@@ -208,16 +208,16 @@ module conglinshuiguo {
             this.bgGroup.visible = visible
             // this.kuangDragon2.visible = visible
         }
-        private changeImage: eui.Image
+        // private changeImage: eui.Image
         public PlayWinAnimation(winElemID: number, finishCB?: Function, params?: any) {
             let animName = null
-            this.changeImage.visible = false
-            this.duobaoglow0.visible = false
-            this.duobaoglow.visible = false
+            // this.changeImage.visible = false
+            // this.duobaoglow0.visible = false
+            // this.duobaoglow.visible = false
             let animInfo = DataCenter.Instance.getElementAnimInfo(winElemID)
-            if (winElemID == CLSG_ElemAllType.Wild || winElemID == CLSG_ElemAllType.DuoBao) {
-                animName = "win"
-            }
+            // if (winElemID == CLSG_ElemAllType.Wild || winElemID == CLSG_ElemAllType.DuoBao) {
+            //     animName = "win"
+            // }
             if (winElemID != CLSG_ElemAllType.DuoBao && winElemID != CLSG_ElemAllType.Wild) {
                 this.bgGroup.visible = true
                 // this.kuangDragon2.visible = true
@@ -259,8 +259,8 @@ module conglinshuiguo {
             this.bgGroup.visible = false
             // this.kuangDragon2.visible = false
             this.isSpecial = false
-            this.duobaoglow.visible = false
-            this.duobaoglow0.visible = false
+            // this.duobaoglow.visible = false
+            // this.duobaoglow0.visible = false
             if (this.mAnimObject != null) {
                 egret.Tween.removeTweens(this.mAnimObject)
                 this.mAnimObject.animation.stop();
@@ -328,7 +328,7 @@ module conglinshuiguo {
             let waittime = [0, 100 * timeScale, 100 * timeScale * 2, 100 * timeScale * 3, 100 * timeScale * 4]
             // let 
             if (!DataCenter.Instance.IsQuickRotate)
-                egret.Tween.get(this.mGroup).wait(waittime[this.mBeltIndex - 1]).to({ y: -660 - 40 }, 200 * timeScale).to({ y: -660 }, 250 / 528 * 40 * timeScale).call(() => {
+                egret.Tween.get(this.mGroup).wait(waittime[this.mBeltIndex - 1]).to({ y: -652 - 40 }, 200 * timeScale).to({ y: -652 }, 250 / 528 * 40 * timeScale).call(() => {
                     egret.Tween.removeTweens(this.mGroup)
                     for (let item of this.mIcons) {
                         item.Blur = true
@@ -341,7 +341,7 @@ module conglinshuiguo {
                     .to({ y: 0 }, 200 * timeScale)
             }
             // else if (this.BeltScrollType == ScrollType.UpScroll)
-            //     egret.Tween.get(this.mGroup).wait(this.mBeltIndex * 50).to({ y: -660 - 60 }, 200).to({ y: -660 }, 250 / 528 * 60).call(() => {
+            //     egret.Tween.get(this.mGroup).wait(this.mBeltIndex * 50).to({ y: -652 - 60 }, 200).to({ y: -652 }, 250 / 528 * 60).call(() => {
             //         egret.Tween.removeTweens(this.mGroup)
             //         egret.Tween.get(this.mGroup, { onChange: this.ScrollUpdateChange, onChangeObj: this, loop: true })
             //             .to({ y: 0 }, 250)
@@ -363,7 +363,7 @@ module conglinshuiguo {
 
             if (this.mBeltSrcollDatas.length > 0) {
                 this.resetBeltPos()
-                this.mGroup.y = -660
+                this.mGroup.y = -652
             }
 
            
@@ -450,7 +450,7 @@ module conglinshuiguo {
                 if (this.mCurBeltSrcollDataIndex + i < this.mBeltSrcollDatas.length)
                     this.mIcons[i].ElemType = this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex + i]
             }
-            this.mGroup.y = -660
+            this.mGroup.y = -652
         }
         /**
          * 添加带子每一段滚动的数据,通过调用多次AddScrollData实现滚动多次...;
@@ -461,6 +461,9 @@ module conglinshuiguo {
         public StopEx() {
             SoundHand.Instance.playHuaDongStopSound()
             SoundHand.Instance.stopSlowStopSound();
+
+            // LabaGame.Instance.playWildDuobaoElemDefaultEffect();
+            
 
             egret.Tween.removeTweens(this.mGroup)
 
@@ -488,6 +491,12 @@ module conglinshuiguo {
                     }
                 }
             }
+            // for (let i = 0;i< this.mIcons.length;i++) {
+            //     if(i>=3){
+            //         this.mIcons[i].ElemType = 1;
+            //     }
+            // }
+
             // LabaGame.Instance.mLabaMachine.getBelt(i).GetElementByIndex(3-j)
             // labalib.LabaMachine.mBeltArray
             // [this.mBeltIndex]
@@ -536,11 +545,11 @@ module conglinshuiguo {
         public mResultType: CLSG_ResultType
         public GenerateRandomElem() {
             if (this.mResultType == CLSG_ResultType.FREEIN || this.mResultType == CLSG_ResultType.REROTATEIN) {
-                return Math.randomInteger(CLSG_ElemAllType.J, CLSG_ElemAllType.Wild)
+                return Math.randomInteger(CLSG_ElemAllType.J, CLSG_ElemAllType.SunWuKong)
             }
             if (this.mBeltIndex == 1 || this.mBeltIndex == 5)
-                return Math.randomInteger(CLSG_ElemAllType.J, CLSG_ElemAllType.Wild)
-            return Math.randomInteger(CLSG_ElemAllType.J, CLSG_ElemAllType.DuoBao)
+                return Math.randomInteger(CLSG_ElemAllType.J, CLSG_ElemAllType.SunWuKong)
+            return Math.randomInteger(CLSG_ElemAllType.J, CLSG_ElemAllType.SunWuKong)
         }
         public mBeltScrollType: ScrollType
         public set BeltScrollType(scrollType: ScrollType) {
@@ -577,7 +586,7 @@ module conglinshuiguo {
                 this.mCurBeltSrcollDataIndex++
                 if (this.RealStart && this.mCurBeltSrcollDataIndex == (this.mRealScrollItem - 3)) {
                     egret.Tween.removeTweens(this.mGroup)
-                    this.mGroup.y = -660 + temp * 142
+                    this.mGroup.y = -652 + temp * 142
                     if (!this.ReadyScrollData()) {
                         for (let item of this.mIcons) {
                             item.Blur = false
@@ -602,7 +611,7 @@ module conglinshuiguo {
 
             this.mLastBeltScrollDataIndex = temp
             if (this.mGroup.y == 0) {
-                this.mGroup.y = -660
+                this.mGroup.y = -652
                 if (!this.RealStart) {
                     this.mBeltSrcollDatas.push(this.GenerateRandomElem())
                     this.mBeltSrcollDatas.push(this.GenerateRandomElem())

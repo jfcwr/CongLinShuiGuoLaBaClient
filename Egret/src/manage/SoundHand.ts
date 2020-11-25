@@ -51,7 +51,7 @@ module conglinshuiguo {
         private bgmState: GameBgmState = GameBgmState.GameBgmState_Sgml;
 
 
-        public static bgMusic: string[] = ["xyj_bgm_mp3"];
+        public static bgMusic: string[] = ["clsg_bgm_mp3"];
 
 
         private mElemSoundPaths: { [index: number]: string } = {};
@@ -106,9 +106,9 @@ module conglinshuiguo {
         //     this.isPlayBg = true;
         // }
 
-        private mCurSoundBG: string = "xyj_bgm_mp3"
+        private mCurSoundBG: string = "clsg_bgm_mp3"
         public switchMusicBG(isNormal: number = 0) {
-            let musicPath = ["xyj_bgm_mp3", "freebg_mp3", "bigwin_mp3" , "freeBg1_mp3"]
+            let musicPath = ["clsg_bgm_mp3", "freebg_mp3", "bigwin_mp3" , "freeBg1_mp3"]
             this.mCurSoundBG = musicPath[isNormal]
             uniLib.SoundMgr.instance.stopBgMusic();
             uniLib.SoundMgr.instance.playBgMusic([musicPath[isNormal]]);
@@ -278,7 +278,7 @@ module conglinshuiguo {
          * 按钮旋转音效
          */
         public playBtnRotateSound() {
-            uniLib.SoundMgr.instance.playSound("ws_btnRotate_mp3", 1);
+            uniLib.SoundMgr.instance.playSound("clsg_btnRotate_mp3", 1);
         }
 
         /**
@@ -365,7 +365,7 @@ module conglinshuiguo {
          * 滑动音效(无夺宝)
          */
         public playSlowStopSound() {
-            this.slowStop = uniLib.SoundMgr.instance.playSound("ws_slowStop_mp3", 1);
+            this.slowStop = uniLib.SoundMgr.instance.playSound("clsg_slowStop_mp3", 1);
         }
         /**
          * 滑动音效停止

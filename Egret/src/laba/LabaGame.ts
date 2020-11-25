@@ -273,10 +273,6 @@ module conglinshuiguo {
 
             this.initHitScrollonIcon()
 
-            // let dragon1 = uniLib.DragonUtils.createDragonBoneAnimation("jiasu")
-            // dragon1.animation.play("jiasu_2", 0)
-            // this.LabaBeltRootGroup.addChild(dragon1)
-            // dragon1.y = 200
             let jiaSu1 = uniLib.DisplayUtils.createMovieClicp("clsg_jiaSuMov");
             this.freeIconGroup.addChild(jiaSu1);
             jiaSu1.blendMode = egret.BlendMode.ADD;
@@ -953,32 +949,32 @@ module conglinshuiguo {
             }
 
 
-            for (let param of params) {
-                this.anim(param.beltindex, param.pos)
-                this.mBeltMaskAnimArr[param.beltindex - 2].visible = true
-            }
+            // for (let param of params) {
+            //     this.anim(param.beltindex, param.pos)
+            //     this.mBeltMaskAnimArr[param.beltindex - 2].visible = true
+            // }
         }
         public anim(beltindex, pos) {
-            let ls = [this.fast_back_whitelight1, this.fast_back_whitelight2, this.fast_back_whitelight3]
-            let parent = ls[beltindex - 2].parent as eui.Group
-            parent.visible = true
-            egret.Tween.removeTweens(parent)
-            if (pos == 1) {
-                parent.scaleY = 1
-                parent.y = 0
-                ls[pos - 1].y = 0
-                egret.Tween.get(parent).set({ height: 0 }).to({ height: 495 }, 200)
-            } else if (pos == 3) {
-                ls[pos - 1].y = 0
-                parent.scaleY = -1
-                parent.y = 495
-                egret.Tween.get(parent).set({ height: 0 }).to({ height: 495 }, 200)
-            } else {
-                parent.verticalCenter = "0"
-                ls[pos - 1].verticalCenter = "0"
-                parent.scaleY = 1
-                egret.Tween.get(parent).set({ height: 0 }).to({ height: 495 }, 200)
-            }
+            // let ls = [this.fast_back_whitelight1, this.fast_back_whitelight2, this.fast_back_whitelight3]
+            // let parent = ls[beltindex - 2].parent as eui.Group
+            // parent.visible = true
+            // egret.Tween.removeTweens(parent)
+            // if (pos == 1) {
+            //     parent.scaleY = 1
+            //     parent.y = 0
+            //     ls[pos - 1].y = 0
+            //     egret.Tween.get(parent).set({ height: 0 }).to({ height: 495 }, 200)
+            // } else if (pos == 3) {
+            //     ls[pos - 1].y = 0
+            //     parent.scaleY = -1
+            //     parent.y = 495
+            //     egret.Tween.get(parent).set({ height: 0 }).to({ height: 495 }, 200)
+            // } else {
+            //     parent.verticalCenter = "0"
+            //     ls[pos - 1].verticalCenter = "0"
+            //     parent.scaleY = 1
+            //     egret.Tween.get(parent).set({ height: 0 }).to({ height: 495 }, 200)
+            // }
 
         }
         public GameRotateButtomTween(type: GameRotateChoose) {
@@ -1901,46 +1897,6 @@ module conglinshuiguo {
 
         }
 
-        private wildFlyGroup: eui.Group
-        private mFlyWildIconList = []
-
-
-        // public FlyWildIconAnim(flypos = [], cb = null): egret.Tween {
-        //     let localPos = FreeGameIngPanel.Instance.getWildFlyPos()
-        //     let retTween = null
-        //     let endpos = this.globalToLocal(localPos.x, localPos.y)
-        //     if (flypos.length > 0)
-        //     for (let pos of flypos) {
-        //         let lpos = this.globalToLocal(pos.x, pos.y)
-        //         let obj = new FlyWildIcon()
-        //         this.addChild(obj)
-
-        //         let bazierFlyObj = new Utils.BezierObject(obj)
-        //         let alpha = Math.randomInteger(0, 1) == 0 ? 1 : -1
-        //         bazierFlyObj.setTwoStepParam(lpos, endpos, { x: (lpos.x + endpos.x) / 2 + Math.randomInteger(70, 100) * alpha, y: (lpos.y + endpos.y) / 2 })
-
-        //         obj.x = lpos.x
-        //         obj.y = lpos.y
-        //         // obj.visible = false
-        //         retTween = egret.Tween.get(bazierFlyObj)
-        //         retTween.set({ visible: true, factor: 0 }).to({ scaleX: 2, scaleY: 2 }, 200)
-        //             .to({ factor: 1, scaleX: 1.8, scaleY: 1.8 }, 800, egret.Ease.circIn)
-        //             .call(() => {
-        //                 if (obj.parent) {
-        //                     obj.parent.removeChild(obj)
-        //                 }
-        //             })
-
-        //     }
-        //     if (retTween == null) {
-        //         if (cb) cb()
-        //         return retTween
-        //     }
-        //     retTween.wait(500).call(() => {
-        //         if (cb) cb()
-        //     })
-        //     return retTween
-        // }
         public selectWildElem(cb = null) {
             this.itStartsToStick();
             game.Timer.setTimeout(() => {
@@ -2172,6 +2128,7 @@ module conglinshuiguo {
                         for (let j: number = 0; j < line.ConnectCount; j++) {
                             let hitColIndex = j;
                             let scrollIcon = this.mLabaMachine.getBelt(hitColIndex).GetElementByIndex(4-lineInfo[hitColIndex]);
+                            scrollIcon.visible = false;
                             let row = - (lineInfo[hitColIndex] - 4) - 1
                             let icon = this.mAwardScrollIcon[row][hitColIndex] as AwardScrollIcon
                             let showBG = scrollIcon.ElemType == CLSG_ElemAllType.Wild || scrollIcon.ElemType == CLSG_ElemAllType.DuoBao
@@ -2208,6 +2165,7 @@ module conglinshuiguo {
                             for (let j: number = 0; j < line.ConnectCount; j++) {
                                 let hitColIndex = j;
                                 let scrollIcon = this.mLabaMachine.getBelt(hitColIndex).GetElementByIndex(4-lineInfo[hitColIndex]);
+                                scrollIcon.visible = false;
                                 let row = - (lineInfo[hitColIndex] - 4) - 1
                                 // let row = (lineInfo[hitColIndex])-1
                                 // if (!isPlayFlag[row][hitColIndex]) {
@@ -2250,7 +2208,7 @@ module conglinshuiguo {
                     if (isChange)
                         continue
                     let scrollIcon = this.mLabaMachine.getBelt(col).GetElementByIndex(row + 1);
-                    if (scrollIcon && (scrollIcon.ElemType == 9 || scrollIcon.ElemType == 10)) {
+                    if (scrollIcon && (scrollIcon.ElemType == 9 || scrollIcon.ElemType == 8)) {
                         scrollIcon.visible = false
                         let playIcon = this.playHitScrollIcon(scrollIcon.ElemType, row, col, freeTri)
                         this.winElemAnimNotLineGroup.addChild(playIcon)

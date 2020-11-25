@@ -62,24 +62,31 @@ module conglinshuiguo {
         private muti3: eui.BitmapLabel
         private muti2: eui.BitmapLabel
         private muti1: eui.BitmapLabel
-        private rect1: eui.Rect
-        private image1: eui.Image
+        // private rect1: eui.Rect
+        // private image1: eui.Image
         public showIcon(beltIndex: number, posXY: egret.Point, elemID: number) {
             this.mutiGroup.visible = false
             this.duobaoLabel.visible = false
-            if (elemID == CLSG_ElemAllType.DuoBao) {
-                this.width = 132 * 3
-                this.image1.width = 132 * 3
-                this.rect1.width = 132 * 3 - 6
+            if (elemID == CLSG_ElemAllType.DuoBao||elemID == CLSG_ElemAllType.Wild) {
+                this.width = 165 * 3
+                // this.image1.width = 165 * 3
+                // this.rect1.width = 165 * 3 - 6
                 this.duobaoLabel.visible = true
+                if(elemID == CLSG_ElemAllType.DuoBao){
+                    this.duobaoLabel.text = "3/4/5个夺宝符号可触发免费旋转。";
+                }
+                else{
+                    this.duobaoLabel.text = "百搭符号可替代除夺宝符号和神秘宝箱符号外的所有符号。";
+
+                }
             }
             else {
-                this.width = 132 * 2
-                this.image1.width = 132 * 2
-                this.rect1.width = 132 * 2 - 6
+                this.width = 165 * 2
+                // this.image1.width = 165 * 2
+                // this.rect1.width = 165 * 2 - 6
                 this.mutiGroup.visible = true
             }
-            this.descGroup.width = this.width - 132
+            this.descGroup.width = this.width - 165
             if (beltIndex <= 3) {
                 this.mainGroup.addChild(this.iconGroup)
                 this.mainGroup.addChild(this.descGroup)
@@ -96,10 +103,10 @@ module conglinshuiguo {
             let xy = this.parent.globalToLocal(posXY.x, posXY.y)
             if (beltIndex <= 3) {
                 xy.x -= 66
-                xy.y -= 66
+                xy.y -= 82.5
             } else {
                 xy.x = xy.x - this.width + 66
-                xy.y = xy.y  - 66
+                xy.y = xy.y  - 82.5
 
             }
             this.x = xy.x

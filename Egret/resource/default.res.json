@@ -1,11 +1,11 @@
 {
 	"groups":[
 		{
-			"keys":"attack_json,attack_png,rerotate_json,rerotate_png,xyj_json,line_json,bigwin_json,s_scatter_ske_json,s_scatter_tex_json,s_scatter_tex_png,s_wild_ske_json,s_wild_tex_json,s_wild_tex_png,_bonusgame_monk_ske_json,_bonusgame_monk_tex_json,_bonusgame_monk_tex_png,_bonusgame_monkey_ske_json,_bonusgame_monkey_tex_json,_bonusgame_monkey_tex_png,_bonusgame_pig_ske_json,_bonusgame_pig_tex_json,_bonusgame_pig_tex_png,_bonusgame_sandy_ske_json,_bonusgame_sandy_tex_json,_bonusgame_sandy_tex_png,h_monk_ske_json,h_monk_tex_json,h_monk_tex_png,h_monkey_ske_json,h_monkey_tex_json,h_monkey_tex_png,h_pig_ske_json,h_pig_tex_json,h_pig_tex_png,h_sandy_ske_json,h_sandy_tex_json,h_sandy_tex_png,mg_feature_monk_ske_json,mg_feature_monk_tex_json,mg_feature_monk_tex_png,mg_feature_monkey_ske_json,mg_feature_monkey_tex_json,mg_feature_monkey_tex_png,mg_feature_pig_ske_json,mg_feature_pig_tex_json,mg_feature_pig_tex_png,mg_feature_sandy_ske_json,mg_feature_sandy_tex_json,mg_feature_sandy_tex_png,s_monk_wild_ske_json,s_monk_wild_tex_json,s_monk_wild_tex_png,s_monkey_wild_ske_json,s_monkey_wild_tex_json,s_monkey_wild_tex_png,s_pig_wild_ske_json,s_pig_wild_tex_json,s_pig_wild_tex_png,s_pigw_ske_json,s_pigw_tex_json,s_pigw_tex_png,s_sandy_wild_ske_json,s_sandy_wild_tex_json,s_sandy_wild_tex_png,winbar3_png,bigwin_partice_json,bigwin_partice_png,bigwin1_json,bigwin1_png,btn1_json,btn1_png,fast1_json,fast1_png,fast2_json,fast2_png,fast3_json,fast3_png,fast4_json,fast4_png,monk1_json,monk1_png,monkey_chuiqi_json,monkey_chuiqi_png,monkey1_json,monkey1_png,pig1_json,pig1_png,rotate1_json,rotate1_png,rotate2_json,rotate2_png,rotationbutton1_json,rotationbutton1_png,rotationbutton2_json,rotationbutton2_png,sandy1_json,sandy1_png,totalwin1_json,totalwin1_png,winbar1_json,winbar1_png,winbar2_json,winbar2_png,winbar3_json,number1_fnt,number2_fnt,number3_fnt,bonus_cloud_a_png,bonus_cloud_b_png,total_bg_png,background_png,background_bonus_png,background_cloud_02_png,background_main_03_png,background_main_06_png,config_json,MaliResultPool_json,MaryOutputIconList_json,TableBankerRuleConfigList_json,TableGameRuleConfigList_json,TableItemConfig_json,TableJackpotSpecialSymbolConfig_json,TableMaliMultiplyList_json,ItemMultiplyList_json,LabaEffectMultiplyList_json,LabaLineList_json,monkeyb_json,monkeyb_png,piga_json,piga_png,pigb_json,pigb_png,sandya_json,sandya_png,sandyb_json,sandyb_png,totalwin2_json,totalwin2_png,monka_json,monka_png,monkb_json,monkb_png,monkeya_json,monkeya_png,number4_fnt,js_hitPoint_json,js_hitPoint_png,background_main_02_png,zhongjiang_kuang_tex_png,jiasu_ske_json,jiasu_tex_json,jiasu_tex_png,zhongjiang_kuang_ske_json,zhongjiang_kuang_tex_json,fiveKind1_json,fiveKind1_png,fiveKind2_json,fiveKind2_png,h_sandy_atlas,h_sandy_json,h_sandy_png,number5_fnt,icon_gx_ske_json,icon_gx_tex_json,icon_gx_tex_png,background_a_png,sym_boluo_ske_json,sym_boluo_tex_json,sym_boluo_tex_png,sym_lanmei_ske_json,sym_lanmei_tex_json,sym_lanmei_tex_png,sym_pingguo_ske_json,sym_pingguo_tex_json,sym_pingguo_tex_png,sym_putao_ske_json,sym_putao_tex_json,sym_putao_tex_png,sym_xiangjiao_ske_json,sym_xiangjiao_tex_json,sym_xiangjiao_tex_png,sym_xigua_ske_json,sym_xigua_tex_json,sym_xigua_tex_png,sym_yangtao_ske_json,sym_yangtao_tex_json,sym_yangtao_tex_png,gq_tex_png,gq_ske_json,gq_tex_json,hua_tex_json,hua_tex_png,hua_ske_json,mg_lemur_ske_json,mg_lemur_tex_json,mg_lemur_tex_png,spin_tex_png,spin_ske_json,spin_tex_json,shuye_1_tex_png,shuye_1_ske_json,shuye_1_tex_json,mg_lemur_walk_tex_png,mg_lemur_walk_ske_json,mg_lemur_walk_tex_json,mg_lemur_popup_tex_png,mg_lemur_popup_ske_json,mg_lemur_popup_tex_json,dajiang_logo_tex_png,dajiang_logo_ske_json,dajiang_logo_tex_json,wuxinglianzhu_tex_png,wuxinglianzhu_ske_json,wuxinglianzhu_tex_json,jiesuan_gx3_tex_png,jiesuan_gx1_1_ske_json,jiesuan_gx1_1_tex_json,jiesuan_gx1_1_tex_png,jiesuan_gx2_ske_json,jiesuan_gx2_tex_json,jiesuan_gx2_tex_png,jiesuan_gx3_ske_json,jiesuan_gx3_tex_json,mgbg_wins_lemur_tex_png,mgbg_wins_lemur_ske_json,mgbg_wins_lemur_tex_json,shuye_0_tex_png,shuye_0_ske_json,shuye_0_tex_json,bg_lemurflip_ske_json,bg_lemurflip_tex_json,bg_lemurflip_tex_png,muxiang_tex_png,muxiang_ske_json,muxiang_tex_json,lb_idle_tex_png,lb_idle_ske_json,lb_idle_tex_json,bonus_loading_jpg,background_b_png,clsg_freeAppearMov_png,clsg_huoMov_json,clsg_huoMov_png,clsg_iconLightMov_json,clsg_iconLightMov_png,clsg_jiaSuMov_json,clsg_jiaSuMov_png,clsg_freeAppearMov_json,bg_lemur_A_tex_png,bg_lemur_A_ske_json,bg_lemur_A_tex_json,bg_lemur_B_tex_png,bg_lemur_B_ske_json,bg_lemur_B_tex_json,bg_lemur_C_tex_json,bg_lemur_C_tex_png,bg_lemur_C_ske_json,bg_guang_tex_png,bg_guang_ske_json,bg_guang_tex_json,dot_particle_json,dot_particle_png,freespin_vfx_a_png,freespin_vfx_a_json,dot_particle1_png,dot_particle1_json,totalwin_ske_tex_png,totalwin_ske_ske_json,totalwin_ske_tex_json,clsg_freeLiZi_png,clsg_freeLiZi_json,background_c_png",
+			"keys":"attack_json,attack_png,rerotate_json,rerotate_png,line_json,bigwin_json,s_scatter_ske_json,s_scatter_tex_json,s_scatter_tex_png,s_wild_ske_json,s_wild_tex_json,s_wild_tex_png,winbar3_png,bigwin_partice_json,bigwin_partice_png,bigwin1_json,bigwin1_png,btn1_json,btn1_png,fast1_json,fast1_png,fast2_json,fast2_png,fast3_json,fast3_png,fast4_json,fast4_png,monk1_json,monk1_png,monkey_chuiqi_json,monkey_chuiqi_png,monkey1_json,monkey1_png,pig1_json,pig1_png,rotate1_json,rotate1_png,rotate2_json,rotate2_png,rotationbutton1_json,rotationbutton1_png,rotationbutton2_json,rotationbutton2_png,sandy1_json,sandy1_png,totalwin1_json,totalwin1_png,winbar1_json,winbar1_png,winbar2_json,winbar2_png,winbar3_json,number1_fnt,number2_fnt,number3_fnt,bonus_cloud_a_png,bonus_cloud_b_png,total_bg_png,background_png,background_bonus_png,background_cloud_02_png,background_main_03_png,background_main_06_png,config_json,MaliResultPool_json,MaryOutputIconList_json,TableBankerRuleConfigList_json,TableGameRuleConfigList_json,TableItemConfig_json,TableJackpotSpecialSymbolConfig_json,TableMaliMultiplyList_json,ItemMultiplyList_json,LabaEffectMultiplyList_json,LabaLineList_json,monkeyb_json,monkeyb_png,piga_json,piga_png,pigb_json,pigb_png,sandya_json,sandya_png,sandyb_json,sandyb_png,totalwin2_json,totalwin2_png,monka_json,monka_png,monkb_json,monkb_png,monkeya_json,monkeya_png,number4_fnt,js_hitPoint_json,js_hitPoint_png,background_main_02_png,fiveKind1_json,fiveKind1_png,fiveKind2_json,fiveKind2_png,number5_fnt,icon_gx_ske_json,icon_gx_tex_json,icon_gx_tex_png,background_a_png,sym_boluo_ske_json,sym_boluo_tex_json,sym_boluo_tex_png,sym_lanmei_ske_json,sym_lanmei_tex_json,sym_lanmei_tex_png,sym_pingguo_ske_json,sym_pingguo_tex_json,sym_pingguo_tex_png,sym_putao_ske_json,sym_putao_tex_json,sym_putao_tex_png,sym_xiangjiao_ske_json,sym_xiangjiao_tex_json,sym_xiangjiao_tex_png,sym_xigua_ske_json,sym_xigua_tex_json,sym_xigua_tex_png,sym_yangtao_ske_json,sym_yangtao_tex_json,sym_yangtao_tex_png,hua_tex_json,hua_tex_png,hua_ske_json,mg_lemur_ske_json,mg_lemur_tex_json,mg_lemur_tex_png,spin_tex_png,spin_ske_json,spin_tex_json,shuye_1_tex_png,shuye_1_ske_json,shuye_1_tex_json,mg_lemur_walk_tex_png,mg_lemur_walk_ske_json,mg_lemur_walk_tex_json,mg_lemur_popup_tex_png,mg_lemur_popup_ske_json,mg_lemur_popup_tex_json,dajiang_logo_tex_png,dajiang_logo_ske_json,dajiang_logo_tex_json,wuxinglianzhu_tex_png,wuxinglianzhu_ske_json,wuxinglianzhu_tex_json,jiesuan_gx3_tex_png,jiesuan_gx1_1_ske_json,jiesuan_gx1_1_tex_json,jiesuan_gx1_1_tex_png,jiesuan_gx2_ske_json,jiesuan_gx2_tex_json,jiesuan_gx2_tex_png,jiesuan_gx3_ske_json,jiesuan_gx3_tex_json,mgbg_wins_lemur_tex_png,mgbg_wins_lemur_ske_json,mgbg_wins_lemur_tex_json,shuye_0_tex_png,shuye_0_ske_json,shuye_0_tex_json,bg_lemurflip_ske_json,bg_lemurflip_tex_json,bg_lemurflip_tex_png,muxiang_tex_png,muxiang_ske_json,muxiang_tex_json,bonus_loading_jpg,background_b_png,clsg_freeAppearMov_png,clsg_huoMov_json,clsg_huoMov_png,clsg_iconLightMov_json,clsg_iconLightMov_png,clsg_jiaSuMov_json,clsg_jiaSuMov_png,clsg_freeAppearMov_json,bg_lemur_A_tex_png,bg_lemur_A_ske_json,bg_lemur_A_tex_json,bg_lemur_B_tex_png,bg_lemur_B_ske_json,bg_lemur_B_tex_json,bg_lemur_C_tex_json,bg_lemur_C_tex_png,bg_lemur_C_ske_json,bg_guang_tex_png,bg_guang_ske_json,bg_guang_tex_json,dot_particle_json,dot_particle_png,freespin_vfx_a_png,freespin_vfx_a_json,dot_particle1_png,dot_particle1_json,totalwin_ske_tex_png,totalwin_ske_ske_json,totalwin_ske_tex_json,clsg_freeLiZi_png,clsg_freeLiZi_json,background_c_png,clsg_json",
 			"name":"clsg_preload"
 		},
 		{
-			"keys":"xyj_bgm_mp3,xyj_btn_click_mp3,freebg_mp3,kuaisu_mp3,scrollgold2_mp3,tangshen2_mp3,tangshen3_mp3,tangshen4_mp3,wuxinglianzhu_mp3,xian_mp3,freeStop_mp3,huaDongStop_mp3,monkeyAbout_mp3,mystical_mp3,mysticalBoom_mp3,ws_btnRotate_mp3,ws_slowStop_mp3,baiDa_mp3,bigwin_mp3,bigwinStop_mp3,clsg_sound1_mp3,duoBaoStop_mp3,freeBg1_mp3,freebtn_mp3,freeIcon1_mp3,freeIcon2_mp3",
+			"keys":"freebg_mp3,kuaisu_mp3,scrollgold2_mp3,tangshen2_mp3,tangshen3_mp3,tangshen4_mp3,wuxinglianzhu_mp3,xian_mp3,freeStop_mp3,huaDongStop_mp3,monkeyAbout_mp3,mystical_mp3,mysticalBoom_mp3,baiDa_mp3,bigwin_mp3,bigwinStop_mp3,clsg_sound1_mp3,duoBaoStop_mp3,freeBg1_mp3,freebtn_mp3,freeIcon1_mp3,freeIcon2_mp3,clsg_bgm_mp3,clsg_btn_click_mp3,clsg_btnRotate_mp3,clsg_slowStop_mp3",
 			"name":"clsg_sound"
 		}
 	],
@@ -29,12 +29,6 @@
 			"name":"rerotate_png",
 			"type":"image",
 			"url":"assets/effect/rerotate.png"
-		},
-		{
-			"name":"xyj_json",
-			"subkeys":"arrow,arrow_blur,arrow_grey,arrow_grey_blur,auto_spin,auto_spin_count_normal_btn,auto_spin_count_normal_btn_2,auto_spin_count_select_btn,background_cloud_01,background_cloud_03,background_cloud_04,background_cloud_05,background_cloud_06,background_main_02,background_main_04,background_main_07,background_main_08,background_main_09,badge,bar,bg_temple,bg_tooltip_arrow,bg_tooltip_box,big_win-bw,big_win-mw,big_win-smw,bonus_bar_a,bonus_bar_b,bonus_bar_glow_a,bonus_bar_glow_b,bonus_button_glow_b,bonus_button_glow_c,bonus_flare_a,bonus_flare_b,bonus_gem_active,bonus_gem_bar,bonus_gem_bar_1,bonus_gem_bar_2,bonus_gem_bar_full,bonus_glow_b,bonus_glow_c,bonus_vfx,btn,btn_start,btn_stop,chip_button,clsg_iconBg,crane_a,crane_b,crane_c,crane_d,crane_e,elem1,elem10,elem10_b,elem1_b,elem2,elem2_b,elem3,elem3_b,elem4,elem4_b,elem5,elem50,elem5_b,elem6,elem60,elem6_b,elem7,elem70,elem7_b,elem8,elem80,elem8_b,elem9,elem99,elem9_b,fast_back_pattern,fast_back_pattern2,fast_back_whitelight,fast_glow_b,fast_glow_c,feature_freespins_1,feature_freespins_2,feature_freespins_3,feature_freespins_4,feature_freespins_5,feature_glow_a_monk,feature_glow_a_monkey,feature_glow_a_pig,feature_glow_a_sandy,feature_glow_b,feature_glow_c,feature_glow_d,feature_glow_e,feature_reel_glow_a,feature_respin,fire_stick_l,fire_stick_r,five_of_a_kind-5ofakind,flare_01_info,flare_01_spin,flare_01_win,flare_02_info,flare_02_win,frame_glow_free,free_frame_a,free_frame_b,free_spin-free_spins_remaining,free_spin-last_free_spin,glow_01_info,glow_02_win,glow_03_win,glow_c_mystery,glow_reel_free,guangxiao,ic_arrow,ic_autospin_in_autospin,ic_nav_bonus_wallet_small,ic_nav_calender,ic_nav_free_game_small,ic_nav_lobby,ic_nav_medium_sound_off,ic_nav_medium_sound_on,ic_nav_return,ic_nav_setting_external,ic_nav_setting_music,ic_nav_smartbot,ic_nav_sound_on,ic_nav_spin_turbo_off,ic_nav_spin_turbo_on,ic_nav_spin_turbo_up,ic_nav_to_wallet,ic_nav_wallet,ic_nav_wallet_small,ic_radio_selected,ic_slider,ic_turbo_spin_turbo_off_in_autospin,ic_turbo_spin_turbo_off_in_autospin_up,ic_turbo_spin_turbo_on_in_autospin,ic_wallet_free_game,icon_auto_spin_menu,icon_bet,icon_history,icon_more_menu,icon_paytable,icon_rule_book,infoboard-info_1,infoboard-info_2,infoboard-info_3,infoboard-info_4,infoboard-info_5,infoboard-info_6,infoboard-info_7,infoboard-total_win,infoboard-win,infoboard_a,infoboard_a_glow_02,infoboard_b,infoboard_b_glow_03,infoboard_c,infoboard_mask_a,infoboard_mask_b,jpg-fivekind_flare_a,jpg-fivekind_flare_d,loading,logo_on_temple,menu_close_button,mg_temple,navigate_down,particle_g,pattern_01_win,payline01,payline02,payline03,payline04,payline05,payline06,payline07,payline08,payline09,payline10,payline11,payline12,payline13,payline14,payline15,payline16,payline17,payline18,payline19,payline20,payline21,payline22,payline23,payline24,payline25,payline26,payline27,payline28,payline29,payline30,plus_2_active,plus_2_deactive,reel_a,rounded_button,setting_info_footer_bg,setting_slider_gradient,setting_switch_border_2,slider_icon_mark,solid_a_total,solid_c,solid_c_bw,spin_base,spin_base1,spin_glow_a,spin_glow_b,total_flare_a,total_glow,total_win-collect,total_win-free_spins,total_win-total_win,transition_to_fs-bonus_loading_text,transition_to_fs-free_spins_won,transition_to_fs-start,wallet_notification",
-			"type":"sheet",
-			"url":"assets/atlas/xyj.json"
 		},
 		{
 			"name":"line_json",
@@ -77,261 +71,6 @@
 			"name":"s_wild_tex_png",
 			"type":"image",
 			"url":"assets/dragon/s_wild_tex.png"
-		},
-		{
-			"name":"_bonusgame_monk_ske_json",
-			"type":"json",
-			"url":"assets/dragon/_bonusgame_monk_ske.json"
-		},
-		{
-			"name":"_bonusgame_monk_tex_json",
-			"type":"json",
-			"url":"assets/dragon/_bonusgame_monk_tex.json"
-		},
-		{
-			"name":"_bonusgame_monk_tex_png",
-			"type":"image",
-			"url":"assets/dragon/_bonusgame_monk_tex.png"
-		},
-		{
-			"name":"_bonusgame_monkey_ske_json",
-			"type":"json",
-			"url":"assets/dragon/_bonusgame_monkey_ske.json"
-		},
-		{
-			"name":"_bonusgame_monkey_tex_json",
-			"type":"json",
-			"url":"assets/dragon/_bonusgame_monkey_tex.json"
-		},
-		{
-			"name":"_bonusgame_monkey_tex_png",
-			"type":"image",
-			"url":"assets/dragon/_bonusgame_monkey_tex.png"
-		},
-		{
-			"name":"_bonusgame_pig_ske_json",
-			"type":"json",
-			"url":"assets/dragon/_bonusgame_pig_ske.json"
-		},
-		{
-			"name":"_bonusgame_pig_tex_json",
-			"type":"json",
-			"url":"assets/dragon/_bonusgame_pig_tex.json"
-		},
-		{
-			"name":"_bonusgame_pig_tex_png",
-			"type":"image",
-			"url":"assets/dragon/_bonusgame_pig_tex.png"
-		},
-		{
-			"name":"_bonusgame_sandy_ske_json",
-			"type":"json",
-			"url":"assets/dragon/_bonusgame_sandy_ske.json"
-		},
-		{
-			"name":"_bonusgame_sandy_tex_json",
-			"type":"json",
-			"url":"assets/dragon/_bonusgame_sandy_tex.json"
-		},
-		{
-			"name":"_bonusgame_sandy_tex_png",
-			"type":"image",
-			"url":"assets/dragon/_bonusgame_sandy_tex.png"
-		},
-		{
-			"name":"h_monk_ske_json",
-			"type":"json",
-			"url":"assets/dragon/h_monk_ske.json"
-		},
-		{
-			"name":"h_monk_tex_json",
-			"type":"json",
-			"url":"assets/dragon/h_monk_tex.json"
-		},
-		{
-			"name":"h_monk_tex_png",
-			"type":"image",
-			"url":"assets/dragon/h_monk_tex.png"
-		},
-		{
-			"name":"h_monkey_ske_json",
-			"type":"json",
-			"url":"assets/dragon/h_monkey_ske.json"
-		},
-		{
-			"name":"h_monkey_tex_json",
-			"type":"json",
-			"url":"assets/dragon/h_monkey_tex.json"
-		},
-		{
-			"name":"h_monkey_tex_png",
-			"type":"image",
-			"url":"assets/dragon/h_monkey_tex.png"
-		},
-		{
-			"name":"h_pig_ske_json",
-			"type":"json",
-			"url":"assets/dragon/h_pig_ske.json"
-		},
-		{
-			"name":"h_pig_tex_json",
-			"type":"json",
-			"url":"assets/dragon/h_pig_tex.json"
-		},
-		{
-			"name":"h_pig_tex_png",
-			"type":"image",
-			"url":"assets/dragon/h_pig_tex.png"
-		},
-		{
-			"name":"h_sandy_ske_json",
-			"type":"json",
-			"url":"assets/dragon/h_sandy_ske.json"
-		},
-		{
-			"name":"h_sandy_tex_json",
-			"type":"json",
-			"url":"assets/dragon/h_sandy_tex.json"
-		},
-		{
-			"name":"h_sandy_tex_png",
-			"type":"image",
-			"url":"assets/dragon/h_sandy_tex.png"
-		},
-		{
-			"name":"mg_feature_monk_ske_json",
-			"type":"json",
-			"url":"assets/dragon/mg_feature_monk_ske.json"
-		},
-		{
-			"name":"mg_feature_monk_tex_json",
-			"type":"json",
-			"url":"assets/dragon/mg_feature_monk_tex.json"
-		},
-		{
-			"name":"mg_feature_monk_tex_png",
-			"type":"image",
-			"url":"assets/dragon/mg_feature_monk_tex.png"
-		},
-		{
-			"name":"mg_feature_monkey_ske_json",
-			"type":"json",
-			"url":"assets/dragon/mg_feature_monkey_ske.json"
-		},
-		{
-			"name":"mg_feature_monkey_tex_json",
-			"type":"json",
-			"url":"assets/dragon/mg_feature_monkey_tex.json"
-		},
-		{
-			"name":"mg_feature_monkey_tex_png",
-			"type":"image",
-			"url":"assets/dragon/mg_feature_monkey_tex.png"
-		},
-		{
-			"name":"mg_feature_pig_ske_json",
-			"type":"json",
-			"url":"assets/dragon/mg_feature_pig_ske.json"
-		},
-		{
-			"name":"mg_feature_pig_tex_json",
-			"type":"json",
-			"url":"assets/dragon/mg_feature_pig_tex.json"
-		},
-		{
-			"name":"mg_feature_pig_tex_png",
-			"type":"image",
-			"url":"assets/dragon/mg_feature_pig_tex.png"
-		},
-		{
-			"name":"mg_feature_sandy_ske_json",
-			"type":"json",
-			"url":"assets/dragon/mg_feature_sandy_ske.json"
-		},
-		{
-			"name":"mg_feature_sandy_tex_json",
-			"type":"json",
-			"url":"assets/dragon/mg_feature_sandy_tex.json"
-		},
-		{
-			"name":"mg_feature_sandy_tex_png",
-			"type":"image",
-			"url":"assets/dragon/mg_feature_sandy_tex.png"
-		},
-		{
-			"name":"s_monk_wild_ske_json",
-			"type":"json",
-			"url":"assets/dragon/s_monk_wild_ske.json"
-		},
-		{
-			"name":"s_monk_wild_tex_json",
-			"type":"json",
-			"url":"assets/dragon/s_monk_wild_tex.json"
-		},
-		{
-			"name":"s_monk_wild_tex_png",
-			"type":"image",
-			"url":"assets/dragon/s_monk_wild_tex.png"
-		},
-		{
-			"name":"s_monkey_wild_ske_json",
-			"type":"json",
-			"url":"assets/dragon/s_monkey_wild_ske.json"
-		},
-		{
-			"name":"s_monkey_wild_tex_json",
-			"type":"json",
-			"url":"assets/dragon/s_monkey_wild_tex.json"
-		},
-		{
-			"name":"s_monkey_wild_tex_png",
-			"type":"image",
-			"url":"assets/dragon/s_monkey_wild_tex.png"
-		},
-		{
-			"name":"s_pig_wild_ske_json",
-			"type":"json",
-			"url":"assets/dragon/s_pig_wild_ske.json"
-		},
-		{
-			"name":"s_pig_wild_tex_json",
-			"type":"json",
-			"url":"assets/dragon/s_pig_wild_tex.json"
-		},
-		{
-			"name":"s_pig_wild_tex_png",
-			"type":"image",
-			"url":"assets/dragon/s_pig_wild_tex.png"
-		},
-		{
-			"name":"s_pigw_ske_json",
-			"type":"json",
-			"url":"assets/dragon/s_pigw_ske.json"
-		},
-		{
-			"name":"s_pigw_tex_json",
-			"type":"json",
-			"url":"assets/dragon/s_pigw_tex.json"
-		},
-		{
-			"name":"s_pigw_tex_png",
-			"type":"image",
-			"url":"assets/dragon/s_pigw_tex.png"
-		},
-		{
-			"name":"s_sandy_wild_ske_json",
-			"type":"json",
-			"url":"assets/dragon/s_sandy_wild_ske.json"
-		},
-		{
-			"name":"s_sandy_wild_tex_json",
-			"type":"json",
-			"url":"assets/dragon/s_sandy_wild_tex.json"
-		},
-		{
-			"name":"s_sandy_wild_tex_png",
-			"type":"image",
-			"url":"assets/dragon/s_sandy_wild_tex.png"
 		},
 		{
 			"name":"winbar3_png",
@@ -739,16 +478,6 @@
 			"url":"assets/effect/pigb.png"
 		},
 		{
-			"name":"xyj_bgm_mp3",
-			"type":"sound",
-			"url":"assets/sound/xyj_bgm.mp3"
-		},
-		{
-			"name":"xyj_btn_click_mp3",
-			"type":"sound",
-			"url":"assets/sound/xyj_btn_click.mp3"
-		},
-		{
 			"name":"number4_fnt",
 			"type":"font",
 			"url":"assets/font/number4.fnt"
@@ -767,36 +496,6 @@
 			"name":"background_main_02_png",
 			"type":"image",
 			"url":"assets/image/background_main_02.png"
-		},
-		{
-			"name":"zhongjiang_kuang_tex_png",
-			"type":"image",
-			"url":"assets/dragon/zhongjiang_kuang_tex.png"
-		},
-		{
-			"name":"jiasu_ske_json",
-			"type":"json",
-			"url":"assets/dragon/jiasu_ske.json"
-		},
-		{
-			"name":"jiasu_tex_json",
-			"type":"json",
-			"url":"assets/dragon/jiasu_tex.json"
-		},
-		{
-			"name":"jiasu_tex_png",
-			"type":"image",
-			"url":"assets/dragon/jiasu_tex.png"
-		},
-		{
-			"name":"zhongjiang_kuang_ske_json",
-			"type":"json",
-			"url":"assets/dragon/zhongjiang_kuang_ske.json"
-		},
-		{
-			"name":"zhongjiang_kuang_tex_json",
-			"type":"json",
-			"url":"assets/dragon/zhongjiang_kuang_tex.json"
 		},
 		{
 			"name":"fiveKind1_json",
@@ -857,21 +556,6 @@
 			"name":"xian_mp3",
 			"type":"sound",
 			"url":"assets/sound/xian.mp3"
-		},
-		{
-			"name":"h_sandy_atlas",
-			"type":"bin",
-			"url":"assets/dragon/h_sandy.atlas"
-		},
-		{
-			"name":"h_sandy_json",
-			"type":"json",
-			"url":"assets/dragon/h_sandy.json"
-		},
-		{
-			"name":"h_sandy_png",
-			"type":"image",
-			"url":"assets/dragon/h_sandy.png"
 		},
 		{
 			"name":"number5_fnt",
@@ -1002,21 +686,6 @@
 			"name":"sym_yangtao_tex_png",
 			"type":"image",
 			"url":"assets/dragon/sym_yangtao_tex.png"
-		},
-		{
-			"name":"gq_tex_png",
-			"type":"image",
-			"url":"assets/dragon/gq_tex.png"
-		},
-		{
-			"name":"gq_ske_json",
-			"type":"json",
-			"url":"assets/dragon/gq_ske.json"
-		},
-		{
-			"name":"gq_tex_json",
-			"type":"json",
-			"url":"assets/dragon/gq_tex.json"
 		},
 		{
 			"name":"hua_tex_json",
@@ -1244,21 +913,6 @@
 			"url":"assets/dragon/muxiang_tex.json"
 		},
 		{
-			"name":"lb_idle_tex_png",
-			"type":"image",
-			"url":"assets/dragon/lb_idle_tex.png"
-		},
-		{
-			"name":"lb_idle_ske_json",
-			"type":"json",
-			"url":"assets/dragon/lb_idle_ske.json"
-		},
-		{
-			"name":"lb_idle_tex_json",
-			"type":"json",
-			"url":"assets/dragon/lb_idle_tex.json"
-		},
-		{
 			"name":"bonus_loading_jpg",
 			"type":"image",
 			"url":"assets/image/bonus_loading.jpg"
@@ -1469,16 +1123,6 @@
 			"url":"assets/sound/mysticalBoom.mp3"
 		},
 		{
-			"name":"ws_btnRotate_mp3",
-			"type":"sound",
-			"url":"assets/sound/ws_btnRotate.mp3"
-		},
-		{
-			"name":"ws_slowStop_mp3",
-			"type":"sound",
-			"url":"assets/sound/ws_slowStop.mp3"
-		},
-		{
 			"name":"baiDa_mp3",
 			"type":"sound",
 			"url":"assets/sound/baiDa.mp3"
@@ -1507,6 +1151,32 @@
 			"name":"background_c_png",
 			"type":"image",
 			"url":"assets/image/background_c.png"
+		},
+		{
+			"name":"clsg_bgm_mp3",
+			"type":"sound",
+			"url":"assets/sound/clsg_bgm.mp3"
+		},
+		{
+			"name":"clsg_btn_click_mp3",
+			"type":"sound",
+			"url":"assets/sound/clsg_btn_click.mp3"
+		},
+		{
+			"name":"clsg_btnRotate_mp3",
+			"type":"sound",
+			"url":"assets/sound/clsg_btnRotate.mp3"
+		},
+		{
+			"name":"clsg_slowStop_mp3",
+			"type":"sound",
+			"url":"assets/sound/clsg_slowStop.mp3"
+		},
+		{
+			"name":"clsg_json",
+			"subkeys":"arrow,arrow_blur,arrow_grey,arrow_grey_blur,auto_spin,auto_spin_count_normal_btn,auto_spin_count_normal_btn_2,auto_spin_count_select_btn,background_cloud_01,background_cloud_03,background_cloud_04,background_cloud_05,background_cloud_06,background_main_02,background_main_04,background_main_07,background_main_08,background_main_09,badge,bar,bg_temple,bg_tooltip_arrow,bg_tooltip_box,big_win-bw,big_win-mw,big_win-smw,bonus_bar_a,bonus_bar_b,bonus_bar_glow_a,bonus_bar_glow_b,bonus_button_glow_b,bonus_button_glow_c,bonus_flare_a,bonus_flare_b,bonus_gem_active,bonus_gem_bar,bonus_gem_bar_1,bonus_gem_bar_2,bonus_gem_bar_full,bonus_glow_b,bonus_glow_c,bonus_vfx,btn,btn_start,btn_stop,chip_button,clsg_iconBg,clsg_rule1,clsg_rule2,clsg_rule3,crane_a,crane_b,crane_c,crane_d,crane_e,elem1,elem10,elem10_b,elem1_b,elem2,elem2_b,elem3,elem3_b,elem4,elem4_b,elem5,elem50,elem5_b,elem6,elem60,elem6_b,elem7,elem70,elem7_b,elem8,elem80,elem8_b,elem9,elem98,elem99,elem9_b,fast_back_pattern,fast_back_pattern2,fast_back_whitelight,fast_glow_b,fast_glow_c,feature_freespins_1,feature_freespins_2,feature_freespins_3,feature_freespins_4,feature_freespins_5,feature_glow_a_monk,feature_glow_a_monkey,feature_glow_a_pig,feature_glow_a_sandy,feature_glow_b,feature_glow_c,feature_glow_d,feature_glow_e,feature_reel_glow_a,feature_respin,fire_stick_l,fire_stick_r,five_of_a_kind-5ofakind,flare_01_info,flare_01_spin,flare_01_win,flare_02_info,flare_02_win,frame_glow_free,free_frame_a,free_frame_b,free_spin-free_spins_remaining,free_spin-last_free_spin,glow_01_info,glow_02_win,glow_03_win,glow_c_mystery,glow_reel_free,guangxiao,ic_arrow,ic_autospin_in_autospin,ic_nav_bonus_wallet_small,ic_nav_calender,ic_nav_free_game_small,ic_nav_lobby,ic_nav_medium_sound_off,ic_nav_medium_sound_on,ic_nav_return,ic_nav_setting_external,ic_nav_setting_music,ic_nav_smartbot,ic_nav_sound_on,ic_nav_spin_turbo_off,ic_nav_spin_turbo_on,ic_nav_spin_turbo_up,ic_nav_to_wallet,ic_nav_wallet,ic_nav_wallet_small,ic_radio_selected,ic_slider,ic_turbo_spin_turbo_off_in_autospin,ic_turbo_spin_turbo_off_in_autospin_up,ic_turbo_spin_turbo_on_in_autospin,ic_wallet_free_game,icon_auto_spin_menu,icon_bet,icon_history,icon_more_menu,icon_paytable,icon_rule_book,infoboard-info_1,infoboard-info_2,infoboard-info_3,infoboard-info_4,infoboard-info_5,infoboard-info_6,infoboard-info_7,infoboard-total_win,infoboard-win,infoboard_a,infoboard_a_glow_02,infoboard_b,infoboard_b_glow_03,infoboard_c,infoboard_mask_a,infoboard_mask_b,jpg-fivekind_flare_a,jpg-fivekind_flare_d,loading,logo_on_temple,menu_close_button,mg_temple,navigate_down,particle_g,pattern_01_win,payline01,payline02,payline03,payline04,payline05,payline06,payline07,payline08,payline09,payline10,payline11,payline12,payline13,payline14,payline15,payline16,payline17,payline18,payline19,payline20,payline21,payline22,payline23,payline24,payline25,payline26,payline27,payline28,payline29,payline30,plus_2_active,plus_2_deactive,reel_a,rounded_button,setting_info_footer_bg,setting_slider_gradient,setting_switch_border_2,slider_icon_mark,solid_a_total,solid_c,solid_c_bw,spin_base,spin_base1,spin_glow_a,spin_glow_b,total_flare_a,total_glow,total_win-collect,total_win-free_spins,total_win-total_win,transition_to_fs-bonus_loading_text,transition_to_fs-free_spins_won,transition_to_fs-start,wallet_notification",
+			"type":"sheet",
+			"url":"assets/atlas/clsg.json"
 		}
 	]
 }
