@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="clsg_compensationTableskin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:game="game.*"
         xmlns:w="http://ns.egret.com/wing">
-	<e:Group id="mainGroup" width="720" height="1280" horizontalCenter="0" bottom="0">
+	<e:Group id="mainGroup" width="720" horizontalCenter="0" height="1280" bottom="0">
 		<e:Rect height="100" left="0" right="0" x="0" scaleX="1" scaleY="1" top="0" fillColor="0x282834"/>
 		<e:Label id="compensationTable" text="赔付表" y="0" scaleX="1" scaleY="1" width="720" height="100" size="45" verticalAlign="middle" textAlign="center" textColor="0xf7ba65" x="0"/>
 		<!--<e:Image width="70" height="70" x="640" anchorOffsetX="0" anchorOffsetY="0" source="menu_close_button" y="10"/>-->
@@ -189,9 +189,9 @@
 									</e:Group>
 
 
-				<e:Group width="720" x="0" y="0" cacheAsBitmap="true" height="900">
+				<e:Group width="720" x="0" y="0" cacheAsBitmap="true" height="600">
 					<e:Label text="中奖线" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle"/>
-					<e:Group width="720" height="500" x="0" scaleX="1" scaleY="1" y="100" anchorOffsetY="0">
+					<e:Group width="720" height="300" x="0" scaleX="1" scaleY="1" y="100" anchorOffsetY="0">
 					<e:Group width="120" height="50" y="0" x="20">
 						<e:Label text="01" x="4" verticalCenter="0" size="25"/>
 						<e:Image source="payline01" x="45" verticalCenter="0"/>
@@ -246,79 +246,49 @@
 					</e:Group>
 					<e:Group width="120" height="50" y="140" x="440">
 						<e:Label text="14" x="4" verticalCenter="0" size="25"/>
-						<e:Image x="45" verticalCenter="0" source="payline14"/>
+						<e:Image x="45" verticalCenter="0" source="payline16"/>
 					</e:Group>
 					<e:Group width="120" height="50" y="140" x="580">
 						<e:Label text="15" x="4" verticalCenter="0" size="25"/>
-						<e:Image x="45" verticalCenter="0" source="payline15"/>
+						<e:Image x="45" verticalCenter="0" source="payline17"/>
 					</e:Group>
 					<e:Group width="120" height="50" y="210" x="20">
 						<e:Label text="16" x="4" verticalCenter="0" size="25"/>
-						<e:Image x="45" verticalCenter="0" source="payline16"/>
+						<e:Image x="45" verticalCenter="0" source="payline20"/>
 					</e:Group>
 					<e:Group width="120" height="50" y="210" x="160">
 						<e:Label text="17" x="4" verticalCenter="0" size="25"/>
-						<e:Image x="45" verticalCenter="0" source="payline17"/>
+						<e:Image x="45" verticalCenter="0" source="payline21"/>
 					</e:Group>
 					<e:Group width="120" height="50" y="210" x="300">
 						<e:Label text="18" verticalCenter="0" size="25"/>
-						<e:Image x="45" verticalCenter="0" source="payline18"/>
+						<e:Image x="45" verticalCenter="0" source="payline32"/>
 					</e:Group>
 					<e:Group width="120" height="50" y="210" x="440">
 						<e:Label text="19" x="4" verticalCenter="0" size="25"/>
-						<e:Image x="45" verticalCenter="0" source="payline19"/>
+						<e:Image x="45" verticalCenter="0" source="payline33"/>
 					</e:Group>
 					<e:Group width="120" height="50" y="210" x="580">
 						<e:Label text="20" x="4" verticalCenter="0" size="25"/>
-						<e:Image x="45" verticalCenter="0" source="payline20"/>
+						<e:Image x="45" verticalCenter="0" source="payline31"/>
 					</e:Group>
-					<e:Group width="120" height="50" y="280" x="20">
-						<e:Label text="21" x="4" verticalCenter="0" size="25"/>
-						<e:Image x="45" verticalCenter="0" source="payline21"/>
-					</e:Group>
-					<e:Group width="120" height="50" y="280" x="160">
-						<e:Label text="22" x="4" verticalCenter="0" size="25"/>
-						<e:Image x="45" source="payline22" verticalCenter="0"/>
-					</e:Group>
-					<e:Group width="120" height="50" y="280" x="300">
-						<e:Label text="23" verticalCenter="0" size="25"/>
-						<e:Image x="45" verticalCenter="0" source="payline23"/>
-					</e:Group>
-					<e:Group width="120" height="50" y="280" x="440">
-						<e:Label text="24" x="4" verticalCenter="0" size="25"/>
-						<e:Image x="45" verticalCenter="0" source="payline24"/>
-					</e:Group>
-					<e:Group width="120" height="50" y="280" x="580">
-						<e:Label text="25" x="4" verticalCenter="0" size="25"/>
-						<e:Image x="45" verticalCenter="0" source="payline25"/>
-					</e:Group>
-					<e:Group width="120" height="50" y="350" x="20">
-						<e:Label text="26" x="4" verticalCenter="0" size="25"/>
-						<e:Image x="45" verticalCenter="0" source="payline26"/>
-					</e:Group>
-					<e:Group width="120" height="50" y="350" x="160">
-						<e:Label text="27" x="4" verticalCenter="0" size="25"/>
-						<e:Image x="45" verticalCenter="0" source="payline27"/>
-					</e:Group>
-					<e:Group width="120" height="50" y="350" x="300">
-						<e:Label text="28" verticalCenter="0" size="25"/>
-						<e:Image x="45" source="payline28" verticalCenter="0"/>
-					</e:Group>
-					<e:Group width="120" height="50" y="350" x="440">
-						<e:Label text="29" x="4" verticalCenter="0" size="25"/>
-						<e:Image x="45" verticalCenter="0" source="payline29"/>
-					</e:Group>
-					<e:Group width="120" height="50" y="350" x="580">
-						<e:Label text="30" x="4" verticalCenter="0" size="25"/>
-						<e:Image x="45" verticalCenter="0" source="payline30"/>
-					</e:Group>
+
+
+
+
+
+
+
+
+
+
 						<e:layout>
 							<e:TileLayout orientation="rows" horizontalGap="20" columnWidth="120" rowHeight="50" requestedColumnCount="5" paddingLeft="20" paddingRight="20" verticalGap="10" horizontalAlign="center" verticalAlign="middle" rowAlign="justifyUsingGap" columnAlign="justifyUsingGap" paddingTop="10" paddingBottom="10"/>
 						</e:layout>
 					</e:Group>
-					<e:Label text="·  只支付每条下注线中赢取最高的奖金。" x="30" y="640" width="660" size="26"/>
-					<e:Label text="·  中奖线奖金按照从最左至右转轴的顺序派发。" x="30" y="686" width="660" size="26"/>
-					<e:Label text="·  所有中奖以现金显示。" x="30" y="732" width="660" size="26"/>
+					<e:Label text="·  只支付每条下注线中赢取最高的奖金。" x="30" y="426.35" width="660" size="26"/>
+					<e:Label text="·  中奖线奖金按照从最左至右转轴的顺序派发。" x="30" y="469.34" width="660" size="26"/>
+					<e:Label text="·  所有中奖以现金显示。" x="30" y="515.34" width="660" size="26"/>
 				</e:Group>
 				<e:layout>
 					<e:VerticalLayout/>

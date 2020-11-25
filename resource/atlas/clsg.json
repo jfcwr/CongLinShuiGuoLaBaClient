@@ -1061,6 +1061,36 @@
       "sourceW": 76,
       "sourceH": 48
     },
+    "payline31": {
+      "x": 1893,
+      "y": 716,
+      "w": 76,
+      "h": 48,
+      "offX": 0,
+      "offY": 0,
+      "sourceW": 76,
+      "sourceH": 48
+    },
+    "payline32": {
+      "x": 1260,
+      "y": 1350,
+      "w": 76,
+      "h": 48,
+      "offX": 0,
+      "offY": 0,
+      "sourceW": 76,
+      "sourceH": 48
+    },
+    "payline33": {
+      "x": 649,
+      "y": 1968,
+      "w": 76,
+      "h": 48,
+      "offX": 0,
+      "offY": 0,
+      "sourceW": 76,
+      "sourceH": 48
+    },
     "solid_a_total": {
       "x": 1513,
       "y": 1002,
