@@ -331,247 +331,7 @@
 		<e:Group id="centerFreeGroup" width="720" height="500" horizontalCenter="0" x="10" y="564"></e:Group>
 		<e:Group id="artLineRootGroup" height="495" touchEnabled="false" touchChildren="false" anchorOffsetY="0"
 		         anchorOffsetX="0" width="710" horizontalCenter="0" y="381" />
-		<e:Group id="downPanel" height="220" anchorOffsetY="0" scaleX="1" scaleY="1" width="720" anchorOffsetX="0"
-		         horizontalCenter="0" bottom="0">
-			<e:Rect x="0" width="720" top="0" bottom="0"  fillColor="0x000000" fillAlpha="0.5"/>
-			<e:Image id="gameRotateImage" scaleX="1.2" scaleY="1.2" touchEnabled="false" top="-39" source="spin_base"  horizontalCenter="0"/>
-			<e:Group id="betMenuGruop" width="720" height="150" anchorOffsetY="0" x="0" scaleX="1" scaleY="1" y="35">
-				<game:Button id="rotationButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="55" x="77.5"
-				             anchorOffsetX="22.5" anchorOffsetY="22.5">
-					<game:skinName>
-						<e:Skin states="up,down,disabled">
-							<e:Image width="100%" height="100%" source="ic_turbo_spin_turbo_off_in_autospin"
-							         source.down="ic_turbo_spin_turbo_off_in_autospin_up" />
-							<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
-						</e:Skin>
-					</game:skinName>
-				</game:Button>
-				<game:Button id="rotationSetButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="40" x="173.5"
-				             anchorOffsetY="24.5" width="49" height="49" anchorOffsetX="24.5">
-					<game:skinName>
-						<e:Skin states="up,down,disabled">
-							<e:Image width="100%" height="100%" source="icon_auto_spin_menu"
-							         source.down="ic_turbo_spin_turbo_off_in_autospin_up" />
-							<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
-						</e:Skin>
-					</game:skinName>
-				</game:Button>
-				<e:Label text="旋转设置" x="129" y="77" size="26" textColor="0x605d5c" />
-				<game:Button id="betGoldButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="40" x="550"
-				             anchorOffsetY="24.5" width="49" height="49" anchorOffsetX="24.5">
-					<game:skinName>
-						<e:Skin states="up,down,disabled">
-							<e:Image width="100%" height="100%" source="icon_bet" />
-							<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
-						</e:Skin>
-					</game:skinName>
-				</game:Button>
-				<e:Label text="投注" x="478" y="77" size="26" textColor="0x605d5c" />
-				<e:Label id="betNumLabel" text="1.50" x="536" y="78" size="26" textColor="0xcfcece" />
-				<game:Button id="menuListButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="55"
-				             anchorOffsetY="22.5" x="650" width="45" height="45" anchorOffsetX="22.5">
-					<game:skinName>
-						<e:Skin states="up,down,disabled">
-							<e:Image width="100%" height="100%" source="icon_more_menu" />
-							<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
-						</e:Skin>
-					</game:skinName>
-				</game:Button>
-				<e:layout>
-					<e:BasicLayout/>
-				</e:layout>
-			</e:Group>
-			<game:Button id="gameRotateButton" interactive="bright" label="" scaleX="1" scaleY="1" enabled="true"
-			             touchEnabled="true" anchorOffsetX="51.5" anchorOffsetY="50" rotation="0" y="47.66" x="366.5">
-				<game:skinName>
-					<e:Skin states="up,down,disabled">
-						<e:Image width="100%" height="100%" source="arrow" />
-						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="-10" size="22" />
-					</e:Skin>
-				</game:skinName>
-			</game:Button>
-			<game:Button id="autoRotateButton" interactive="bright" label="12" touchChildren="false" touchEnabled="true"
-			             scaleX="1" scaleY="1" x="303.99" y="-10.31" width="120" height="122" visible="false">
-				<game:skinName>
-					<e:Skin states="up,down,disabled">
-						<e:Image width="100%" height="100%" source="auto_spin" />
-						<e:BitmapLabel id="labelDisplay" font="number2_fnt" horizontalCenter="0" verticalCenter="0" />
-					</e:Skin>
-				</game:skinName>
-			</game:Button>
-			<e:Group id="menuListGroup" height="180" width="720" visible="false">
-				<e:Rect id="closeRect" x="0" width="720" height="1280" bottom="0" fillAlpha="0"  strokeAlpha="0" fillColor="0x000000"/>
-				<e:Rect x="0" width="720" height="180"  fillColor="0x000000" fillAlpha="0.8" visible="false"/>
-				<e:Group width="720" height="108" y="0">
-					<game:Button id="soundSetButton" interactive="bright" label="" scaleX="1" scaleY="1" width="70" height="70"
-					             anchorOffsetY="54" anchorOffsetX="54" x="120" verticalCenter="0">
-						<game:skinName>
-							<e:Skin states="up,down,disabled">
-								<e:Image width="100%" height="100%" source="ic_nav_medium_sound_on" source.down="ic_nav_medium_sound_off" />
-								<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
-							</e:Skin>
-						</game:skinName>
-					</game:Button>
-					<game:Button id="compensationTableButton" interactive="bright" label="" scaleX="1" scaleY="1" width="70"
-					             height="70" anchorOffsetX="54" anchorOffsetY="54" horizontalCenter="-94" verticalCenter="0">
-						<game:skinName>
-							<e:Skin states="up,down,disabled">
-								<e:Image width="100%" height="100%" source="icon_paytable" />
-								<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
-							</e:Skin>
-						</game:skinName>
-					</game:Button>
-					<game:Button id="ruleListButton" interactive="bright" label="" scaleX="1" scaleY="1" width="70" height="70"
-					             anchorOffsetX="54" anchorOffsetY="54" horizontalCenter="85" verticalCenter="0">
-						<game:skinName>
-							<e:Skin states="up,down,disabled">
-								<e:Image width="100%" height="100%" source="icon_rule_book" />
-								<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
-							</e:Skin>
-						</game:skinName>
-					</game:Button>
-					<game:Button id="backButton" interactive="bright" label="" scaleX="1" scaleY="1" width="90" height="90"
-					             anchorOffsetX="45" anchorOffsetY="45" horizontalCenter="255" verticalCenter="0">
-						<game:skinName>
-							<e:Skin states="up,down,disabled">
-								<e:Image width="100%" height="100%" source="menu_close_button" />
-								<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
-							</e:Skin>
-						</game:skinName>
-					</game:Button>
-				</e:Group>
-				<e:Group width="720" height="72" x="0" y="108">
-					<e:Label text="声音" x="60" width="80" textAlign="center" textColor="0x605d5c" size="26" scaleX="1" scaleY="1"
-					         verticalCenter="0" />
-					<e:Label text="赔付表" x="228" textAlign="center" textColor="0x605d5c" size="26" width="80" scaleX="1" scaleY="1"
-					         verticalCenter="0" />
-					<e:Label text="规则" width="80" textAlign="center" size="26" textColor="0x605d5c" horizontalCenter="85" x="296"
-					         scaleX="1" scaleY="1" verticalCenter="0" />
-					<e:Label text="退出" x="576" width="80" textAlign="center" size="26" textColor="0x605D5C" scaleX="1" scaleY="1"
-					         verticalCenter="0" />
-					<e:layout>
-						<e:BasicLayout/>
-					</e:layout>
-				</e:Group>
-			</e:Group>
-			<e:Group id="popGroup" width="720" height="220" touchEnabled="false" visible="false">
-				<e:Rect alpha="0.75" width="720" height="1560" bottom="0" />
-			</e:Group>
-			<e:Group id="moneyBox" width="720" bottom="0" horizontalCenter="0">
-				<e:Image x="10" source="ic_nav_wallet" verticalCenter="0" />
-				<!--<e:Image id="imgHead" anchorOffsetX="0" anchorOffsetY="0" source="ic_nav_wallet" left="0" width="30" height="30"
-				             verticalCenter="0" />
-				-->
-				<e:Label text="余额" x="47" size="33" textColor="0x605d5c" verticalAlign="middle" verticalCenter="0" />
-				<e:Label id="moneyLabel" text="222" x="122" size="24" verticalAlign="middle" verticalCenter="0" textColor="0xcfcece" />
-				<e:Group right="20" verticalCenter="0">
-				<e:Label text="赢奖" x="585" size="33" textColor="0x605D5C" verticalAlign="middle" anchorOffsetX="50"
-				         verticalCenter="0" />
-				<e:Label id="raceObtainGoldLabel" text="1200" size="24" verticalAlign="middle" verticalCenter="0.5"
-				         textColor="0xcfcece"  right="1"/>
-					<e:layout>
-						<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle" gap="15"/>
-					</e:layout>
-						 </e:Group>
-				<e:layout>
-				
-					<e:BasicLayout/>
-				</e:layout>
-			</e:Group>
-			<!--<e:Label id="nameLabel" text="名字" x="162" y="24.48" fontFamily="SimHei" anchorOffsetX="0" width="184" size="28"
-			             textAlign="left" textColor="0xc1bbfc" visible="false" />
-			-->
-			<!--<e:BitmapLabel id="idLabel" text="1" x="201.7" y="88" visible="false" />
-			-->
-			<!--<e:Group id="groupMenu" width="720" height="200" horizontalCenter="0" anchorOffsetY="0" y="0" visible="false">
-			<game:Button id="helpButton1" interactive="bright" label="" scaleX="1" scaleY="1" y="4" x="3">
-				<game:skinName>
-					<e:Skin states="up,down,disabled">
-						<e:Image width="100%" height="100%" source="cjsg_commHelp" />
-						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
-					</e:Skin>
-				</game:skinName>
-			</game:Button>
-			<game:Button id="setButton" interactive="bright" label="" scaleX="1" scaleY="1" y="5" x="3">
-				<game:skinName>
-					<e:Skin states="up,down,disabled">
-						<e:Image width="100%" height="100%" source="cjsg_commSet" />
-						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
-					</e:Skin>
-				</game:skinName>
-			</game:Button>
-			<game:Button id="homeButton" interactive="bright" label="" scaleX="1" scaleY="1" y="90" x="3">
-				<game:skinName>
-					<e:Skin states="up,down,disabled">
-						<e:Image width="100%" height="100%" source="cjsg_commHome" />
-						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
-					</e:Skin>
-				</game:skinName>
-			</game:Button>
-			<e:layout>
-				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" />
-			</e:layout>
-		</e:Group>
-		-->
-		<game:Button id="freeRotateButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" touchEnabled="false"
-		             touchChildren="false" x="463" y="171" label="0" visible="false">
-			<game:skinName>
-				<e:Skin states="up,down,disabled">
-					<e:BitmapLabel id="labelDisplay" horizontalCenter="15" verticalCenter="-12" text="10" />
-				</e:Skin>
-			</game:skinName>
-		</game:Button>
-		<game:Button id="fastSettleButton" label="" x="464" y="171" visible="false">
-			<game:skinName>
-				<e:Skin states="up,down,disabled">
-					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
-				</e:Skin>
-			</game:skinName>
-		</game:Button>
-		<!--<e:Group id="autoRotateGroup" width="191" y="-94.57" height="377.33" x="479.22" scaleX="1" scaleY="1"
-			         anchorOffsetY="0" visible="false">
-		<e:Image x="0" y="0" source="cjsg_zd_choice_bg" />
-		<e:Group touchEnabled="true" touchChildren="true" scaleX="1" scaleY="1" name="buttonGroup" width="191" x="0"
-		         height="270" y="10" anchorOffsetY="0">
-			<e:layout>
-				<e:BasicLayout/>
-			</e:layout>
-			<e:Button y="196.67" anchorOffsetX="0" anchorOffsetY="0" x="9">
-				<e:skinName>
-					<e:Skin states="up,down,disabled">
-						<e:Image width="100%" height="100%" source="cjsg_zd_choice_25" source.down="cjsg_zd_choice_an_25" />
-						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
-					</e:Skin>
-				</e:skinName>
-			</e:Button>
-			<e:Button y="134" anchorOffsetX="0" anchorOffsetY="0" x="9">
-				<e:skinName>
-					<e:Skin states="up,down,disabled">
-						<e:Image width="100%" height="100%" source="cjsg_zd_choice_50" source.down="cjsg_zd_choice_an_50" />
-						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
-					</e:Skin>
-				</e:skinName>
-			</e:Button>
-			<e:Button y="72" anchorOffsetX="0" anchorOffsetY="0" x="9">
-				<e:skinName>
-					<e:Skin states="up,down,disabled">
-						<e:Image width="100%" height="100%" source="cjsg_zd_choice_100" source.down="cjsg_zd_choice_an_100" />
-						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
-					</e:Skin>
-				</e:skinName>
-			</e:Button>
-			<e:Button y="9" anchorOffsetX="0" anchorOffsetY="0" x="9">
-				<e:skinName>
-					<e:Skin states="up,down,disabled">
-						<e:Image width="100%" height="100%" source="cjsg_zd_choice_wx" source.down="cjsg_zd_choice_an_wx" />
-						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
-					</e:Skin>
-				</e:skinName>
-			</e:Button>
-		</e:Group>
-	</e:Group>
-	-->
-</e:Group>
+
 
 <!--<game:Button id="backButton" label="退出" horizontalCenter="127" width="90" height="90" verticalCenter="27">
 <e:skinName>
@@ -582,8 +342,7 @@
 </e:skinName>
 </game:Button>
 -->
-<e:Group id="effGroup" width="720" height="1280" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"
-         touchChildren="false" touchEnabled="false"></e:Group>
+
 		<e:Group id="fiveBox" width="720" height="0" x="0" y="502.2" touchEnabled="false" touchChildren="false">
 
 
@@ -591,6 +350,145 @@
 
 		</e:Group>
 		<e:Group id="MonkeyMovGroup2" height="0" left="0" right="0" bottom="1280" touchEnabled="false"/>
+		<e:Group id="downPanel" height="220" anchorOffsetY="0" scaleX="1" scaleY="1" width="720" anchorOffsetX="0" horizontalCenter="0" bottom="0">
+			<e:Rect x="0" width="720" top="0" bottom="0" fillColor="0x000000" fillAlpha="0.5"/>
+			<e:Image id="gameRotateImage" scaleX="1.2" scaleY="1.2" touchEnabled="false" top="-39" source="spin_base" horizontalCenter="0"/>
+			<e:Group id="betMenuGruop" width="720" height="150" anchorOffsetY="0" x="0" scaleX="1" scaleY="1" y="35">
+			<game:Button id="rotationButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="55" x="77.5" anchorOffsetX="22.5" anchorOffsetY="22.5">
+				<game:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="ic_turbo_spin_turbo_off_in_autospin" source.down="ic_turbo_spin_turbo_off_in_autospin_up"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</game:skinName>
+			</game:Button>
+			<game:Button id="rotationSetButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="40" x="173.5" anchorOffsetY="24.5" width="49" height="49" anchorOffsetX="24.5">
+				<game:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="icon_auto_spin_menu" source.down="ic_turbo_spin_turbo_off_in_autospin_up"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</game:skinName>
+			</game:Button>
+			<e:Label text="旋转设置" x="129" y="77" size="26" textColor="0x605d5c"/>
+			<game:Button id="betGoldButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="40" x="550" anchorOffsetY="24.5" width="49" height="49" anchorOffsetX="24.5">
+				<game:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="icon_bet"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</game:skinName>
+			</game:Button>
+			<e:Label text="投注" x="478" y="77" size="26" textColor="0x605d5c"/>
+			<e:Label id="betNumLabel" text="1.50" x="536" y="78" size="26" textColor="0xcfcece"/>
+			<game:Button id="menuListButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="55" anchorOffsetY="22.5" x="650" width="45" height="45" anchorOffsetX="22.5">
+				<game:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="icon_more_menu"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</game:skinName>
+			</game:Button>
+			<e:layout>
+				<e:BasicLayout/>
+			</e:layout>
+			</e:Group>
+			<game:Button id="gameRotateButton" interactive="bright" label="" scaleX="1" scaleY="1" enabled="true" touchEnabled="true" anchorOffsetX="51.5" anchorOffsetY="50" rotation="0" y="47.66" x="366.5">
+			<game:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="arrow"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="-10" size="22"/>
+				</e:Skin>
+			</game:skinName>
+			</game:Button>
+			<game:Button id="autoRotateButton" interactive="bright" label="12" touchChildren="false" touchEnabled="true" scaleX="1" scaleY="1" x="303.99" y="-10.31" width="120" height="122" visible="false">
+			<game:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="auto_spin"/>
+				<e:BitmapLabel id="labelDisplay" font="number2_fnt" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</game:skinName>
+			</game:Button>
+			<e:Group id="menuListGroup" height="180" width="720" visible="false">
+			<e:Rect id="closeRect" x="0" width="720" height="1280" bottom="0" fillAlpha="0" strokeAlpha="0" fillColor="0x000000"/>
+			<e:Rect x="0" width="720" height="180" fillColor="0x000000" fillAlpha="0.8" visible="false"/>
+			<e:Group width="720" height="108" y="0">
+				<game:Button id="soundSetButton" interactive="bright" label="" scaleX="1" scaleY="1" width="70" height="70" anchorOffsetY="54" anchorOffsetX="54" x="120" verticalCenter="0">
+				<game:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="ic_nav_medium_sound_on" source.down="ic_nav_medium_sound_off"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</game:skinName>
+				</game:Button>
+				<game:Button id="compensationTableButton" interactive="bright" label="" scaleX="1" scaleY="1" width="70" height="70" anchorOffsetX="54" anchorOffsetY="54" horizontalCenter="-94" verticalCenter="0">
+				<game:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="icon_paytable"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</game:skinName>
+				</game:Button>
+				<game:Button id="ruleListButton" interactive="bright" label="" scaleX="1" scaleY="1" width="70" height="70" anchorOffsetX="54" anchorOffsetY="54" horizontalCenter="85" verticalCenter="0">
+				<game:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="icon_rule_book"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</game:skinName>
+				</game:Button>
+				<game:Button id="backButton" interactive="bright" label="" scaleX="1" scaleY="1" width="90" height="90" anchorOffsetX="45" anchorOffsetY="45" horizontalCenter="255" verticalCenter="0">
+				<game:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="menu_close_button"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</game:skinName>
+				</game:Button>
+			</e:Group>
+			<e:Group width="720" height="72" x="0" y="108">
+				<e:Label text="声音" x="60" width="80" textAlign="center" textColor="0x605d5c" size="26" scaleX="1" scaleY="1" verticalCenter="0"/>
+				<e:Label text="赔付表" x="228" textAlign="center" textColor="0x605d5c" size="26" width="80" scaleX="1" scaleY="1" verticalCenter="0"/>
+				<e:Label text="规则" width="80" textAlign="center" size="26" textColor="0x605d5c" horizontalCenter="85" x="296" scaleX="1" scaleY="1" verticalCenter="0"/>
+				<e:Label text="退出" x="576" width="80" textAlign="center" size="26" textColor="0x605D5C" scaleX="1" scaleY="1" verticalCenter="0"/>
+				<e:layout>
+				<e:BasicLayout/>
+				</e:layout>
+			</e:Group>
+			</e:Group>
+			<e:Group id="popGroup" width="720" height="220" touchEnabled="false" visible="false">
+			<e:Rect alpha="0.75" width="720" height="1560" bottom="0"/>
+			</e:Group>
+			<e:Group id="moneyBox" width="720" bottom="0" horizontalCenter="0">
+			<e:Image x="10" source="ic_nav_wallet" verticalCenter="0"/>
+			<e:Label text="余额" x="47" size="33" textColor="0x605d5c" verticalAlign="middle" verticalCenter="0"/>
+			<e:Label id="moneyLabel" text="222" x="122" size="24" verticalAlign="middle" verticalCenter="0" textColor="0xcfcece"/>
+			<e:Group right="20" verticalCenter="0">
+				<e:Label text="赢奖" x="585" size="33" textColor="0x605D5C" verticalAlign="middle" anchorOffsetX="50" verticalCenter="0"/>
+				<e:Label id="raceObtainGoldLabel" text="1200" size="24" verticalAlign="middle" verticalCenter="0.5" textColor="0xcfcece" right="1"/>
+				<e:layout>
+				<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle" gap="15"/>
+				</e:layout>
+			</e:Group>
+			<e:layout>
+				<e:BasicLayout/>
+			</e:layout>
+			</e:Group>
+			<game:Button id="freeRotateButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" touchEnabled="false" touchChildren="false" x="463" y="171" label="0" visible="false">
+			<game:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:BitmapLabel id="labelDisplay" horizontalCenter="15" verticalCenter="-12" text="10"/>
+				</e:Skin>
+			</game:skinName>
+			</game:Button>
+			<game:Button id="fastSettleButton" label="" x="464" y="171" visible="false">
+			<game:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</game:skinName>
+			</game:Button>
+		</e:Group>
 
 </e:Group>
 <e:Group id="group_test" width="278" left="0" anchorOffsetY="0" anchorOffsetX="0" bottom="0" height="43" visible="false">

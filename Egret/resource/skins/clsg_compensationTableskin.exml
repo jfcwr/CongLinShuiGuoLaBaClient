@@ -33,13 +33,13 @@
 						</e:Group>
 						</e:Group>
 						<e:Group width="285" height="180" x="385" y="20" scaleX="1" scaleY="1">
-						<e:Image x="-34.85" y="-21.39" source="elem9"/>
+						<e:Image x="-34.85" y="-21.39" source="elem8"/>
 						<e:Group width="140" height="170" x="145" y="5">
 							<e:Label text="夺宝符号" y="0" x="0" width="140" height="170" textAlign="center" verticalAlign="middle"/>
 						</e:Group>
 						</e:Group>
 						<e:Group width="285" height="180" y="230" scaleX="1" scaleY="1" x="50">
-						<e:Image x="-50" source="elem8" y="-15"/>
+						<e:Image x="-50" y="-15" source="elem99"/>
 						<e:Group width="140" height="170" x="145" y="10">
 							<e:Label text="神秘宝箱符号" width="140" height="170" textAlign="center" verticalAlign="middle" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0" x="-72" y="-5"/>
 
@@ -150,13 +150,15 @@
 
 
 
-										<e:Group width="720" x="0" y="0" cacheAsBitmap="true" height="930">
+										<e:Group width="720" x="0" y="0" cacheAsBitmap="true" height="530">
 										<e:Label text="免费旋转模式" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle"/>
-										<e:Group width="720" height="830" x="0" scaleX="1" scaleY="1" y="100">
-											<e:Image y="0" horizontalCenter="0" source="feature_freespins_1"/>
+										<e:Group width="720" height="430" x="0" scaleX="1" scaleY="1" y="100">
+											<e:Image y="36.36" horizontalCenter="-218" source="elem8"/>
+											<e:Image y="36.36" source="elem8" x="257"/>
+											<e:Image y="36.36" horizontalCenter="221" source="elem8"/>
 
 										</e:Group>
-										<e:Label text="·  当3、4或5个夺宝符号出现在卷轴的任意位置时，将触发免费旋转模式并分别获得8、10或15次免费旋转。" x="30" scaleX="1" scaleY="1" y="700" textAlign="left" width="660" size="26" lineSpacing="10"/>
+										<e:Label text="·  当3、4或5个夺宝符号出现在卷轴的任意位置时，将触发免费旋转模式并分别获得8、10或15次免费旋转。" x="30" scaleX="1" scaleY="1" y="375.75" textAlign="left" width="660" size="26" lineSpacing="10"/>
 
 									</e:Group>
 

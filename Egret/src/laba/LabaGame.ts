@@ -1010,7 +1010,6 @@ module conglinshuiguo {
         }
         private dengAnimation2: labalib.Utils.KeyFrameObject;
         private characterGroup: eui.Group
-        private effGroup: eui.Group
         public InitMaskRext() {
             let worldGroupMask = new eui.Rect()
             worldGroupMask.width = this.worldGroup.width
