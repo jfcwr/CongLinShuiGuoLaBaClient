@@ -353,6 +353,8 @@ module conglinshuiguo {
             let totalTime: number = 0;
             let bigwinTween = egret.Tween.get(this)
             let scrollNumberInfo: any = null;
+            let soundIndex = 0;
+            SoundHand.Instance.switchMusicBG(2)
 
             for (let winidx = 0; winidx < showWinTypeCount; winidx++) {
                 let waitTime = this._winTime[winidx]
@@ -371,15 +373,18 @@ module conglinshuiguo {
                     if (obtainGold < toGold)
                         toGold = obtainGold
                     scrollNumberInfo = labalib.Utils.scrollNumber(this.GoldNumLabel, fromGold, toGold, waitTime,()=>{
-                        SoundHand.Instance.playbigwinStopSound()
-                        if(DataCenter.Instance.IsFreeGame()){
-                            SoundHand.Instance.switchMusicBG(1)
-                        }
-                        else{
-                            SoundHand.Instance.switchMusicBG(0)
+                        soundIndex++;
+                        if(soundIndex>=showWinTypeCount){
+                            SoundHand.Instance.playbigwinStopSound()
+                            if(DataCenter.Instance.IsFreeGame()){
+                                SoundHand.Instance.switchMusicBG(1)
+                            }
+                            else{
+                                SoundHand.Instance.switchMusicBG(0)
+                            }
                         }
                     });
-                    SoundHand.Instance.switchMusicBG(2)
+                    
                 }).wait(waitTime)
             }
             bigwinTween.wait(4000).call(() => {

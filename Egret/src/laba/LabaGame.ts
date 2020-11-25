@@ -574,7 +574,7 @@ module conglinshuiguo {
             this.torchImage1.visible = true;
             this.torchImage2.visible = true;
             this.leafMov1.visible = false;
-            this.leafMov2.visible = false;
+            // this.leafMov2.visible = false;
 
             if (!this.torchMov1) {
                 this.torchMov1 = uniLib.DisplayUtils.createMovieClicp("clsg_huoMov");
@@ -621,7 +621,7 @@ module conglinshuiguo {
             this.freeBgImage.blendMode = null;
             this.menImage.source = "mg_temple";
             this.leafMov1.visible = true;
-            this.leafMov2.visible = true;
+            // this.leafMov2.visible = true;
             if (this.MonkeyFreeMov1){
                 egret.Tween.removeTweens(this.MonkeyFreeMov1)
                 this.MonkeyFreeMov1.animation.stop();
@@ -2354,14 +2354,14 @@ module conglinshuiguo {
         private gameRotateImage:eui.Image;
         // 点击菜单按钮
         protected onMenuListButton() {
-            if(this.btnLightMov){
-                this.btnLightMov.visible = false;
-            }
-            this.gameRotateButton.visible = false;
-            this.gameRotateImage.visible = false;
-            this.menuListGroup.visible = true;
-            egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
-            this.betMenuGruop.visible = false;
+            // if(this.btnLightMov){
+            //     this.btnLightMov.visible = false;
+            // }
+            // this.gameRotateButton.visible = false;
+            // this.gameRotateImage.visible = false;
+            // this.menuListGroup.visible = true;
+            // egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
+            // this.betMenuGruop.visible = false;
             //测试
             // this.mysteryMode();
             // this.freeStickMov();
@@ -2369,9 +2369,9 @@ module conglinshuiguo {
 
             //     })
             // this.SetHighAnim(true);
-            // this.bigWinPanel.enterBigWinAnim(() => {
-            //     // this.bigWinPanel.playGoldWinType(100000)
-            // })
+            this.bigWinPanel.enterBigWinAnim(() => {
+                this.bigWinPanel.playGoldWinType(100000)
+            })
         }
         // 点击关闭菜单按钮
         protected onCloseMenuButton() {
@@ -2749,6 +2749,11 @@ module conglinshuiguo {
         public switchTipsImage(type: switchType, obtainGold?: number) {
             game.Timer.clearTimeout(this.mMaxShowTipsTimer)
             egret.Tween.removeTweens(this.TipsImage)
+            if(DataCenter.Instance.IsFreeGame()){
+                this.TipsImage.source = "infoboard-info_7";
+                this.TipsImage.x = 20;
+                return
+            }
             let target = 0
             let moveTween = egret.Tween.get(this.TipsImage, { loop: true })
             let widthlist = [434, 456, 454, 644, 702, 218, 627]
@@ -2792,8 +2797,7 @@ module conglinshuiguo {
                 }
             }
             else if (type == switchType.again) {
-
-
+                this.winMoneyImage.source = "infoboard-info_7";
             } else if (type == switchType.cover) {
 
                 // moveTween.to({ x: (parent.width - widthlist[5]) / 2 }, 5000)

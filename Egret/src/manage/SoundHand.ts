@@ -108,10 +108,6 @@ module conglinshuiguo {
 
         private mCurSoundBG: string = "xyj_bgm_mp3"
         public switchMusicBG(isNormal: number = 0) {
-            //背景音效
-            // if (this.isPlayBg) {
-            //     return;
-            // }
             let musicPath = ["xyj_bgm_mp3", "freebg_mp3", "bigwin_mp3" , "freeBg1_mp3"]
             this.mCurSoundBG = musicPath[isNormal]
             uniLib.SoundMgr.instance.stopBgMusic();

@@ -273,6 +273,7 @@ module conglinshuiguo {
             this.lantern.start();
         }
 		public stopAppear() {
+			LabaGame.Instance.switchTipsImage(1);
 			this.lantern.stop(true);
 			this.playCopperFly(false);
 			egret.Tween.removeTweens(this.lightImage1)
