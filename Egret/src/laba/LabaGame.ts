@@ -563,15 +563,16 @@ module conglinshuiguo {
             this.MonkeyMov2.visible = false;
             this.bgImage.source = "background_c_png";
             // this.MonkeyMov3.visible = false;
-            this.helloMonkeyMov.visible = false;
-            if (this.stepOnThehelloMonkeyTime) {
-                game.Timer.clearTimeout(this.stepOnThehelloMonkeyTime);
-                this.stepOnThehelloMonkeyTime = null;
-            }
-            if (this.stepOnThehelloMonkeyMov) {
-                this.helloMonkeyMov.armature.removeEventListener(dragonBones.EventObject.COMPLETE, this.playHelloMonkeyMov1, this);
-                this.stepOnThehelloMonkeyMov = null;
-            }
+            // this.helloMonkeyMov.visible = false;
+            this.helloMonkeyMov.alpha = 0;
+            // if (this.stepOnThehelloMonkeyTime) {
+            //     game.Timer.clearTimeout(this.stepOnThehelloMonkeyTime);
+            //     this.stepOnThehelloMonkeyTime = null;
+            // }
+            // if (this.stepOnThehelloMonkeyMov) {
+            //     this.helloMonkeyMov.armature.removeEventListener(dragonBones.EventObject.COMPLETE, this.playHelloMonkeyMov1, this);
+            //     this.stepOnThehelloMonkeyMov = null;
+            // }
             this.gameNameImage.visible = false;
             this.freeBgImage.visible = true;
             this.freeBgImage.blendMode = egret.BlendMode.ADD
@@ -623,7 +624,8 @@ module conglinshuiguo {
             // this.MonkeyMov3.visible = true;
             this.bgImage.source = "background_a_png";
             // this.helloMonkeyMov.visible = true;
-            this.playHelloMonkeyMov();
+            this.helloMonkeyMov.alpha = 1;
+            // this.playHelloMonkeyMov();
             this.gameNameImage.visible = true;
             this.freeBgImage.visible = false;
             this.freeBgImage.blendMode = null;
