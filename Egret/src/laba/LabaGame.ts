@@ -2658,6 +2658,7 @@ module conglinshuiguo {
                 this.helloMonkeyMov.scaleX = -1;
                 // this.helloMonkeyMov.scaleY = -1;
             }
+            this.helloMonkeyMov.visible = true;
             this.helloMonkeyMov.animation.play("mid_spawn",1)
             this.stepOnThehelloMonkeyMov = this.helloMonkeyMov.armature.addEventListener(dragonBones.EventObject.COMPLETE, this.playHelloMonkeyMov1, this);
             
@@ -2680,6 +2681,9 @@ module conglinshuiguo {
             }
             else if(this.helloMonkeyMovIndex==4){
                 this.helloMonkeyMov.animation.play("mid_despawn",1)
+            }
+            else if(this.helloMonkeyMovIndex==5){
+                this.helloMonkeyMov.visible = false;
                 let random2 = MathUtil.random(3000,15000)
                 this.stepOnThehelloMonkeyTime = game.Timer.setTimeout(() => {
                     this.stepOnThehelloMonkeyTime = null
@@ -2687,7 +2691,7 @@ module conglinshuiguo {
                     this.playHelloMonkeyMov()
                 }, null, random2)
             }
-            if(this.helloMonkeyMovIndex<=3){
+            if(this.helloMonkeyMovIndex<=4){
                 this.stepOnThehelloMonkeyMov = this.helloMonkeyMov.armature.addEventListener(dragonBones.EventObject.COMPLETE, this.playHelloMonkeyMov1, this);
             }
         }
