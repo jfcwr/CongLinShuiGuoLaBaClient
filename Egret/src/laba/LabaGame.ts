@@ -28,6 +28,7 @@ module conglinshuiguo {
         winTotal = 5,      //共赢得
 
     }
+    
 
     export class LabaGame extends game.BaseUI {
         private static m_Instance: LabaGame;
@@ -181,6 +182,9 @@ module conglinshuiguo {
         private maskImage1:eui.Image;
         private maskImage2:eui.Image;
         public freemGroup:eui.Group;
+
+        public maskRect:eui.Rect;
+
 
 
         //----------

@@ -499,7 +499,8 @@
 <e:HorizontalLayout gap="15" />
 </e:layout>
 </e:Group>
-	<e:Group id="freemGroup" width="720" touchEnabled="false" horizontalCenter="0" top="0" bottom="0">
+	<e:Rect id="maskRect" width="720" x="0" top="0" bottom="0" fillAlpha="0.6" visible="false"/>
+	<e:Group id="freemGroup" width="720" touchEnabled="false" horizontalCenter="0" bottom="0" height="1280">
 	</e:Group>
 	<e:Group width="720" height="1280" y="0" horizontalCenter="0" touchEnabled="false">
 		<e:Image id="maskImage1" source="background_b_png" touchEnabled="false" scaleX="1" scaleY="1" top="-3" bottom="3" left="720" x="720.0000000000001" y="-3"/>

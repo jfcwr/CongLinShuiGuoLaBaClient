@@ -5,7 +5,7 @@
 
 	</w:Declarations>
 	<e:Image id="imgBonus" source="" height="1560" horizontalCenter="0" width="720" bottom="0"  visible="false"/>
-	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.8"/>
+	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.8" visible="false"/>
 	<e:Group id="totalWin" width="720" height="1280" x="0" bottom="0">
 
 

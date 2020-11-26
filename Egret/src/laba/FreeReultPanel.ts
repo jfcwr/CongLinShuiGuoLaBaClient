@@ -78,6 +78,7 @@ module conglinshuiguo {
 				egret.Tween.get(this.lightImage2).set({ scaleX:1,scaleY:1,alpha:1 }).to({ scaleX:12,scaleY:12 }, 300).to({ alpha:0 }, 300)
 				// labalib.Utils.PlayTweenGroup(this.totalGlow, 1)
 			})
+			LabaGame.Instance.maskRect.visible = true;
 			LabaGame.Instance.freemGroup.addChild(FreeReultPanel.Instance);
 
 
@@ -269,6 +270,7 @@ module conglinshuiguo {
             // LabaGame.Instance.playFreeMov();
             game.Timer.setTimeout(() => {
 				LabaGame.Instance.freemGroup.removeChild(FreeReultPanel.Instance);
+				LabaGame.Instance.maskRect.visible = false;
             }, null, 500)
         }
 

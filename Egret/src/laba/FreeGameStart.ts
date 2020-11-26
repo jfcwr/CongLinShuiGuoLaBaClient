@@ -43,6 +43,7 @@ module conglinshuiguo {
             this.winMonkeyMov.animation.play("win_2",1)
             LabaGame.Instance.playFreeMov();
             game.Timer.setTimeout(() => {
+                LabaGame.Instance.maskRect.visible = false;
                 LabaGame.Instance.freemGroup.removeChild(FreeGameStart.Instance);
             }, null, 500)
         }
@@ -211,6 +212,7 @@ module conglinshuiguo {
             this.mFinishCB = cb
             this.mFinishCBObj = params
             this.loadGroup.visible = true
+            LabaGame.Instance.maskRect.visible = true;
             LabaGame.Instance.freemGroup.addChild(FreeGameStart.Instance);
             // GX.PopUpManager.addPopUp(FreeGameStart.Instance, false, 0)
             this.gameRoot.visible = true
