@@ -1160,6 +1160,7 @@ module conglinshuiguo {
                 this.mysteryMov.touchEnabled = false;
                 this.MonkeyMovGroup.addChild(this.mysteryMov);
             }
+            this.gameRotateButton.enabled = false;
             SoundHand.Instance.playMonkeyAboutSound()
             this.mysteryMov.visible = true;
             this.mysteryMov.animation.play("long_flip",1)
@@ -1425,9 +1426,9 @@ module conglinshuiguo {
             else {
                 let specialGame = DataCenter.Instance.IsTriggerCurFreeGame() || DataCenter.Instance.IsTriggerRerotateGame()
                 if (DataCenter.Instance.IsGetServerMsg && !DataCenter.Instance.IsQuickRotate && !specialGame) {
-                    if(DataCenter.Instance.CurServerResultDatas&&DataCenter.Instance.IsMysticalGame()){
-                        return;
-                    }
+                    // if(DataCenter.Instance.CurServerResultDatas&&DataCenter.Instance.IsMysticalGame()){
+                    //     return;
+                    // }
                     game.Timer.clearTimeout(this.mLabaMachine.RealStartTimer)
                     this.GameRotateButtomTween(GameRotateChoose.stop)
                     this.mAccFastStopTimes++
@@ -1826,6 +1827,7 @@ module conglinshuiguo {
             //连线
             if(DataCenter.Instance.IsMysticalGame()){
                 this.stopMysteryMode();
+                this.gameRotateButton.enabled = true;
                 DataCenter.Instance.getServerBetResult()
 
             }
