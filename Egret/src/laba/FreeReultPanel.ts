@@ -80,6 +80,7 @@ module conglinshuiguo {
 			})
 			LabaGame.Instance.maskRect.visible = true;
 			LabaGame.Instance.freemGroup.addChild(FreeReultPanel.Instance);
+			FreeReultPanel.Instance.y = uniLib.Global.screenHeight-1280;
 
 
 
