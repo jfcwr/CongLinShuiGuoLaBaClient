@@ -220,7 +220,6 @@ module conglinshuiguo {
          */
         public onSkipCurWinType() {
             if(this.call_&&this.isClose){
-                this.isClose = false;
                 egret.Tween.removeTweens(this)
                 this.winSignOut(this.call_)
             }
@@ -235,6 +234,7 @@ module conglinshuiguo {
             }
         }
         public winSignOut(cb:any) {
+            this.isClose = false;
             egret.Tween.get(this.winLeafMov1).set({ x:0 }).to({ x:-200 }, 300)
             egret.Tween.get(this.winLeafMov2).set({ x:0 }).to({ x:-200 }, 300)
             egret.Tween.get(this.winLeafMov3).set({ x:720 }).to({ x:920 }, 300)
