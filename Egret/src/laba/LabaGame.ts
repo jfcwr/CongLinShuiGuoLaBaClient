@@ -1162,7 +1162,7 @@ module conglinshuiguo {
                     if(mysteriousData[i][j]>0){
                         numberBox++;
                         // let icon = this.mLabaMachine.getBelt(i).GetElementByIndex(3-j);
-                        let icon1 = this.elemPos[2-j][i]
+                        let icon1 = this.elemPos[j][i]
                         jumpPont.push(icon1);
                         // let point1 = icon.localToGlobal();
                         // let point = this.gameGroup.globalToLocal(point1.x, point1.y);
@@ -1397,6 +1397,7 @@ module conglinshuiguo {
 
         public mGameButtonStatus: GameRotateStatus = GameRotateStatus.RotateNormal
         public onRotateButtonByClick(e: egret.Event = null) {
+            
             SoundHand.Instance.playBtnRotateSound();
             if (this.mGameButtonStatus == GameRotateStatus.RotateNormal) {
                 if (e && e.target != null) {
@@ -1404,11 +1405,14 @@ module conglinshuiguo {
                     this.GameRotateButtomTween(GameRotateChoose.rotate)
                 }
                 this.onRotateButton()
-                this.mGameButtonStatus = GameRotateStatus.RotatePause
+                this.mGameButtonStatus = GameRotateStatus.RotatePause;
             }
             else {
                 let specialGame = DataCenter.Instance.IsTriggerCurFreeGame() || DataCenter.Instance.IsTriggerRerotateGame()
                 if (DataCenter.Instance.IsGetServerMsg && !DataCenter.Instance.IsQuickRotate && !specialGame) {
+                    if(DataCenter.Instance.CurServerResultDatas&&DataCenter.Instance.IsMysticalGame()){
+                        return;
+                    }
                     game.Timer.clearTimeout(this.mLabaMachine.RealStartTimer)
                     this.GameRotateButtomTween(GameRotateChoose.stop)
                     this.mAccFastStopTimes++
@@ -1807,6 +1811,8 @@ module conglinshuiguo {
             //连线
             if(DataCenter.Instance.IsMysticalGame()){
                 this.stopMysteryMode();
+                DataCenter.Instance.getServerBetResult()
+
             }
             game.Timer.clearTimeout(this.mPlayWinAllEffectTimeout)
 

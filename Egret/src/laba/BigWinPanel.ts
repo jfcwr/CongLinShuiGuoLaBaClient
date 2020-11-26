@@ -26,6 +26,8 @@ module conglinshuiguo {
         private winLeafMov3: dragonBones.EgretArmatureDisplay = null;
         private winLeafMov4: dragonBones.EgretArmatureDisplay = null;
         private normalGoldFlyGroup:eui.Group;
+        private closeBtn:eui.Rect;
+
 
 
         public enterBigWinAnim(cb) {
@@ -217,6 +219,11 @@ module conglinshuiguo {
          *  点击事件;
          */
         public onSkipCurWinType() {
+            if(this.call_&&this.isClose){
+                this.isClose = false;
+                egret.Tween.removeTweens(this)
+                this.winSignOut(this.call_)
+            }
             // this.visible = false;
             // LabaGame.Instance.skipGoldButton.visible = false;
 
@@ -292,8 +299,8 @@ module conglinshuiguo {
                 }
             }
         }
-
-
+        private call_:Function = null;
+        private isClose:boolean = false;
         /**
          * 播放金币滚动动画;
          * obtainGold: 获得的金币;
@@ -305,6 +312,7 @@ module conglinshuiguo {
             //     this._goldParticle.stopCB();
             //     this._goldParticle = null;
             // }
+            this.call_ = cb;
 
 
             if (obtainGold == 0) {
@@ -331,11 +339,20 @@ module conglinshuiguo {
             //保存普通获取计算要播放的几个动画;
             let showWinTypeCount: number = 0;
             //从后往前计算，
-            for (let i: number = 0; i < this._scoreList.length; i++) {
-                if (obtainNormalMultiply >= this._scoreList[this._scoreList.length - i - 1]) {
-                    showWinTypeCount = this._scoreList.length - i;
-                    break;
-                }
+            // for (let i: number = 0; i < this._scoreList.length; i++) {
+            //     if (obtainNormalMultiply >= this._scoreList[this._scoreList.length - i - 1]) {
+            //         showWinTypeCount = this._scoreList.length - i;
+            //         break;
+            //     }
+            // }
+            if(obtainNormalMultiply>=this._scoreList[1]){
+                showWinTypeCount = 1
+            }
+            if(obtainNormalMultiply>=this._scoreList[2]){
+                showWinTypeCount = 2
+            }
+            if(obtainNormalMultiply>=this._scoreList[3]){
+                showWinTypeCount = 3
             }
             egret.log("call playGoldWinType, obtainGold:", obtainGold, " showWinTypeCount:", showWinTypeCount, " obtainNormalMultiply:", obtainNormalMultiply);
 
@@ -393,6 +410,9 @@ module conglinshuiguo {
                     
                 }).wait(waitTime)
             }
+            bigwinTween.call(() => {
+                this.isClose = true;
+            })
             bigwinTween.wait(4000).call(() => {
                 this.winSignOut(cb);
                 // if (cb)
