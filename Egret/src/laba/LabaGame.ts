@@ -1824,7 +1824,7 @@ module conglinshuiguo {
         private rerotateImage: eui.Image
         public mPlayWinAllEffectTimeout: number = 0;
         public playWinAllEffect() {
-            //连线
+            //连线 
             if(DataCenter.Instance.IsMysticalGame()){
                 this.stopMysteryMode();
                 this.gameRotateButton.enabled = true;
@@ -2494,7 +2494,7 @@ module conglinshuiguo {
         private playMonkeyMov() {
             if (!this.MonkeyMov1) {
                 this.MonkeyMov1 = uniLib.DragonUtils.createDragonBoneAnimation("mg_lemur_walk")
-                this.MonkeyMov1.y = 250;
+                this.MonkeyMov1.y = 275;
                 this.MonkeyMovGroup.addChild(this.MonkeyMov1);
             }
             let random1 = MathUtil.random(1,2);//上方猴子方向
