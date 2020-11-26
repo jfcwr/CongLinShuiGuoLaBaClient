@@ -644,16 +644,18 @@ m
                 let itemIdList_ = DataCenter.Instance.CurServerResultDatas.itemIdList;
                 let jiaSuIndex = 0;
                 let jiaSuNumber = 0;
-                for(let i =0;i<5;++i){
-                    for(let j =0;j<3;++j){
-                        if(itemIdList_[i][j] == 8){
-                            jiaSuIndex++;
+                if(itemIdList_){
+                    for(let i =0;i<5;++i){
+                        for(let j =0;j<3;++j){
+                            if(itemIdList_[i][j] == 8){
+                                jiaSuIndex++;
+                                break;
+                            }
+                        }
+                        if(jiaSuIndex == 2){
+                            jiaSuNumber = i;
                             break;
                         }
-                    }
-                    if(jiaSuIndex == 2){
-                        jiaSuNumber = i;
-                        break;
                     }
                 }
                 SoundHand.Instance.playSlowStopSound();
