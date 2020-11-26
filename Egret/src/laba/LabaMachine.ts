@@ -714,7 +714,7 @@ m
                                 beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 10 + i * 2, back: false, waitTime: i * 100, speed: 200 * timeScale });
                         }
                     }
-
+                    console.log("testddddsw scrolldata111111 real start")
                     beltext.ReadyScrollData()
                     beltext.RealStart = true
                 }

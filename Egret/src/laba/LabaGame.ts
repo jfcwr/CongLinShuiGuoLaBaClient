@@ -2317,9 +2317,9 @@ module conglinshuiguo {
 
             //     })
             // this.SetHighAnim(true);
-            // this.bigWinPanel.enterBigWinAnim(() => {
-            //     this.bigWinPanel.playGoldWinType(100000)
-            // })
+            this.bigWinPanel.enterBigWinAnim(() => {
+                this.bigWinPanel.playGoldWinType(100000)
+            })
         }
         // 点击关闭菜单按钮
         protected onCloseMenuButton() {
@@ -2775,7 +2775,20 @@ module conglinshuiguo {
                 this.winMoneyLabel.visible = true
                 this.winMoneyImage.visible = true
 
-                this.playWinBarAnim(1)
+                let curDizhu = labalib.LabaDataCenter.Instance.CurDizhu;
+                let perGold = curDizhu / 20;
+                let obtainNormalMultiply = Math.floor(obtainGold / perGold);
+
+
+
+                let highScoreList = DataCenter.Instance.getLabaHighScoreList();
+                if(obtainNormalMultiply<highScoreList[0]){
+                    this.playWinBarAnim(1)
+                }
+                else if(obtainNormalMultiply<highScoreList[1]){
+                    this.playWinBarAnim(3)
+                }
+
                 // this.winAnimBarGroup.visible = true
             }
             if (type != 1)

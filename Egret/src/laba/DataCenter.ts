@@ -303,11 +303,14 @@ module conglinshuiguo {
             let highScoreList = this.getLabaHighScoreList();
             let showWinTypeCount: number = 0;
             //从后往前计算，
-            for (let i: number = 0; i < highScoreList.length; i++) {
-                if (obtainNormalMultiply >= highScoreList[highScoreList.length - i - 1]) {
-                    showWinTypeCount = highScoreList.length - i;
-                    break;
-                }
+            // for (let i: number = 2; i < highScoreList.length; i++) {
+            //     if (obtainNormalMultiply >= highScoreList[highScoreList.length - i - 1]) {
+            //         showWinTypeCount = highScoreList.length - i;
+            //         break;
+            //     }
+            // }
+            if(obtainNormalMultiply>highScoreList[1]){
+                showWinTypeCount = 1;
             }
 
             if (showWinTypeCount == 0)
@@ -340,7 +343,7 @@ module conglinshuiguo {
             if (itemIdList && param) {
                 resultdata = labalib.Utils.getLineArrayByItemIdList(itemIdList);
             }
-            return [resultdata[2], resultdata[1], resultdata[0]]
+            return [resultdata[0], resultdata[1], resultdata[2]]
         }
 
 
@@ -374,7 +377,7 @@ module conglinshuiguo {
             if (param && param["wildCountNum"]) {
                 DataCenter.Instance.WildCount = param["wildCountNum"]
             }
-            let result = [ret[2], ret[1], ret[0]]
+            let result = [ret[0], ret[1], ret[2]]
             return result;
         }
 

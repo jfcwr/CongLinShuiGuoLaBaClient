@@ -21,147 +21,147 @@
 	<e:Group id="gameRootPanel" height="1280" touchEnabled="false" name="gameRootPanel" width="720" horizontalCenter="0"
 	         bottom="0">
 		<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="clsg_iconBg" y="338" fillMode="repeat" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" locked="true"/>
-		<e:Group id="freeIconGroup" top="375" width="710" height="505" horizontalCenter="0" touchEnabled="false"/>
+		<e:Group id="freeIconGroup" top="375" width="710" height="515" horizontalCenter="0" touchEnabled="false"/>
 
-		<e:Group id="gameGroup" width="710" height="505" scaleX="1" scaleY="1" name="gameGroup" anchorOffsetX="0"
+		<e:Group id="gameGroup" width="710" height="515" scaleX="1" scaleY="1" name="gameGroup" anchorOffsetX="0"
 		         anchorOffsetY="0" horizontalCenter="0" top="375">
 			<e:Image id="rerotateImage" scaleX="1" scaleY="1" touchEnabled="false" width="750" height="480" y="-28.33"
 			         source="" horizontalCenter="0" blendMode="normal"  visible="false"/>
 			<e:Scroller id="labaGameScroller" anchorOffsetX="0" anchorOffsetY="0" scrollPolicyH="off"
-			            scrollPolicyV="off" width="710" height="505" y="0" horizontalCenter="0">
-				<e:Group height="505" x="105" anchorOffsetX="0" width="710">
-					<e:Group id="LabaBeltRootGroup" height="505" x="0" y="0" anchorOffsetX="0" width="710" touchChildren="true"
+			            scrollPolicyV="off" width="710" height="515" y="0" horizontalCenter="0">
+				<e:Group height="515" x="105" anchorOffsetX="0" width="710">
+					<e:Group id="LabaBeltRootGroup" height="515" x="0" y="0" anchorOffsetX="0" width="710" touchChildren="true"
 					         touchEnabled="false">
-						<e:Group scrollEnabled="true" height="505" width="142" x="142" scaleY="-1" y="505" visible="false">
+						<e:Group scrollEnabled="true" height="515" width="142" x="142" scaleY="-1" y="515" visible="false">
 							<e:Image id="fast_back_whitelight1" scaleX="1.4" scaleY="1" touchEnabled="false" source=""
-							         blendMode="add" width="142" height="505" anchorOffsetY="0" y="0"  x="-22"/>
+							         blendMode="add" width="142" height="515" anchorOffsetY="0" y="0"  x="-22"/>
 						</e:Group>
-						<e:Group scrollEnabled="true" height="505" width="142" x="284" scaleY="-1" y="505" visible="false">
+						<e:Group scrollEnabled="true" height="515" width="142" x="284" scaleY="-1" y="515" visible="false">
 							<e:Image id="fast_back_whitelight2" scaleX="1.4" scaleY="1" touchEnabled="false" source=""
-							         blendMode="add" width="142" height="505" anchorOffsetY="0" y="0"  x="-28"/>
+							         blendMode="add" width="142" height="515" anchorOffsetY="0" y="0"  x="-28"/>
 						</e:Group>
-						<e:Group scrollEnabled="true" height="505" width="142" x="426" scaleY="-1" y="505" visible="false">
+						<e:Group scrollEnabled="true" height="515" width="142" x="426" scaleY="-1" y="515" visible="false">
 							<e:Image id="fast_back_whitelight3" touchEnabled="false" blendMode="add" scaleX="1.4"
-							         source="" scaleY="1"  width="142" height="505" y="0" x="-28"/>
+							         source="" scaleY="1"  width="142" height="515" y="0" x="-28"/>
 						</e:Group>
-						<e:Group id="belt1Group" x="0" anchorOffsetX="0" scaleX="1" scaleY="1" width="142" height="1155" name="belt1Group"
-						         y="-652">
-							<e:Group name="beltIcon11Group" x="0" y="990" width="142" height="165">
+						<e:Group id="belt1Group" x="0" anchorOffsetX="0" scaleX="1" scaleY="1" width="142" height="1197" name="belt1Group"
+						         y="-684">
+							<e:Group name="beltIcon11Group" x="0" y="1026" width="142" height="171">
 								<e:Image name="Icon11Image" verticalCenter="0" horizontalCenter="0" source="elem1" />
 							</e:Group>
-							<e:Group name="beltIcon12Group" x="0" y="825" width="142" height="165">
+							<e:Group name="beltIcon12Group" x="0" y="855" width="142" height="171">
 								<e:Image name="Icon12Image" verticalCenter="0" horizontalCenter="0" source="elem5" />
 							</e:Group>
-							<e:Group name="beltIcon13Group" x="0" y="660" width="142" height="165">
+							<e:Group name="beltIcon13Group" x="0" y="684" width="142" height="171">
 								<e:Image name="Icon13Image" verticalCenter="0" horizontalCenter="0" source="elem3" />
 							</e:Group>
-							<e:Group name="beltIcon14Group" x="0" y="505" width="142" height="165">
+							<e:Group name="beltIcon14Group" x="0" y="513" width="142" height="171">
 								<e:Image name="Icon14Image" verticalCenter="0" horizontalCenter="0" source="elem1" />
 							</e:Group>
-							<e:Group name="beltIcon15Group" x="0" y="330" width="142" height="165">
+							<e:Group name="beltIcon15Group" x="0" y="342" width="142" height="171">
 								<e:Image name="Icon15Image" verticalCenter="0" horizontalCenter="0" source="elem1" />
 							</e:Group>
-							<e:Group name="beltIcon16Group" x="0" y="165" width="142" height="165">
+							<e:Group name="beltIcon16Group" x="0" y="171" width="142" height="171">
 								<e:Image name="Icon16Image" verticalCenter="0" horizontalCenter="0" width="144" height="144" source="elem5" />
 							</e:Group>
-							<e:Group name="beltIcon17Group" x="0" y="0" width="142" height="165">
+							<e:Group name="beltIcon17Group" x="0" y="0" width="142" height="171">
 								<e:Image name="Icon17Image" verticalCenter="0" horizontalCenter="0" source="elem3" />
 							</e:Group>
 						</e:Group>
-						<e:Group id="belt2Group" height="1155" x="142" y="-652" width="142" name="belt2Group">
-							<e:Group name="beltIcon21Group" x="0" y="990" width="142" height="165">
+						<e:Group id="belt2Group" height="1197" x="142" y="-684" width="142" name="belt2Group">
+							<e:Group name="beltIcon21Group" x="0" y="1026" width="142" height="171">
 								<e:Image name="Icon21Image" verticalCenter="0" horizontalCenter="0" source="elem6" />
 							</e:Group>
-							<e:Group name="beltIcon22Group" x="0" y="825" width="142" height="165">
+							<e:Group name="beltIcon22Group" x="0" y="855" width="142" height="171">
 								<e:Image name="Icon22Image" verticalCenter="0" horizontalCenter="0" source="elem4" />
 							</e:Group>
-							<e:Group name="beltIcon23Group" x="0" y="660" width="142" height="165">
+							<e:Group name="beltIcon23Group" x="0" y="684" width="142" height="171">
 								<e:Image name="Icon23Image" verticalCenter="0" horizontalCenter="0" source="elem8" />
 							</e:Group>
-							<e:Group name="beltIcon24Group" x="0" y="505" width="142" height="165">
+							<e:Group name="beltIcon24Group" x="0" y="513" width="142" height="171">
 								<e:Image name="Icon24Image" source="elem1" verticalCenter="0" horizontalCenter="0" />
 							</e:Group>
-							<e:Group name="beltIcon25Group" x="0" y="330" width="142" height="165">
+							<e:Group name="beltIcon25Group" x="0" y="342" width="142" height="171">
 								<e:Image name="Icon25Image" verticalCenter="0" horizontalCenter="0" source="elem6" />
 							</e:Group>
-							<e:Group name="beltIcon26Group" x="0" y="165" width="142" height="165">
+							<e:Group name="beltIcon26Group" x="0" y="171" width="142" height="171">
 								<e:Image name="Icon26Image" verticalCenter="0" horizontalCenter="0" source="elem4" />
 							</e:Group>
-							<e:Group name="beltIcon27Group" x="0" y="0" width="142" height="165">
+							<e:Group name="beltIcon27Group" x="0" y="0" width="142" height="171">
 								<e:Image name="Icon27Image" verticalCenter="0" horizontalCenter="0" source="elem7" />
 							</e:Group>
 						</e:Group>
-						<e:Group id="belt3Group" width="142" height="1155" x="284" y="-652" name="belt3Group">
-							<e:Group name="beltIcon31Group" y="990" width="142" height="165" x="0">
+						<e:Group id="belt3Group" width="142" height="1197" x="284" y="-684" name="belt3Group">
+							<e:Group name="beltIcon31Group" y="1026" width="142" height="171" x="0">
 								<e:Image name="Icon31Image" verticalCenter="0" horizontalCenter="0" source="elem10" />
 							</e:Group>
-							<e:Group name="beltIcon32Group" y="825" width="142" height="165" x="0">
+							<e:Group name="beltIcon32Group" y="855" width="142" height="171" x="0">
 								<e:Image name="Icon32Image" verticalCenter="0" horizontalCenter="0" source="elem8" />
 							</e:Group>
-							<e:Group name="beltIcon33Group" x="0" y="660" width="142" height="165">
+							<e:Group name="beltIcon33Group" x="0" y="684" width="142" height="171">
 								<e:Image name="Icon33Image" verticalCenter="0" horizontalCenter="0" source="elem9" />
 							</e:Group>
-							<e:Group name="beltIcon34Group" x="0" y="505" width="142" height="165">
+							<e:Group name="beltIcon34Group" x="0" y="513" width="142" height="171">
 								<e:Image name="Icon34Image" source="elem1" verticalCenter="0" horizontalCenter="0" />
 							</e:Group>
-							<e:Group name="beltIcon35Group" x="0" y="330" width="142" height="165">
+							<e:Group name="beltIcon35Group" x="0" y="342" width="142" height="171">
 								<e:Image name="Icon35Image" verticalCenter="0" horizontalCenter="0" source="elem10" />
 							</e:Group>
-							<e:Group name="beltIcon36Group" x="0" y="165" width="142" height="165">
+							<e:Group name="beltIcon36Group" x="0" y="171" width="142" height="171">
 								<e:Image name="Icon36Image" verticalCenter="0" horizontalCenter="0" source="elem8" />
 							</e:Group>
-							<e:Group name="beltIcon37Group" x="0" y="0" width="142" height="165">
+							<e:Group name="beltIcon37Group" x="0" y="0" width="142" height="171">
 								<e:Image name="Icon37Image" verticalCenter="0" horizontalCenter="0" source="elem9" blendMode="normal" />
 							</e:Group>
 						</e:Group>
-						<e:Group id="belt4Group" width="142" height="1155" x="426" y="-652" name="belt4Group">
-							<e:Group name="beltIcon41Group" x="0" y="990" width="142" height="165">
+						<e:Group id="belt4Group" width="142" height="1197" x="426" y="-684" name="belt4Group">
+							<e:Group name="beltIcon41Group" x="0" y="1026" width="142" height="171">
 								<e:Image name="Icon41Image" verticalCenter="0" horizontalCenter="0" source="elem6" />
 							</e:Group>
-							<e:Group name="beltIcon42Group" x="0" y="825" width="142" height="165">
+							<e:Group name="beltIcon42Group" x="0" y="855" width="142" height="171">
 								<e:Image name="Icon42Image" verticalCenter="0" horizontalCenter="0" source="elem4" />
 							</e:Group>
-							<e:Group name="beltIcon43Group" x="0" y="660" width="142" height="165">
+							<e:Group name="beltIcon43Group" x="0" y="684" width="142" height="171">
 								<e:Image name="Icon43Image" verticalCenter="0" horizontalCenter="0" source="elem7" />
 							</e:Group>
-							<e:Group name="beltIcon44Group" x="0" y="505" width="142" height="165">
+							<e:Group name="beltIcon44Group" x="0" y="513" width="142" height="171">
 								<e:Image name="Icon44Image" source="elem1" verticalCenter="0" horizontalCenter="0" />
 							</e:Group>
-							<e:Group name="beltIcon45Group" x="0" y="330" width="142" height="165">
+							<e:Group name="beltIcon45Group" x="0" y="342" width="142" height="171">
 								<e:Image name="Icon45Image" verticalCenter="0" horizontalCenter="0" source="elem6" />
 							</e:Group>
-							<e:Group name="beltIcon46Group" x="0" y="165" width="142" height="165">
+							<e:Group name="beltIcon46Group" x="0" y="171" width="142" height="171">
 								<e:Image name="Icon46Image" verticalCenter="0" horizontalCenter="0" source="elem4" />
 							</e:Group>
-							<e:Group name="beltIcon47Group" x="0" y="0" width="142" height="165">
+							<e:Group name="beltIcon47Group" x="0" y="0" width="142" height="171">
 								<e:Image name="Icon47Image" verticalCenter="0" horizontalCenter="0" source="elem7" />
 							</e:Group>
 						</e:Group>
-						<e:Group id="belt5Group" width="142" height="1155" x="568" y="-652" scaleX="1" scaleY="1" name="belt5Group">
-							<e:Group name="beltIcon51Group" x="0" y="990" width="142" height="165">
+						<e:Group id="belt5Group" width="142" height="1197" x="568" y="-684" scaleX="1" scaleY="1" name="belt5Group">
+							<e:Group name="beltIcon51Group" x="0" y="1026" width="142" height="171">
 								<e:Image name="Icon51Image" source="elem1" verticalCenter="0" horizontalCenter="0" />
 							</e:Group>
-							<e:Group name="beltIcon52Group" x="0" y="825" width="142" height="165">
+							<e:Group name="beltIcon52Group" x="0" y="855" width="142" height="171">
 								<e:Image name="Icon52Image" verticalCenter="0" horizontalCenter="0" source="elem5" />
 							</e:Group>
-							<e:Group name="beltIcon53Group" x="0" y="660" width="142" height="165">
+							<e:Group name="beltIcon53Group" x="0" y="684" width="142" height="171">
 								<e:Image name="Icon53Image" verticalCenter="0" horizontalCenter="0" source="elem3" />
 							</e:Group>
-							<e:Group name="beltIcon54Group" x="0" y="505" width="142" height="165">
+							<e:Group name="beltIcon54Group" x="0" y="513" width="142" height="171">
 								<e:Image name="Icon54Image" source="elem1" verticalCenter="0" horizontalCenter="0" />
 							</e:Group>
-							<e:Group name="beltIcon55Group" x="0" y="330" width="142" height="165">
+							<e:Group name="beltIcon55Group" x="0" y="342" width="142" height="171">
 								<e:Image name="Icon55Image" verticalCenter="0" horizontalCenter="0" source="elem" />
 							</e:Group>
-							<e:Group name="beltIcon56Group" x="0" y="165" width="142" height="165">
+							<e:Group name="beltIcon56Group" x="0" y="171" width="142" height="171">
 								<e:Image name="Icon56Image" verticalCenter="0" horizontalCenter="0" source="elem5" />
 							</e:Group>
-							<e:Group name="beltIcon57Group" x="0" y="0" width="142" height="165">
+							<e:Group name="beltIcon57Group" x="0" y="0" width="142" height="171">
 								<e:Image name="Icon57Image" verticalCenter="0" horizontalCenter="0" source="elem3" />
 							</e:Group>
 						</e:Group>
-						<e:Group id="winElemAnimNotLineGroup" width="710" height="505" scaleX="1" scaleY="1" x="0" y="8" />
-						<e:Image id="freeBgImage" source="glow_reel_free" width="710" height="525" y="-14" x="0" scale9Grid="40,35,244,210" visible="false"/>
+						<e:Group id="winElemAnimNotLineGroup" width="710" height="515" scaleX="1" scaleY="1" x="0" y="8" />
+						<e:Image id="freeBgImage" source="glow_reel_free" width="710" height="535" y="-14" x="0" scale9Grid="40,35,244,210" visible="false"/>
 						<e:Rect id="elemAnimMask" fillAlpha="0.3" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
 						        left="0" right="0" top="0" bottom="0" strokeAlpha="0.5" />
 
@@ -171,12 +171,12 @@
 						            width="132" verticalCenter="0" x="396" height="390" />
 						-->
 
-						<e:Group id="winElemAnimGroup" horizontalCenter="0" verticalCenter="0" width="710" height="505" x="0" y="0"
+						<e:Group id="winElemAnimGroup" horizontalCenter="0" verticalCenter="0" width="710" height="515" x="0" y="0"
 						         scaleX="1" scaleY="1" />
 					</e:Group>
 				</e:Group>
 			</e:Scroller>
-			<e:Group id="tipsGroup" width="710" height="505" scaleX="1" scaleY="1" touchChildren="false"
+			<e:Group id="tipsGroup" width="710" height="515" scaleX="1" scaleY="1" touchChildren="false"
 			         touchEnabled="false" x="0" y="0">
 				<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.2" strokeColor="0x686666" strokeAlpha="1"
 				        fillColor="0x141414" />
@@ -190,9 +190,9 @@
 				<e:Group id="BeltHighScoll4" width="110" height="380" x="411" y="0" />
 				<e:Group id="BeltHighScoll5" width="110" height="380" x="548" y="0" anchorOffsetX="0" />
 			</e:Group>
-			<e:Group id="lineRootGroup" width="710" height="505" anchorOffsetY="0" touchChildren="false" touchEnabled="false"
+			<e:Group id="lineRootGroup" width="710" height="515" anchorOffsetY="0" touchChildren="false" touchEnabled="false"
 			         scrollEnabled="true" verticalCenter="0" horizontalCenter="0">
-				<e:Group id="darkLineGroup" height="505" width="710" touchChildren="false" touchEnabled="false" name="darkLineGroup">
+				<e:Group id="darkLineGroup" height="515" width="710" touchChildren="false" touchEnabled="false" name="darkLineGroup">
 					<e:Image source="lined1" y="39.8" width="715" x="-5" name="lined2" visible="false"/>
 					
 					<e:Image source="lined1" width="715" x="-5" y="202.61" name="lined1"  visible="false"/>
@@ -243,9 +243,9 @@
 
 
 				</e:Group>
-				<e:Group id="moveLineGroup" width="710" height="505" touchChildren="false" touchEnabled="false" name="moveLineGroup"
+				<e:Group id="moveLineGroup" width="710" height="515" touchChildren="false" touchEnabled="false" name="moveLineGroup"
 				         scrollEnabled="true">
-					<e:Group id="lightLineGroup" width="710" height="505" touchChildren="false" touchEnabled="false"
+					<e:Group id="lightLineGroup" width="710" height="515" touchChildren="false" touchEnabled="false"
 					         name="lightLineGroup">
 						<e:Image source="line1" y="32.8" width="715" x="-5" name="line2" visible="false"/>
 						
@@ -301,7 +301,7 @@
 
 		</e:Group>
 		<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="background_png" bottom="-84" width="720" horizontalCenter="0" height="1280" locked="true"/>
-		<e:Group id="mysteriousBoxGroup" width="710" height="505" horizontalCenter="0" touchEnabled="false" top="375"/>
+		<e:Group id="mysteriousBoxGroup" width="710" height="515" horizontalCenter="0" touchEnabled="false" top="375"/>
 		<e:Group height="106" touchEnabled="false" touchChildren="false" x="-5" y="259">
 			<e:Group id="worldGroup" width="628" height="77" anchorOffsetY="0" x="45" anchorOffsetX="0" y="29">
 			<e:Image id="TipsImage" scaleX="1" scaleY="1" touchEnabled="false" x="116" source="infoboard-info_1" verticalCenter="0"/>
@@ -326,11 +326,11 @@
 			<e:Image id="torchImage1" scaleX="1.5" scaleY="1.5" touchEnabled="false" y="198" x="0" source="fire_stick_l" visible="false"/>
 			<e:Image id="torchImage2" scaleX="1.5" scaleY="1.5" touchEnabled="false" y="198" x="657.67" source="fire_stick_r" visible="false"/>
 		</e:Group>
-		<e:Group id="iconLineGroup" width="710" height="505" touchChildren="false" touchEnabled="false" name="moveLineGroup"
-		         x="5" y="381" />
+		<e:Group id="iconLineGroup" width="710" height="515" touchChildren="false" touchEnabled="false" name="moveLineGroup"
+		         x="5" y="375" />
 		<e:Group id="centerFreeGroup" width="720" height="500" horizontalCenter="0" x="10" y="564"></e:Group>
-		<e:Group id="artLineRootGroup" height="505" touchEnabled="false" touchChildren="false" anchorOffsetY="0"
-		         anchorOffsetX="0" width="710" horizontalCenter="0" y="381" />
+		<e:Group id="artLineRootGroup" height="515" touchEnabled="false" touchChildren="false" anchorOffsetY="0"
+		         anchorOffsetX="0" width="710" horizontalCenter="0" y="375" />
 
 
 <!--<game:Button id="backButton" label="退出" horizontalCenter="127" width="90" height="90" verticalCenter="27">

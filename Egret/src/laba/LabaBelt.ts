@@ -136,7 +136,7 @@ module conglinshuiguo {
             }
         }
         public Animation_Dragon(animInfo, animName = null, times = 1) {
-            if(animInfo.Path == "s_wild"){
+            if (animInfo.Path == "s_wild") {
                 SoundHand.Instance.playBaiDaSound();
             }
             this.mAnimObject = uniLib.DragonUtils.createDragonBoneAnimation(animInfo.Path)
@@ -225,15 +225,15 @@ module conglinshuiguo {
             //     return
             // }
             // else {
-                this.elemImage.visible = false
-                // this.mAnimObject.blendMode="add"
-                if (this.mAnimObject != null) {
-                    if (this.isSpecial)
-                        return
-                    this.mAnimObject.animation.play(animName, 1)
+            this.elemImage.visible = false
+            // this.mAnimObject.blendMode="add"
+            if (this.mAnimObject != null) {
+                if (this.isSpecial)
                     return
-                }
-                this.Animation_Dragon(animInfo, animName, 1)
+                this.mAnimObject.animation.play(animName, 1)
+                return
+            }
+            this.Animation_Dragon(animInfo, animName, 1)
             // }
 
 
@@ -320,7 +320,7 @@ module conglinshuiguo {
             let waittime = [0, 100 * timeScale, 100 * timeScale * 2, 100 * timeScale * 3, 100 * timeScale * 4]
             // let 
             if (!DataCenter.Instance.IsQuickRotate)
-                egret.Tween.get(this.mGroup).wait(waittime[this.mBeltIndex - 1]).to({ y: -652 - 40 }, 200 * timeScale).to({ y: -652 }, 250 / 528 * 40 * timeScale).call(() => {
+                egret.Tween.get(this.mGroup).wait(waittime[this.mBeltIndex - 1]).to({ y: -684 - 40 }, 200 * timeScale).to({ y: -684 }, 250 / 684 * 40 * timeScale).call(() => {
                     egret.Tween.removeTweens(this.mGroup)
                     for (let item of this.mIcons) {
                         item.Blur = true
@@ -333,7 +333,7 @@ module conglinshuiguo {
                     .to({ y: 0 }, 200 * timeScale)
             }
             // else if (this.BeltScrollType == ScrollType.UpScroll)
-            //     egret.Tween.get(this.mGroup).wait(this.mBeltIndex * 50).to({ y: -652 - 60 }, 200).to({ y: -652 }, 250 / 528 * 60).call(() => {
+            //     egret.Tween.get(this.mGroup).wait(this.mBeltIndex * 50).to({ y: -684 - 60 }, 200).to({ y: -684 }, 250 / 684 * 60).call(() => {
             //         egret.Tween.removeTweens(this.mGroup)
             //         egret.Tween.get(this.mGroup, { onChange: this.ScrollUpdateChange, onChangeObj: this, loop: true })
             //             .to({ y: 0 }, 250)
@@ -352,16 +352,17 @@ module conglinshuiguo {
             // egret.Tween.pauseTweens(this.mGroup)
             egret.Tween.removeTweens(this.mGroup)
 
-
+            console.log("testddddsw scrolldata111111 mBeltIndex :", this.mBeltIndex, " col", this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex], this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex + 1], this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex + 2])
+            console.log("testddddsw scrolldata111111 ", JSON.stringify(this.mBeltSrcollDatas), this.mCurBeltSrcollDataIndex)
             if (this.mBeltSrcollDatas.length > 0) {
                 this.resetBeltPos()
-                this.mGroup.y = -652
+                this.mGroup.y = -684
             }
 
-           
 
 
-           
+
+
             this.mScrollInfoExt = this.mScrollInfoList.splice(0, 1)
             this.BeltScrollType = this.mScrollInfoExt[0].beltScrollType
             this.mResultType = this.mScrollInfoExt[0].resultType
@@ -398,7 +399,7 @@ module conglinshuiguo {
             //     for (let item of this.mIcons) {
             //         this.mBeltSrcollDatas.push(item.ElemType)
             //     }
-
+            console.log("testddddsw scrolldata111111 ", JSON.stringify(this.mBeltSrcollDatas), this.mCurBeltSrcollDataIndex)
 
             for (let i = 0; i < 3; i++) {
                 this.mBeltSrcollDatas.push(this.mIcons[i].ElemType)
@@ -412,6 +413,7 @@ module conglinshuiguo {
                     this.mBeltSrcollDatas.push(cols[i])
                 }
 
+            console.log("testddddsw scrolldata ", JSON.stringify(this.mBeltSrcollDatas), this.mCurBeltSrcollDataIndex)
             this.resetBeltPos()
 
 
@@ -426,9 +428,9 @@ module conglinshuiguo {
                 for (let icon of this.mIcons) {
                     icon.Blur = false
                 }
-                if(!LabaGame.Instance.playJiaSu){
+                if (!LabaGame.Instance.playJiaSu) {
                     LabaGame.Instance.playJiaSu = true;
-                    LabaGame.Instance.SetHighAnim(true,this.isHighRotate)
+                    LabaGame.Instance.SetHighAnim(true, this.isHighRotate)
                 }
             }
             egret.Tween.get(this.mGroup, { onChange: this.ScrollUpdateChange, onChangeObj: this, loop: true })
@@ -442,7 +444,7 @@ module conglinshuiguo {
                 if (this.mCurBeltSrcollDataIndex + i < this.mBeltSrcollDatas.length)
                     this.mIcons[i].ElemType = this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex + i]
             }
-            this.mGroup.y = -652
+            this.mGroup.y = -684
         }
         /**
          * 添加带子每一段滚动的数据,通过调用多次AddScrollData实现滚动多次...;
@@ -455,7 +457,7 @@ module conglinshuiguo {
             SoundHand.Instance.stopSlowStopSound();
 
             // LabaGame.Instance.playWildDuobaoElemDefaultEffect();
-            
+
 
             egret.Tween.removeTweens(this.mGroup)
 
@@ -475,33 +477,28 @@ module conglinshuiguo {
             //  return
             DataCenter.Instance.SetBeltStatus(true, this.mBeltIndex - 1);
             // DataCenter.Instance.CurServerResultDatas
-            if(this.isHighRotate){
-                for(let item of DataCenter.Instance.CurServerResultDatas.itemIdList[this.isHighRotate]){
-                    if(item == 8){
+            if (this.isHighRotate) {
+                for (let item of DataCenter.Instance.CurServerResultDatas.itemIdList[this.isHighRotate]) {
+                    if (item == 8) {
                         SoundHand.Instance.playDuoBaoStopSound();
                         break;
                     }
                 }
             }
-            for (let i = 0;i< this.mIcons.length;i++) {
-                if(i>=3){
+            for (let i = 0; i < this.mIcons.length; i++) {
+                if (i >= 3) {
                     this.mIcons[i].ElemType = 1;
                 }
             }
 
-            // LabaGame.Instance.mLabaMachine.getBelt(i).GetElementByIndex(3-j)
-            // labalib.LabaMachine.mBeltArray
-            // [this.mBeltIndex]
-            // for(){
-
-            // }
+            
             if (this.mScrollInfoList.length == 0 && this.isHighRotate) {
-                if(this.isHighRotate == 4){
+                if (this.isHighRotate == 4) {
                     LabaGame.Instance.SetHighAnim(false)
                     LabaGame.Instance.playJiaSu = true;
                 }
-                else{
-                    LabaGame.Instance.SetHighAnim(true,this.isHighRotate+1)
+                else {
+                    LabaGame.Instance.SetHighAnim(true, this.isHighRotate + 1)
                 }
 
             }
@@ -573,12 +570,12 @@ module conglinshuiguo {
 
             // this. 滚4挺5
             let nGroupY = this.mGroup.y;
-            let temp = Math.floor((nGroupY + 528) / 142)
+            let temp = Math.floor((nGroupY + 684) / 142)
             if (this.mLastBeltScrollDataIndex != temp) {
                 this.mCurBeltSrcollDataIndex++
                 if (this.RealStart && this.mCurBeltSrcollDataIndex == (this.mRealScrollItem - 3)) {
                     egret.Tween.removeTweens(this.mGroup)
-                    this.mGroup.y = -652 + temp * 142
+                    this.mGroup.y = -684 + temp * 142
                     if (!this.ReadyScrollData()) {
                         for (let item of this.mIcons) {
                             item.Blur = false
@@ -603,7 +600,7 @@ module conglinshuiguo {
 
             this.mLastBeltScrollDataIndex = temp
             if (this.mGroup.y == 0) {
-                this.mGroup.y = -652
+                this.mGroup.y = -684
                 if (!this.RealStart) {
                     this.mBeltSrcollDatas.push(this.GenerateRandomElem())
                     this.mBeltSrcollDatas.push(this.GenerateRandomElem())
@@ -660,12 +657,12 @@ module conglinshuiguo {
             this.resetBeltPos()
             DataCenter.Instance.SetBeltStatus(true, this.mBeltIndex - 1)
             if (this.mScrollInfoList.length == 0 && this.isHighRotate) {
-                if(this.isHighRotate == 4){
+                if (this.isHighRotate == 4) {
 
                     LabaGame.Instance.SetHighAnim(false)
                 }
-                else{
-                    LabaGame.Instance.SetHighAnim(true,this.isHighRotate)
+                else {
+                    LabaGame.Instance.SetHighAnim(true, this.isHighRotate)
                 }
 
             }

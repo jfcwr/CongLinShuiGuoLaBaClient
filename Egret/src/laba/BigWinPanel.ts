@@ -366,12 +366,18 @@ module conglinshuiguo {
                     this.playWinType(winidx + 1)
 
                     let fromGold = 0
-                    let toGold = this._scoreList[winidx] * perGold
-                    if (winidx != 0) {
-                        fromGold = this._scoreList[winidx - 1] * perGold
+                    let toGold  = this._scoreList[winidx+2] * perGold
+                    if(winidx+2>=4){
+                        if(toGold<obtainGold){
+                            toGold = obtainGold;
+                        }
                     }
-                    if (obtainGold < toGold)
-                        toGold = obtainGold
+                    if (winidx != 0) {
+                        fromGold = this._scoreList[winidx - 1+2] * perGold;
+                    }
+                    if (obtainGold < toGold){
+                        toGold = obtainGold;
+                    }
                     scrollNumberInfo = labalib.Utils.scrollNumber(this.GoldNumLabel, fromGold, toGold, waitTime,()=>{
                         soundIndex++;
                         if(soundIndex>=showWinTypeCount){
@@ -401,6 +407,7 @@ module conglinshuiguo {
                 egret.Tween.removeTweens(bigwinTween)
                 
                 //还有没有播放完毕的金币类型;
+                console.error(this._mCurPlayWinType)
                 if (this._mCurPlayWinType < showWinTypeCount) {
                     this.playWinType(showWinTypeCount);
                     this.GoldNumLabel.text = GX.GoldFormat(obtainGold, false, true);
