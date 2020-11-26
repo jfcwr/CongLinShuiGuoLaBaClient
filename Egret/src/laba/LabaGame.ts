@@ -1358,6 +1358,7 @@ module conglinshuiguo {
         //自动旋转次数
         public onClickRotateCountButton(nCount: number) {
             this.mIsAutoRotating = true;
+            this.mGameButtonStatus = GameRotateStatus.RotatePause;
 
             this.gameRotateButton.visible = false;
             this.autoRotateButton.visible = true

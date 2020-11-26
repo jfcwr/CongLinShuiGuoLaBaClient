@@ -340,6 +340,36 @@ module conglinshuiguo {
                 DataCenter.Instance.WildCount = param["wildCountNum"]
             }
             let resultdata = [[1, 2, 3, 4, 5], [2, 3, 4, 5, 6], [3, 4, 5, 6, 7]]
+            let resultdata_ = [1,2,3,4,5,6,7]
+            for(let i = 0;i<5;++i){
+                for(let j = 0;j<3;++j){
+                    if(i == 0){
+                        resultdata[j][i] = MathUtil.random(1,7);
+                        for(let item of resultdata_){
+                            if(resultdata[j][i] == item){
+                                resultdata_.remove(item);
+                            }
+                        }
+                    }
+                }
+            }
+            for(let i = 1;i<5;++i){
+                for(let j = 0;j<3;++j){
+                    if(i == 1){
+                        resultdata[j][i] = resultdata_[MathUtil.random(0,resultdata_.length-1)];
+                    }
+                }
+            }
+            let random_ = MathUtil.random(0,100);
+            if(random_>90){
+                resultdata[MathUtil.random(0,2)][MathUtil.random(2,4)] = 8;
+            }
+            if(random_>80){
+                resultdata[MathUtil.random(0,2)][MathUtil.random(2,4)] = 9;
+            }
+            if(random_>98){
+                resultdata[MathUtil.random(0,2)][MathUtil.random(2,4)] = 9;
+            }
             if (itemIdList && param) {
                 resultdata = labalib.Utils.getLineArrayByItemIdList(itemIdList);
             }
