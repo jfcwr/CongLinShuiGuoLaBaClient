@@ -358,6 +358,9 @@ module conglinshuiguo {
                     if(i == 1){
                         resultdata[j][i] = resultdata_[MathUtil.random(0,resultdata_.length-1)];
                     }
+                    else if(i != 0){
+                        resultdata[j][i] = MathUtil.random(1,7);
+                    }
                 }
             }
             let random_ = MathUtil.random(0,100);
