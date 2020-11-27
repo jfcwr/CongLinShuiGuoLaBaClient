@@ -100,8 +100,11 @@ module conglinshuiguo {
             
         }
 
+        private leftCountLabel:eui.BitmapLabel;
+
         public playAppear() {
             SoundHand.Instance.switchMusicBG(3)
+            this.leftCountLabel.text = DataCenter.Instance.getFreeBonusCount()+"";
             egret.Tween.get(this.bgimage).set({ alpha: 0 }).to({ alpha: 1 }, 300);
             if(!this.winMonkeyMov){
                 this.winMonkeyMov = uniLib.DragonUtils.createDragonBoneAnimation("mgbg_wins_lemur")

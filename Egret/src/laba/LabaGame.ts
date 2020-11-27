@@ -2058,7 +2058,7 @@ module conglinshuiguo {
             // this.nextDoTimer = game.Timer.setTimeout(() => {
                 SoundHand.Instance.endLabaBg()
                 SoundHand.Instance.switchMusicBG(1)
-                FreeGameIngPanel.Instance.LeftFreeCount = 8
+                FreeGameIngPanel.Instance.LeftFreeCount = DataCenter.Instance.getFreeBonusCount()
                 // labalib.Utils.PlayTweenGroup(this.cloud, 1, () => {
 
                     // this.lcloud.alpha = 0

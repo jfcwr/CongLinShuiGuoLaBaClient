@@ -570,12 +570,12 @@ module conglinshuiguo {
 
             // this. 滚4挺5
             let nGroupY = this.mGroup.y;
-            let temp = Math.floor((nGroupY + 684) / 142)
+            let temp = Math.floor((nGroupY + 684) / 171)
             if (this.mLastBeltScrollDataIndex != temp) {
                 this.mCurBeltSrcollDataIndex++
                 if (this.RealStart && this.mCurBeltSrcollDataIndex == (this.mRealScrollItem - 3)) {
                     egret.Tween.removeTweens(this.mGroup)
-                    this.mGroup.y = -684 + temp * 142
+                    this.mGroup.y = -684 + temp * 171
                     if (!this.ReadyScrollData()) {
                         for (let item of this.mIcons) {
                             item.Blur = false

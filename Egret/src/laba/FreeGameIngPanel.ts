@@ -33,7 +33,7 @@ module conglinshuiguo {
             this.skinName = new clsg_freeGameIng();
             this.InitCharacterDragon()
 
-            this.LeftFreeCount = 2
+            // this.LeftFreeCount = 2
         }
         public get LeftFreeCount() {
             return parseInt(this.freecountBLabel.text)
@@ -161,7 +161,7 @@ module conglinshuiguo {
             this.mCharacterState = {}
             this.ProgressValue = 0
             this.Progress = 0
-            this.LeftFreeCount = 8
+            this.LeftFreeCount = DataCenter.Instance.getFreeBonusCount();
             this.mFinishCB = null
         }
         public InitCharacterDragon() {
