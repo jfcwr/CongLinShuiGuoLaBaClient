@@ -527,6 +527,7 @@ module conglinshuiguo {
                 label.horizontalCenter = "0"
                 label.text = "" + (i + 1)
                 group.addChild(label)
+                group.touchEnabled = false;
                 this.mLineTipsInfoArr.push(group)
                 this.iconLineGroup.addChild(group)
             }
@@ -536,6 +537,7 @@ module conglinshuiguo {
             label.horizontalCenter = "0"
             label.scaleX = 1.7
             label.scaleY = 1.7
+            label.touchEnabled = false;
             this.iconLineGroup.addChild(label)
             // label.text = "22222"
             this.hideAllLineTips()
@@ -894,7 +896,8 @@ module conglinshuiguo {
             this.mLineTipsInfoArr[index].y = pos.y
             if (special.indexOf(index) != -1)
                 this.mLineTipsInfoArr[index].y = posmap[index]
-            this.mLineTipsInfoArr[index].visible = true
+            this.mLineTipsInfoArr[index].visible = true;
+            this.mLineTipsInfoArr[index].touchEnabled = false;
             let label = this.iconLineGroup.getChildByName("muti") as eui.BitmapLabel
             label.visible = point != 0 ? true : false
             label.text = "" + point

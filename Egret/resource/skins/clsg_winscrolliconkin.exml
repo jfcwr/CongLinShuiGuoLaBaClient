@@ -7,7 +7,7 @@
 
 
 	</w:Declarations>
-	<e:Group id="bgGroup" horizontalCenter="0" verticalCenter="0" width="132" height="132">
+	<e:Group id="bgGroup" horizontalCenter="0" verticalCenter="0" width="132" height="132" touchEnabled="false">
 
 
 
@@ -18,8 +18,8 @@
 	<e:Image id="shinningBg" blendMode="add" horizontalCenter="0" verticalCenter="0" alpha="1" source="feature_glow_b" visible="false"/>
 
 
-	<e:Image id="elemImage"  horizontalCenter="0" verticalCenter="0"  source="elem1"/>
+	<e:Image id="elemImage"  horizontalCenter="0" verticalCenter="0"  source="elem1" touchEnabled="false"/>
 	<e:Group id="animGroup" width="1" height="1" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0"
-	         horizontalCenter="0" verticalCenter="0" />
+	         horizontalCenter="0" verticalCenter="0"  touchEnabled="false"/>
 
 </e:Skin>

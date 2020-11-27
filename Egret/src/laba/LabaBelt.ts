@@ -142,6 +142,7 @@ module conglinshuiguo {
             this.mAnimObject = uniLib.DragonUtils.createDragonBoneAnimation(animInfo.Path)
             this.mAnimObject.animation.play(animName, times)
             this.mAnimObject.scaleX = animInfo.Scale
+            this.mAnimObject.touchEnabled = false;
             this.mAnimObject.scaleY = animInfo.Scale
             this.animGroup.addChild(this.mAnimObject)
         }

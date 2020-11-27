@@ -799,6 +799,8 @@ m
                 uniLib.SoundMgr.instance.playSound("xian_mp3", 1);
             this.darkLineGroup.getChildByName("lined" + linetype).visible = visible
             this.lightLineGroup.getChildByName("line" + linetype).visible = visible
+            this.darkLineGroup.getChildByName("lined" + linetype).touchEnabled = false;
+            this.lightLineGroup.getChildByName("line" + linetype).touchEnabled = false;
             // this.lightLineGroup.getChildByName("line" + linetype).blendMode = "add"
         }
         /**

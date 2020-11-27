@@ -160,7 +160,7 @@
 								<e:Image name="Icon57Image" verticalCenter="0" horizontalCenter="0" source="elem3" />
 							</e:Group>
 						</e:Group>
-						<e:Group id="winElemAnimNotLineGroup" width="710" height="515" scaleX="1" scaleY="1" x="0" y="8" />
+						<e:Group id="winElemAnimNotLineGroup" width="710" height="515" scaleX="1" scaleY="1" x="0" y="8"  touchEnabled="false"/>
 						<e:Image id="freeBgImage" source="glow_reel_free" width="710" height="535" y="-14" x="0" scale9Grid="40,35,244,210" visible="false"/>
 						<e:Rect id="elemAnimMask" fillAlpha="0.3" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
 						        left="0" right="0" top="0" bottom="0" strokeAlpha="0.5" />
@@ -172,14 +172,14 @@
 						-->
 
 						<e:Group id="winElemAnimGroup" horizontalCenter="0" verticalCenter="0" width="710" height="515" x="0" y="0"
-						         scaleX="1" scaleY="1" />
+						         scaleX="1" scaleY="1"  touchEnabled="false"/>
 					</e:Group>
 				</e:Group>
 			</e:Scroller>
 			<e:Group id="tipsGroup" width="710" height="515" scaleX="1" scaleY="1" touchChildren="false"
 			         touchEnabled="false" x="0" y="0">
 				<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.2" strokeColor="0x686666" strokeAlpha="1"
-				        fillColor="0x141414" />
+				        fillColor="0x141414"  touchEnabled="false"/>
 			</e:Group>
 
 			<e:Group id="highScrollGroup" width="688" height="380" anchorOffsetY="0" touchEnabled="false" touchChildren="false"
