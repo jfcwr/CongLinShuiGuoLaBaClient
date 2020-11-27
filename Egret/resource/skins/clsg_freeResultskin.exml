@@ -47,7 +47,7 @@
 		<e:Image scaleX="1" scaleY="1" y="242.4" source="total_win-total_win" horizontalCenter="0.5" />
 		<e:BitmapLabel id="winLabel" text="59.44" scaleX="0.6" scaleY="0.6" verticalCenter="198" font="number3_fnt"
 		               horizontalCenter="-0.5" />
-		<game:Button id="getMoneyButton" interactive="bright" label="" scaleX="1" scaleY="1" y="861.64" width="343" height="91"
+		<game:Button id="getMoneyButton" interactive="bright" label="" scaleX="1" scaleY="1" y="1055.58" width="343" height="91"
 		             anchorOffsetX="171.5" anchorOffsetY="45.5" horizontalCenter="0.5">
 			<game:skinName>
 				<e:Skin states="up,down,disabled">

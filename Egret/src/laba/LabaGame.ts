@@ -605,9 +605,10 @@ module conglinshuiguo {
             }
             if (!this.lightFreeMov) {
                 this.lightFreeMov = uniLib.DragonUtils.createDragonBoneAnimation("bg_guang")
-                this.lightFreeMov.x = 360;
-                this.lightFreeMov.y = 720;
+                this.lightFreeMov.x = 280;
+                this.lightFreeMov.y = 500;
                 this.MonkeyMovGroup.addChild(this.lightFreeMov);
+                this.lightFreeMov.alpha = 0.2;
             }
             this.lightFreeMov.animation.play(null,0)
             this.torchMov1.visible = true;
@@ -2340,7 +2341,7 @@ module conglinshuiguo {
             //测试
             // this.mysteryMode();
             // this.freeStickMov();
-            // FreeReultPanel.Instance.showFreeEnd(() => {
+            // FreeGameStart.Instance.Show(() => {
 
             //     })
             // this.SetHighAnim(true);

@@ -460,41 +460,42 @@ module conglinshuiguo {
             if (!this.winTitleMov1) {
                 this.winTitleMov1 = uniLib.DragonUtils.createDragonBoneAnimation("dajiang_logo")
                 this.winTitleMov1.x = 450;
-                this.winTitleGroup.addChild(this.winTitleMov1);
                 this.winTitleMov1.animation.play(this._winTypeTitlePaths[this._mCurPlayWinType - 1],0)
 
                 this.winTitleMov2 = uniLib.DragonUtils.createDragonBoneAnimation("dajiang_logo")
                 this.winTitleMov2.x = 450;
-                this.winTitleGroup.addChild(this.winTitleMov2);
                 this.winTitleMov2.animation.play(this._winTypeTitlePaths[this._mCurPlayWinType],0)
                 this.winTitleMov2.visible = false;
 
                 this.winTitleMov3 = uniLib.DragonUtils.createDragonBoneAnimation("dajiang_logo")
                 this.winTitleMov3.x = 450;
-                this.winTitleGroup.addChild(this.winTitleMov3);
                 this.winTitleMov3.animation.play(this._winTypeTitlePaths[this._mCurPlayWinType+1],0)
                 this.winTitleMov3.visible = false;
 
                 this.winLightMov1 = uniLib.DragonUtils.createDragonBoneAnimation("jiesuan_gx1_1")
                 this.winLightMov1.x = 450;
-                this.winTitleGroup.addChild(this.winLightMov1);
                 this.winLightMov1.animation.play(this._winTypePaths[0],1)
                 // this.winLightMov1.visible = false;
                 this.winLightMov1.animation.timeScale = 3;
 
                 this.winLightMov2 = uniLib.DragonUtils.createDragonBoneAnimation("jiesuan_gx2")
                 this.winLightMov2.x = 450;
-                this.winTitleGroup.addChild(this.winLightMov2);
                 // this.winLightMov2.animation.play(this._winTypePaths[this._mCurPlayWinType-1],1)
                 this.winLightMov2.visible = false;
                 this.winLightMov2.animation.timeScale = 3;
 
                 this.winLightMov3 = uniLib.DragonUtils.createDragonBoneAnimation("jiesuan_gx3")
                 this.winLightMov3.x = 450;
-                this.winTitleGroup.addChild(this.winLightMov3);
                 // this.winLightMov3.animation.play(this._winTypePaths[this._mCurPlayWinType-1],1)
                 this.winLightMov3.visible = false;
                 this.winLightMov3.animation.timeScale = 3;
+                this.winTitleGroup.addChild(this.winLightMov1);
+                this.winTitleGroup.addChild(this.winLightMov2);
+                this.winTitleGroup.addChild(this.winLightMov3);
+                
+                this.winTitleGroup.addChild(this.winTitleMov1);
+                this.winTitleGroup.addChild(this.winTitleMov2);
+                this.winTitleGroup.addChild(this.winTitleMov3);
             }
             this.winTitleGroup.visible = true;
             if(this._mCurPlayWinType == 1){
