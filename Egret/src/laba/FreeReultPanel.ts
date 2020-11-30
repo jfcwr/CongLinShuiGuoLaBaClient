@@ -71,9 +71,12 @@ module conglinshuiguo {
 
 
 			// this.freecountLabel.text = "" + (wildMap[DataCenter.Instance.WildCount - 1] * 2 + 8)
+			SoundHand.Instance.switchMusicBG(4)
 
 
 			this.mStopScrollCB = labalib.Utils.scrollNumber(this.winLabel, 0, DataCenter.Instance.FreeAccObtainGold, 1000, () => {
+				this.mStopScrollCB = null;
+				SoundHand.Instance.playFreeStopSound();
 				this.playCopperFly();
 				egret.Tween.get(this.lightImage2).set({ scaleX:1,scaleY:1,alpha:1 }).to({ scaleX:12,scaleY:12 }, 300).to({ alpha:0 }, 300)
 				// labalib.Utils.PlayTweenGroup(this.totalGlow, 1)
@@ -191,7 +194,6 @@ module conglinshuiguo {
          */
         public playCopperFly(addOrRem:boolean = true) {
             if(!this.copperTime&&addOrRem){
-				SoundHand.Instance.playFreeStopSound();
 				SoundHand.Instance.endLabaBg();
                 this.copperTime = game.Timer.setInterval(()=>{
 					for(let i = 0;i<MathUtil.random(2,5);++i){
@@ -272,6 +274,7 @@ module conglinshuiguo {
             game.Timer.setTimeout(() => {
 				LabaGame.Instance.freemGroup.removeChild(FreeReultPanel.Instance);
 				LabaGame.Instance.maskRect.visible = false;
+				// SoundHand.Instance.switchMusicBG();
             }, null, 500)
         }
 

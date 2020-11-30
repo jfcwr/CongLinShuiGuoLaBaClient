@@ -16,6 +16,7 @@
 
 	</e:Group>
 	<e:Image id="shinningBg" blendMode="add" horizontalCenter="0" verticalCenter="0" alpha="1" source="feature_glow_b" visible="false"/>
+	<e:Image id="elemImageBg" horizontalCenter="5" verticalCenter="5" touchEnabled="false" source="free_frame_b" scaleX="1.05" scaleY="1.05" visible="false"/>
 
 
 	<e:Image id="elemImage"  horizontalCenter="0" verticalCenter="0"  source="elem1" touchEnabled="false"/>

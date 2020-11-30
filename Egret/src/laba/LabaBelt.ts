@@ -20,6 +20,7 @@ module conglinshuiguo {
             // this.addChild(this.kuangDragon2)
             this.kuangDragon1.x = 66
             this.kuangDragon1.y = 66
+            this.touchEnabled = false;
             // this.kuangDragon2.x = 66
             // this.kuangDragon2.y = 66
         }
@@ -125,9 +126,10 @@ module conglinshuiguo {
             this.mAnimObject = uniLib.DragonUtils.createDragonBoneAnimation(animInfo.Path)
             if (winElemID == 9)
                 animName = "win"
-            this.mAnimObject.animation.play(null, 1)
+            this.mAnimObject.animation.play(null, 0)
             this.mAnimObject.scaleX = animInfo.Scale
             this.mAnimObject.scaleY = animInfo.Scale
+            this.mAnimObject.touchEnabled = false;
             this.animGroup.addChild(this.mAnimObject)
             if (specialWild) {
                 egret.Tween.get(this.mAnimObject).set({ scaleX: 0.2, scaleY: 0.2 }).to({ scaleX: animInfo.Scale + 0.1, scaleY: animInfo.Scale + 0.1 }, 400)
@@ -135,7 +137,7 @@ module conglinshuiguo {
                 // this.Animation_Scale(this.mAnimObject, null, { minScale: 0.2, maxScale: animInfo.Scale, curScale: animInfo.Scale, periodTm: 200 })
             }
         }
-        public Animation_Dragon(animInfo, animName = null, times = 1) {
+        public Animation_Dragon(animInfo, animName = null, times = 0) {
             if (animInfo.Path == "s_wild") {
                 SoundHand.Instance.playBaiDaSound();
             }
@@ -176,6 +178,35 @@ module conglinshuiguo {
                 .to({ scaleX: animInfo.Scale + 0.1, scaleY: animInfo.Scale + 0.1 }, 400)
                 .set({ scaleX: animInfo.Scale, scaleY: animInfo.Scale })
         }
+        private elemImageBg:eui.Image;
+        /**
+         * 免费滑动
+         */
+        public PlayfreeSlide(winElemID: number[],sizeIndex:boolean = false) {
+            this.elemImageBg.visible = true;
+            this.elemImage.visible = true;
+            let index = 0;
+            if(sizeIndex){
+                this.elemImageBg.source = "free_frame_a";
+            }
+            this.elemImage.source = "elem"+winElemID[index]+"_b";
+            egret.Tween.get(this.elemImage,{loop:true}).set({ alpha:0.2 }).to({ alpha:1 }, 150).to({ alpha:0.2 }, 150).call(() => {
+                index++;
+                if(index>winElemID.length){
+                    index = 0;
+                }
+                this.elemImage.source = "elem"+winElemID[index]+"_b";
+            });
+        }
+        /**
+         * 免费滑动停止
+         */
+        public freeSlideStop(winElemID: number) {
+            this.elemImageBg.visible = false;
+            this.elemImage.visible = false;
+            this.elemImage.alpha = 1;
+            egret.Tween.removeTweens(this.elemImage)
+        }
 
         // private duobaoglow: eui.Image
         // private duobaoglow0: eui.Image
@@ -214,7 +245,7 @@ module conglinshuiguo {
             if (winElemID != CLSG_ElemAllType.DuoBao && winElemID != CLSG_ElemAllType.Wild) {
                 this.bgGroup.visible = true
                 // this.kuangDragon2.visible = true
-                this.kuangDragon1.animation.play(null, 1)
+                this.kuangDragon1.animation.play(null, 0)
                 // this.kuangDragon2.animation.play(null, 1)
                 // labalib.Utils.PlayTweenGroup(this.scaleAnim, 1)
             }
@@ -231,10 +262,10 @@ module conglinshuiguo {
             if (this.mAnimObject != null) {
                 if (this.isSpecial)
                     return
-                this.mAnimObject.animation.play(animName, 1)
+                this.mAnimObject.animation.play(animName, 0)
                 return
             }
-            this.Animation_Dragon(animInfo, animName, 1)
+            this.Animation_Dragon(animInfo, animName, 0)
             // }
 
 
@@ -286,7 +317,7 @@ module conglinshuiguo {
                     let rect = new eui.Rect(icon.parent.width, icon.parent.height)
                     rect.alpha = 0
                     icon.touchEnabled = false
-                    icon.touchChildren = false
+                    // icon.touchChildren = false
                     icon.parent.addChild(rect)
                     rect.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClickShowIconInfo, this);
                 }
@@ -320,7 +351,7 @@ module conglinshuiguo {
             let timeScale = DataCenter.Instance.ScrollTimeScale
             let waittime = [0, 100 * timeScale, 100 * timeScale * 2, 100 * timeScale * 3, 100 * timeScale * 4]
             // let 
-            if (!DataCenter.Instance.IsQuickRotate)
+            if (!DataCenter.Instance.IsQuickRotate||LabaGame.Instance.isFreeGame)
                 egret.Tween.get(this.mGroup).wait(waittime[this.mBeltIndex - 1]).to({ y: -684 - 40 }, 200 * timeScale).to({ y: -684 }, 250 / 684 * 40 * timeScale).call(() => {
                     egret.Tween.removeTweens(this.mGroup)
                     for (let item of this.mIcons) {
@@ -478,19 +509,36 @@ module conglinshuiguo {
             //  return
             DataCenter.Instance.SetBeltStatus(true, this.mBeltIndex - 1);
             // DataCenter.Instance.CurServerResultDatas
-            if (this.isHighRotate) {
-                for (let item of DataCenter.Instance.CurServerResultDatas.itemIdList[this.isHighRotate]) {
-                    if (item == 8) {
-                        SoundHand.Instance.playDuoBaoStopSound();
-                        break;
+            // if (this.isHighRotate) {
+            //     for (let item of DataCenter.Instance.CurServerResultDatas.itemIdList[this.isHighRotate]) {
+            //         if (item == 8) {
+            //             console.error("夺宝音效")
+            //             SoundHand.Instance.playDuoBaoStopSound();
+            //             break;
+            //         }
+            //     }
+            // }
+            if(LabaGame.Instance.freeIconBg.length>=1){
+                for(let j = 0;j<3;++j){
+                    if(LabaGame.Instance.freeIconBg[this.mBeltIndex - 1][2-j] == 1){
+                        let icon = LabaGame.Instance.mAwardScrollIcon[j][this.mBeltIndex - 1]
+                        LabaGame.Instance.winElemAnimGroup.addChild(icon)
+                        icon.freeSlideStop(2)
                     }
                 }
             }
             for (let i = 0; i < this.mIcons.length; i++) {
                 if (i >= 3) {
-                    this.mIcons[i].ElemType = 1;
+                    this.mIcons[i].ElemType = MathUtil.random(1,7);
+                }
+                else{
+                    if(this.mIcons[i].ElemType == 8){
+                        SoundHand.Instance.playDuoBaoStopSound();
+                    }
+
                 }
             }
+
 
             
             if (this.mScrollInfoList.length == 0 && this.isHighRotate) {

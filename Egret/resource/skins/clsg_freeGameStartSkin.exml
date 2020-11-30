@@ -25,9 +25,9 @@
 	<e:Group id="movGroup" width="720" height="1280" touchEnabled="false" horizontalCenter="0" bottom="140">
 	</e:Group>
 	<e:Group id="gameRoot" width="720" height="1280" touchEnabled="false" horizontalCenter="0" bottom="140">
-		<e:Image horizontalCenter="-18" verticalCenter="-503.5" source="free_spin-last_free_spin"/>
-		<e:Image verticalCenter="132.5" source="transition_to_fs-bonus_loading_text" horizontalCenter="0.5"/>
-		<e:BitmapLabel id="leftCountLabel" y="267.16" text="8" font="number3_fnt" horizontalCenter="0"/>
+		<e:Image horizontalCenter="-18" verticalCenter="-629" source="free_spins_won"/>
+		<e:Image verticalCenter="132.5" source="transition_to_fs-bonus_loading_text" horizontalCenter="0.5" scaleX="0.8" scaleY="0.8"/>
+		<e:BitmapLabel id="leftCountLabel" y="141.16" text="8" font="number3_fnt" horizontalCenter="0"/>
 		<game:Button id="startButton" interactive="bright" label="" scaleX="1" scaleY="1" x="360.5" y="950.38" width="343" height="91" anchorOffsetX="171.5" anchorOffsetY="45.5">
 		<game:skinName>
 			<e:Skin states="up,down,disabled">

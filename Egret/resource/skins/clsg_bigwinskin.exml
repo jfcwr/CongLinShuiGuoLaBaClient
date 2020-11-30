@@ -32,7 +32,7 @@
 			<e:Image id="winTitleImage" scaleX="0.9" scaleY="0.9"
 			          horizontalCenter="0" verticalCenter="-57" source=""/>
 			<e:BitmapLabel id="GoldNumLabel" text="900000" horizontalCenter="0" x="59" scaleX="0.5" scaleY="0.5"
-			               letterSpacing="-10" font="number3_fnt" verticalCenter="104" />
+			               letterSpacing="-10" font="number3_fnt" verticalCenter="4" />
 
 		</e:Group>
 

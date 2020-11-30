@@ -531,12 +531,20 @@ module conglinshuiguo {
                 this.mLineTipsInfoArr.push(group)
                 this.iconLineGroup.addChild(group)
             }
+            let image = new eui.Image("heidi_jianbian")
+            image.name = "mutiImage"
+            image.horizontalCenter = "0"
+            image.scaleX = 0.6
+            image.scaleY = 0.6
+            image.touchEnabled = false;
+            this.iconLineGroup.addChild(image)
+
             let label = new eui.BitmapLabel()
-            label.font = "number5_fnt"
+            label.font = "number2_fnt"
             label.name = "muti"
             label.horizontalCenter = "0"
-            label.scaleX = 1.7
-            label.scaleY = 1.7
+            label.scaleX = 0.6
+            label.scaleY = 0.6
             label.touchEnabled = false;
             this.iconLineGroup.addChild(label)
             // label.text = "22222"
@@ -554,6 +562,10 @@ module conglinshuiguo {
         private torchMov1:egret.MovieClip = null;
         private torchMov2:egret.MovieClip = null;
         private bgImage:eui.Image;
+        private branchImage1:eui.Image;
+        private branchImage2:eui.Image;
+        public isFreeGame = false;
+
 
 
 
@@ -561,8 +573,11 @@ module conglinshuiguo {
          * 初始替换免费动画
          */
         public playFreeMov() {
+            this.isFreeGame = true;
             this.MonkeyMov1.visible = false;
             this.MonkeyMov2.visible = false;
+            this.branchImage1.visible = true;
+            this.branchImage2.visible = true;
             this.bgImage.source = "background_c_png";
             // this.MonkeyMov3.visible = false;
             // this.helloMonkeyMov.visible = false;
@@ -623,7 +638,10 @@ module conglinshuiguo {
         public stopFreeMov() {
             // conglinshuiguo.LabaGame.Instance.stopFreeMov()
             this.MonkeyMov1.visible = true;
+            this.isFreeGame = false;
             this.MonkeyMov2.visible = true;
+            this.branchImage1.visible = false;
+            this.branchImage2.visible = false;
             // this.MonkeyMov3.visible = true;
             this.bgImage.source = "background_a_png";
             // this.helloMonkeyMov.visible = true;
@@ -715,8 +733,8 @@ module conglinshuiguo {
         }
         private stickMov:egret.MovieClip = null;
         private freeIconGroup:eui.Group;
-        private stickMovBg:eui.Image[] = [];
-        private freeIconBg:any = [];
+        public stickMovBg:eui.Image[] = [];
+        public freeIconBg:any = [];
         
 
         /**
@@ -808,6 +826,7 @@ module conglinshuiguo {
                 this.freeIconGroup.addChild(stickBg)
             }, null, 1000);
         }
+
         private bombShuYe:egret.MovieClip[] = [];
         /**
          * 开始粘连
@@ -867,6 +886,7 @@ module conglinshuiguo {
                                 stickMov.scaleX = 2;
                                 stickMov.scaleY = 2;
                                 stickMov.play(1);
+                                stickMov.touchEnabled = false;
                                 this.bombShuYe.push(stickMov);
                                 })
                             .to({ scaleX:1,scaleY:1 }, 100)
@@ -874,6 +894,7 @@ module conglinshuiguo {
                         }
                     }
                 }
+                this.stickMovBg[0].parent.setChildIndex(this.stickMovBg[0],100);
             });
         }
         public hideAllLineTips() {
@@ -881,13 +902,14 @@ module conglinshuiguo {
                 item.visible = false
             }
             this.iconLineGroup.getChildByName("muti").visible = false
+            this.iconLineGroup.getChildByName("mutiImage").visible = false
         }
         public showOneLineTips(index, gpos, point) {
             // let gpos=line.localToGlobal(0,line)
             // conglinshuiguo.LabaGame.Instance["mLabaMachine"].testShowLine(0)
             let pos = this.iconLineGroup.globalToLocal(gpos.x, gpos.y)
             if ((index - 1) <= 7||(index - 1) == 10)
-                this.mLineTipsInfoArr[index].x = pos.x + 2
+                this.mLineTipsInfoArr[index].x = pos.x + 12
             else
                 this.mLineTipsInfoArr[index].x = pos.x + 700
             let special = [13,14,15,16,17,18,19, 20, 21, 22, 23, 24, 28]
@@ -899,14 +921,22 @@ module conglinshuiguo {
                 this.mLineTipsInfoArr[index].y = posmap[index]
             this.mLineTipsInfoArr[index].visible = true;
             this.mLineTipsInfoArr[index].touchEnabled = false;
+
+            
             let label = this.iconLineGroup.getChildByName("muti") as eui.BitmapLabel
             label.visible = point != 0 ? true : false
             label.text = "" + point
             let labely = SgmlHelper.Instance.getLineInfo(index)[2]
-            label.y = 80 + (3-labely) * 130
+            let labelPosmap = [0, -20, -50, 40, 0, 90, 0, 40, 0, 0,
+                -30, 0, 40, 50, 0,30, 0, 0, 20, 40]
+            label.y = 80 + (3-labely) * 130+labelPosmap[index];
+
+            let mutiImage  = this.iconLineGroup.getChildByName("mutiImage") as eui.Image
+            mutiImage.visible = point != 0 ? true : false
+            mutiImage.y = 80 + (3-labely) * 130+labelPosmap[index]-50;
             // this.
         }
-        private winElemAnimGroup: eui.Group
+        public winElemAnimGroup: eui.Group
         private elemPos: any[] = [[],[],[]]
         public initHitScrollonIcon() {
             for (let row = 0; row < 3; row++) {
@@ -1072,6 +1102,7 @@ module conglinshuiguo {
             this.mBarWinDragon.animation.stop();
             if(index==1){
                 SoundHand.Instance.playRerotateTwoSound()
+                uniLib.SoundMgr.instance.playSound("scrollgold2_mp3", 1);
                 this.mBarWinDragonIndex = index;
                 this.mBarWinDragon.animation.play("huaban0", 1)
                 this.playMonkeyAboutMov(true)
@@ -1082,6 +1113,7 @@ module conglinshuiguo {
             else if(index==3){
                 this.playMonkeyAboutMov(true)
                 SoundHand.Instance.playRerotateTwoSound()
+                uniLib.SoundMgr.instance.playSound("scrollgold2_mp3", 1);
                 this.mBarWinDragonIndex = index;
                 this.mBarWinDragon.animation.play("huaban1", 1)
             }
@@ -1093,7 +1125,6 @@ module conglinshuiguo {
 
             this.mBarWinDragon.scaleX = 1
             this.mBarWinDragon.scaleY = 1
-            uniLib.SoundMgr.instance.playSound("scrollgold2_mp3", 1);
         }
         private mBarWinDragon = null
         private WinBarComplete() {
@@ -2344,6 +2375,9 @@ module conglinshuiguo {
             // FreeGameStart.Instance.Show(() => {
 
             //     })
+            // FreeReultPanel.Instance.showFreeEnd(() => {
+
+            //     })
             // this.SetHighAnim(true);
             // this.bigWinPanel.enterBigWinAnim(() => {
             //     this.bigWinPanel.playGoldWinType(100000)
@@ -2713,12 +2747,15 @@ module conglinshuiguo {
                 this.stepOnThehelloMonkeyMov = this.helloMonkeyMov.armature.addEventListener(dragonBones.EventObject.COMPLETE, this.playHelloMonkeyMov1, this);
             }
         }
+        private btnGroup:eui.Group;
+
 
         public switchBG(type: GameBG) {
             // this.bg1.visible = type == GameBG.free
             this.centerFreeGroup.visible = type == GameBG.free
+            this.btnGroup.visible = type == GameBG.normal
 
-            this.downPanel.visible = type == GameBG.normal
+            // this.downPanel.visible = type == GameBG.normal
         }
         private winBitmapLabel: eui.BitmapLabel
         private winWorldGroup: eui.Group

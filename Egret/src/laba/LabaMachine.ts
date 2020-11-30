@@ -11,7 +11,7 @@ module conglinshuiguo {
             this.mLineBold = 5
 
             this.mLineRoot.touchEnabled = false
-            this.mLineRoot.touchChildren = false
+            // this.mLineRoot.touchChildren = false
 
 
             this.darkLineGroup = this.mLineRoot.getChildByName("darkLineGroup") as eui.Group
@@ -499,12 +499,12 @@ m
             //     "awardMultiple": 5, "specialSymbolNum": 9, "isPinpan": 0
             // }]
             // topData.labaStatusInfo.dataList = [{
-            //     "isFalseFree": 0, "awardMultipleReal": 101, "specialSymbolAward": 0, "awardPoint": 5555555,
-            //     "itemIdList": [[3, 3, 3],
-            //     [3, 3, 3],
-            //     [3, 3, 3],
-            //     [3, 3, 3],
-            //     [3, 3, 3]], "jackpotSpecialSymbolType": 0, "totalValue": 0, "specialSymbolValues": [],
+            //     "isFalseFree": 0, "awardMultipleReal": 0, "specialSymbolAward": 0, "awardPoint": 20000,
+            //     "itemIdList": [[3, 1, 3],
+            //     [4, 8, 6],
+            //     [3, 1, 3],
+            //     [3, 1, 3],
+            //     [3, 2, 3]], "jackpotSpecialSymbolType": 0, "totalValue": 0, "specialSymbolValues": [],
             //     "awardMultiple": 5, "specialSymbolNum": 9, "isPinpan": 0
             // }]
             // topData.labaStatusInfo.dataList[0].awardPoint = 5000 / 5 * 326
@@ -630,6 +630,24 @@ m
             super.startGameByResult(serverResult)
         }
         public doEnterRotate(isGetServerResponse: boolean = false) {
+            if(LabaGame.Instance.stickMovBg.length>=1){
+                let winElemID = [1,2,3,4,5,6,7];
+                winElemID.sort(function(a,b){ return Math.random()>.5 ? -1 : 1;});
+                for(let i = 0;i<5;++i){
+                    for(let j = 0;j<3;++j){
+                        if(LabaGame.Instance.freeIconBg[i][j] == 1){
+                            let icon = LabaGame.Instance.mAwardScrollIcon[2-j][i]
+                            LabaGame.Instance.winElemAnimGroup.addChild(icon)
+                            if(j == 1&&i ==2){
+                                icon.PlayfreeSlide(winElemID,true)
+                            }
+                            else{
+                                icon.PlayfreeSlide(winElemID)
+                            }
+                        }
+                    }
+                }
+            }
             if (!isGetServerResponse) {
 
                 for (let i: number = 0; i < DataCenter.Instance.BeltCount; i++) {
@@ -662,58 +680,66 @@ m
                 // return
                 let timeScale = DataCenter.Instance.ScrollTimeScale
                 let count = [10, 12, 14, 17, 19]
-                if (DataCenter.Instance.IsQuickRotate)
+                if (DataCenter.Instance.IsQuickRotate&&!LabaGame.Instance.isFreeGame)
                     count = [20, 24, 28, 34, 40]
                 for (let i: number = 0; i < DataCenter.Instance.BeltCount; i++) {
                     let beltext = this.mBeltArray[i] as LabaBelt
                     // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4, waitTime: i * 100, speed: 250*20 });
 
                     if (DataCenter.Instance.IsTriggerCurFreeGame() || DataCenter.Instance.IsTriggerRerotateGame()) {
-                        if ((i == 3&&jiaSuNumber==2)||(i == 2&&jiaSuNumber==1)||(i == 4&&jiaSuNumber==3)) {
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 0, back: false, waitTime: i * 100, speed: 500 * 7 * timeScale });
-
-                            // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4*5, waitTime: i * 100, speed: 250*20 });
-                            beltext.isHighRotate = i;
+                        if(DataCenter.Instance.IsQuickRotate){
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 3, back: false, waitTime: i * 100, speed: 200 * timeScale });
                         }
-                        else if((i == 3&&jiaSuNumber==1)||(i == 4&&jiaSuNumber==2)){
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 0, back: false, waitTime: i * 100, speed: 500 * 7 * timeScale });
+                        else{
+                            if ((i == 3&&jiaSuNumber==2)||(i == 2&&jiaSuNumber==1)||(i == 4&&jiaSuNumber==3)) {
+                                beltext.isHighRotate = i;
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 0, back: false, waitTime: i * 100, speed: 500 * 7 * timeScale });
 
-                            // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4*5, waitTime: i * 100, speed: 250*20 });
-                            beltext.isHighRotate = i;
+                                // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4*5, waitTime: i * 100, speed: 250*20 });
+                            }
+                            else if((i == 3&&jiaSuNumber==1)||(i == 4&&jiaSuNumber==2)){
+                                beltext.isHighRotate = i;
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 0, back: false, waitTime: i * 100, speed: 500 * 7 * timeScale });
 
+                                // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4*5, waitTime: i * 100, speed: 250*20 });
+
+                            }
+                            else if(i == 4&&jiaSuNumber==1){
+                                beltext.isHighRotate = i;
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 0, back: false, waitTime: i * 100, speed: 500 * 7 * timeScale });
+
+                                // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4*5, waitTime: i * 100, speed: 250*20 });
+
+                            }
+                            else{
+                                beltext.isHighRotate = i;
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], back: false, waitTime: i * 100, speed: 200 * timeScale });
+                            }
                         }
-                        else if(i == 4&&jiaSuNumber==1){
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 0, back: false, waitTime: i * 100, speed: 500 * 7 * timeScale });
-
-                            // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4*5, waitTime: i * 100, speed: 250*20 });
-                            beltext.isHighRotate = i;
-
-                        }
-                        else
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], back: false, waitTime: i * 100, speed: 200 * timeScale });
                     }
                     else{
                         if(DataCenter.Instance.IsMysticalGame()){
                             beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 60+i*2, back: false, waitTime: i * 100, speed: 200 * timeScale });
                         }
                         else{
-                            if (DataCenter.Instance.IsQuickRotate) {
-                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 10, back: false, waitTime: i * 100, speed: 200 * timeScale });
+                            if (DataCenter.Instance.IsQuickRotate&&!LabaGame.Instance.isFreeGame) {
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 3, back: false, waitTime: i * 100, speed: 200 * timeScale });
 
-                            } else
+                            } else{
                                 beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 10 + i * 2, back: false, waitTime: i * 100, speed: 200 * timeScale });
+                            }
                         }
                     }
                     console.log("testddddsw scrolldata111111 real start")
@@ -721,6 +747,8 @@ m
                     beltext.RealStart = true
                 }
             }
+            
+            
         }
 
 

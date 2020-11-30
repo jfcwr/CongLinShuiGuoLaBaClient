@@ -39,8 +39,8 @@ module conglinshuiguo {
             // SoundHand.Instance.playBigWinSound()
             if(!this.winMonkeyMov){
                 this.winMonkeyMov = uniLib.DragonUtils.createDragonBoneAnimation("mgbg_wins_lemur")
-                this.winMonkeyMov.x = 360;
-                this.winMonkeyMov.y = 950;
+                this.winMonkeyMov.x = 300;
+                this.winMonkeyMov.y = 650;
 
                 this.winLeafMov1 = uniLib.DragonUtils.createDragonBoneAnimation("shuye_0")
                 this.winLeafMov1.x = 0;
@@ -71,7 +71,7 @@ module conglinshuiguo {
             egret.Tween.get(this.winLeafMov2).set({ x:-200 }).to({ x:0 }, 300)
             egret.Tween.get(this.winLeafMov3).set({ x:920 }).to({ x:720 }, 300)
             egret.Tween.get(this.winLeafMov4).set({ x:920 }).to({ x:720 }, 300)
-            this.winMonkeyMov.animation.play("win_0",1)
+            this.winMonkeyMov.animation.play("spawn",1)
             SoundHand.Instance.playbigwinMonkeySound();
             this.winMonkeyMov.armature.addEventListener(dragonBones.EventObject.COMPLETE, this.winMonkeyMovIdle, this);
             game.Timer.setTimeout(() => {
@@ -82,7 +82,7 @@ module conglinshuiguo {
         }
         public winMonkeyMovIdle(){
             this.winMonkeyMov.armature.removeEventListener(dragonBones.EventObject.COMPLETE, this.winMonkeyMovIdle, this);
-            this.winMonkeyMov.animation.play("win_1",0)
+            this.winMonkeyMov.animation.play("idle",0)
         }
         public empty(){
             if (this.winTitleMov1){
@@ -244,7 +244,7 @@ module conglinshuiguo {
             this.winLeafMov2.animation.stop();
             this.winLeafMov3.animation.stop();
             this.winLeafMov4.animation.stop();
-            this.winMonkeyMov.animation.play("win_2",1)
+            this.winMonkeyMov.animation.play("exit",1)
             this.winLightMov3.animation.play(this._winTypePaths[2],1)
             this.winLightMov1.animation.play("gx_3",1)
             this.winLightMov2.animation.play(this._winTypePaths[2],1)
@@ -502,7 +502,7 @@ module conglinshuiguo {
                 this.winTitleMov3.alpha = 0;
                 // this.winLightMov3.alpha = 0;
                 this.GoldNumLabel.visible = false;
-                egret.Tween.get(this.winTitleMov1).set({ y: -700,alpha: 1,visible:true }).to({ y: 60 }, 330).call(() => {
+                egret.Tween.get(this.winTitleMov1).set({ y: -700,alpha: 1,visible:true }).to({ y: -40 }, 330).call(() => {
                     this.GoldNumLabel.visible = true;
                     this.winLightMov1.animation.stop();
                     this.winLightMov1.animation.play(this._winTypePaths[1],0)
@@ -512,7 +512,7 @@ module conglinshuiguo {
             else if(this._mCurPlayWinType == 2){
                 this.winLightMov2.visible = true;
                 this.winLightMov2.animation.play(this._winTypePaths[0],1)
-                egret.Tween.get(this.winTitleMov2).set({ y: -700,alpha: 1,visible:true }).to({ y: 60 }, 330).call(() => {
+                egret.Tween.get(this.winTitleMov2).set({ y: -700,alpha: 1,visible:true }).to({ y: -40 }, 330).call(() => {
                     this.winTitleMov1.animation.stop()
                     this.winLightMov1.animation.stop();
                     this.winLightMov2.animation.stop();
@@ -525,7 +525,7 @@ module conglinshuiguo {
             else if(this._mCurPlayWinType == 3){
                 this.winLightMov3.visible = true;
                 this.winLightMov3.animation.play(this._winTypePaths[0],1)
-                egret.Tween.get(this.winTitleMov3).set({ y: -700,alpha: 1,visible:true }).to({ y: 60 }, 330).call(() => {
+                egret.Tween.get(this.winTitleMov3).set({ y: -700,alpha: 1,visible:true }).to({ y: -40 }, 330).call(() => {
                     this.winTitleMov2.animation.stop()
                     this.winLightMov2.animation.stop();
                     this.winLightMov3.animation.stop();

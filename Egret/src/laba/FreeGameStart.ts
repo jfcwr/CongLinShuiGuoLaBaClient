@@ -40,7 +40,7 @@ module conglinshuiguo {
             this.winLeafMov2.animation.stop();
             this.winLeafMov3.animation.stop();
             this.winLeafMov4.animation.stop();
-            this.winMonkeyMov.animation.play("win_2",1)
+            this.winMonkeyMov.animation.play("exit",1)
             LabaGame.Instance.playFreeMov();
             game.Timer.setTimeout(() => {
                 LabaGame.Instance.maskRect.visible = false;
@@ -108,8 +108,8 @@ module conglinshuiguo {
             egret.Tween.get(this.bgimage).set({ alpha: 0 }).to({ alpha: 1 }, 300);
             if(!this.winMonkeyMov){
                 this.winMonkeyMov = uniLib.DragonUtils.createDragonBoneAnimation("mgbg_wins_lemur")
-                this.winMonkeyMov.x = 360;
-                this.winMonkeyMov.y = 550;
+                this.winMonkeyMov.x = 300;
+                this.winMonkeyMov.y = 350;
 
                 this.winLeafMov1 = uniLib.DragonUtils.createDragonBoneAnimation("shuye_0")
                 this.winLeafMov1.x = 0;
@@ -141,12 +141,12 @@ module conglinshuiguo {
             egret.Tween.get(this.winLeafMov2).set({ x:-200 }).to({ x:0 }, 300)
             egret.Tween.get(this.winLeafMov3).set({ x:920 }).to({ x:720 }, 300)
             egret.Tween.get(this.winLeafMov4).set({ x:920 }).to({ x:720 }, 300)
-            this.winMonkeyMov.animation.play("win_0",1)
+            this.winMonkeyMov.animation.play("spawn",1)
             this.winMonkeyMov.armature.addEventListener(dragonBones.EventObject.COMPLETE, this.winMonkeyMovIdle, this);
         }
         public winMonkeyMovIdle(){
             this.winMonkeyMov.armature.removeEventListener(dragonBones.EventObject.COMPLETE, this.winMonkeyMovIdle, this);
-            this.winMonkeyMov.animation.play("win_1",0)
+            this.winMonkeyMov.animation.play("idle",0)
         }
 
         destroy(): void {
@@ -215,7 +215,7 @@ module conglinshuiguo {
             this.mFinishCB = cb
             this.mFinishCBObj = params
             this.loadGroup.visible = true
-            LabaGame.Instance.maskRect.visible = true;
+            // LabaGame.Instance.maskRect.visible = true;
             LabaGame.Instance.freemGroup.addChild(FreeGameStart.Instance);
             // GX.PopUpManager.addPopUp(FreeGameStart.Instance, false, 0)
             this.gameRoot.visible = true

@@ -108,7 +108,7 @@ module conglinshuiguo {
 
         private mCurSoundBG: string = "clsg_bgm_mp3"
         public switchMusicBG(isNormal: number = 0) {
-            let musicPath = ["clsg_bgm_mp3", "freebg_mp3", "bigwin_mp3" , "freeBg1_mp3"]
+            let musicPath = ["clsg_bgm_mp3", "freebg_mp3", "bigwin_mp3" , "freeBg1_mp3","freeEnd_mp3"]
             this.mCurSoundBG = musicPath[isNormal]
             uniLib.SoundMgr.instance.stopBgMusic();
             uniLib.SoundMgr.instance.playBgMusic([musicPath[isNormal]]);

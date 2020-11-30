@@ -15,6 +15,8 @@
 	         horizontalCenter="0">
 		<e:Image id="lightImage1" source="solid_c_bw" y="399.88" scaleX="1" scaleY="1" horizontalCenter="0" blendMode="add" alpha="1" anchorOffsetX="54" anchorOffsetY="27.5"/>
 		<e:Image scaleX="6" scaleY="6" source="solid_a_total" x="50" y="450" blendMode="add"/>
+		<e:Image scaleX="2" scaleY="2" blendMode="add" source="vine_l" verticalCenter="0" left="-19"/>
+		<e:Image scaleX="2" scaleY="2" blendMode="add" verticalCenter="0" source="vine_r" right="3"/>
 		<e:Image id="torchImage1" scaleX="2" scaleY="2" source="fire_stick_l" verticalCenter="0" x="-100"/>
 		<e:Image id="torchImage2" scaleX="2" scaleY="2" verticalCenter="0" source="fire_stick_r" x="740"/>
 
