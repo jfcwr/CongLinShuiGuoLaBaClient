@@ -497,6 +497,7 @@ module conglinshuiguo {
                 this.winTitleGroup.addChild(this.winTitleMov1);
                 this.winTitleGroup.addChild(this.winTitleMov2);
                 this.winTitleGroup.addChild(this.winTitleMov3);
+                this.winTitleGroup.addChild(this.GoldNumLabel);
             }
             this.winTitleGroup.visible = true;
             if(this._mCurPlayWinType == 1){
