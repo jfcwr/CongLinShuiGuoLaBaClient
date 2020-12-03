@@ -2860,10 +2860,10 @@ module conglinshuiguo {
 
                 // this.winAnimBarGroup.visible = true
             }
-            if (type != 1)
-                this.mMaxShowTipsTimer = game.Timer.setTimeout(() => {
-                    this.switchTipsImage(1)
-                }, null, 8000)
+            // if (type != 1)
+            //     this.mMaxShowTipsTimer = game.Timer.setTimeout(() => {
+            //         this.switchTipsImage(1)
+            //     }, null, 8000)
         }
 
 

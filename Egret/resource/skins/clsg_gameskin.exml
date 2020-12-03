@@ -309,8 +309,7 @@
 			<e:Group id="worldGroup" width="628" height="77" anchorOffsetY="0" x="45" anchorOffsetX="0" y="29">
 			<e:Image id="TipsImage" scaleX="1" scaleY="1" touchEnabled="false" x="116" source="infoboard-info_1" verticalCenter="0"/>
 			</e:Group>
-			<e:Group id="winAnimBarGroup" width="628" height="100" anchorOffsetY="0" anchorOffsetX="0" y="17" horizontalCenter="0">
-			</e:Group>
+
 			<e:Group id="winWorldGroup" width="628" height="77" anchorOffsetY="0" anchorOffsetX="0" y="30" horizontalCenter="0" visible="false">
 			<e:Image id="winMoneyImage" scaleX="1" scaleY="1" touchEnabled="false" x="116" verticalCenter="0" source="infoboard-win"/>
 			<e:BitmapLabel id="winMoneyLabel" x="-10" y="-10" text="22222222" font="number2_fnt"/>
@@ -329,6 +328,7 @@
 			<e:Image id="torchImage1" scaleX="1.5" scaleY="1.5" touchEnabled="false" y="198" x="0" source="fire_stick_l" visible="false"/>
 			<e:Image id="torchImage2" scaleX="1.5" scaleY="1.5" touchEnabled="false" y="198" x="657.67" source="fire_stick_r" visible="false"/>
 		</e:Group>
+		<e:Group id="winAnimBarGroup" width="628" height="100" anchorOffsetY="0" anchorOffsetX="0" y="265" horizontalCenter="0"/>
 		<e:Group id="iconLineGroup" width="710" height="515" touchChildren="false" touchEnabled="false" name="moveLineGroup"
 		         x="5" y="375" />
 

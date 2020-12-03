@@ -256,6 +256,7 @@ module conglinshuiguo {
                 this.winTitleMov1.alpha = 0;
                 this.winTitleMov3.alpha = 0;
                 GX.PopUpManager.removePopUp(this)
+                LabaGame.Instance.playWinBarAnim(3)
             }, null, 500)
         }
 
