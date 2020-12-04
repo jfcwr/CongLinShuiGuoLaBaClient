@@ -610,7 +610,12 @@ m
             if (serverResult.hasResult == true) {
                 this.startGameByResult(serverResult);
                 game.Timer.clearTimeout(this.RealStartTimer)
-                this.RealStartTimer = game.Timer.setTimeout(() => { this.doEnterRotate(true) }, null, 400)
+                if(!LabaGame.Instance.isFreeGame){
+                    this.RealStartTimer = game.Timer.setTimeout(() => { this.doEnterRotate(true) }, null, 400)
+                }
+                else{
+                    this.RealStartTimer = game.Timer.setTimeout(() => { this.doEnterRotate(true) }, null, 20)
+                }
             } else {
                 if (this.isState(labalib.LabaInnerState.SendBet) == false) {
                     // if (DataCenter.Instance.MainUserGold >= DataCenter.Instance.CurDizhu) {
@@ -731,11 +736,11 @@ m
                     }
                     else{
                         if(DataCenter.Instance.IsMysticalGame()){
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 60+i*2, back: false, waitTime: i * 100, speed: 200 * timeScale });
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 100+i*2, back: false, waitTime: i * 100, speed: 200 * timeScale });
                         }
                         else{
                             if (DataCenter.Instance.IsQuickRotate&&!LabaGame.Instance.isFreeGame) {
-                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 3, back: false, waitTime: i * 100, speed: 200 * timeScale });
+                                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 2, back: false, waitTime: i * 100, speed: 200 * timeScale });
 
                             } else{
                                 beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 10 + i * 2, back: false, waitTime: i * 100, speed: 200 * timeScale });

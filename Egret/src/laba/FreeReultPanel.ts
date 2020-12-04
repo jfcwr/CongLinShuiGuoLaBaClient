@@ -259,7 +259,7 @@ module conglinshuiguo {
                 this.torchMov1.visible = false
                 this.torchMov2.visible = false
             }
-			
+			SoundHand.Instance.playfreeEnd2Sound();
             egret.Tween.get(this.winLeafMov1).set({ x:0 }).to({ x:-200 }, 300)
             egret.Tween.get(this.winLeafMov2).set({ x:0 }).to({ x:-200 }, 300)
             egret.Tween.get(this.winLeafMov3).set({ x:720 }).to({ x:920 }, 300)

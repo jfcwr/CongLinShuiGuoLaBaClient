@@ -382,6 +382,12 @@ module conglinshuiguo {
         public playMonkeyAboutSound() {
             uniLib.SoundMgr.instance.playSound("monkeyAbout_mp3", 1);
         }
+        /**
+         * 免费游戏结束面板 猴子消失
+         */
+        public playfreeEnd2Sound() {
+            uniLib.SoundMgr.instance.playSound("freeEnd2_mp3", 1);
+        }
 
 
     }

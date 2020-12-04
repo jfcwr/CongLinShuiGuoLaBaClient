@@ -184,6 +184,8 @@ module conglinshuiguo {
         public freemGroup:eui.Group;
 
         public maskRect:eui.Rect;
+        public isFreeGame = false;
+        
 
 
 
@@ -564,7 +566,6 @@ module conglinshuiguo {
         private bgImage:eui.Image;
         private branchImage1:eui.Image;
         private branchImage2:eui.Image;
-        public isFreeGame = false;
 
 
 
@@ -720,9 +721,9 @@ module conglinshuiguo {
             let stringMov = ["bg_lemur_A","bg_lemur_B","bg_lemur_C"]
             let action = stringMov[MathUtil.random(0,2)];
             this.MonkeyFreeMov1 = uniLib.DragonUtils.createDragonBoneAnimation(action)
-            this.MonkeyFreeMov1.y = 310;
-            this.MonkeyFreeMov1.scaleX = 1.5;
-            this.MonkeyFreeMov1.scaleY = 1.5;
+            this.MonkeyFreeMov1.y = 330;
+            this.MonkeyFreeMov1.scaleX = direction?-2:2;
+            this.MonkeyFreeMov1.scaleY = 2;
             this.MonkeyMovGroup.addChild(this.MonkeyFreeMov1);
             this.MonkeyFreeMov1.animation.play(null,0)
             let playX = direction?-100:820;
@@ -1449,6 +1450,10 @@ module conglinshuiguo {
 
         public mGameButtonStatus: GameRotateStatus = GameRotateStatus.RotateNormal
         public onRotateButtonByClick(e: egret.Event = null) {
+            if(Number(this.moneyLabel.text)<labalib.LabaDataCenter.Instance.CurDizhu){
+                GX.Tips.showTips("金额不足!")
+                return;
+            }
             
             SoundHand.Instance.playBtnRotateSound();
             if (this.mGameButtonStatus == GameRotateStatus.RotateNormal) {
@@ -1495,7 +1500,6 @@ module conglinshuiguo {
 
             this.switchTipsImage(1)
             DataCenter.Instance.ChangeIconWin = []
-            this.mLabaMachine.doEnterRotate()
             if (DataCenter.Instance.ServerRealGold < DataCenter.Instance.CurDizhu) {
                 GX.Tips.showPopup("金币不足");
                 labalib.EventManager.ResetButtonStatusEvent.call()
@@ -1509,6 +1513,8 @@ module conglinshuiguo {
             if (this.mLeftRotateCount > 0 && (!DataCenter.Instance.IsFreeGame() || DataCenter.Instance.IsFreeGameEnd() ||
                 DataCenter.Instance.IsRerotateGame() || DataCenter.Instance.IsTriggerRerotateGame()))
                 this.mLeftRotateCount--;
+
+            this.mLabaMachine.doEnterRotate()
             this.refreshRotateButtonStatus();
             this.mLabaMachine.startRotate();
 
@@ -2361,23 +2367,23 @@ module conglinshuiguo {
         private gameRotateImage:eui.Image;
         // 点击菜单按钮
         protected onMenuListButton() {
-            if(this.btnLightMov){
-                this.btnLightMov.visible = false;
-            }
-            this.gameRotateButton.visible = false;
-            this.gameRotateImage.visible = false;
-            this.menuListGroup.visible = true;
-            egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
-            this.betMenuGruop.visible = false;
+            // if(this.btnLightMov){
+            //     this.btnLightMov.visible = false;
+            // }
+            // this.gameRotateButton.visible = false;
+            // this.gameRotateImage.visible = false;
+            // this.menuListGroup.visible = true;
+            // egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
+            // this.betMenuGruop.visible = false;
             //测试
             // this.mysteryMode();
             // this.freeStickMov();
             // FreeGameStart.Instance.Show(() => {
 
             //     })
-            // FreeReultPanel.Instance.showFreeEnd(() => {
+            FreeReultPanel.Instance.showFreeEnd(() => {
 
-            //     })
+                })
             // this.SetHighAnim(true);
             // this.bigWinPanel.enterBigWinAnim(() => {
             //     this.bigWinPanel.playGoldWinType(100000)
@@ -2766,7 +2772,18 @@ module conglinshuiguo {
         public switchTipsImage(type: switchType, obtainGold?: number) {
             game.Timer.clearTimeout(this.mMaxShowTipsTimer)
             egret.Tween.removeTweens(this.TipsImage)
-            if(DataCenter.Instance.IsFreeGame()){
+
+            // if(!(((type == switchType.win || type == switchType.winTotal) && obtainGold > 0))){
+            if(this.mBarWinDragonIndex>0){
+                if(this.mBarWinDragonIndex == 1){
+                    this.playWinBarAnim(2);
+                }
+                else{
+                    this.playWinBarAnim(4);
+                }
+                this.mBarWinDragonIndex = 0;
+            }
+            if(this.isFreeGame){
                 this.TipsImage.source = "infoboard-info_7";
                 this.TipsImage.x = 20;
                 return
@@ -2783,18 +2800,7 @@ module conglinshuiguo {
             this.winWorldGroup.visible = ((type == switchType.win || type == switchType.winTotal) && obtainGold > 0)
             // this.winAnimBarGroup.visible = ((type == switchType.win || type == switchType.winTotal) && obtainGold > 0)
             this.worldGroup.visible = !((type == switchType.win || type == switchType.winTotal) && obtainGold > 0)
-
-            if(!(((type == switchType.win || type == switchType.winTotal) && obtainGold > 0))){
-                if(this.mBarWinDragonIndex>0){
-                    if(this.mBarWinDragonIndex == 1){
-                        this.playWinBarAnim(2);
-                    }
-                    else{
-                        this.playWinBarAnim(4);
-                    }
-                    this.mBarWinDragonIndex = 0;
-                }
-            }
+            
 
             // if (type != 1) {
             //     this.TipsImage.source = tipsImageSrc[type - 1]

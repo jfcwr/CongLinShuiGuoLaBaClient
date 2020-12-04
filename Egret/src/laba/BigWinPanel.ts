@@ -40,7 +40,7 @@ module conglinshuiguo {
             if(!this.winMonkeyMov){
                 this.winMonkeyMov = uniLib.DragonUtils.createDragonBoneAnimation("mgbg_wins_lemur")
                 this.winMonkeyMov.x = 300;
-                this.winMonkeyMov.y = 650;
+                this.winMonkeyMov.y = this.height-1280+650;
 
                 this.winLeafMov1 = uniLib.DragonUtils.createDragonBoneAnimation("shuye_0")
                 this.winLeafMov1.x = 0;
@@ -257,7 +257,7 @@ module conglinshuiguo {
                 this.winTitleMov3.alpha = 0;
                 GX.PopUpManager.removePopUp(this)
                 LabaGame.Instance.playWinBarAnim(3)
-            }, null, 500)
+            }, null, 1000)
         }
 
         /**

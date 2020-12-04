@@ -164,7 +164,7 @@
 						</e:Group>
 						<e:Group id="winElemAnimNotLineGroup" width="710" height="515" scaleX="1" scaleY="1" x="0" y="8"  touchEnabled="false"/>
 
-						<e:Rect id="elemAnimMask" fillAlpha="0.3" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
+						<e:Rect id="elemAnimMask" fillAlpha="0.8" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
 						        left="0" right="0" top="0" bottom="0" strokeAlpha="0.5" />
 
 

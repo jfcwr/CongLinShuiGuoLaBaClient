@@ -5,7 +5,7 @@
 			"name":"clsg_preload"
 		},
 		{
-			"keys":"freebg_mp3,kuaisu_mp3,scrollgold2_mp3,tangshen2_mp3,tangshen3_mp3,tangshen4_mp3,wuxinglianzhu_mp3,xian_mp3,freeStop_mp3,huaDongStop_mp3,monkeyAbout_mp3,mystical_mp3,mysticalBoom_mp3,baiDa_mp3,bigwin_mp3,bigwinStop_mp3,clsg_sound1_mp3,duoBaoStop_mp3,freeBg1_mp3,freebtn_mp3,freeIcon1_mp3,freeIcon2_mp3,clsg_bgm_mp3,clsg_btn_click_mp3,clsg_btnRotate_mp3,clsg_slowStop_mp3,freeEnd_mp3",
+			"keys":"freebg_mp3,kuaisu_mp3,scrollgold2_mp3,tangshen2_mp3,tangshen3_mp3,tangshen4_mp3,wuxinglianzhu_mp3,xian_mp3,freeStop_mp3,huaDongStop_mp3,monkeyAbout_mp3,mystical_mp3,mysticalBoom_mp3,baiDa_mp3,bigwin_mp3,bigwinStop_mp3,clsg_sound1_mp3,duoBaoStop_mp3,freeBg1_mp3,freebtn_mp3,freeIcon1_mp3,freeIcon2_mp3,clsg_bgm_mp3,clsg_btn_click_mp3,clsg_btnRotate_mp3,clsg_slowStop_mp3,freeEnd_mp3,freeEnd2_mp3",
 			"name":"clsg_sound"
 		}
 	],
@@ -811,6 +811,11 @@
 			"name":"freeEnd_mp3",
 			"type":"sound",
 			"url":"assets/sound/freeEnd.mp3"
+		},
+		{
+			"name":"freeEnd2_mp3",
+			"type":"sound",
+			"url":"assets/sound/freeEnd2.mp3"
 		}
 	]
 }
