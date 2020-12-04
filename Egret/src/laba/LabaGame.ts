@@ -2367,23 +2367,23 @@ module conglinshuiguo {
         private gameRotateImage:eui.Image;
         // 点击菜单按钮
         protected onMenuListButton() {
-            // if(this.btnLightMov){
-            //     this.btnLightMov.visible = false;
-            // }
-            // this.gameRotateButton.visible = false;
-            // this.gameRotateImage.visible = false;
-            // this.menuListGroup.visible = true;
-            // egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
-            // this.betMenuGruop.visible = false;
+            if(this.btnLightMov){
+                this.btnLightMov.visible = false;
+            }
+            this.gameRotateButton.visible = false;
+            this.gameRotateImage.visible = false;
+            this.menuListGroup.visible = true;
+            egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
+            this.betMenuGruop.visible = false;
             //测试
             // this.mysteryMode();
             // this.freeStickMov();
             // FreeGameStart.Instance.Show(() => {
 
             //     })
-            FreeReultPanel.Instance.showFreeEnd(() => {
+            // FreeReultPanel.Instance.showFreeEnd(() => {
 
-                })
+            //     })
             // this.SetHighAnim(true);
             // this.bigWinPanel.enterBigWinAnim(() => {
             //     this.bigWinPanel.playGoldWinType(100000)
