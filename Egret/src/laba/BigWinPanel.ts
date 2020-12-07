@@ -248,6 +248,10 @@ module conglinshuiguo {
             this.winLightMov3.animation.play(this._winTypePaths[2],1)
             this.winLightMov1.animation.play("gx_3",1)
             this.winLightMov2.animation.play(this._winTypePaths[2],1)
+            egret.Tween.get(this.GoldNumLabel).set({ scaleX:0.5,scaleY:0.5 }).to({ scaleX:0,scaleY:0 }, 300)
+            egret.Tween.get(this.winTitleMov1).set({ scaleX:1,scaleY:1 }).to({ scaleX:0,scaleY:0 }, 300)
+            egret.Tween.get(this.winTitleMov2).set({ scaleX:1,scaleY:1 }).to({ scaleX:0,scaleY:0 }, 300)
+            egret.Tween.get(this.winTitleMov3).set({ scaleX:1,scaleY:1 }).to({ scaleX:0,scaleY:0 }, 300)
             game.Timer.setTimeout(() => {
                 if (cb)
                     cb()
@@ -256,6 +260,10 @@ module conglinshuiguo {
                 this.winTitleMov1.alpha = 0;
                 this.winTitleMov3.alpha = 0;
                 GX.PopUpManager.removePopUp(this)
+                this.GoldNumLabel.scaleX=this.GoldNumLabel.scaleY = 0.5;
+                this.winTitleMov1.scaleX=this.winTitleMov1.scaleY = 1;
+                this.winTitleMov2.scaleX=this.winTitleMov2.scaleY = 1;
+                this.winTitleMov3.scaleX=this.winTitleMov3.scaleY = 1;
                 LabaGame.Instance.playWinBarAnim(3)
             }, null, 1000)
         }
@@ -399,7 +407,7 @@ module conglinshuiguo {
                     scrollNumberInfo = labalib.Utils.scrollNumber(this.GoldNumLabel, fromGold, toGold, waitTime,()=>{
                         soundIndex++;
                         if(soundIndex>=showWinTypeCount){
-                            SoundHand.Instance.playbigwinStopSound()
+                            SoundHand.Instance.playFreeStopSound()
                             if(DataCenter.Instance.IsFreeGame()){
                                 SoundHand.Instance.switchMusicBG(1)
                             }

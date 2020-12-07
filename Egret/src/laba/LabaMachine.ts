@@ -32,8 +32,6 @@ module conglinshuiguo {
         private darkLineGroup: eui.Group
         private lightLineGroup: eui.Group
         private moveLineGroup: eui.Group
-m
-
         /**
          * 重新实现发送押注协议，因为这里需要发送多少条线;
          */

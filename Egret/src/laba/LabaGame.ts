@@ -915,7 +915,7 @@ module conglinshuiguo {
                 this.mLineTipsInfoArr[index].x = pos.x + 700
             let special = [13,14,15,16,17,18,19, 20, 21, 22, 23, 24, 28]
             let posmap = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                0, 0, 0, 274, 250, 380, 82, 115, 420, 302,
+                0, 0, 0, 280, 250, 400, 82, 115, 420, 282,
                 342, 70, 315, 196, 210, 0, 0, 0, 220, 0]
             this.mLineTipsInfoArr[index].y = pos.y
             if (special.indexOf(index) != -1)
@@ -928,8 +928,8 @@ module conglinshuiguo {
             label.visible = point != 0 ? true : false
             label.text = "" + point
             let labely = SgmlHelper.Instance.getLineInfo(index)[2]
-            let labelPosmap = [0, -20, -50, 40, 0, 90, 0, 40, 0, 0,
-                -30, 0, 40, 50, 0,30, 0, 0, 20, 40]
+            let labelPosmap = [0, -20, -50, 40, 40, 90, 0, 40, 30, 30,
+                0, 30, 40, 50, 0,30, 0, 0, 20, 40]
             label.y = 80 + (3-labely) * 130+labelPosmap[index];
 
             let mutiImage  = this.iconLineGroup.getChildByName("mutiImage") as eui.Image
@@ -1121,7 +1121,7 @@ module conglinshuiguo {
             else if(index==4){
                 this.mBarWinDragon.animation.play("huaban1_1", 1)
             }
-            this.mBarWinDragon.x = 308
+            this.mBarWinDragon.x = 330
             this.mBarWinDragon.y = 17
 
             this.mBarWinDragon.scaleX = 1
@@ -2170,6 +2170,7 @@ module conglinshuiguo {
             if (lines.length > 0) {
                 this.winElemAnimNotLineGroup.parent.addChild(this.winElemAnimNotLineGroup)
                 this.elemAnimMask.parent.addChild(this.elemAnimMask)
+                this.lineRootGroup.parent.addChild(this.lineRootGroup)
                 this.winElemAnimGroup.parent.addChild(this.winElemAnimGroup)
             }
             for (let i: number = 0; i < lines.length; i++) {
@@ -2252,6 +2253,7 @@ module conglinshuiguo {
 
             this.winElemAnimNotLineGroup.parent.addChild(this.winElemAnimNotLineGroup)
             this.elemAnimMask.parent.addChild(this.elemAnimMask)
+            this.lineRootGroup.parent.addChild(this.lineRootGroup)
             this.winElemAnimGroup.parent.addChild(this.winElemAnimGroup)
             let changepos = DataCenter.Instance.ChangeIconWin
             for (let row: number = 0; row < 3; row++) {
@@ -2388,6 +2390,7 @@ module conglinshuiguo {
             // this.bigWinPanel.enterBigWinAnim(() => {
             //     this.bigWinPanel.playGoldWinType(100000)
             // })
+            // this.playWinBarAnim(3)
         }
         // 点击关闭菜单按钮
         protected onCloseMenuButton() {

@@ -166,6 +166,54 @@
 
 						<e:Rect id="elemAnimMask" fillAlpha="0.8" touchEnabled="false" touchChildren="false" scaleX="1" scaleY="1"
 						        left="0" right="0" top="0" bottom="0" strokeAlpha="0.5" />
+						<e:Group id="lineRootGroup" width="710" height="515" anchorOffsetY="0" touchChildren="false" touchEnabled="false" scrollEnabled="true" verticalCenter="0" horizontalCenter="0">
+							<e:Group id="darkLineGroup" height="515" width="710" touchChildren="false" touchEnabled="false" name="darkLineGroup">
+							<e:Image source="lined1" y="39.8" width="715" x="-5" name="lined2" touchEnabled="false" visible="false"/>
+							<e:Image source="lined1" width="715" x="-5" y="202.61" name="lined1" touchEnabled="false" visible="false"/>
+							<e:Image source="lined1" width="715" x="-5" y="354.84" name="lined0" touchEnabled="false" visible="false"/>
+							<e:Image width="715" source="lined2" x="-4" top="121" name="lined4" touchEnabled="false" visible="false"/>
+							<e:Image width="715" scaleY="-1" source="lined2" x="-5" bottom="95" name="lined3" touchEnabled="false" visible="false"/>
+							<e:Image source="lined3" width="715" x="-5" top="107" name="lined6" touchEnabled="false" visible="false"/>
+							<e:Image source="lined3" width="715" x="-5" bottom="64" scaleY="-1" name="lined5" touchEnabled="false" visible="false"/>
+							<e:Image width="715" x="-5" top="248" source="lined4" name="lined8" visible="false"/>
+							<e:Image source="lined4" width="715" x="-5" bottom="247" scaleY="-1" name="lined7" touchEnabled="false" visible="false"/>
+							<e:Image source="lined4" width="715" x="-5" top="84" name="lined10" touchEnabled="false" visible="false"/>
+							<e:Image source="lined4" width="715" x="-5" bottom="123" scaleY="-1" name="lined9" touchEnabled="false" visible="false"/>
+							<e:Image source="lined3" width="715" x="-5" scaleY="-1" top="129" name="lined12" touchEnabled="false" visible="false"/>
+							<e:Image x="-5" width="715" name="lined11" source="lined3" verticalCenter="60.5" touchEnabled="false" visible="false"/>
+							<e:Image source="lined6" x="-5" width="715" scaleY="1" verticalCenter="-71.5" name="lined14" touchEnabled="false" visible="false"/>
+							<e:Image source="lined6" scaleY="-1" x="-5" width="715" verticalCenter="90.5" name="lined13" touchEnabled="false" visible="false"/>
+							<e:Image scaleY="-1" x="-5" width="715" source="lined6" top="81" name="lined16" touchEnabled="false" visible="false"/>
+							<e:Image source="lined6" x="-5" width="715" bottom="109" name="lined15" touchEnabled="false" visible="false"/>
+							<e:Image source="lined5" width="715" x="-5" top="137" name="lined18" touchEnabled="false" visible="false"/>
+							<e:Image bottom="122" scaleY="-1" x="-5" width="715" source="lined5" name="lined17" touchEnabled="false" visible="false"/>
+							<e:Image x="-5" width="715" source="lined7" top="135" name="lined19" scaleY="-1" touchEnabled="false" visible="false"/>
+							</e:Group>
+							<e:Group id="moveLineGroup" width="710" height="515" touchChildren="false" touchEnabled="false" name="moveLineGroup" scrollEnabled="true">
+							<e:Group id="lightLineGroup" width="710" height="515" touchChildren="false" touchEnabled="false" name="lightLineGroup">
+								<e:Image source="line1" y="32.8" width="715" x="-5" name="line2" visible="false" touchEnabled="false"/>
+								<e:Image source="line1" width="715" x="-5" y="195.61" name="line1" visible="false" touchEnabled="false"/>
+								<e:Image source="line1" width="715" x="-5" y="347.84" name="line0" touchEnabled="false" visible="false"/>
+								<e:Image width="720" source="line2" x="-8" top="117" name="line4" height="296" touchEnabled="false" visible="false"/>
+								<e:Image width="720" scaleY="-1" source="line2" x="-9" bottom="90" name="line3" height="298" touchEnabled="false" visible="false"/>
+								<e:Image source="line3" width="725" x="-11" top="100" name="line6" touchEnabled="false" visible="false"/>
+								<e:Image source="line3" width="727" x="-12" bottom="57" scaleY="-1" name="line5" touchEnabled="false" visible="false"/>
+								<e:Image width="728" x="-13" top="242" source="line4" name="line8" touchEnabled="false" visible="false"/>
+								<e:Image source="line4" width="728" x="-13" bottom="241" scaleY="-1" name="line7" touchEnabled="false" visible="false"/>
+								<e:Image source="line4" width="728" x="-12" top="77" name="line10" touchEnabled="false" visible="false"/>
+								<e:Image width="728" x="-12" source="line4" scaleY="-1" bottom="116" name="line9" touchEnabled="false" visible="false"/>
+								<e:Image source="line3" width="728" x="-12" scaleY="-1" name="line12" top="122" touchEnabled="false" visible="false"/>
+								<e:Image source="line3" width="728" x="-12" scaleY="1" name="line11" verticalCenter="60.5" touchEnabled="false" visible="false"/>
+								<e:Image source="line6" x="-13" width="728" scaleY="1" verticalCenter="-71.5" name="line14" touchEnabled="false" visible="false"/>
+								<e:Image source="line6" scaleY="-1" x="-13" width="728" verticalCenter="90.5" name="line13" touchEnabled="false" visible="false"/>
+								<e:Image scaleY="-1" x="-12" width="728" source="line6" top="75" name="line16" visible="false" touchEnabled="false"/>
+								<e:Image source="line6" x="-12" width="728" bottom="103" name="line15" visible="false" touchEnabled="false"/>
+								<e:Image source="line5" width="728" x="-12" top="143" name="line18" height="276" visible="false" touchEnabled="false"/>
+								<e:Image scaleY="-1" x="-13.52" width="728" source="line5" name="line17" y="387.08" visible="false" touchEnabled="false"/>
+								<e:Image x="0.16" width="705" source="line7" name="line19" y="414.79" scaleY="-1" touchEnabled="false" visible="false"/>
+							</e:Group>
+							</e:Group>
+						</e:Group>
 
 
 
@@ -193,114 +241,7 @@
 				<e:Group id="BeltHighScoll4" width="110" height="380" x="411" y="0" />
 				<e:Group id="BeltHighScoll5" width="110" height="380" x="548" y="0" anchorOffsetX="0" />
 			</e:Group>
-			<e:Group id="lineRootGroup" width="710" height="515" anchorOffsetY="0" touchChildren="false" touchEnabled="false"
-			         scrollEnabled="true" verticalCenter="0" horizontalCenter="0">
-				<e:Group id="darkLineGroup" height="515" width="710" touchChildren="false" touchEnabled="false" name="darkLineGroup">
-					<e:Image source="lined1" y="39.8" width="715" x="-5" name="lined2" touchEnabled="false" visible="false"/>
-					
-					<e:Image source="lined1" width="715" x="-5" y="202.61" name="lined1"  visible="false" touchEnabled="false"/>
 
-					<e:Image source="lined1" width="715" x="-5" y="354.84" name="lined0"  visible="false" touchEnabled="false"/>
-					<e:Image width="715" source="lined2" x="-4" top="83" name="lined4" visible="false" touchEnabled="false"/>
-					<e:Image width="715" scaleY="-1" source="lined2" x="-5" bottom="60" name="lined3"  visible="false" touchEnabled="false"/>
-					<e:Image source="lined3" width="715" x="-5" top="121" name="lined6" visible="false" touchEnabled="false"/>
-
-					<e:Image source="lined3" width="715" x="-5" bottom="35" scaleY="-1" name="lined5"  visible="false" touchEnabled="false"/>
-					<e:Image width="715" x="-5" top="232" source="lined4" name="lined8" visible="false"/>
-
-					<e:Image source="lined4" width="715" x="-5" bottom="227" scaleY="-1" name="lined7"  visible="false" touchEnabled="false"/>
-					<e:Image source="lined4" width="715" x="-5" top="39" name="lined10" visible="false" touchEnabled="false"/>
-
-					<e:Image source="lined4" width="715" x="-5" bottom="123" scaleY="-1" name="lined9"  visible="false" touchEnabled="false"/>
-					<e:Image source="lined3" width="715" x="-5" scaleY="-1" top="154" name="lined12" visible="false" touchEnabled="false"/>
-
-					<e:Image x="-5" width="715" name="lined11" source="lined3" verticalCenter="26.5"  visible="false" touchEnabled="false"/>
-					<e:Image source="lined6" x="-5" width="715" scaleY="1" verticalCenter="-71.5" name="lined14" visible="false" touchEnabled="false"/>
-					<e:Image source="lined6" scaleY="-1" x="-5" width="715" verticalCenter="90.5" name="lined13" visible="false" touchEnabled="false"/>
-					<e:Image scaleY="-1" x="-5" width="715" source="lined6" top="81" name="lined16" visible="false" touchEnabled="false"/>
-					<e:Image source="lined6" x="-5" width="715" bottom="109" name="lined15" visible="false" touchEnabled="false"/>
-
-
-					<e:Image source="lined5" width="715" x="-5" top="137" name="lined18"  visible="false" touchEnabled="false"/>
-					<e:Image bottom="122" scaleY="-1" x="-5" width="715" source="lined5" name="lined17" visible="false" touchEnabled="false"/>
-
-
-
-
-					<e:Image x="-5" width="715" source="lined7" top="159" name="lined19"  scaleY="-1" visible="false" touchEnabled="false"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-				</e:Group>
-				<e:Group id="moveLineGroup" width="710" height="515" touchChildren="false" touchEnabled="false" name="moveLineGroup"
-				         scrollEnabled="true">
-					<e:Group id="lightLineGroup" width="710" height="515" touchChildren="false" touchEnabled="false"
-					         name="lightLineGroup">
-						<e:Image source="line1" y="32.8" width="715" x="-5" name="line2" visible="false" touchEnabled="false"/>
-						
-						<e:Image source="line1" width="715" x="-5" y="195.61" name="line1"  visible="false" touchEnabled="false"/>
-
-						<e:Image source="line1" width="715" x="-5" y="347.84" name="line0"  visible="false" touchEnabled="false"/>
-						<e:Image width="720" source="line2" x="-8" top="79" name="line4" height="296"  visible="false" touchEnabled="false"/>
-							<e:Image width="720" scaleY="-1" source="line2" x="-9" bottom="55" name="line3" height="298"  visible="false" touchEnabled="false"/>
-						<e:Image source="line3" width="725" x="-11" top="114" name="line6" visible="false" touchEnabled="false"/>
-						<e:Image source="line3" width="727" x="-12" bottom="28" scaleY="-1" name="line5"  visible="false" touchEnabled="false"/>
-						<e:Image width="728" x="-13" top="226" source="line4" name="line8" visible="false" touchEnabled="false"/>
-
-						<e:Image source="line4" width="728" x="-13" bottom="221" scaleY="-1" name="line7"  visible="false" touchEnabled="false"/>
-						<e:Image source="line4" width="728" x="-12" top="32" name="line10" visible="false" touchEnabled="false"/>
-
-						<e:Image width="728" x="-12" source="line4" scaleY="-1" bottom="116" name="line9"  visible="false" touchEnabled="false"/>
-						<e:Image source="line3" width="728" x="-12" scaleY="-1" name="line12" top="147" visible="false" touchEnabled="false"/>
-
-						<e:Image source="line3" width="728" x="-12" scaleY="1" name="line11" verticalCenter="26.5"  visible="false" touchEnabled="false"/>
-						<e:Image source="line6" x="-13" width="728" scaleY="1" verticalCenter="-71.5" name="line14" visible="false" touchEnabled="false"/>
-						<e:Image source="line6" scaleY="-1" x="-13" width="728" verticalCenter="90.5" name="line13" visible="false" touchEnabled="false"/>
-						<e:Image scaleY="-1" x="-12" width="728" source="line6" top="75" name="line16" visible="false" touchEnabled="false"/>
-						<e:Image source="line6" x="-12" width="728" bottom="103" name="line15" visible="false" touchEnabled="false"/>
-
-
-						<e:Image source="line5" width="728" x="-12" top="143" name="line18"  height="276" visible="false" touchEnabled="false"/>
-						<e:Image scaleY="-1" x="-13.52" width="728" source="line5" name="line17" y="387.08" visible="false" touchEnabled="false"/>
-
-
-
-
-						<e:Image x="0.16" width="705" source="line7" name="line19"  y="438.79" scaleY="-1" visible="false" touchEnabled="false"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-					</e:Group>
-				</e:Group>
-			</e:Group>
 
 		</e:Group>
 		<e:Image scaleX="1" scaleY="1" touchEnabled="false" source="background_png" bottom="-84" width="720" horizontalCenter="0" height="1280" locked="true"/>
@@ -515,7 +456,7 @@
 	<e:Group id="freemGroup" width="720" touchEnabled="false" horizontalCenter="0" bottom="0" top="0">
 	</e:Group>
 	<e:Group width="720" height="1280" y="0" horizontalCenter="0" touchEnabled="false">
-		<e:Image id="maskImage1" source="background_b_png" touchEnabled="false" scaleX="1" scaleY="1" top="-3" bottom="3" left="720" x="720.0000000000001" y="-3"/>
+		<e:Image id="maskImage1" source="background_b_png" touchEnabled="false" scaleX="1" scaleY="1" top="-3" bottom="3" left="718" x="720.0000000000001" y="-3"/>
 		<e:Image id="maskImage2" source="background_b_png" touchEnabled="false" scaleX="1" scaleY="1" top="0" bottom="0" anchorOffsetX="1" left="-1453" x="-1453" y="0"/>
 	</e:Group>
 
