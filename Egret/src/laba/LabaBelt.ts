@@ -327,7 +327,14 @@ module conglinshuiguo {
         }
         public onClickShowIconInfo(e: egret.TouchEvent) {
             let scrollicon = e.target.parent.getChildAt(0) as labalib.ScrollIcon
-            MutiTipsIcon.Instance.showIcon(this.mBeltIndex, scrollicon.localToGlobal(scrollicon.width / 2, scrollicon.height / 2), scrollicon.ElemType)
+            if(LabaGame.Instance.dakaiPanl == scrollicon&&LabaGame.Instance.tipsGroup.visible){
+                LabaGame.Instance.tipsGroup.visible = false;
+                LabaGame.Instance.dakaiPanl = null;
+            }
+            else{
+                LabaGame.Instance.dakaiPanl = scrollicon;
+                MutiTipsIcon.Instance.showIcon(this.mBeltIndex, scrollicon.localToGlobal(scrollicon.width / 2, scrollicon.height / 2), scrollicon.ElemType)
+            }
         }
         public SetScrollData(datas: Array<number>, totalTime: number, scrollToIndex?: number, scrollFromToIndex?: number): void {
             super.SetScrollData(datas, totalTime, scrollToIndex, scrollFromToIndex);

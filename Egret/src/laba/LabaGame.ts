@@ -185,6 +185,7 @@ module conglinshuiguo {
 
         public maskRect:eui.Rect;
         public isFreeGame = false;
+        public dakaiPanl:any = null;
         
 
 
@@ -1472,11 +1473,13 @@ module conglinshuiguo {
                     // }
                     game.Timer.clearTimeout(this.mLabaMachine.RealStartTimer)
                     this.GameRotateButtomTween(GameRotateChoose.stop)
-                    this.mAccFastStopTimes++
+                    if (this.mAccFastStopTimes >= 0) {
+                        this.mAccFastStopTimes++
+                    }
                     if (this.mAccFastStopTimes >= 4 && !DataCenter.Instance.IsQuickRotate) {
+                        this.mAccFastStopTimes = -1;
                         GX.Tips.showPopup("检测到您急停的频率很高,是否开启极速旋转模式?", () => {
                             //确定
-                            this.mAccFastStopTimes = 0
                             this.rotationButton.currentState = "down"
                             this.rotationSetButton.currentState = "down"
                             DataCenter.Instance.IsQuickRotate = true
@@ -1554,7 +1557,7 @@ module conglinshuiguo {
             this.rotationButton.enabled = this.IsAutoRotating == false && !this.mIsRotating && !this.mIsFreeGameIng && !this.mIsInReRotategame
             this.rotationSetButton.enabled = this.IsAutoRotating == false && !this.mIsRotating && !this.mIsFreeGameIng && !this.mIsInReRotategame
             this.betGoldButton.enabled = this.IsAutoRotating == false && !this.mIsRotating && !this.mIsFreeGameIng && !this.mIsInReRotategame
-            this.menuListButton.enabled = this.IsAutoRotating == false && !this.mIsRotating && !this.mIsFreeGameIng && !this.mIsInReRotategame
+            // this.menuListButton.enabled = this.IsAutoRotating == false && !this.mIsRotating && !this.mIsFreeGameIng && !this.mIsInReRotategame
             if (this.IsAutoRotating) {
 
                 // this.chooseGameRotateButton(GameRotateChoose.autorotate);

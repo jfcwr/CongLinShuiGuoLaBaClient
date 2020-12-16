@@ -316,7 +316,7 @@
 						</e:Skin>
 					</game:skinName>
 					</game:Button>
-					<e:Label text="旋转设置" x="129" y="77" size="26" textColor="0x605d5c"/>
+					<e:Label text="旋转设置" x="129" y="77" size="24" textColor="0x605d5c"/>
 					<game:Button id="betGoldButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="40" x="550" anchorOffsetY="24.5" width="49" height="49" anchorOffsetX="24.5">
 					<game:skinName>
 						<e:Skin states="up,down,disabled">
@@ -325,7 +325,7 @@
 						</e:Skin>
 					</game:skinName>
 					</game:Button>
-					<e:Label text="投注" x="478" y="77" size="26" textColor="0x605d5c"/>
+					<e:Label text="投注" x="478" y="77" size="24" textColor="0x605d5c"/>
 					<e:Label id="betNumLabel" text="1.50" x="536" y="78" size="26" textColor="0xcfcece"/>
 					<game:Button id="menuListButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="59" anchorOffsetY="12" x="653" anchorOffsetX="17" width="34" height="24">
 					<game:skinName>
@@ -411,13 +411,13 @@
 			<e:Group id="popGroup" width="720" height="220" touchEnabled="false" visible="false">
 			<e:Rect alpha="0.75" width="720" height="1560" bottom="0"/>
 			</e:Group>
-			<e:Group id="moneyBox" width="720" bottom="6" horizontalCenter="0" height="26">
+			<e:Group id="moneyBox" width="720" bottom="15" horizontalCenter="0" height="26">
 			<e:Image x="10" source="ic_nav_wallet" verticalCenter="-2.5"/>
 			<e:Label text="余额" x="47" size="26" textColor="0x605d5c" verticalAlign="middle" verticalCenter="0"/>
-			<e:Label id="moneyLabel" text="222" x="104.68" size="26" verticalAlign="middle" verticalCenter="0" textColor="0xcfcece"/>
+			<e:Label id="moneyLabel" text="222" x="104.68" size="28" verticalAlign="middle" verticalCenter="0" textColor="0xcfcece"/>
 			<e:Group right="20" verticalCenter="0">
 				<e:Label text="赢奖" x="51.33" size="26" textColor="0x605D5C" verticalAlign="middle" anchorOffsetX="50" verticalCenter="0"/>
-				<e:Label id="raceObtainGoldLabel" text="1200" size="26" verticalAlign="middle" verticalCenter="0" textColor="0xcfcece" right="1"/>
+				<e:Label id="raceObtainGoldLabel" text="1200" size="28" verticalAlign="middle" verticalCenter="0" textColor="0xcfcece" right="1"/>
 				<e:layout>
 				<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle" gap="5"/>
 				</e:layout>
