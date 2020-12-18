@@ -2391,7 +2391,7 @@ module conglinshuiguo {
             //     })
             // this.SetHighAnim(true);
             // this.bigWinPanel.enterBigWinAnim(() => {
-            //     this.bigWinPanel.playGoldWinType(100000)
+            //     this.bigWinPanel.playGoldWinType(1000000000)
             // })
             // this.playWinBarAnim(3)
         }

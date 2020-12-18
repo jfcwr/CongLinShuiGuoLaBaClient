@@ -31,8 +31,10 @@
 		         scaleX="0.8" scaleY="0.8" left="0" right="0" height="290">
 			<e:Image id="winTitleImage" scaleX="0.9" scaleY="0.9"
 			          horizontalCenter="0" verticalCenter="-57" source=""/>
-			<e:BitmapLabel id="GoldNumLabel" text="900000" horizontalCenter="0" x="59" scaleX="0.5" scaleY="0.5"
-			               letterSpacing="-10" font="number3_fnt" verticalCenter="4" />
+			<e:Group id="goldLabelGroup" width="900" height="290" touchEnabled="false" scaleX="0.9" scaleY="0.9" anchorOffsetX="450" anchorOffsetY="145" horizontalCenter="0" verticalCenter="0">
+				<e:BitmapLabel id="GoldNumLabel" text="10000000" horizontalCenter="0" x="34" scaleX="1" scaleY="1" letterSpacing="-10" font="number3_fnt" verticalCenter="4" y="59"/>
+			</e:Group>
+
 
 		</e:Group>
 

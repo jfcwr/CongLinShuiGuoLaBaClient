@@ -322,6 +322,22 @@ module conglinshuiguo {
             //     this._goldParticle = null;
             // }
             this.call_ = cb;
+            if(obtainGold>=1000000000){
+                this.goldLabelGroup.scaleX = 0.7;
+                this.goldLabelGroup.scaleY = 0.7;
+            }
+            else if(obtainGold>=100000000){
+                this.goldLabelGroup.scaleX = 0.8;
+                this.goldLabelGroup.scaleY = 0.8;
+            }
+            else if(obtainGold>=10000000){
+                this.goldLabelGroup.scaleX = 0.9;
+                this.goldLabelGroup.scaleY = 0.9;
+            }
+            else{
+                this.goldLabelGroup.scaleX = 1;
+                this.goldLabelGroup.scaleY = 1;
+            }
 
 
             if (obtainGold == 0) {
@@ -460,6 +476,8 @@ module conglinshuiguo {
         private winLightMov1: dragonBones.EgretArmatureDisplay = null;
         private winLightMov2: dragonBones.EgretArmatureDisplay = null;
         private winLightMov3: dragonBones.EgretArmatureDisplay = null;
+        private goldLabelGroup:eui.Group;
+
         /**
          * 播放指定的胜利类型
          */
@@ -501,7 +519,7 @@ module conglinshuiguo {
                 this.winTitleGroup.addChild(this.winTitleMov1);
                 this.winTitleGroup.addChild(this.winTitleMov2);
                 this.winTitleGroup.addChild(this.winTitleMov3);
-                this.winTitleGroup.addChild(this.GoldNumLabel);
+                this.winTitleGroup.addChild(this.goldLabelGroup);
                 this.winLightMov1.animation.play(this._winTypePaths[0],1)
             }
             if(this._mCurPlayWinType == 1){
