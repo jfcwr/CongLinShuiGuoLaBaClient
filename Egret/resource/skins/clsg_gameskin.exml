@@ -327,7 +327,7 @@
 					</game:Button>
 					<e:Label text="投注" x="478" y="77" size="24" textColor="0x605d5c"/>
 					<e:Label id="betNumLabel" text="1.50" x="536" y="78" size="26" textColor="0xcfcece"/>
-					<game:Button id="menuListButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="59" anchorOffsetY="12" x="653" anchorOffsetX="17" width="34" height="24">
+					<game:Button interactive="bright" scaleX="1" scaleY="1" enabled="true" y="59" anchorOffsetY="12" x="653" anchorOffsetX="17" width="34" height="24">
 					<game:skinName>
 						<e:Skin states="up,down,disabled">
 						<e:Image width="100%" height="100%" source="icon_more_menu"/>
@@ -335,6 +335,7 @@
 						</e:Skin>
 					</game:skinName>
 					</game:Button>
+					<e:Rect id="menuListButton" width="70" height="70" x="653" y="59" anchorOffsetX="35" anchorOffsetY="35" fillAlpha="0"/>
 					<e:layout>
 					<e:BasicLayout/>
 					</e:layout>
