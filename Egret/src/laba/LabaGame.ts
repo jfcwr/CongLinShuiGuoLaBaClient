@@ -1568,6 +1568,7 @@ module conglinshuiguo {
 
 
 
+
         public testWin(value, filer, a) {
             // this.bigWinPanel.initTween()
             this.bigWinPanel.initTween(value, filer, a)
