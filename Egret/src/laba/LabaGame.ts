@@ -2377,6 +2377,7 @@ module conglinshuiguo {
             }
             this.gameRotateButton.visible = false;
             this.gameRotateImage.visible = false;
+            this.autoRotateButton.alpha = 0;
             this.menuListGroup.visible = true;
             egret.Tween.get(this.menuListGroup).set({ y: 108 }).to({ y: 0 }, 200)
             this.betMenuGruop.visible = false;
@@ -2402,6 +2403,7 @@ module conglinshuiguo {
             }
             this.gameRotateButton.visible = true;
             this.gameRotateImage.visible = true;
+            this.autoRotateButton.alpha = 1;
             this.betMenuGruop.visible = true;
             egret.Tween.get(this.betMenuGruop).set({ y: 185 }).to({ y: 35 }, 200)
             this.menuListGroup.visible = false;
