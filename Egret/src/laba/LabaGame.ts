@@ -2375,7 +2375,7 @@ module conglinshuiguo {
             if(this.btnLightMov){
                 this.btnLightMov.visible = false;
             }
-            this.gameRotateButton.visible = false;
+            this.gameRotateButton.alpha = 0;
             this.gameRotateImage.visible = false;
             this.autoRotateButton.alpha = 0;
             this.menuListGroup.visible = true;
@@ -2401,7 +2401,8 @@ module conglinshuiguo {
             if(this.btnLightMov){
                 this.btnLightMov.visible = true;
             }
-            this.gameRotateButton.visible = true;
+            this.gameRotateButton.alpha = 1;
+            // this.gameRotateButton.visible = true;
             this.gameRotateImage.visible = true;
             this.autoRotateButton.alpha = 1;
             this.betMenuGruop.visible = true;
