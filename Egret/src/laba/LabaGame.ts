@@ -1534,6 +1534,7 @@ module conglinshuiguo {
         public onCancelAutoRotate() {
 
             if (this.IsAutoRotating) {
+                game.Timer.clearTimeout(this.delayRotateTimer);
                 // this.mIsAutoRotating = false;
                 this.mLeftRotateCount = 0;
                 this.refreshRotateButtonStatus();
