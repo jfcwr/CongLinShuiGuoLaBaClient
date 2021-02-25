@@ -2019,7 +2019,7 @@ module conglinshuiguo {
         public doRefreshGoldDisplay(isDisPlay = true) {
             let raceNo: number = DataCenter.Instance.CurRaceNo;
             let obtainGold = DataCenter.Instance.RaceObtainGold;
-            DataCenter.Instance.MainUserGold = DataCenter.Instance.MainUserGold + obtainGold;
+            // DataCenter.Instance.MainUserGold = DataCenter.Instance.MainUserGold + obtainGold;
             if (isDisPlay)
                 DataCenter.Instance.DisplayRaceGold(raceNo);
             this.raceObtainGoldLabel.text = "" + obtainGold
