@@ -89,6 +89,15 @@ module conglinshuiguo {
         }
 
 
+        public mainGoldNumber:number = null;
+        /**
+         * 获取当前金币;
+         */
+        public mainGold(): number {
+            return this.mainGoldNumber;
+        }
+
+
 
         /**
          * 最大的底注索引;

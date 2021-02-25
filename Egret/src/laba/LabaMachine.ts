@@ -442,6 +442,7 @@ module conglinshuiguo {
         protected playDefaultAnimByLine() {
         }
         public onMsg_GameStateUpdate(data, topData) {
+            DataCenter.Instance.mainGoldNumber = topData.userChips;
 
             let mysteriousData = LabaGame.Instance.mysteriousData;
             let itemIdListIcon =null;
@@ -456,6 +457,7 @@ module conglinshuiguo {
                         }
                     }
                 }
+                topData.labaStatusInfo.dataList[1].awardPoint = topData.labaStatusInfo.dataList[1].awardPoint/2
                 topData.labaStatusInfo.dataList[0] = topData.labaStatusInfo.dataList[1];
                 LabaGame.Instance.mysteryMode()
             }

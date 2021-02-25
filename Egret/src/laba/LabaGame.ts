@@ -1735,7 +1735,12 @@ module conglinshuiguo {
         // }
 
         public onMainGoldChanged(gold: number) {
+            // if(DataCenter.Instance.mainGold()){
+            //     this.moneyLabel.text = GX.GoldFormat(Number(GX.numToFixed(DataCenter.Instance.mainGold(), 2)), true, true, true);
+            // }
+            // else{
             this.moneyLabel.text = GX.GoldFormat(Number(GX.numToFixed(gold, 2)), true, true, true);
+            // }
         }
         public setMainGoldManu(gold: number) {
             this.moneyLabel.text = GX.GoldFormat(Number(GX.numToFixed(gold, 2)), true, true, true);
@@ -2020,8 +2025,11 @@ module conglinshuiguo {
             let raceNo: number = DataCenter.Instance.CurRaceNo;
             let obtainGold = DataCenter.Instance.RaceObtainGold;
             // DataCenter.Instance.MainUserGold = DataCenter.Instance.MainUserGold + obtainGold;
-            if (isDisPlay)
-                DataCenter.Instance.DisplayRaceGold(raceNo);
+
+
+
+            // if (isDisPlay)
+            DataCenter.Instance.DisplayRaceGold(raceNo);
             this.raceObtainGoldLabel.text = "" + obtainGold
             // this.switchTipsImage(4, obtainGold)
         }
