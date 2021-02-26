@@ -442,7 +442,6 @@ module conglinshuiguo {
         protected playDefaultAnimByLine() {
         }
         public onMsg_GameStateUpdate(data, topData) {
-            DataCenter.Instance.mainGoldNumber = topData.userChips;
 
             let mysteriousData = LabaGame.Instance.mysteriousData;
             let itemIdListIcon =null;
@@ -457,13 +456,16 @@ module conglinshuiguo {
                         }
                     }
                 }
-                topData.labaStatusInfo.dataList[1].awardPoint = topData.labaStatusInfo.dataList[1].awardPoint/2
-                topData.labaStatusInfo.dataList[0] = topData.labaStatusInfo.dataList[1];
+                topData.labaStatusInfo.dataList[0] = JSON.parse(JSON.stringify(topData.labaStatusInfo.dataList[1]))//topData.labaStatusInfo.dataList[1];
+                
+                topData.labaStatusInfo.dataList[1].awardPoint = 0;
+                // topData.labaStatusInfo.dataList[0] = topData.labaStatusInfo.dataList[1];
                 LabaGame.Instance.mysteryMode()
             }
             else{
                 mysteriousData = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
             }
+            DataCenter.Instance.mainGoldNumber = topData.labaStatusInfo.dataList[0].awardPoint;
             // if(topData.labaStatusInfo.dataList.length == 2){
             //     for(let item of topData.labaStatusInfo.dataList[0].itemIdList){
 

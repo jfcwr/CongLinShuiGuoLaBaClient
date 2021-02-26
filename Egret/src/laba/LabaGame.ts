@@ -1103,18 +1103,22 @@ module conglinshuiguo {
             this.mBarWinDragon.visible = true
             this.mBarWinDragon.animation.stop();
             if(index==1){
-                SoundHand.Instance.playRerotateTwoSound()
                 uniLib.SoundMgr.instance.playSound("scrollgold2_mp3", 1);
                 this.mBarWinDragonIndex = index;
                 this.mBarWinDragon.animation.play("huaban0", 1)
-                this.playMonkeyAboutMov(true)
+                if(!this.isFreeGame){
+                    this.playMonkeyAboutMov(true)
+                    SoundHand.Instance.playRerotateTwoSound()
+                }
             }
             else if(index==2){
                 this.mBarWinDragon.animation.play("huaban0_1", 1)
             }
             else if(index==3){
-                this.playMonkeyAboutMov(true)
-                SoundHand.Instance.playRerotateTwoSound()
+                if(!this.isFreeGame){
+                    this.playMonkeyAboutMov(true)
+                    SoundHand.Instance.playRerotateTwoSound()
+                }
                 uniLib.SoundMgr.instance.playSound("scrollgold2_mp3", 1);
                 this.mBarWinDragonIndex = index;
                 this.mBarWinDragon.animation.play("huaban1", 1)
@@ -1887,7 +1891,14 @@ module conglinshuiguo {
 
             LabaGame.Instance.playAllHitElemDefaultEffect()
             this.elemAnimMask.visible = true
-            this.switchTipsImage(4, DataCenter.Instance.RaceObtainGold)
+            let obtainGold;
+            if(DataCenter.Instance.IsMysticalGame()){
+                obtainGold = DataCenter.Instance.mainGold();//DataCenter.Instance.RaceObtainGold;
+            }
+            else{
+                obtainGold = DataCenter.Instance.RaceObtainGold;
+            }
+            this.switchTipsImage(4, obtainGold)
             this.mLabaMachine.drawAllLines()
         }
         /**
@@ -2023,13 +2034,19 @@ module conglinshuiguo {
         }
         public doRefreshGoldDisplay(isDisPlay = true) {
             let raceNo: number = DataCenter.Instance.CurRaceNo;
-            let obtainGold = DataCenter.Instance.RaceObtainGold;
-            // DataCenter.Instance.MainUserGold = DataCenter.Instance.MainUserGold + obtainGold;
+            let obtainGold 
+            if(DataCenter.Instance.IsMysticalGame()){
+                obtainGold = DataCenter.Instance.mainGold();//DataCenter.Instance.RaceObtainGold;
+            }
+            else{
+                obtainGold = DataCenter.Instance.RaceObtainGold;
+            }
 
-
-
-            // if (isDisPlay)
-            DataCenter.Instance.DisplayRaceGold(raceNo);
+            if(this.isFreeGame){
+                DataCenter.Instance.MainUserGold = DataCenter.Instance.MainUserGold + obtainGold;
+            }
+            if (isDisPlay)
+                DataCenter.Instance.DisplayRaceGold(raceNo);
             this.raceObtainGoldLabel.text = "" + obtainGold
             // this.switchTipsImage(4, obtainGold)
         }
@@ -2802,7 +2819,26 @@ module conglinshuiguo {
                 }
                 this.mBarWinDragonIndex = 0;
             }
+            this.TipsImage.visible = !(obtainGold > 0)
+            this.winWorldGroup.visible = (obtainGold > 0)
+            this.worldGroup.visible = !(obtainGold > 0)
+            if(type==switchType.win){
+                let curDizhu = labalib.LabaDataCenter.Instance.CurDizhu;
+                let perGold = curDizhu / 20;
+                let obtainNormalMultiply = Math.floor(obtainGold / perGold);
+
+                let highScoreList = DataCenter.Instance.getLabaHighScoreList();
+                if(obtainNormalMultiply<highScoreList[0]){
+                    this.playWinBarAnim(1)
+                }
+                else if(obtainNormalMultiply<highScoreList[1]){
+                    this.playWinBarAnim(3)
+                }
+            }
+            
+
             if(this.isFreeGame){
+                this.winMoneyLabel.text = GX.GoldFormat(obtainGold, true, true, true)
                 this.TipsImage.source = "infoboard-info_7";
                 this.TipsImage.x = 20;
                 return
@@ -2815,10 +2851,9 @@ module conglinshuiguo {
             this.TipsImage.y = 35
 
             let parent = this.TipsImage.parent
-            this.TipsImage.visible = !((type == switchType.win || type == switchType.winTotal) && obtainGold > 0)
-            this.winWorldGroup.visible = ((type == switchType.win || type == switchType.winTotal) && obtainGold > 0)
-            // this.winAnimBarGroup.visible = ((type == switchType.win || type == switchType.winTotal) && obtainGold > 0)
-            this.worldGroup.visible = !((type == switchType.win || type == switchType.winTotal) && obtainGold > 0)
+            this.TipsImage.visible = !(obtainGold > 0)
+            this.winWorldGroup.visible = (obtainGold > 0)
+            this.worldGroup.visible = !(obtainGold > 0)
             
 
             // if (type != 1) {
@@ -2845,9 +2880,7 @@ module conglinshuiguo {
                 // moveTween.to({ x: (parent.width - widthlist[5]) / 2 }, 5000)
             } else if ((type == switchType.win || type == switchType.winTotal) && obtainGold > 0) {
 
-                // this.worldGroup.addChild(this.winWorldGroup)
-                // this.winMoneyLabel.text = DataCenter.Instance.RaceObtainGold + ""
-                // this.winMoneyImage.source = tipsImageSrc[type - 1]
+                
                 if (type == switchType.win) {
                     this.winMoneyImage.source = tipsImageSrc[type - 1]
                 } else {
@@ -2857,33 +2890,26 @@ module conglinshuiguo {
                 // this.winAnimBarGroup.visible = false
                 this.winMoneyLabel.visible = false
                 this.winMoneyImage.visible = false
+                let obtainGold1;
+                if(DataCenter.Instance.IsMysticalGame()){
+                    obtainGold1 = DataCenter.Instance.mainGold();
+                }
+                else{
+                    obtainGold1 = DataCenter.Instance.RaceObtainGold;
+                }
 
-                this.winMoneyLabel.text = GX.GoldFormat(DataCenter.Instance.RaceObtainGold, true, true, true)
-                let muti = DataCenter.Instance.RaceObtainGold * 20 / DataCenter.Instance.CurDizhu
-                if (!DataCenter.Instance.isBigwin(DataCenter.Instance.RaceObtainGold) && muti > 60) {
-                    labalib.Utils.scrollNumber(this.winMoneyLabel, 0, DataCenter.Instance.RaceObtainGold, 2400, () => {
+                this.winMoneyLabel.text = GX.GoldFormat(obtainGold1, true, true, true)
+                let muti = obtainGold1 * 20 / DataCenter.Instance.CurDizhu
+                if (!DataCenter.Instance.isBigwin(obtainGold1) && muti > 60) {
+                    labalib.Utils.scrollNumber(this.winMoneyLabel, 0, obtainGold1, 2400, () => {
                         // uniLib.SoundMgr.instance.playSound("scrollgold2_mp3", 1);
                     })
                 } else
-                    this.winMoneyLabel.text = GX.GoldFormat(DataCenter.Instance.RaceObtainGold, true, true, true)
+                    this.winMoneyLabel.text = GX.GoldFormat(obtainGold1, true, true, true)
                 this.winMoneyLabel.visible = true
                 this.winMoneyImage.visible = true
 
-                let curDizhu = labalib.LabaDataCenter.Instance.CurDizhu;
-                let perGold = curDizhu / 20;
-                let obtainNormalMultiply = Math.floor(obtainGold / perGold);
-
-
-
-                let highScoreList = DataCenter.Instance.getLabaHighScoreList();
-                if(obtainNormalMultiply<highScoreList[0]){
-                    this.playWinBarAnim(1)
-                }
-                else if(obtainNormalMultiply<highScoreList[1]){
-                    this.playWinBarAnim(3)
-                }
-
-                // this.winAnimBarGroup.visible = true
+                
             }
             // if (type != 1)
             //     this.mMaxShowTipsTimer = game.Timer.setTimeout(() => {

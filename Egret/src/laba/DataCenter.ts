@@ -91,7 +91,7 @@ module conglinshuiguo {
 
         public mainGoldNumber:number = null;
         /**
-         * 获取当前金币;
+         * 获取当前局金币;
          */
         public mainGold(): number {
             return this.mainGoldNumber;

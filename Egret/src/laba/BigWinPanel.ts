@@ -452,7 +452,6 @@ module conglinshuiguo {
                 egret.Tween.removeTweens(bigwinTween)
                 
                 //还有没有播放完毕的金币类型;
-                console.error(this._mCurPlayWinType)
                 if (this._mCurPlayWinType < showWinTypeCount) {
                     this.playWinType(showWinTypeCount);
                     this.GoldNumLabel.text = GX.GoldFormat(obtainGold, false, true);
