@@ -489,12 +489,12 @@ module conglinshuiguo {
             this.tipsGroup.addChild(MutiTipsIcon.Instance)
 
 
-            if (game.Config.debug) {
-                this.group_test.visible = true;
-                this.group_test.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnDebugTest, this);
-            } else {
-                this.group_test.visible = false;
-            }
+            // if (game.Config.debug) {
+            //     this.group_test.visible = true;
+            //     this.group_test.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnDebugTest, this);
+            // } else {
+            //     this.group_test.visible = false;
+            // }
 
 
             this.switchBG(GameBG.normal)
@@ -1513,7 +1513,7 @@ module conglinshuiguo {
                 return
             }
             if (this.mLabaMachine.isState(labalib.LabaInnerState.Rotating) || this.mLabaMachine.isState(labalib.LabaInnerState.SendBet)) {
-                console.error("正在旋转中,或者正在发消息");
+                // console.error("正在旋转中,或者正在发消息");
                 return;
             }
 
@@ -2053,7 +2053,7 @@ module conglinshuiguo {
         public delayRotateTimer: number
 
         public doNormal(rotateNext: boolean = true, isdelay: boolean = true) {
-            console.log('免费旋转一次--------------')
+            // console.log('免费旋转一次--------------')
             game.Timer.clearTimeout(this.delayRotateTimer);
             let waitTimer = 1500
             this.refreshRotateButtonStatus();

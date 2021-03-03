@@ -391,8 +391,6 @@ module conglinshuiguo {
             // egret.Tween.pauseTweens(this.mGroup)
             egret.Tween.removeTweens(this.mGroup)
 
-            console.log("testddddsw scrolldata111111 mBeltIndex :", this.mBeltIndex, " col", this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex], this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex + 1], this.mBeltSrcollDatas[this.mCurBeltSrcollDataIndex + 2])
-            console.log("testddddsw scrolldata111111 ", JSON.stringify(this.mBeltSrcollDatas), this.mCurBeltSrcollDataIndex)
             if (this.mBeltSrcollDatas.length > 0) {
                 this.resetBeltPos()
                 this.mGroup.y = -684
@@ -438,7 +436,6 @@ module conglinshuiguo {
             //     for (let item of this.mIcons) {
             //         this.mBeltSrcollDatas.push(item.ElemType)
             //     }
-            console.log("testddddsw scrolldata111111 ", JSON.stringify(this.mBeltSrcollDatas), this.mCurBeltSrcollDataIndex)
 
             for (let i = 0; i < 3; i++) {
                 this.mBeltSrcollDatas.push(this.mIcons[i].ElemType)
@@ -452,7 +449,6 @@ module conglinshuiguo {
                     this.mBeltSrcollDatas.push(cols[i])
                 }
 
-            console.log("testddddsw scrolldata ", JSON.stringify(this.mBeltSrcollDatas), this.mCurBeltSrcollDataIndex)
             this.resetBeltPos()
 
 

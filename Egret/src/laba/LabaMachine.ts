@@ -749,7 +749,6 @@ module conglinshuiguo {
                             }
                         }
                     }
-                    console.log("testddddsw scrolldata111111 real start")
                     beltext.ReadyScrollData()
                     beltext.RealStart = true
                 }
@@ -800,7 +799,6 @@ module conglinshuiguo {
                         if (i == line.LineType) {
                             let lineimg = this.darkLineGroup.getChildByName("lined" + i)
                             let pos = lineimg.localToGlobal(0, 0)
-                            console.log("ccccccc",line.Multiply)
                             LabaGame.Instance.showOneLineTips(i, pos, totalPoint / totalMuti * line.Multiply)
                             if (line.ConnectCount == 5)
                                 LabaGame.Instance.playFiveKindAnim()
