@@ -178,24 +178,24 @@ module conglinshuiguo {
                 .to({ scaleX: animInfo.Scale + 0.1, scaleY: animInfo.Scale + 0.1 }, 400)
                 .set({ scaleX: animInfo.Scale, scaleY: animInfo.Scale })
         }
-        private elemImageBg:eui.Image;
+        private elemImageBg: eui.Image;
         /**
          * 免费滑动
          */
-        public PlayfreeSlide(winElemID: number[],sizeIndex:boolean = false) {
+        public PlayfreeSlide(winElemID: number[], sizeIndex: boolean = false) {
             this.elemImageBg.visible = true;
             this.elemImage.visible = true;
             let index = 0;
-            if(sizeIndex){
+            if (sizeIndex) {
                 this.elemImageBg.source = "free_frame_a";
             }
-            this.elemImage.source = "elem"+winElemID[index]+"_b";
-            egret.Tween.get(this.elemImage,{loop:true}).set({ alpha:0.2 }).to({ alpha:1 }, 150).to({ alpha:0.2 }, 150).call(() => {
+            this.elemImage.source = "elem" + winElemID[index] + "_b";
+            egret.Tween.get(this.elemImage, { loop: true }).set({ alpha: 0.2 }).to({ alpha: 1 }, 150).to({ alpha: 0.2 }, 150).call(() => {
                 index++;
-                if(index>winElemID.length){
+                if (index > winElemID.length) {
                     index = 0;
                 }
-                this.elemImage.source = "elem"+winElemID[index]+"_b";
+                this.elemImage.source = "elem" + winElemID[index] + "_b";
             });
         }
         /**
@@ -327,11 +327,11 @@ module conglinshuiguo {
         }
         public onClickShowIconInfo(e: egret.TouchEvent) {
             let scrollicon = e.target.parent.getChildAt(0) as labalib.ScrollIcon
-            if(LabaGame.Instance.dakaiPanl == scrollicon&&LabaGame.Instance.tipsGroup.visible){
+            if (LabaGame.Instance.dakaiPanl == scrollicon && LabaGame.Instance.tipsGroup.visible) {
                 LabaGame.Instance.tipsGroup.visible = false;
                 LabaGame.Instance.dakaiPanl = null;
             }
-            else{
+            else {
                 LabaGame.Instance.dakaiPanl = scrollicon;
                 MutiTipsIcon.Instance.showIcon(this.mBeltIndex, scrollicon.localToGlobal(scrollicon.width / 2, scrollicon.height / 2), scrollicon.ElemType)
             }
@@ -358,7 +358,7 @@ module conglinshuiguo {
             let timeScale = DataCenter.Instance.ScrollTimeScale
             let waittime = [0, 100 * timeScale, 100 * timeScale * 2, 100 * timeScale * 3, 100 * timeScale * 4]
             // let 
-            if (!DataCenter.Instance.IsQuickRotate||LabaGame.Instance.isFreeGame)
+            if (!DataCenter.Instance.IsQuickRotate || LabaGame.Instance.isFreeGame)
                 egret.Tween.get(this.mGroup).wait(waittime[this.mBeltIndex - 1]).to({ y: -684 - 40 }, 200 * timeScale).to({ y: -684 }, 250 / 684 * 40 * timeScale).call(() => {
                     egret.Tween.removeTweens(this.mGroup)
                     for (let item of this.mIcons) {
@@ -521,9 +521,9 @@ module conglinshuiguo {
             //         }
             //     }
             // }
-            if(LabaGame.Instance.freeIconBg.length>=1){
-                for(let j = 0;j<3;++j){
-                    if(LabaGame.Instance.freeIconBg[this.mBeltIndex - 1][2-j] == 1){
+            if (LabaGame.Instance.freeIconBg.length >= 1) {
+                for (let j = 0; j < 3; ++j) {
+                    if (LabaGame.Instance.freeIconBg[this.mBeltIndex - 1][2 - j] == 1) {
                         let icon = LabaGame.Instance.mAwardScrollIcon[j][this.mBeltIndex - 1]
                         LabaGame.Instance.winElemAnimGroup.addChild(icon)
                         icon.freeSlideStop(2)
@@ -532,10 +532,10 @@ module conglinshuiguo {
             }
             for (let i = 0; i < this.mIcons.length; i++) {
                 if (i >= 3) {
-                    this.mIcons[i].ElemType = MathUtil.random(1,7);
+                    this.mIcons[i].ElemType = MathUtil.random(1, 7);
                 }
-                else{
-                    if(this.mIcons[i].ElemType == 8){
+                else {
+                    if (this.mIcons[i].ElemType == 8) {
                         SoundHand.Instance.playDuoBaoStopSound();
                     }
 
@@ -543,7 +543,7 @@ module conglinshuiguo {
             }
 
 
-            
+
             if (this.mScrollInfoList.length == 0 && this.isHighRotate) {
                 if (this.isHighRotate == 4) {
                     LabaGame.Instance.SetHighAnim(false)
@@ -686,37 +686,19 @@ module conglinshuiguo {
 
 
         }
+        public isStopNow() {
+            return (this.mRealScrollItem - this.mCurBeltSrcollDataIndex) < 4
+        }
         public fastStop() {
             this.mScrollInfoList.clear()
+            SoundHand.Instance.playHuaDongStopSound()
+            SoundHand.Instance.stopSlowStopSound();
+
             egret.Tween.removeTweens(this.mGroup)
 
             for (let item of this.mIcons) {
                 item.Blur = false
                 item.ElemType = item.ElemType
-            }
-
-            let result = DataCenter.Instance.getResultDatas()
-            let cols = [result[0][this.mBeltIndex - 1], result[1][this.mBeltIndex - 1], result[2][this.mBeltIndex - 1]]
-
-            this.mCurBeltSrcollDataIndex = 0
-            this.mLastBeltScrollDataIndex = 0
-            this.mOffsetIndex = 0
-            this.mBeltSrcollDatas.clear()
-            if (this.mScrollInfoList.length == 0)
-                for (let i = 0; i < 3; i++) {
-                    this.mBeltSrcollDatas.push(cols[i])
-                }
-            this.resetBeltPos()
-            DataCenter.Instance.SetBeltStatus(true, this.mBeltIndex - 1)
-            if (this.mScrollInfoList.length == 0 && this.isHighRotate) {
-                if (this.isHighRotate == 4) {
-
-                    LabaGame.Instance.SetHighAnim(false)
-                }
-                else {
-                    LabaGame.Instance.SetHighAnim(true, this.isHighRotate)
-                }
-
             }
             labalib.EventManager.Instance.dispatchEvent(labalib.LabaBaseEvent.BeltRotateEndEx, {
                 "beltIndex": this.mBeltIndex,
@@ -724,6 +706,48 @@ module conglinshuiguo {
                 "stageIndex": 1,
                 "stageRevertIndex": 1
             });
+            let result = DataCenter.Instance.getResultDatas()
+            let cols = [result[0][this.mBeltIndex - 1], result[1][this.mBeltIndex - 1], result[2][this.mBeltIndex - 1]]
+            for (let i = 0; i < 3; i++) {
+                this.mIcons[i].ElemType = cols[i]
+            }
+            this.mGroup.y = -684
+
+            DataCenter.Instance.SetBeltStatus(true, this.mBeltIndex - 1);
+
+            if (LabaGame.Instance.freeIconBg.length >= 1) {
+                for (let j = 0; j < 3; ++j) {
+                    if (LabaGame.Instance.freeIconBg[this.mBeltIndex - 1][2 - j] == 1) {
+                        let icon = LabaGame.Instance.mAwardScrollIcon[j][this.mBeltIndex - 1]
+                        LabaGame.Instance.winElemAnimGroup.addChild(icon)
+                        icon.freeSlideStop(2)
+                    }
+                }
+            }
+            for (let i = 0; i < this.mIcons.length; i++) {
+                if (i >= 3) {
+                    this.mIcons[i].ElemType = MathUtil.random(1, 7);
+                }
+                else {
+                    if (this.mIcons[i].ElemType == 8) {
+                        SoundHand.Instance.playDuoBaoStopSound();
+                    }
+
+                }
+            }
+
+
+
+            if (this.mScrollInfoList.length == 0 && this.isHighRotate) {
+                if (this.isHighRotate == 4) {
+                    LabaGame.Instance.SetHighAnim(false)
+                    LabaGame.Instance.playJiaSu = true;
+                }
+                else {
+                    LabaGame.Instance.SetHighAnim(true, this.isHighRotate + 1)
+                }
+
+            }
         }
 
     }

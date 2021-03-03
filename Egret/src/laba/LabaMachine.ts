@@ -442,28 +442,28 @@ module conglinshuiguo {
         protected playDefaultAnimByLine() {
         }
         public onMsg_GameStateUpdate(data, topData) {
-
+          
             let mysteriousData = LabaGame.Instance.mysteriousData;
-            let itemIdListIcon =null;
-            if(topData.labaStatusInfo.dataList.length == 2){
-                for(let i = 0;i<5;++i){
-                    for(let j = 0;j<3;++j){
-                        if(topData.labaStatusInfo.dataList[0].itemIdList[i][j] == 0){
+            let itemIdListIcon = null;
+            if (topData.labaStatusInfo.dataList.length == 2) {
+                for (let i = 0; i < 5; ++i) {
+                    for (let j = 0; j < 3; ++j) {
+                        if (topData.labaStatusInfo.dataList[0].itemIdList[i][j] == 0) {
                             mysteriousData[i][j] = topData.labaStatusInfo.dataList[1].itemIdList[i][j];
                         }
-                        else{
+                        else {
                             mysteriousData[i][j] = 0;
                         }
                     }
                 }
                 topData.labaStatusInfo.dataList[0] = JSON.parse(JSON.stringify(topData.labaStatusInfo.dataList[1]))//topData.labaStatusInfo.dataList[1];
-                
+
                 topData.labaStatusInfo.dataList[1].awardPoint = 0;
                 // topData.labaStatusInfo.dataList[0] = topData.labaStatusInfo.dataList[1];
                 LabaGame.Instance.mysteryMode()
             }
-            else{
-                mysteriousData = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
+            else {
+                mysteriousData = [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]];
             }
             DataCenter.Instance.mainGoldNumber = topData.labaStatusInfo.dataList[0].awardPoint;
             // if(topData.labaStatusInfo.dataList.length == 2){
@@ -478,11 +478,7 @@ module conglinshuiguo {
             //     isFalseFree: 0, isPinpan: 0, awardPoint: 0, awardMultipleReal: 326,
             // });
             // }]   
-            // topData.labaStatusInfo.dataList = [{
-            //     "isFalseFree": 0, "awardMultipleReal": 0, "specialSymbolAward": 0, "awardPoint":6000,
-            //     "itemIdList": [[6, 1, 5], [6, 8, 1], [6, 1, 3], [7, 10, 5], [1, 6, 8]], "jackpotSpecialSymbolType": 0, "totalValue": 0, 
-            //     "specialSymbolValues": [], "awardMultiple": 5, "specialSymbolNum": 9, "isPinpan": 0
-            // }] 
+            // topData.labaStatusInfo.dataList =[{"itemIdList":[[4,0,1],[0,0,9],[5,9,0],[0,8,2],[1,0,2]]},{"isFalseFree":7,"awardMultipleReal":1505,"specialSymbolAward":0,"awardPoint":1128750,"jackpotSpecialSymbolType":0,"itemIdList":[[4,7,1],[7,7,9],[5,9,7],[7,8,2],[1,7,2]],"awardMultiple":1508,"specialSymbolNum":0,"isPinpan":1}]
             // this.testData3(topData)   //无奖
             // this.testData1(topData)     //免费
             // this.testData2(topData)     //重转
@@ -612,10 +608,10 @@ module conglinshuiguo {
             if (serverResult.hasResult == true) {
                 this.startGameByResult(serverResult);
                 game.Timer.clearTimeout(this.RealStartTimer)
-                if(!LabaGame.Instance.isFreeGame){
+                if (!LabaGame.Instance.isFreeGame) {
                     this.RealStartTimer = game.Timer.setTimeout(() => { this.doEnterRotate(true) }, null, 400)
                 }
-                else{
+                else {
                     this.RealStartTimer = game.Timer.setTimeout(() => { this.doEnterRotate(true) }, null, 20)
                 }
             } else {
@@ -637,18 +633,18 @@ module conglinshuiguo {
             super.startGameByResult(serverResult)
         }
         public doEnterRotate(isGetServerResponse: boolean = false) {
-            if(LabaGame.Instance.stickMovBg.length>=1){
-                let winElemID = [1,2,3,4,5,6,7];
-                winElemID.sort(function(a,b){ return Math.random()>.5 ? -1 : 1;});
-                for(let i = 0;i<5;++i){
-                    for(let j = 0;j<3;++j){
-                        if(LabaGame.Instance.freeIconBg[i][j] == 1){
-                            let icon = LabaGame.Instance.mAwardScrollIcon[2-j][i]
+            if (LabaGame.Instance.stickMovBg.length >= 1) {
+                let winElemID = [1, 2, 3, 4, 5, 6, 7];
+                winElemID.sort(function (a, b) { return Math.random() > .5 ? -1 : 1; });
+                for (let i = 0; i < 5; ++i) {
+                    for (let j = 0; j < 3; ++j) {
+                        if (LabaGame.Instance.freeIconBg[i][j] == 1) {
+                            let icon = LabaGame.Instance.mAwardScrollIcon[2 - j][i]
                             LabaGame.Instance.winElemAnimGroup.addChild(icon)
-                            if(j == 1&&i ==2){
-                                icon.PlayfreeSlide(winElemID,true)
+                            if (j == 1 && i == 2) {
+                                icon.PlayfreeSlide(winElemID, true)
                             }
-                            else{
+                            else {
                                 icon.PlayfreeSlide(winElemID)
                             }
                         }
@@ -669,15 +665,15 @@ module conglinshuiguo {
                 let itemIdList_ = DataCenter.Instance.CurServerResultDatas.itemIdList;
                 let jiaSuIndex = 0;
                 let jiaSuNumber = 0;
-                if(itemIdList_){
-                    for(let i =0;i<5;++i){
-                        for(let j =0;j<3;++j){
-                            if(itemIdList_[i][j] == 8){
+                if (itemIdList_) {
+                    for (let i = 0; i < 5; ++i) {
+                        for (let j = 0; j < 3; ++j) {
+                            if (itemIdList_[i][j] == 8) {
                                 jiaSuIndex++;
                                 break;
                             }
                         }
-                        if(jiaSuIndex == 2){
+                        if (jiaSuIndex == 2) {
                             jiaSuNumber = i;
                             break;
                         }
@@ -687,18 +683,18 @@ module conglinshuiguo {
                 // return
                 let timeScale = DataCenter.Instance.ScrollTimeScale
                 let count = [10, 12, 14, 17, 19]
-                if (DataCenter.Instance.IsQuickRotate&&!LabaGame.Instance.isFreeGame)
+                if (DataCenter.Instance.IsQuickRotate && !LabaGame.Instance.isFreeGame)
                     count = [20, 24, 28, 34, 40]
                 for (let i: number = 0; i < DataCenter.Instance.BeltCount; i++) {
                     let beltext = this.mBeltArray[i] as LabaBelt
                     // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4, waitTime: i * 100, speed: 250*20 });
 
                     if (DataCenter.Instance.IsTriggerCurFreeGame() || DataCenter.Instance.IsTriggerRerotateGame()) {
-                        if(DataCenter.Instance.IsQuickRotate){
+                        if (DataCenter.Instance.IsQuickRotate) {
                             beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 3, back: false, waitTime: i * 100, speed: 200 * timeScale });
                         }
-                        else{
-                            if ((i == 3&&jiaSuNumber==2)||(i == 2&&jiaSuNumber==1)||(i == 4&&jiaSuNumber==3)) {
+                        else {
+                            if ((i == 3 && jiaSuNumber == 2) || (i == 2 && jiaSuNumber == 1) || (i == 4 && jiaSuNumber == 3)) {
                                 beltext.isHighRotate = i;
                                 beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
                                 beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 20, waitTime: i * 100, speed: 200 * 2 * timeScale });
@@ -706,7 +702,7 @@ module conglinshuiguo {
 
                                 // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4*5, waitTime: i * 100, speed: 250*20 });
                             }
-                            else if((i == 3&&jiaSuNumber==1)||(i == 4&&jiaSuNumber==2)){
+                            else if ((i == 3 && jiaSuNumber == 1) || (i == 4 && jiaSuNumber == 2)) {
                                 beltext.isHighRotate = i;
                                 beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
                                 beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
@@ -717,7 +713,7 @@ module conglinshuiguo {
                                 // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4*5, waitTime: i * 100, speed: 250*20 });
 
                             }
-                            else if(i == 4&&jiaSuNumber==1){
+                            else if (i == 4 && jiaSuNumber == 1) {
                                 beltext.isHighRotate = i;
                                 beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
                                 beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], waitTime: i * 100, speed: 200 * timeScale });
@@ -730,21 +726,21 @@ module conglinshuiguo {
                                 // beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 4*5, waitTime: i * 100, speed: 250*20 });
 
                             }
-                            else{
+                            else {
                                 beltext.isHighRotate = i;
                                 beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: count[i], back: false, waitTime: i * 100, speed: 200 * timeScale });
                             }
                         }
                     }
-                    else{
-                        if(DataCenter.Instance.IsMysticalGame()){
-                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 100+i*2, back: false, waitTime: i * 100, speed: 200 * timeScale });
+                    else {
+                        if (DataCenter.Instance.IsMysticalGame()) {
+                            beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 100 + i * 2, back: false, waitTime: i * 100, speed: 200 * timeScale });
                         }
-                        else{
-                            if (DataCenter.Instance.IsQuickRotate&&!LabaGame.Instance.isFreeGame) {
+                        else {
+                            if (DataCenter.Instance.IsQuickRotate && !LabaGame.Instance.isFreeGame) {
                                 beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 2, back: false, waitTime: i * 100, speed: 200 * timeScale });
 
-                            } else{
+                            } else {
                                 beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 10 + i * 2, back: false, waitTime: i * 100, speed: 200 * timeScale });
                             }
                         }
@@ -753,8 +749,8 @@ module conglinshuiguo {
                     beltext.RealStart = true
                 }
             }
-            
-            
+
+
         }
 
 
@@ -857,9 +853,14 @@ module conglinshuiguo {
             let timeScale = DataCenter.Instance.ScrollTimeScale
             for (let i: number = 0; i < DataCenter.Instance.BeltCount; i++) {
                 let beltext = this.mBeltArray[i] as LabaBelt
-                beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 0, back: false, waitTime: i * 100, speed: 200 * timeScale });
-                beltext.ReadyScrollData()
-                beltext.RealStart = true
+                if (!beltext.isStopNow()) {
+                    beltext["mScrollInfoList"].clear()
+                    beltext.AddScrollData({ beltScrollType: ScrollType.DownScroll, resultType: CLSG_ResultType.NORMAL, realScrollItem: 0, back: false, waitTime: i * 100, speed: 200 * timeScale });
+                    beltext.ReadyScrollData()
+                    beltext.RealStart = true
+                }
+                else
+                    beltext.fastStop()
             }
         }
 
