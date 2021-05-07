@@ -1,0 +1,184 @@
+{
+  "mc": {
+    "action": {
+      "frameRate": 10,
+      "labels": [
+        {
+          "name": "mc",
+          "frame": 1,
+          "end": 15
+        }
+      ],
+      "events": [],
+      "frames": [
+        {
+          "res": "leaf_particle_00",
+          "x": -19,
+          "y": -45
+        },
+        {
+          "res": "leaf_particle_01",
+          "x": -49,
+          "y": -45
+        },
+        {
+          "res": "leaf_particle_02",
+          "x": -72,
+          "y": -56
+        },
+        {
+          "res": "leaf_particle_03",
+          "x": -85,
+          "y": -61
+        },
+        {
+          "res": "leaf_particle_04",
+          "x": -97,
+          "y": -66
+        },
+        {
+          "res": "leaf_particle_05",
+          "x": -106,
+          "y": -68
+        },
+        {
+          "res": "leaf_particle_06",
+          "x": -115,
+          "y": -71
+        },
+        {
+          "res": "leaf_particle_07",
+          "x": -121,
+          "y": -76
+        },
+        {
+          "res": "leaf_particle_08",
+          "x": -127,
+          "y": -80
+        },
+        {
+          "res": "leaf_particle_09",
+          "x": -132,
+          "y": -83
+        },
+        {
+          "res": "leaf_particle_10",
+          "x": -136,
+          "y": -87
+        },
+        {
+          "res": "leaf_particle_11",
+          "x": -139,
+          "y": -89
+        },
+        {
+          "res": "leaf_particle_12",
+          "x": -141,
+          "y": -90
+        },
+        {
+          "res": "leaf_particle_13",
+          "x": -90,
+          "y": -90
+        },
+        {
+          "res": "leaf_particle_14",
+          "x": -25,
+          "y": -91
+        }
+      ]
+    }
+  },
+  "res": {
+    "leaf_particle_00": {
+      "x": 348,
+      "y": 425,
+      "w": 35,
+      "h": 39
+    },
+    "leaf_particle_01": {
+      "x": 265,
+      "y": 425,
+      "w": 82,
+      "h": 55
+    },
+    "leaf_particle_02": {
+      "x": 146,
+      "y": 425,
+      "w": 118,
+      "h": 77
+    },
+    "leaf_particle_03": {
+      "x": 0,
+      "y": 401,
+      "w": 145,
+      "h": 99
+    },
+    "leaf_particle_04": {
+      "x": 848,
+      "y": 0,
+      "w": 167,
+      "h": 121
+    },
+    "leaf_particle_05": {
+      "x": 424,
+      "y": 370,
+      "w": 185,
+      "h": 138
+    },
+    "leaf_particle_06": {
+      "x": 636,
+      "y": 221,
+      "w": 199,
+      "h": 152
+    },
+    "leaf_particle_07": {
+      "x": 424,
+      "y": 201,
+      "w": 211,
+      "h": 168
+    },
+    "leaf_particle_08": {
+      "x": 483,
+      "y": 0,
+      "w": 222,
+      "h": 181
+    },
+    "leaf_particle_09": {
+      "x": 0,
+      "y": 209,
+      "w": 231,
+      "h": 191
+    },
+    "leaf_particle_10": {
+      "x": 244,
+      "y": 0,
+      "w": 238,
+      "h": 200
+    },
+    "leaf_particle_11": {
+      "x": 0,
+      "y": 0,
+      "w": 243,
+      "h": 208
+    },
+    "leaf_particle_12": {
+      "x": 232,
+      "y": 209,
+      "w": 191,
+      "h": 215
+    },
+    "leaf_particle_13": {
+      "x": 706,
+      "y": 0,
+      "w": 141,
+      "h": 220
+    },
+    "leaf_particle_14": {
+      "x": 146,
+      "y": 401,
+      "w": 12,
+      "h": 12
+    }
+  }
+}

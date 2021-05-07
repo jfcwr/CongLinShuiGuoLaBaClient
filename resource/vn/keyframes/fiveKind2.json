@@ -1,0 +1,129 @@
+{
+  "mc": {
+    "action": {
+      "frameRate": 10,
+      "labels": [
+        {
+          "name": "mc",
+          "frame": 1,
+          "end": 10
+        }
+      ],
+      "events": [],
+      "frames": [
+        {
+          "res": "fivekind_vfx_a_00",
+          "x": 32,
+          "y": -69
+        },
+        {
+          "res": "fivekind_vfx_a_01",
+          "x": -2,
+          "y": -69
+        },
+        {
+          "res": "fivekind_vfx_a_02",
+          "x": -97,
+          "y": -52
+        },
+        {
+          "res": "fivekind_vfx_a_03",
+          "x": -140,
+          "y": -38
+        },
+        {
+          "res": "fivekind_vfx_a_04",
+          "x": -131,
+          "y": -36
+        },
+        {
+          "res": "fivekind_vfx_a_05",
+          "x": -130,
+          "y": -28
+        },
+        {
+          "res": "fivekind_vfx_a_06",
+          "x": -135,
+          "y": -29
+        },
+        {
+          "res": "fivekind_vfx_a_07",
+          "x": -139,
+          "y": -29
+        },
+        {
+          "res": "fivekind_vfx_a_08",
+          "x": -143,
+          "y": 0
+        },
+        {
+          "res": "fivekind_vfx_a_09",
+          "x": -126,
+          "y": 3
+        }
+      ]
+    }
+  },
+  "res": {
+    "fivekind_vfx_a_00": {
+      "x": 238,
+      "y": 300,
+      "w": 119,
+      "h": 109
+    },
+    "fivekind_vfx_a_01": {
+      "x": 0,
+      "y": 222,
+      "w": 153,
+      "h": 133
+    },
+    "fivekind_vfx_a_02": {
+      "x": 0,
+      "y": 0,
+      "w": 227,
+      "h": 119
+    },
+    "fivekind_vfx_a_03": {
+      "x": 0,
+      "y": 120,
+      "w": 267,
+      "h": 101
+    },
+    "fivekind_vfx_a_04": {
+      "x": 228,
+      "y": 0,
+      "w": 253,
+      "h": 85
+    },
+    "fivekind_vfx_a_05": {
+      "x": 154,
+      "y": 222,
+      "w": 229,
+      "h": 77
+    },
+    "fivekind_vfx_a_06": {
+      "x": 0,
+      "y": 356,
+      "w": 237,
+      "h": 83
+    },
+    "fivekind_vfx_a_07": {
+      "x": 268,
+      "y": 86,
+      "w": 243,
+      "h": 87
+    },
+    "fivekind_vfx_a_08": {
+      "x": 0,
+      "y": 440,
+      "w": 183,
+      "h": 61
+    },
+    "fivekind_vfx_a_09": {
+      "x": 184,
+      "y": 440,
+      "w": 169,
+      "h": 61
+    }
+  }
+}

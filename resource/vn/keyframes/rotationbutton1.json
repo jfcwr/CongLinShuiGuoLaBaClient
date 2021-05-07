@@ -1,0 +1,151 @@
+{
+  "mc": {
+    "action": {
+      "frameRate": 10,
+      "labels": [
+        {
+          "name": "mc",
+          "frame": 1,
+          "end": 12
+        }
+      ],
+      "events": [],
+      "frames": [
+        {
+          "res": "feature_vfx_c_00",
+          "x": -32,
+          "y": -32
+        },
+        {
+          "res": "feature_vfx_c_01",
+          "x": -48,
+          "y": -48
+        },
+        {
+          "res": "feature_vfx_c_02",
+          "x": -61,
+          "y": -62
+        },
+        {
+          "res": "feature_vfx_c_03",
+          "x": -66,
+          "y": -80
+        },
+        {
+          "res": "feature_vfx_c_04",
+          "x": -65,
+          "y": -88
+        },
+        {
+          "res": "feature_vfx_c_05",
+          "x": -68,
+          "y": -95
+        },
+        {
+          "res": "feature_vfx_c_06",
+          "x": -69,
+          "y": -95
+        },
+        {
+          "res": "feature_vfx_c_07",
+          "x": -70,
+          "y": -95
+        },
+        {
+          "res": "feature_vfx_c_08",
+          "x": -68,
+          "y": -94
+        },
+        {
+          "res": "feature_vfx_c_09",
+          "x": -68,
+          "y": -94
+        },
+        {
+          "res": "feature_vfx_c_10",
+          "x": -68,
+          "y": -58
+        },
+        {
+          "res": "feature_vfx_c_11",
+          "x": -66,
+          "y": -58
+        }
+      ]
+    }
+  },
+  "res": {
+    "feature_vfx_c_00": {
+      "x": 399,
+      "y": 91,
+      "w": 58,
+      "h": 56
+    },
+    "feature_vfx_c_01": {
+      "x": 399,
+      "y": 0,
+      "w": 90,
+      "h": 90
+    },
+    "feature_vfx_c_02": {
+      "x": 139,
+      "y": 332,
+      "w": 122,
+      "h": 118
+    },
+    "feature_vfx_c_03": {
+      "x": 0,
+      "y": 346,
+      "w": 138,
+      "h": 140
+    },
+    "feature_vfx_c_04": {
+      "x": 133,
+      "y": 177,
+      "w": 144,
+      "h": 154
+    },
+    "feature_vfx_c_05": {
+      "x": 278,
+      "y": 175,
+      "w": 128,
+      "h": 166
+    },
+    "feature_vfx_c_06": {
+      "x": 0,
+      "y": 175,
+      "w": 132,
+      "h": 170
+    },
+    "feature_vfx_c_07": {
+      "x": 0,
+      "y": 0,
+      "w": 134,
+      "h": 174
+    },
+    "feature_vfx_c_08": {
+      "x": 135,
+      "y": 0,
+      "w": 132,
+      "h": 176
+    },
+    "feature_vfx_c_09": {
+      "x": 268,
+      "y": 0,
+      "w": 130,
+      "h": 174
+    },
+    "feature_vfx_c_10": {
+      "x": 262,
+      "y": 342,
+      "w": 118,
+      "h": 116
+    },
+    "feature_vfx_c_11": {
+      "x": 381,
+      "y": 342,
+      "w": 116,
+      "h": 114
+    }
+  }
+}

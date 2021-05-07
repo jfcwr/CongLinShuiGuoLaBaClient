@@ -1,0 +1,272 @@
+{
+  "mc": {
+    "action": {
+      "frameRate": 10,
+      "labels": [
+        {
+          "name": "mc",
+          "frame": 1,
+          "end": 23
+        }
+      ],
+      "events": [],
+      "frames": [
+        {
+          "res": "particle_spin_00",
+          "x": -40,
+          "y": -52
+        },
+        {
+          "res": "particle_spin_01",
+          "x": -74,
+          "y": -94
+        },
+        {
+          "res": "particle_spin_02",
+          "x": -99,
+          "y": -116
+        },
+        {
+          "res": "particle_spin_03",
+          "x": -116,
+          "y": -121
+        },
+        {
+          "res": "particle_spin_04",
+          "x": -122,
+          "y": -126
+        },
+        {
+          "res": "particle_spin_05",
+          "x": -128,
+          "y": -130
+        },
+        {
+          "res": "particle_spin_06",
+          "x": -130,
+          "y": -132
+        },
+        {
+          "res": "particle_spin_07",
+          "x": -132,
+          "y": -131
+        },
+        {
+          "res": "particle_spin_08",
+          "x": -134,
+          "y": -132
+        },
+        {
+          "res": "particle_spin_09",
+          "x": -135,
+          "y": -130
+        },
+        {
+          "res": "particle_spin_10",
+          "x": -135,
+          "y": -132
+        },
+        {
+          "res": "particle_spin_11",
+          "x": -137,
+          "y": -131
+        },
+        {
+          "res": "particle_spin_12",
+          "x": -137,
+          "y": -132
+        },
+        {
+          "res": "particle_spin_13",
+          "x": -139,
+          "y": -132
+        },
+        {
+          "res": "particle_spin_14",
+          "x": -140,
+          "y": -132
+        },
+        {
+          "res": "particle_spin_15",
+          "x": -143,
+          "y": -132
+        },
+        {
+          "res": "particle_spin_16",
+          "x": -144,
+          "y": -131
+        },
+        {
+          "res": "particle_spin_17",
+          "x": -147,
+          "y": -132
+        },
+        {
+          "res": "particle_spin_18",
+          "x": -147,
+          "y": -132
+        },
+        {
+          "res": "particle_spin_19",
+          "x": -148,
+          "y": -133
+        },
+        {
+          "res": "particle_spin_20",
+          "x": -149,
+          "y": -131
+        },
+        {
+          "res": "particle_spin_21",
+          "x": -148,
+          "y": -129
+        },
+        {
+          "res": "particle_spin_22",
+          "x": -142,
+          "y": -125
+        }
+      ]
+    }
+  },
+  "res": {
+    "particle_spin_00": {
+      "x": 782,
+      "y": 821,
+      "w": 72,
+      "h": 84
+    },
+    "particle_spin_01": {
+      "x": 641,
+      "y": 821,
+      "w": 140,
+      "h": 154
+    },
+    "particle_spin_02": {
+      "x": 454,
+      "y": 821,
+      "w": 186,
+      "h": 194
+    },
+    "particle_spin_03": {
+      "x": 237,
+      "y": 801,
+      "w": 216,
+      "h": 212
+    },
+    "particle_spin_04": {
+      "x": 0,
+      "y": 795,
+      "w": 236,
+      "h": 222
+    },
+    "particle_spin_05": {
+      "x": 1682,
+      "y": 0,
+      "w": 252,
+      "h": 234
+    },
+    "particle_spin_06": {
+      "x": 1335,
+      "y": 255,
+      "w": 262,
+      "h": 242
+    },
+    "particle_spin_07": {
+      "x": 1411,
+      "y": 0,
+      "w": 270,
+      "h": 248
+    },
+    "particle_spin_08": {
+      "x": 1134,
+      "y": 0,
+      "w": 276,
+      "h": 254
+    },
+    "particle_spin_09": {
+      "x": 289,
+      "y": 271,
+      "w": 282,
+      "h": 256
+    },
+    "particle_spin_10": {
+      "x": 0,
+      "y": 534,
+      "w": 286,
+      "h": 260
+    },
+    "particle_spin_11": {
+      "x": 0,
+      "y": 271,
+      "w": 288,
+      "h": 262
+    },
+    "particle_spin_12": {
+      "x": 586,
+      "y": 0,
+      "w": 290,
+      "h": 266
+    },
+    "particle_spin_13": {
+      "x": 293,
+      "y": 0,
+      "w": 292,
+      "h": 268
+    },
+    "particle_spin_14": {
+      "x": 0,
+      "y": 0,
+      "w": 292,
+      "h": 270
+    },
+    "particle_spin_15": {
+      "x": 289,
+      "y": 528,
+      "w": 264,
+      "h": 272
+    },
+    "particle_spin_16": {
+      "x": 831,
+      "y": 275,
+      "w": 252,
+      "h": 272
+    },
+    "particle_spin_17": {
+      "x": 554,
+      "y": 546,
+      "w": 256,
+      "h": 274
+    },
+    "particle_spin_18": {
+      "x": 877,
+      "y": 0,
+      "w": 256,
+      "h": 274
+    },
+    "particle_spin_19": {
+      "x": 572,
+      "y": 269,
+      "w": 258,
+      "h": 276
+    },
+    "particle_spin_20": {
+      "x": 1084,
+      "y": 275,
+      "w": 250,
+      "h": 274
+    },
+    "particle_spin_21": {
+      "x": 811,
+      "y": 548,
+      "w": 248,
+      "h": 272
+    },
+    "particle_spin_22": {
+      "x": 1060,
+      "y": 550,
+      "w": 238,
+      "h": 266
+    }
+  }
+}
