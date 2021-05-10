@@ -599,7 +599,7 @@ module conglinshuiguo {
         public startRotate() {
             if (this.isState(labalib.LabaInnerState.Rotating) || this.isState(labalib.LabaInnerState.SendBet)) {
                 if (this.isState(labalib.LabaInnerState.SendBet) && (DataCenter.Instance.ServerRealGold < DataCenter.Instance.CurDizhu)) {
-                    GX.Tips.showPopup("金币不足")
+                    GX.Tips.showPopup(game.Words.get(101))
                     labalib.EventManager.ResetButtonStatusEvent.call();
                 }
                 return;

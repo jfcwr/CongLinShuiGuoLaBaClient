@@ -73,10 +73,10 @@ module conglinshuiguo {
                 // this.rect1.width = 165 * 3 - 6
                 this.duobaoLabel.visible = true
                 if(elemID == CLSG_ElemAllType.DuoBao){
-                    this.duobaoLabel.text = "3/4/5个夺宝符号可触发免费旋转。";
+                    this.duobaoLabel.text = game.Words.get(99);
                 }
                 else{
-                    this.duobaoLabel.text = "百搭符号可替代除夺宝符号和神秘宝箱符号外的所有符号。";
+                    this.duobaoLabel.text = game.Words.get(100);
 
                 }
             }

@@ -1479,7 +1479,7 @@ module conglinshuiguo {
         public mGameButtonStatus: GameRotateStatus = GameRotateStatus.RotateNormal
         public onRotateButtonByClick(e: egret.Event = null) {
             if(Number(this.moneyLabel.text)<labalib.LabaDataCenter.Instance.CurDizhu){
-                GX.Tips.showTips("金额不足!")
+                GX.Tips.showTips(game.Words.get(101))
                 return;
             }
             
@@ -1531,7 +1531,7 @@ module conglinshuiguo {
             this.switchTipsImage(1)
             DataCenter.Instance.ChangeIconWin = []
             if (DataCenter.Instance.ServerRealGold < DataCenter.Instance.CurDizhu) {
-                GX.Tips.showPopup("金币不足");
+                GX.Tips.showPopup("金额不足");
                 labalib.EventManager.ResetButtonStatusEvent.call()
                 return
             }

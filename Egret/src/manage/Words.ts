@@ -297,6 +297,15 @@ game.Words.register(97)
 game.Words.register(98)
     .set(game.LanguageType.Chinese, "开始自动旋转")
     .set(game.LanguageType.Vietnamese, "Bắt đầu Quay tự động")
+game.Words.register(99)
+    .set(game.LanguageType.Chinese, "3/4/5个夺宝符号可触发免费旋转。")
+    .set(game.LanguageType.Vietnamese, "3/4/5 biểu tượng Scatter sẽ kích hoạt vòng quay miễn phí.")
+game.Words.register(100)
+    .set(game.LanguageType.Chinese, "百搭符号可替代除夺宝符号和神秘宝箱符号外的所有符号。")
+    .set(game.LanguageType.Vietnamese, "Biểu tượng Wild thay thế cho tất cả các biểu tượng ngoại trừ biểu tượng Scatter và biểu tượng Hộp Bí Mật.")
+game.Words.register(101)
+    .set(game.LanguageType.Chinese, "金额不足!")
+    .set(game.LanguageType.Vietnamese, "Không đủ GP")
 
 
 
