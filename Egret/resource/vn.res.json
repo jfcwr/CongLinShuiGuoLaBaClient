@@ -1,7 +1,7 @@
 {
 	"groups":[
 		{
-			"keys":"ResultPool_json,TableBankerRuleConfigList_json,TableGameRuleConfigList_json,TableItemConfig_json,TableJackpotSpecialSymbolConfig_json,TableMaliMultiplyList_json,TableSpecialSymbolConfig_json,ItemMultiplyList_json,LabaEffectMultiplyList_json,LabaLineList_json,MaliResultPool_json,MaryOutputIconList_json,line_json,clsg_json,bg_lemur_A_tex_json,bg_lemur_A_tex_png,bg_lemur_B_ske_json,bg_lemur_B_tex_json,bg_lemur_B_tex_png,bg_lemur_C_ske_json,bg_lemur_C_tex_json,bg_lemur_C_tex_png,bg_lemurflip_ske_json,bg_lemurflip_tex_json,bg_lemurflip_tex_png,dajiang_logo_ske_json,dajiang_logo_tex_json,dajiang_logo_tex_png,hua_ske_json,hua_tex_json,hua_tex_png,icon_gx_ske_json,icon_gx_tex_json,icon_gx_tex_png,jiesuan_gx1_1_ske_json,jiesuan_gx1_1_tex_json,jiesuan_gx1_1_tex_png,jiesuan_gx1_ske_json,jiesuan_gx1_tex_json,jiesuan_gx1_tex_png,jiesuan_gx2_ske_json,jiesuan_gx2_tex_json,jiesuan_gx2_tex_png,jiesuan_gx3_ske_json,jiesuan_gx3_tex_json,jiesuan_gx3_tex_png,mg_lemur_popup_ske_json,mg_lemur_popup_tex_json,mg_lemur_popup_tex_png,mg_lemur_ske_json,mg_lemur_tex_json,mg_lemur_tex_png,mg_lemur_walk_ske_json,mg_lemur_walk_tex_json,mg_lemur_walk_tex_png,mgbg_wins_lemur_ske_json,mgbg_wins_lemur_tex_json,mgbg_wins_lemur_tex_png,muxiang_ske_json,muxiang_tex_json,muxiang_tex_png,s_scatter_ske_json,s_scatter_tex_json,s_scatter_tex_png,s_wild_ske_json,s_wild_tex_json,s_wild_tex_png,shuye_0_ske_json,shuye_0_tex_json,shuye_0_tex_png,shuye_1_ske_json,shuye_1_tex_json,shuye_1_tex_png,spin_ske_json,spin_tex_json,spin_tex_png,sym_boluo_ske_json,sym_boluo_tex_json,sym_boluo_tex_png,sym_lanmei_ske_json,sym_lanmei_tex_json,sym_lanmei_tex_png,sym_pingguo_ske_json,sym_pingguo_tex_json,sym_pingguo_tex_png,sym_putao_ske_json,sym_putao_tex_json,sym_putao_tex_png,sym_xiangjiao_ske_json,sym_xiangjiao_tex_json,sym_xiangjiao_tex_png,sym_xigua_ske_json,sym_xigua_tex_json,sym_xigua_tex_png,sym_yangtao_ske_json,sym_yangtao_tex_json,sym_yangtao_tex_png,totalwin_ske_ske_json,totalwin_ske_tex_json,totalwin_ske_tex_png,wuxinglianzhu_ske_json,wuxinglianzhu_tex_json,wuxinglianzhu_tex_png,bg_guang_ske_json,bg_guang_tex_json,bg_guang_tex_png,bg_lemur_A_ske_json,clsg_iconLightMov_png,clsg_jiaSuMov_json,clsg_jiaSuMov_png,dot_particle_json,dot_particle_png,freespin_vfx_a_json,freespin_vfx_a_png,rotate2_json,rotate2_png,clsg_freeAppearMov_json,clsg_freeAppearMov_png,clsg_freeLiZi_json,clsg_freeLiZi_png,clsg_huoMov_json,clsg_huoMov_png,clsg_iconLightMov_json,number3_fnt,number4_fnt,number5_fnt,number1_fnt,number2_fnt,background_a_png,background_b_png,background_c_png,bonus_loading_jpg,clsg_rule1_png,clsg_rule2_png,clsg_rule3_png,background_png,config_json",
+			"keys":"line_json,clsg_json,bg_lemur_A_tex_json,bg_lemur_A_tex_png,bg_lemur_B_ske_json,bg_lemur_B_tex_json,bg_lemur_B_tex_png,bg_lemur_C_ske_json,bg_lemur_C_tex_json,bg_lemur_C_tex_png,bg_lemurflip_ske_json,bg_lemurflip_tex_json,bg_lemurflip_tex_png,dajiang_logo_ske_json,dajiang_logo_tex_json,dajiang_logo_tex_png,hua_ske_json,hua_tex_json,hua_tex_png,icon_gx_ske_json,icon_gx_tex_json,icon_gx_tex_png,jiesuan_gx1_1_ske_json,jiesuan_gx1_1_tex_json,jiesuan_gx1_1_tex_png,jiesuan_gx1_ske_json,jiesuan_gx1_tex_json,jiesuan_gx1_tex_png,jiesuan_gx2_ske_json,jiesuan_gx2_tex_json,jiesuan_gx2_tex_png,jiesuan_gx3_ske_json,jiesuan_gx3_tex_json,jiesuan_gx3_tex_png,mg_lemur_popup_ske_json,mg_lemur_popup_tex_json,mg_lemur_popup_tex_png,mg_lemur_ske_json,mg_lemur_tex_json,mg_lemur_tex_png,mg_lemur_walk_ske_json,mg_lemur_walk_tex_json,mg_lemur_walk_tex_png,mgbg_wins_lemur_ske_json,mgbg_wins_lemur_tex_json,mgbg_wins_lemur_tex_png,muxiang_ske_json,muxiang_tex_json,muxiang_tex_png,s_scatter_ske_json,s_scatter_tex_json,s_scatter_tex_png,s_wild_ske_json,s_wild_tex_json,s_wild_tex_png,shuye_0_ske_json,shuye_0_tex_json,shuye_0_tex_png,shuye_1_ske_json,shuye_1_tex_json,shuye_1_tex_png,spin_ske_json,spin_tex_json,spin_tex_png,sym_boluo_ske_json,sym_boluo_tex_json,sym_boluo_tex_png,sym_lanmei_ske_json,sym_lanmei_tex_json,sym_lanmei_tex_png,sym_pingguo_ske_json,sym_pingguo_tex_json,sym_pingguo_tex_png,sym_putao_ske_json,sym_putao_tex_json,sym_putao_tex_png,sym_xiangjiao_ske_json,sym_xiangjiao_tex_json,sym_xiangjiao_tex_png,sym_xigua_ske_json,sym_xigua_tex_json,sym_xigua_tex_png,sym_yangtao_ske_json,sym_yangtao_tex_json,sym_yangtao_tex_png,totalwin_ske_ske_json,totalwin_ske_tex_json,totalwin_ske_tex_png,wuxinglianzhu_ske_json,wuxinglianzhu_tex_json,wuxinglianzhu_tex_png,bg_guang_ske_json,bg_guang_tex_json,bg_guang_tex_png,bg_lemur_A_ske_json,clsg_iconLightMov_png,clsg_jiaSuMov_json,clsg_jiaSuMov_png,dot_particle_json,dot_particle_png,freespin_vfx_a_json,freespin_vfx_a_png,rotate2_json,rotate2_png,clsg_freeAppearMov_json,clsg_freeAppearMov_png,clsg_freeLiZi_json,clsg_freeLiZi_png,clsg_huoMov_json,clsg_huoMov_png,clsg_iconLightMov_json,number3_fnt,number4_fnt,number5_fnt,number1_fnt,number2_fnt,background_a_png,background_b_png,background_c_png,bonus_loading_jpg,clsg_rule1_png,clsg_rule2_png,clsg_rule3_png,background_png,config_json,MaryOutputIconList_json,ResultPool_json,TableBankerRuleConfigList_json,TableGameRuleConfigList_json,TableItemConfig_json,TableJackpotSpecialSymbolConfig_json,TableMaliMultiplyList_json,TableSpecialSymbolConfig_json,ItemMultiplyList_json,LabaEffectMultiplyList_json,LabaLineList_json,MaliResultPool_json",
 			"name":"clsg_preload"
 		},
 		{
@@ -10,66 +10,6 @@
 		}
 	],
 	"resources":[
-		{
-			"name":"MaliResultPool_json",
-			"type":"json",
-			"url":"table/MaliResultPool.json"
-		},
-		{
-			"name":"MaryOutputIconList_json",
-			"type":"json",
-			"url":"table/MaryOutputIconList.json"
-		},
-		{
-			"name":"ResultPool_json",
-			"type":"json",
-			"url":"table/ResultPool.json"
-		},
-		{
-			"name":"TableBankerRuleConfigList_json",
-			"type":"json",
-			"url":"table/TableBankerRuleConfigList.json"
-		},
-		{
-			"name":"TableGameRuleConfigList_json",
-			"type":"json",
-			"url":"table/TableGameRuleConfigList.json"
-		},
-		{
-			"name":"TableItemConfig_json",
-			"type":"json",
-			"url":"table/TableItemConfig.json"
-		},
-		{
-			"name":"TableJackpotSpecialSymbolConfig_json",
-			"type":"json",
-			"url":"table/TableJackpotSpecialSymbolConfig.json"
-		},
-		{
-			"name":"TableMaliMultiplyList_json",
-			"type":"json",
-			"url":"table/TableMaliMultiplyList.json"
-		},
-		{
-			"name":"TableSpecialSymbolConfig_json",
-			"type":"json",
-			"url":"table/TableSpecialSymbolConfig.json"
-		},
-		{
-			"name":"ItemMultiplyList_json",
-			"type":"json",
-			"url":"table/ItemMultiplyList.json"
-		},
-		{
-			"name":"LabaEffectMultiplyList_json",
-			"type":"json",
-			"url":"table/LabaEffectMultiplyList.json"
-		},
-		{
-			"name":"LabaLineList_json",
-			"type":"json",
-			"url":"table/LabaLineList.json"
-		},
 		{
 			"name":"line_json",
 			"subkeys":"line1,line2,line3,line4,line5,line6,line7,lined1,lined2,lined3,lined4,lined5,lined6,lined7",
@@ -836,6 +776,66 @@
 			"name":"config_json",
 			"type":"json",
 			"url":"assets_vn/config/config.json"
+		},
+		{
+			"name":"MaryOutputIconList_json",
+			"type":"json",
+			"url":"assets_vn/table/MaryOutputIconList.json"
+		},
+		{
+			"name":"ResultPool_json",
+			"type":"json",
+			"url":"assets_vn/table/ResultPool.json"
+		},
+		{
+			"name":"TableBankerRuleConfigList_json",
+			"type":"json",
+			"url":"assets_vn/table/TableBankerRuleConfigList.json"
+		},
+		{
+			"name":"TableGameRuleConfigList_json",
+			"type":"json",
+			"url":"assets_vn/table/TableGameRuleConfigList.json"
+		},
+		{
+			"name":"TableItemConfig_json",
+			"type":"json",
+			"url":"assets_vn/table/TableItemConfig.json"
+		},
+		{
+			"name":"TableJackpotSpecialSymbolConfig_json",
+			"type":"json",
+			"url":"assets_vn/table/TableJackpotSpecialSymbolConfig.json"
+		},
+		{
+			"name":"TableMaliMultiplyList_json",
+			"type":"json",
+			"url":"assets_vn/table/TableMaliMultiplyList.json"
+		},
+		{
+			"name":"TableSpecialSymbolConfig_json",
+			"type":"json",
+			"url":"assets_vn/table/TableSpecialSymbolConfig.json"
+		},
+		{
+			"name":"ItemMultiplyList_json",
+			"type":"json",
+			"url":"assets_vn/table/ItemMultiplyList.json"
+		},
+		{
+			"name":"LabaEffectMultiplyList_json",
+			"type":"json",
+			"url":"assets_vn/table/LabaEffectMultiplyList.json"
+		},
+		{
+			"name":"LabaLineList_json",
+			"type":"json",
+			"url":"assets_vn/table/LabaLineList.json"
+		},
+		{
+			"name":"MaliResultPool_json",
+			"type":"json",
+			"url":"assets_vn/table/MaliResultPool.json"
 		}
 	]
 }
