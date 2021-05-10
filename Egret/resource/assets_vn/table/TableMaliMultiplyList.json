@@ -1,0 +1,13 @@
+[
+{"id":1,"returnAwardProbability":0,"returnAwardMultiple":500},
+{"id":2,"returnAwardProbability":100,"returnAwardMultiple":20},
+{"id":3,"returnAwardProbability":1,"returnAwardMultiple":200},
+{"id":4,"returnAwardProbability":2,"returnAwardMultiple":100},
+{"id":5,"returnAwardProbability":3,"returnAwardMultiple":70},
+{"id":6,"returnAwardProbability":4,"returnAwardMultiple":50},
+{"id":7,"returnAwardProbability":5,"returnAwardMultiple":20},
+{"id":8,"returnAwardProbability":6,"returnAwardMultiple":10},
+{"id":9,"returnAwardProbability":7,"returnAwardMultiple":5},
+{"id":10,"returnAwardProbability":500,"returnAwardMultiple":0},
+{"id":11,"returnAwardProbability":500,"returnAwardMultiple":0}
+]

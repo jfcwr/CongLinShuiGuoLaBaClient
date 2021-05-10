@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="clsg_ruleskin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:game="game.*"
         xmlns:w="http://ns.egret.com/wing">
-	<e:Group id="mainGroup" width="720" height="1280" horizontalCenter="0" verticalCenter="0">
+	<e:Group id="mainGroup" width="720" height="1280" horizontalCenter="0" bottom="0">
 		<e:Rect height="100" left="0" right="0" x="0" scaleX="1" scaleY="1" top="0" fillColor="0x282834" />
-		<e:Label text="游戏规则" y="0" scaleX="1" scaleY="1" width="720" height="100" size="45" verticalAlign="middle"
+		<e:Label id="rulelabel0" text="游戏规则" y="0" scaleX="1" scaleY="1" width="720" height="100" size="45" verticalAlign="middle"
 		         textAlign="center" textColor="0xf7ba65" x="0" />
 		<!--<e:Image width="70" height="70" x="640" anchorOffsetX="0" anchorOffsetY="0" source="menu_close_button" y="10" />
 		-->
@@ -19,154 +19,231 @@
 			<e:Rect left="2" right="-2" scaleX="1" scaleY="1" fillColor="0x30303c" x="0" y="-2.33" height="1180" />
 			<e:Scroller id="ruleScroller" width="720" height="1180" x="0" y="0" anchorOffsetY="0" verticalScrollBar="true">
 				<e:Group id="scrollGroup" width="720">
+					<e:Label id="rulelabel1" text="水果丛林" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle"/>
 
-					<e:Group width="720" x="0" y="0" height="900" cacheAsBitmap="true" anchorOffsetY="0">
-						<e:Label text="水果丛林" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle" />
-						<e:Label text="·  水果丛林是一个5轴3行的视频老虎机游戏，编入了神秘宝箱符号，以及带有粘性符号的免费旋转。" x="30" scaleX="1" scaleY="1" y="113.33"
+					<e:Group width="720" x="0" y="0" cacheAsBitmap="true" anchorOffsetY="0">
+
+						<e:Label id="rulelabel2" text="·  水果丛林是一个5轴3行的视频老虎机游戏，编入了神秘宝箱符号，以及带有粘性符号的免费旋转。" x="30" scaleX="1" scaleY="1" y="113.33"
 						         textAlign="left" width="660" size="25" lineSpacing="10" textColor="0xcccccc" />
 
-						<e:Label text="·  投注大小可以在“投注大小”选项中设定。" x="30" y="187.35" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC" />
-						<e:Label text="·  投注倍数可以在“投注倍数”选项中设定。" x="30" y="231.69" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  投注总额可以在“投注总额”选项中设定。" x="30" y="278.72" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  “现金钱包”用来显示下注者可用的现金余额。" x="30" y="320.38" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  “自动旋转”可以根据玩家所选择的回合数量自动进行游戏。" x="30" y="359.72" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  中奖组合和奖金派发是根据“赔付表”进行的。" x="32" y="432" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  只支付每条下注线中赢取最高的奖金。" x="32" y="553.71" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  中奖线奖金按照从最左至右转轴的顺序派发。" x="30" y="595.36" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  不同中奖线上的奖金会被叠加。" x="30" y="633.35" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  所有中奖以现金显示。" x="30" y="670.01" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  —条中奖线所得的奖励等同于显示在“赔付表”上的符号赔付值乘以投注大小和投注倍数。" x="30" y="474.7" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  百搭符号可替代除夺宝符号和神秘宝箱符号外的所有符号。" x="30" y="705.37" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  百搭符号只出现在第2，第3和第4转轴上。" x="30" y="775.04" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  免费旋转模式中投注大小和投注倍数和触发免费旋转模式时的参数保持一致。" x="30" y="816.65" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Rect width="720" height="3" x="0" bottom="0" fillColor="0x282834" />
+						<e:Label id="rulelabel3" text="·  投注大小可以在“投注大小”选项中设定。" x="30" y="187.35" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC" />
+						<e:Label id="rulelabel4" text="·  投注倍数可以在“投注倍数”选项中设定。" x="30" y="231.69" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel5" text="·  投注总额可以在“投注总额”选项中设定。" x="30" y="278.72" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel6" text="·  “现金钱包”用来显示下注者可用的现金余额。" x="30" y="320.38" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel7" text="·  “自动旋转”可以根据玩家所选择的回合数量自动进行游戏。" x="30" y="359.72" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel8" text="·  中奖组合和奖金派发是根据“赔付表”进行的。" x="32" y="432" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel10" text="·  只支付每条下注线中赢取最高的奖金。" x="32" y="553.71" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel11" text="·  中奖线奖金按照从最左至右转轴的顺序派发。" x="30" y="595.36" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel12" text="·  不同中奖线上的奖金会被叠加。" x="30" y="633.35" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel13" text="·  所有中奖以现金显示。" x="30" y="670.01" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel9" text="·  —条中奖线所得的奖励等同于显示在“赔付表”上的符号赔付值乘以投注大小和投注倍数。" x="30" y="474.7" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel14" text="·  百搭符号可替代除夺宝符号和神秘宝箱符号外的所有符号。" x="30" y="705.37" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel15" text="·  百搭符号只出现在第2，第3和第4转轴上。" x="30" y="775.04" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel16" text="·  免费旋转模式中投注大小和投注倍数和触发免费旋转模式时的参数保持一致。" x="30" y="816.65" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:layout>
+							<e:VerticalLayout paddingLeft="30" gap="20"/>
+						</e:layout>
 					</e:Group>
-					<e:Group width="720" x="0" y="0" cacheAsBitmap="true" height="350" anchorOffsetY="0">
-						<e:Label text="神秘宝箱模式" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle" />
-						<e:Group width="720" height="250" x="0" scaleX="1" scaleY="1" y="100">
-							<e:Label text="·  神秘宝箱模式可以在主游戏的任何旋转中随机触发。" x="30" scaleX="1" scaleY="1" y="20"
+					<e:Rect width="720" height="3" x="0" bottom="0" fillColor="0x282834" anchorOffsetX="2" scaleX="1"/>
+					<e:Group width="720" x="0" y="0" cacheAsBitmap="true" anchorOffsetY="0">
+						<e:Label id="rulelabel17" text="神秘宝箱模式" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle" />
+						<e:Group width="720" x="0" scaleX="1" scaleY="1" y="100">
+							<e:Label id="rulelabel18" text="·  神秘宝箱模式可以在主游戏的任何旋转中随机触发。" x="30" scaleX="1" scaleY="1" y="20"
 							         textAlign="left" width="660" size="25" lineSpacing="10" textColor="0xcccccc" />
-							<e:Label text="·  神秘宝箱模式期间，5至10个神秘宝箱符号会出现在卷轴的任意位置上。" x="30" y="66.03" width="660" size="25" lineSpacing="10"
+							<e:Label id="rulelabel19" text="·  神秘宝箱模式期间，5至10个神秘宝箱符号会出现在卷轴的任意位置上。" x="30" y="66.03" width="660" size="25" lineSpacing="10"
 							         textColor="0xcccccc" />
-							<e:Label text="·  所有神秘宝箱符号都将揭示随机选择的一个符号(夺宝符号和百搭符号除外），然后支付赢奖。" x="30" y="144.34" width="660" size="25"
+							<e:Label id="rulelabel20" text="·  所有神秘宝箱符号都将揭示随机选择的一个符号(夺宝符号和百搭符号除外），然后支付赢奖。" x="30" y="144.34" width="660" size="25"
 							         lineSpacing="10" textColor="0xCCCCCC" />
 
 
 
 
 
-							<e:Rect width="720" height="3" x="0" bottom="0" fillColor="0x282834" />
+							<e:layout>
+								<e:VerticalLayout paddingLeft="30" gap="20"/>
+							</e:layout>
 						</e:Group>
 					</e:Group>
-					<e:Group width="720" x="10" y="10" cacheAsBitmap="true" height="550" anchorOffsetY="0">
-						<e:Label text="免费旋转模式" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle"/>
-						<e:Group width="720" height="450" x="0" scaleX="1" scaleY="1" y="100">
-						<e:Label text="·  当3、4或5个夺宝符号出现在卷轴的任意位置时，将触发免费旋转模式并分别获得8、10或15次免费旋转。" x="30" scaleX="1" scaleY="1" y="20" textAlign="left" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  当免费旋转开始时，卷轴第三列的中间位置将会出现一个粘性符号，并将持续保留于整场免费旋转。" x="30" y="96.69" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  每次免费旋转，所有粘性符号将揭示随机选择的一个符号(夺宝符号和百搭符号除外)。" x="30" y="172.32" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  当所有卷轴停止旋转时，若卷轴上任意符号与粘性符号相匹配，这些符号将在剩余的免费旋转中被转化为粘性符号。" x="30" y="247" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  免费旋转期间，卷轴上最多可出现15个粘性符号。" x="30" y="323" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Label text="·  夺宝符号不会在免费旋转模式中出现。" x="30" y="367.36" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
-						<e:Rect width="720" height="3" x="0" bottom="0" fillColor="0x282834"/>
+					<e:Rect width="720" height="3" x="0" bottom="0" fillColor="0x282834"/>
+					<e:Group width="720" x="10" y="10" cacheAsBitmap="true" anchorOffsetY="0">
+						<e:Label id="rulelabel21" text="免费旋转模式" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle"/>
+						<e:Group width="720" x="0" scaleX="1" scaleY="1" y="100">
+						<e:Label id="rulelabel22" text="·  当3、4或5个夺宝符号出现在卷轴的任意位置时，将触发免费旋转模式并分别获得8、10或15次免费旋转。" x="30" scaleX="1" scaleY="1" y="20" textAlign="left" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel23" text="·  当免费旋转开始时，卷轴第三列的中间位置将会出现一个粘性符号，并将持续保留于整场免费旋转。" x="30" y="96.69" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel24" text="·  每次免费旋转，所有粘性符号将揭示随机选择的一个符号(夺宝符号和百搭符号除外)。" x="30" y="172.32" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel25" text="·  当所有卷轴停止旋转时，若卷轴上任意符号与粘性符号相匹配，这些符号将在剩余的免费旋转中被转化为粘性符号。" x="30" y="247" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel26" text="·  免费旋转期间，卷轴上最多可出现15个粘性符号。" x="30" y="323" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+						<e:Label id="rulelabel27" text="·  夺宝符号不会在免费旋转模式中出现。" x="30" y="367.36" width="660" size="25" lineSpacing="10" textColor="0xCCCCCC"/>
+							<e:layout>
+								<e:VerticalLayout gap="20" paddingLeft="30"/>
+							</e:layout>
 						</e:Group>
 					</e:Group>
-					<e:Group width="720" x="0" y="0" cacheAsBitmap="true" height="1055" anchorOffsetY="0">
-						<e:Label text="主游戏" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle" />
-						<e:Group width="720" height="955" x="0" y="100" anchorOffsetY="0">
-							<e:Group width="680" height="300" x="20" y="0">
+					<e:Rect width="720" height="3" x="0" bottom="0" fillColor="0x282834"/>
+					<e:Group width="720" x="0" y="0" cacheAsBitmap="true" anchorOffsetY="0">
+						<e:Label id="rulelabel28" text="主游戏" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle" />
+						<e:Group width="720" x="0" y="100" anchorOffsetY="0">
+							<e:Group width="680" x="20" y="0">
 								<e:Image x="15" y="0" source="btn_start"  width="60" height="60"/>
-								<e:Label text="旋转按钮" y="0" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xcccccc" />
-								<e:Label text="·  单击后可在当前中奖线、投注大小和投注倍数下开始游戏。" y="40" width="530" size="24" scaleX="1" scaleY="1" x="150"
-								         textColor="0xCCCCCC" lineSpacing="5" />
-								<e:Label text="·  旋转过程中单击按钮或游戏区可以马上停止当前旋转。" y="103" width="530" size="24" scaleX="1" scaleY="1" x="150"
-								         textColor="0xCCCCCC" lineSpacing="5" />
-								<e:Label text="·  按下空格键，使用当前的投注线数、投注大小和投注倍数进行旋转。（仅适用于桌面版）" y="166" width="530" size="24" scaleX="1" scaleY="1"
-								         x="150" textColor="0xCCCCCC" lineSpacing="5" />
-								<e:Label text="· 按住空格键，将持续进行旋转，直到松开空格键。（仅适用于桌面版）" y="229" width="530" size="24" scaleX="1" scaleY="1" x="150"
-								         textColor="0xCCCCCC" lineSpacing="5" />
+								<e:Group width="680" x="0" scaleX="1" scaleY="1" top="0">
+									<e:Label id="rulelabel29" text="旋转按钮" y="0" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xcccccc"/>
+									<e:Label id="rulelabel30" text="·  单击后可在当前中奖线、投注大小和投注倍数下开始游戏。" y="40.00000000000023" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+									<e:Label id="rulelabel31" text="·  旋转过程中单击按钮或游戏区可以马上停止当前旋转。" y="103" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+									<e:Label id="rulelabel32" text="·  按下空格键，使用当前的投注线数、投注大小和投注倍数进行旋转。（仅适用于桌面版）" y="166" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+									<e:Label id="rulelabel33" text="· 按住空格键，将持续进行旋转，直到松开空格键。（仅适用于桌面版）" y="229.00000000000045" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+									<e:layout>
+										<e:VerticalLayout paddingLeft="147" gap="20"/>
+									</e:layout>
+								</e:Group>
+
+
+
+
+
 							</e:Group>
-							<e:Group width="680" height="130" x="20" y="320" anchorOffsetY="0">
+							<e:Group width="680" x="20" y="320" anchorOffsetY="0">
 								<e:Image x="15" y="0" source="btn_stop"  width="60" height="60"/>
-								<e:Label text="停止按钮" y="0" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" />
-								<e:Label text="·  单击按钮停止旋转。在自动游戏模式，剩余旋转次数会显示在按钮中。" y="40" width="530" size="24" scaleX="1" scaleY="1" x="150"
-								         textColor="0xCCCCCC" lineSpacing="5" />
+								<e:Group width="680" x="0" scaleX="1" scaleY="1" top="0">
+									<e:Label id="rulelabel34" text="停止按钮" y="0" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC"/>
+									<e:Label id="rulelabel35" text="·  单击按钮停止旋转。在自动游戏模式，剩余旋转次数会显示在按钮中。" y="40" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+									<e:layout>
+									<e:VerticalLayout paddingLeft="147" gap="20"/>
+									</e:layout>
+								</e:Group>
+
+
 							</e:Group>
-							<e:Group width="680" height="480" x="20" y="470" scaleX="1" scaleY="1">
+							<e:Group width="680" x="20" y="470" scaleX="1" scaleY="1">
 								<e:Image x="20" y="0" source="icon_auto_spin_menu" />
-								<e:Label text="旋转设置" y="0" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" />
-								<e:Label text="·  旋转速度可被设置为常速或极速（主游戏转轴的旋转时间将减少）。" y="40" width="530" size="24" scaleX="1" scaleY="1" x="150"
-								         textColor="0xCCCCCC" lineSpacing="5" />
-								<e:Label text="·  自动旋转可以根据选的次数进行自动游戏。" y="103" width="530" size="24" scaleX="1" scaleY="1" x="150"
-								         textColor="0xCCCCCC" lineSpacing="5" />
-								<e:Label text="·  次数： 点击所选次数进行自动游戏。" y="137" width="530" size="24" scaleX="1" scaleY="1" x="150"
-								         textColor="0xCCCCCC" lineSpacing="5" />
-								<e:Label text="·  停止旋转单次赢得超过金额（玩家指定数值）：当单次旋转赢得超过指定金额时，自动旋转将自动停止。" y="171" width="530" size="24" scaleX="1"
-								         scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5" />
-								<e:Label text="·  停止旋转余额增加超过金额（玩家指定数值）：当余额的增幅超过指定金额时（与自动旋转开始前相比），自动旋转将自动停止。" y="263" width="530" size="24"
-								         scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5" />
-								<e:Label text="·  停止旋转余额减少超过金额（玩家指定数值）：当余额的减幅超过指定金额时（与自动旋转开始前相比），自动旋转将自动停止。" y="355" width="530" size="24"
-								         scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5" />
+								<e:Group width="680" x="0" scaleX="1" scaleY="1" top="0">
+									<e:Label id="rulelabel36" text="旋转设置" y="0" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC"/>
+									<e:Label id="rulelabel37" text="·  旋转速度可被设置为常速或极速（主游戏转轴的旋转时间将减少）。" y="40.000000000000455" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+									<e:Label id="rulelabel38" text="·  自动旋转可以根据选的次数进行自动游戏。" y="103" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+									<e:Label id="rulelabel39" text="·  次数： 点击所选次数进行自动游戏。" y="137.00000000000045" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+									<e:Label id="rulelabel40" text="·  停止旋转单次赢得超过金额（玩家指定数值）：当单次旋转赢得超过指定金额时，自动旋转将自动停止。" y="171" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+									<e:Label id="rulelabel41" text="·  停止旋转余额增加超过金额（玩家指定数值）：当余额的增幅超过指定金额时（与自动旋转开始前相比），自动旋转将自动停止。" y="263" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+									<e:Label id="rulelabel42" text="·  停止旋转余额减少超过金额（玩家指定数值）：当余额的减幅超过指定金额时（与自动旋转开始前相比），自动旋转将自动停止。" y="355" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+									<e:layout>
+									<e:VerticalLayout paddingLeft="147" gap="20"/>
+									</e:layout>
+								</e:Group>
+
+
+
+
+
+
+
 							</e:Group>
+							<e:layout>
+								<e:VerticalLayout paddingLeft="20" gap="15"/>
+							</e:layout>
 						</e:Group>
 					</e:Group>
-					<e:Group width="720" x="0" y="0" cacheAsBitmap="true" height="500" anchorOffsetY="0">
-						<e:Group width="680" height="215" x="20" y="0" anchorOffsetY="0">
+					<e:Group width="720" x="0" y="0" cacheAsBitmap="true" anchorOffsetY="0">
+						<e:Group width="680" x="20" y="0" anchorOffsetY="0">
 							<e:Image x="20" y="0" source="icon_bet" />
-							<e:Label text="投注设置" y="0" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" />
-							<e:Label text="·  投注大小：拖动以选择投注大小。" y="40" width="530" size="24" scaleX="1" scaleY="1" x="150"
-							         textColor="0xCCCCCC" lineSpacing="5" />
-							<e:Label text="·  投注倍数：拖动以选择投注倍数。" y="74" width="530" size="24" scaleX="1" scaleY="1" x="150"
-							         textColor="0xCCCCCC" lineSpacing="5" />
-							<e:Label text="·  投注总额：拖动以选择投注金额。" y="108" width="530" size="24" scaleX="1" scaleY="1" x="150"
-							         textColor="0xCCCCCC" lineSpacing="5" />
-							<e:Label text="· 最大投注：点击按钮可以把投注大小、投注倍数的数值调到最大。" y="142" width="530" size="24" scaleX="1" scaleY="1" x="150"
-							         textColor="0xCCCCCC" lineSpacing="5" />
-						</e:Group>
-						<e:Group width="680" height="90" x="20" y="235" anchorOffsetY="0">
-							<e:Image x="20" y="0"  source="ic_turbo_spin_turbo_off_in_autospin" width="50" height="50"/>
-							<e:Label text="极速旋转" y="0" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" />
-							<e:Label text="·  点击打开或关闭极速旋转。" y="40" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC"
-							         lineSpacing="5" />
-						</e:Group>
-						<e:Group width="680" height="116" x="20" y="345" scaleX="1" scaleY="1" anchorOffsetY="0">
-							<e:Image x="20" y="0" source="icon_more_menu" />
-							<e:Label text="更多" y="0" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" />
-							<e:Label text="·  点击进入“声音设置”、“赔付表”和“游戏规则”。" y="40" width="530" size="24" scaleX="1" scaleY="1" x="150"
-							         textColor="0xCCCCCC" lineSpacing="5" />
-						</e:Group>
-						<e:Rect width="720" height="3" x="0" bottom="0" fillColor="0x282834" />
-					</e:Group>
-					<e:Group width="720" x="0" y="0" cacheAsBitmap="true" height="590" anchorOffsetY="0">
-						<e:Label text="更多设置" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle" />
-						<e:Group width="720" height="490" x="0" y="100" anchorOffsetY="0">
-							<e:Group width="680" height="108" x="20" y="0" anchorOffsetY="0">
-								<e:Image x="20" y="0" source="ic_nav_medium_sound_on" width="60" height="60" />
-								<e:Label text="声音" y="10" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" />
-								<e:Label text="·  点击打开或关闭游戏声音。" y="50" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC"
-								         lineSpacing="5" />
-							</e:Group>
-							<e:Group width="680" height="108" x="20" y="118" anchorOffsetY="0">
-								<e:Image x="20" y="0" source="icon_paytable" width="60" height="60" />
-								<e:Label text="赔付表" y="10" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" />
-								<e:Label text="·  显示中奖组合以及赔付表。" y="50" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC"
-								         lineSpacing="5" />
-							</e:Group>
-							<e:Group width="680" height="108" x="20" y="236" anchorOffsetY="0">
-								<e:Image x="20" y="0" source="icon_rule_book" width="60" height="60" />
-								<e:Label text="规则" y="10" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" />
-								<e:Label text="·  显示游戏规则和按键功能。" y="50" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC"
-								         lineSpacing="5" />
+							<e:Group width="680" x="0" scaleX="1" scaleY="1" top="0">
+								<e:Label id="rulelabel43" text="投注设置" y="0" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC"/>
+								<e:Label id="rulelabel44" text="·  投注大小：拖动以选择投注大小。" y="40" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+								<e:Label id="rulelabel45" text="·  投注倍数：拖动以选择投注倍数。" y="73.99999999999955" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+								<e:Label id="rulelabel46" text="·  投注总额：拖动以选择投注金额。" y="107.99999999999955" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+								<e:Label id="rulelabel47" text="· 最大投注：点击按钮可以把投注大小、投注倍数的数值调到最大。" y="142" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+								<e:layout>
+								<e:VerticalLayout paddingLeft="147" gap="20"/>
+								</e:layout>
 							</e:Group>
 
-							<e:Group width="680" height="95" x="20" y="354" anchorOffsetY="0">
-								<e:Image x="10" y="0" source="menu_close_button" />
-								<e:Label text="关闭" y="10" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" />
-								<e:Label text="·  点击回到游戏大厅。" y="50" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC"
-								         lineSpacing="5" />
+
+
+
+
+						</e:Group>
+						<e:Group width="680" x="20" y="235" anchorOffsetY="0">
+							<e:Image x="20" y="0"  source="ic_turbo_spin_turbo_off_in_autospin" width="50" height="50"/>
+							<e:Group width="680" x="0" scaleX="1" scaleY="1" top="0">
+								<e:Label id="rulelabel48" text="极速旋转" y="0" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC"/>
+								<e:Label id="rulelabel49" text="·  点击打开或关闭极速旋转。" y="40" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+								<e:layout>
+								<e:VerticalLayout paddingLeft="147" gap="20"/>
+								</e:layout>
 							</e:Group>
-							<e:Rect width="720" height="3" x="0" bottom="0" fillColor="0x282834" />
+
+
+						</e:Group>
+						<e:Group width="680" x="20" y="345" scaleX="1" scaleY="1" anchorOffsetY="0">
+							<e:Image x="20" y="0" source="icon_more_menu" />
+							<e:Group width="680" x="0" scaleX="1" scaleY="1" top="0">
+								<e:Label id="rulelabel50" text="更多" y="0" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC"/>
+								<e:Label id="rulelabel51" text="·  点击进入“声音设置”、“赔付表”和“游戏规则”。" y="40" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+								<e:layout>
+								<e:VerticalLayout paddingLeft="147" gap="20"/>
+								</e:layout>
+							</e:Group>
+
+
+						</e:Group>
+
+					</e:Group>
+					<e:Rect width="720" height="3" x="0" bottom="0" fillColor="0x282834"/>
+					<e:Group width="720" x="0" y="0" cacheAsBitmap="true" anchorOffsetY="0">
+						<e:Label id="rulelabel52" text="更多设置" x="0" y="0" width="720" textAlign="center" height="100" verticalAlign="middle" />
+						<e:Group width="720" x="0" y="100" anchorOffsetY="0">
+							<e:Group width="680" x="20" y="0" anchorOffsetY="0">
+								<e:Image x="20" y="0" source="ic_nav_medium_sound_on" width="60" height="60" />
+								<e:Group width="680" x="0" scaleX="1" scaleY="1" top="0">
+									<e:Label id="rulelabel53" text="声音" y="9.999999999999545" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC"/>
+									<e:Label id="rulelabel54" text="·  点击打开或关闭游戏声音。" y="50" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+									<e:layout>
+									<e:VerticalLayout paddingLeft="147" gap="20"/>
+									</e:layout>
+								</e:Group>
+
+
+							</e:Group>
+							<e:Group width="680" x="20" y="118" anchorOffsetY="0">
+								<e:Image x="20" y="0" source="icon_paytable" width="60" height="60" />
+								<e:Group width="680" x="0" scaleX="1" scaleY="1" top="0">
+									<e:Label id="rulelabel55" text="赔付表" y="10" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC"/>
+									<e:Label id="rulelabel56" text="·  显示中奖组合以及赔付表。" y="50" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+									<e:layout>
+									<e:VerticalLayout paddingLeft="147" gap="20"/>
+									</e:layout>
+								</e:Group>
+
+
+							</e:Group>
+							<e:Group width="680" x="20" y="236" anchorOffsetY="0">
+								<e:Image x="20" y="0" source="icon_rule_book" width="60" height="60" />
+								<e:Group width="680" x="0" scaleX="1" scaleY="1" top="0">
+									<e:Label id="rulelabel57" text="规则" y="10" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC"/>
+									<e:Label id="rulelabel58" text="·  显示游戏规则和按键功能。" y="50" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+									<e:layout>
+									<e:VerticalLayout paddingLeft="147" gap="20"/>
+									</e:layout>
+								</e:Group>
+
+
+							</e:Group>
+
+							<e:Group width="680" x="20" y="354" anchorOffsetY="0">
+								<e:Image x="10" y="0" source="menu_close_button" />
+								<e:Group width="680" x="0" scaleX="1" scaleY="1" top="0">
+									<e:Label id="rulelabel59" text="关闭" y="10" width="530" size="25" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC"/>
+									<e:Label id="rulelabel60" text="·  点击回到游戏大厅。" y="50" width="530" size="24" scaleX="1" scaleY="1" x="150" textColor="0xCCCCCC" lineSpacing="5"/>
+									<e:layout>
+									<e:VerticalLayout paddingLeft="147" gap="20"/>
+									</e:layout>
+								</e:Group>
+
+
+							</e:Group>
+							<e:layout>
+								<e:VerticalLayout paddingLeft="20" gap="19"/>
+							</e:layout>
 						</e:Group>
 					</e:Group>
+					<e:Rect width="720" height="3" x="0" bottom="0" fillColor="0x282834"/>
 					<e:layout>
 						<e:VerticalLayout/>
 					</e:layout>

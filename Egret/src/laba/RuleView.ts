@@ -56,6 +56,9 @@ module conglinshuiguo {
         }
 
         protected initUI() {
+            for(let i=0;i<61;++i){
+                this.skin["rulelabel"+i].text = game.Words.get(i+22);
+            }
 
         }
 

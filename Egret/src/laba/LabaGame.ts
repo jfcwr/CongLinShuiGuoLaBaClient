@@ -511,7 +511,30 @@ module conglinshuiguo {
             this.playMonkeyMov();
             this.playMonkeyAfterMov();
             this.playMonkeyAboutMov();
+            this.multilingualLabel();
 
+        }
+        private multilingual4:eui.Label;
+        private multilingual1:eui.Label;
+        private multilingual2:eui.Label;
+        private multilingual3:eui.Label;
+        private multilingual5:eui.Label;
+        private multilingual6:eui.Label;
+        private multilingual7:eui.Label;
+        private multilingual8:eui.Label;
+
+        /**
+         * 多语言修改
+         */
+        private multilingualLabel() {
+            this.multilingual1.text = game.Words.get(83);
+            this.multilingual2.text = game.Words.get(84);
+            this.multilingual3.text = game.Words.get(85);
+            this.multilingual4.text = game.Words.get(86);
+            this.multilingual5.text = game.Words.get(87);
+            this.multilingual6.text = game.Words.get(88);
+            this.multilingual7.text = game.Words.get(89);
+            this.multilingual8.text = game.Words.get(90);
         }
         private iconLineGroup: eui.Group
         private mLineTipsInfoArr = []
@@ -2866,7 +2889,8 @@ module conglinshuiguo {
                 for (let idx of showImageIndex) {
                     let posX = (parent.width - widthlist[idx - 1]) / 2
                     let moveWidth = posX > 0 ? posX : 20
-                    if (idx == 4 || idx == 7|| idx == 5) {
+                    let imageWidth = RES.getRes("infoboard-info_" + idx)._bitmapWidth;
+                    if (imageWidth>600) {
                         moveTween.set({ x: moveWidth, source: "infoboard-info_" + idx }).wait(300).to({ x: -widthlist[idx - 1] }, 5000)
                     } else {
                         moveTween.set({ x: moveWidth, source: "infoboard-info_" + idx }).wait(5000)

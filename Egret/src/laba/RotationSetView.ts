@@ -173,8 +173,18 @@ module conglinshuiguo {
             }
             this.autoNum = Number(str[1])
         }
+        private multilingual1:eui.Label;
+        private multilingual2:eui.Label;
+        private multilingual3:eui.Label;
+
 
         protected initUI() {
+            this.multilingual1.text = game.Words.get(58);
+            this.multilingual2.text = game.Words.get(94);
+            this.multilingual3.text = game.Words.get(95);
+            this.changSuButton["labelDisplay"].text = game.Words.get(96);
+            this.jisuButton["labelDisplay"].text = game.Words.get(97);
+            this.startAutoRotatingButton["labelDisplay"].text = game.Words.get(98);
            
         }
 

@@ -222,8 +222,15 @@ module conglinshuiguo {
             GX.localStorage.setItem("dizhu_" + game.GameId(), idx.toString());
             this.allBetNum.text = DataCenter.Instance.CurDizhu + ""
         }
+        private multilingual1:eui.Label;
+        private multilingual2:eui.Label;
+
         private clickCount: number = 0;
         protected initUI() {
+            this.multilingual1.text = game.Words.get(65);
+            this.multilingual2.text = game.Words.get(91);
+            this.bigBetButton["labelDisplay"].text = game.Words.get(92);
+            this.bigBetClickButton["labelDisplay"].text = game.Words.get(93);
 
         }
 

@@ -316,7 +316,7 @@
 						</e:Skin>
 					</game:skinName>
 					</game:Button>
-					<e:Label text="旋转设置" x="129" y="77" size="24" textColor="0x605d5c"/>
+					<e:Label id="multilingual1" text="旋转设置" y="77" size="24" textColor="0x605d5c" horizontalCenter="-183"/>
 					<game:Button id="betGoldButton" interactive="bright" scaleX="1" scaleY="1" enabled="true" y="40" x="550" anchorOffsetY="24.5" width="49" height="49" anchorOffsetX="24.5">
 					<game:skinName>
 						<e:Skin states="up,down,disabled">
@@ -325,8 +325,15 @@
 						</e:Skin>
 					</game:skinName>
 					</game:Button>
-					<e:Label text="投注" x="478" y="77" size="24" textColor="0x605d5c"/>
-					<e:Label id="betNumLabel" text="1.50" x="536" y="78" size="26" textColor="0xcfcece"/>
+					<e:Group verticalCenter="15" horizontalCenter="183">
+						<e:Label id="multilingual2" text="投注" x="-65" y="2" size="24" textColor="0x605d5c" scaleX="1" scaleY="1"/>
+						<e:Label id="betNumLabel" text="270" x="-7" y="3" size="26" textColor="0xcfcece" scaleX="1" scaleY="1"/>
+						<e:layout>
+						<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle" gap="5"/>
+						</e:layout>
+					</e:Group>
+
+
 					<game:Button interactive="bright" scaleX="1" scaleY="1" enabled="true" y="59" anchorOffsetY="12" x="653" anchorOffsetX="17" width="34" height="24">
 					<game:skinName>
 						<e:Skin states="up,down,disabled">
@@ -394,10 +401,10 @@
 					</game:Button>
 					</e:Group>
 					<e:Group width="720" height="72" x="0" y="108">
-					<e:Label text="声音" x="60" width="80" textAlign="center" textColor="0x605d5c" size="26" scaleX="1" scaleY="1" verticalCenter="0"/>
-					<e:Label text="赔付表" x="228" textAlign="center" textColor="0x605d5c" size="26" width="80" scaleX="1" scaleY="1" verticalCenter="0"/>
-					<e:Label text="规则" width="80" textAlign="center" size="26" textColor="0x605d5c" horizontalCenter="85" x="296" scaleX="1" scaleY="1" verticalCenter="0"/>
-					<e:Label text="退出" x="576" width="80" textAlign="center" size="26" textColor="0x605D5C" scaleX="1" scaleY="1" verticalCenter="0"/>
+					<e:Label id="multilingual5" text="声音" x="60" width="80" textAlign="center" textColor="0x605d5c" size="26" scaleX="1" scaleY="1" verticalCenter="0"/>
+					<e:Label id="multilingual6" text="赔付表" x="228" textAlign="center" textColor="0x605d5c" size="26" width="80" scaleX="1" scaleY="1" verticalCenter="0"/>
+					<e:Label id="multilingual7" text="规则" width="80" textAlign="center" size="26" textColor="0x605d5c" horizontalCenter="85" x="296" scaleX="1" scaleY="1" verticalCenter="0"/>
+					<e:Label id="multilingual8" text="退出" x="576" width="80" textAlign="center" size="26" textColor="0x605D5C" scaleX="1" scaleY="1" verticalCenter="0"/>
 					<e:layout>
 						<e:BasicLayout/>
 					</e:layout>
@@ -414,10 +421,17 @@
 			</e:Group>
 			<e:Group id="moneyBox" width="720" bottom="15" horizontalCenter="0" height="26">
 			<e:Image x="10" source="ic_nav_wallet" verticalCenter="-2.5"/>
-			<e:Label text="余额" x="47" size="26" textColor="0x605d5c" verticalAlign="middle" verticalCenter="0"/>
-			<e:Label id="moneyLabel" text="222" x="104.68" size="28" verticalAlign="middle" verticalCenter="0" textColor="0xcfcece"/>
+				<e:Group verticalCenter="0" left="47">
+					<e:Label id="multilingual3" text="余额" x="0" size="26" textColor="0x605d5c" verticalAlign="middle" verticalCenter="0" y="-13" scaleX="1" scaleY="1"/>
+					<e:Label id="moneyLabel" text="222" x="57.68000000000001" size="28" verticalAlign="middle" verticalCenter="0" textColor="0xcfcece" y="-14" scaleX="1" scaleY="1"/>
+					<e:layout>
+					<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle" gap="5"/>
+					</e:layout>
+				</e:Group>
+
+
 			<e:Group right="20" verticalCenter="0">
-				<e:Label text="赢奖" x="51.33" size="26" textColor="0x605D5C" verticalAlign="middle" anchorOffsetX="50" verticalCenter="0"/>
+				<e:Label id="multilingual4" text="赢奖" x="51.33" size="26" textColor="0x605D5C" verticalAlign="middle" anchorOffsetX="50" verticalCenter="0"/>
 				<e:Label id="raceObtainGoldLabel" text="1200" size="28" verticalAlign="middle" verticalCenter="0" textColor="0xcfcece" right="1"/>
 				<e:layout>
 				<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle" gap="5"/>

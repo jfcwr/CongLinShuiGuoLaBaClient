@@ -5,7 +5,7 @@
 <e:Group width="720" height="565" x="0"  bottom="0">
 	<e:Rect bottom="0" scaleX="1" scaleY="1" fillColor="0x282833" left="0" right="0" top="0"/>
 	<e:Rect scaleX="1" scaleY="1" width="360" height="85" horizontalCenter="0" y="195" fillColor="0x30303d" strokeWeight="2" strokeColor="0x181829" ellipseWidth="10"/>
-	<e:Label text="投注设置" height="34" textAlign="center" verticalAlign="middle" size="36" y="26" scaleX="1" scaleY="1" horizontalCenter="0"/>
+	<e:Label id="multilingual1" text="投注设置" height="34" textAlign="center" verticalAlign="middle" size="36" y="26" scaleX="1" scaleY="1" horizontalCenter="0"/>
 	<game:Button id="closeButton" interactive="bright" label="" scaleX="1" scaleY="1" x="616" y="23" width="42" height="42">
 		<game:skinName>
 		<e:Skin states="up,down,disabled">
@@ -32,12 +32,12 @@
 		</e:Skin>
 		</game:skinName>
 	</game:Button>
-	<e:Label text="投注总额" y="142" scaleX="1" scaleY="1" height="31" size="32" textAlign="center" verticalAlign="middle" horizontalCenter="0"/>
+	<e:Label id="multilingual2" text="投注总额" y="142" scaleX="1" scaleY="1" height="31" size="32" textAlign="center" verticalAlign="middle" horizontalCenter="0"/>
 	<game:Button id="bigBetButton" interactive="bright" label="最大投注" y="369" width="173" height="85" x="32">
 		<game:skinName>
 		<e:Skin states="up,down,disabled">
 			<e:Rect fillColor="0x30303d"  strokeColor="0x181829" width="173" height="85" strokeWeight="2" ellipseWidth="10"/>
-			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="36" textColor="0x8c6e14"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="30" textColor="0x8c6e14"/>
 		</e:Skin>
 		</game:skinName>
 	</game:Button>

@@ -6,7 +6,7 @@
 			<e:Rect scaleX="1" scaleY="1" fillAlpha="1" strokeAlpha="1" top="0" bottom="0" x="0" width="720"  fillColor="0x282833"/>
 			<e:Group width="720" height="84" x="0" y="0" scaleX="1" scaleY="1">
 				<e:Rect bottom="0" right="0" left="0" top="0"  fillColor="0x31313c"/>
-				<e:Label text="旋转设置" horizontalCenter="0" verticalCenter="0" />
+				<e:Label id="multilingual1" text="旋转设置" horizontalCenter="0" verticalCenter="0" />
 				<game:Button id="closeButton" interactive="bright" label="" scaleX="1" scaleY="1" x="624.48" verticalCenter="0">
 					<game:skinName>
 						<e:Skin states="up,down,disabled">
@@ -19,7 +19,7 @@
 			<e:Group width="680" height="195" y="108" horizontalCenter="0">
 				<e:Rect anchorOffsetY="0" left="0" right="0" top="0" bottom="1" height="195"  fillColor="0x31313c" width="680"/>
 				<e:Image x="45.000000000000014" y="27" scaleX="1" scaleY="1" height="37" width="37" source="ic_nav_spin_turbo_up"/>
-				<e:Label text="旋转速度" x="102.00000000000001" y="27" size="36" textColor="0xf2f2fc" scaleX="1" scaleY="1"/>
+				<e:Label id="multilingual2" text="旋转速度" x="102.00000000000001" y="27" size="36" textColor="0xf2f2fc" scaleX="1" scaleY="1"/>
 				<game:Button id="changSuButton" label="常速" width="261" height="85" x="84" y="84" scaleX="1" scaleY="1">
 					<game:skinName>
 					<e:Skin states="up,down,disabled">
@@ -43,7 +43,7 @@
 				<e:Rect anchorOffsetY="0" left="0" right="0" top="0" bottom="1" height="195"  fillColor="0x31313c" width="680"/>
 				<e:Group width="680" height="60" x="0" y="0" anchorOffsetY="0">
 					<e:Image x="45" y="27" source="icon_auto_spin_menu" width="37" height="37"/>
-					<e:Label text="自动旋转" x="107" y="27" size="36" verticalAlign="middle" textAlign="left" textColor="0xf2f2fc"/>
+					<e:Label id="multilingual3" text="自动旋转" x="107" y="27" size="36" verticalAlign="middle" textAlign="left" textColor="0xf2f2fc"/>
 				</e:Group>
 				<e:Group id="betGroup" width="680" height="100" x="0" y="60" scaleX="1" scaleY="1">
 					<e:Button id="autoBet10" label="10" x="40" y="20.000000000000114" width="145" height="67" name="bet_1" scaleX="1" scaleY="1">

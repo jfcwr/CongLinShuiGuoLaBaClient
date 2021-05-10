@@ -24,16 +24,16 @@
 	</w:Declarations>
 	<e:Group width="720" height="650" horizontalCenter="0" verticalCenter="0">
 
-		<e:Group horizontalCenter="200.5" y="322.43" height="300">
-			<e:Image id="freeWordImage" scaleY="1" touchEnabled="false" scaleX="1" source="free_spin-free_spins_remaining"
-			         left="-400" bottom="0" />
+		<e:Group horizontalCenter="-55.5" y="322.43" height="300">
+			<e:Image id="freeWordImage" scaleY="1" touchEnabled="false" scaleX="1"
+			          horizontalCenter="0" source="free_spin-free_spins_remaining" verticalCenter="120.5"/>
 
 
 
 
 
 			<e:BitmapLabel id="freecountBLabel" text="1" anchorOffsetX="0" font="number3_fnt" scaleX="0.7" scaleY="0.7"
-			               bottom="-30"  horizontalCenter="0"/>
+			               bottom="-30"  right="-150"/>
 
 
 		</e:Group>

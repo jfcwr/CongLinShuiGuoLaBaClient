@@ -173,6 +173,10 @@ module conglinshuiguo {
             this.curIndex = 0;
             this.pageHelper = new PageHelper(this.helpScroller);
             this.pageHelper.addPageChangedListener(this.onPageChanged, this);
+
+            for(let i=0;i<22;++i){
+                this.skin["rulelabel"+i].text = game.Words.get(i);
+            }
         }
 
         protected onPageChanged(pageIndex: number) {
