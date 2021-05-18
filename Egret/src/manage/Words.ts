@@ -306,6 +306,9 @@ game.Words.register(100)
 game.Words.register(101)
     .set(game.LanguageType.Chinese, "金额不足!")
     .set(game.LanguageType.Vietnamese, "Không đủ GP")
+game.Words.register(102)
+    .set(game.LanguageType.Chinese, "检测到您急停的频率很高,是否开启极速旋转模式?")
+    .set(game.LanguageType.Vietnamese, "检测到您急停的频率很高,是否开启极速旋转模式?")
 
 
 

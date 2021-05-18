@@ -1505,15 +1505,15 @@ module conglinshuiguo {
                     }
                     if (this.mAccFastStopTimes >= 4 && !DataCenter.Instance.IsQuickRotate) {
                         this.mAccFastStopTimes = -1;
-                        GX.Tips.showPopup("检测到您急停的频率很高,是否开启极速旋转模式?", () => {
-                            //确定
-                            this.rotationButton.currentState = "down"
-                            this.rotationSetButton.currentState = "down"
-                            DataCenter.Instance.IsQuickRotate = true
-                        }, () => {
+                        // GX.Tips.showPopup(game.Words.get(102), () => {
+                        //     //确定
+                        //     this.rotationButton.currentState = "down"
+                        //     this.rotationSetButton.currentState = "down"
+                        //     DataCenter.Instance.IsQuickRotate = true
+                        // }, () => {
 
-                            //否定
-                        }, this, true, null, null, null, null, false);
+                        //     //否定
+                        // }, this, true, null, null, null, null, false);
                     }
                     this.mLabaMachine.doFastStop()
                     this.gameRotateButton.enabled = false
@@ -1531,7 +1531,7 @@ module conglinshuiguo {
             this.switchTipsImage(1)
             DataCenter.Instance.ChangeIconWin = []
             if (DataCenter.Instance.ServerRealGold < DataCenter.Instance.CurDizhu) {
-                GX.Tips.showPopup("金额不足");
+                GX.Tips.showPopup(game.Words.get(101));
                 labalib.EventManager.ResetButtonStatusEvent.call()
                 return
             }
