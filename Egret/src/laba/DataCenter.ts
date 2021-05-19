@@ -59,7 +59,7 @@ module conglinshuiguo {
             let dizhuList: Array<number> = this.getDizhuList();
             // this.mCurDizhu = this.mLineCount * dizhuList[this.mDizhuIndex];
             this.mCurDizhu = dizhuList[this.mDizhuIndex];
-            LabaGame.Instance.betNumLabel.text = "" + this.mCurDizhu
+            LabaGame.Instance.betNumLabel.text = GX.GoldFormat(this.mCurDizhu, false, true, true)//"" + this.mCurDizhu
         }
 
         /**当前每一条线的底注 */

@@ -285,7 +285,7 @@ module conglinshuiguo {
 			}
 			SoundHand.Instance.playFreebtnSound();
 			egret.Tween.removeTweens(this.winLabel)
-			this.winLabel.text = DataCenter.Instance.FreeAccObtainGold + ""
+			this.winLabel.text = GX.GoldFormat(DataCenter.Instance.FreeAccObtainGold, true, true, true);//DataCenter.Instance.FreeAccObtainGold + ""
 			game.Timer.clearTimeout(this.mDelayCloseTimer)
 			this.mDelayCloseTimer = game.Timer.setTimeout(() => {
 				GX.PopUpManager.removePopUp(FreeReultPanel.Instance)

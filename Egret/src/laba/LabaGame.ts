@@ -950,7 +950,7 @@ module conglinshuiguo {
             
             let label = this.iconLineGroup.getChildByName("muti") as eui.BitmapLabel
             label.visible = point != 0 ? true : false
-            label.text = "" + point
+            label.text = GX.GoldFormat(point, true, true, true);//"" + point
             let labely = SgmlHelper.Instance.getLineInfo(index)[2]
             let labelPosmap = [0, -20, -50, 40, 40, 90, 0, 40, 30, 30,
                 0, 30, 40, 50, 0,30, 0, 0, 20, 40]
@@ -2070,7 +2070,7 @@ module conglinshuiguo {
             }
             if (isDisPlay)
                 DataCenter.Instance.DisplayRaceGold(raceNo);
-            this.raceObtainGoldLabel.text = "" + obtainGold
+            this.raceObtainGoldLabel.text = GX.GoldFormat(obtainGold, false, true, true)//"" + obtainGold
             // this.switchTipsImage(4, obtainGold)
         }
         public delayRotateTimer: number

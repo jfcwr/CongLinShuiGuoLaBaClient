@@ -188,7 +188,7 @@ module conglinshuiguo {
                 DataCenter.Instance.DizhuIndex = idx;
             }
             GX.localStorage.setItem("dizhu_" + game.GameId(), idx.toString());
-            this.allBetNum.text = DataCenter.Instance.CurDizhu + ""
+            this.allBetNum.text = GX.GoldFormat(DataCenter.Instance.CurDizhu, false, true, true)//DataCenter.Instance.CurDizhu + ""
         }
         public onSubButton() {
             let dizhuIndex = DataCenter.Instance.DizhuIndex;
