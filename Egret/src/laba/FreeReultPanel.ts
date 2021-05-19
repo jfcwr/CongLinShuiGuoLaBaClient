@@ -80,7 +80,7 @@ module conglinshuiguo {
 				this.playCopperFly();
 				egret.Tween.get(this.lightImage2).set({ scaleX:1,scaleY:1,alpha:1 }).to({ scaleX:12,scaleY:12 }, 300).to({ alpha:0 }, 300)
 				// labalib.Utils.PlayTweenGroup(this.totalGlow, 1)
-			})
+			},{isBitmapLabel:true,fontPrecise:false,isThousandFormat:true})
 			LabaGame.Instance.maskRect.visible = true;
 			LabaGame.Instance.freemGroup.addChild(FreeReultPanel.Instance);
 			FreeReultPanel.Instance.y = uniLib.Global.screenHeight-1280;
@@ -285,7 +285,7 @@ module conglinshuiguo {
 			}
 			SoundHand.Instance.playFreebtnSound();
 			egret.Tween.removeTweens(this.winLabel)
-			this.winLabel.text = GX.GoldFormat(DataCenter.Instance.FreeAccObtainGold, true, true, true);//DataCenter.Instance.FreeAccObtainGold + ""
+			this.winLabel.text = GX.GoldFormat(DataCenter.Instance.FreeAccObtainGold, true, false, true);//DataCenter.Instance.FreeAccObtainGold + ""
 			game.Timer.clearTimeout(this.mDelayCloseTimer)
 			this.mDelayCloseTimer = game.Timer.setTimeout(() => {
 				GX.PopUpManager.removePopUp(FreeReultPanel.Instance)

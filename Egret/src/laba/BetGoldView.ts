@@ -188,7 +188,7 @@ module conglinshuiguo {
                 DataCenter.Instance.DizhuIndex = idx;
             }
             GX.localStorage.setItem("dizhu_" + game.GameId(), idx.toString());
-            this.allBetNum.text = GX.GoldFormat(DataCenter.Instance.CurDizhu, false, true, true)//DataCenter.Instance.CurDizhu + ""
+            this.allBetNum.text = GX.GoldFormat(DataCenter.Instance.CurDizhu, false, false, true)//DataCenter.Instance.CurDizhu + ""
         }
         public onSubButton() {
             let dizhuIndex = DataCenter.Instance.DizhuIndex;
@@ -201,7 +201,7 @@ module conglinshuiguo {
                 DataCenter.Instance.DizhuIndex = idx;
             }
             GX.localStorage.setItem("dizhu_" + game.GameId(), idx.toString());
-            this.allBetNum.text = GX.GoldFormat(DataCenter.Instance.CurDizhu, false, true, true)
+            this.allBetNum.text = GX.GoldFormat(DataCenter.Instance.CurDizhu, false, false, true)
         }
         protected onBigBetClickButton() {
             if (BetGoldView.Instance.parent) {
@@ -213,14 +213,14 @@ module conglinshuiguo {
         }
         public updateBetView() {
 
-            this.allBetNum.text = GX.GoldFormat(DataCenter.Instance.CurDizhu, false, true, true)
+            this.allBetNum.text = GX.GoldFormat(DataCenter.Instance.CurDizhu, false, false, true)
 
         }
         protected onBigBetButton() {
             let idx = DataCenter.Instance.MaxDizhuIndex;
             DataCenter.Instance.DizhuIndex = idx;
             GX.localStorage.setItem("dizhu_" + game.GameId(), idx.toString());
-            this.allBetNum.text = GX.GoldFormat(DataCenter.Instance.CurDizhu, false, true, true)
+            this.allBetNum.text = GX.GoldFormat(DataCenter.Instance.CurDizhu, false, false, true)
         }
         private multilingual1:eui.Label;
         private multilingual2:eui.Label;

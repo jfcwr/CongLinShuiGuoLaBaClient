@@ -431,7 +431,7 @@ module conglinshuiguo {
                                 SoundHand.Instance.switchMusicBG(0)
                             }
                         }
-                    });
+                    },{isBitmapLabel:true,fontPrecise:false,isThousandFormat:true});
                     
                 }).wait(waitTime)
             }
@@ -454,7 +454,7 @@ module conglinshuiguo {
                 //还有没有播放完毕的金币类型;
                 if (this._mCurPlayWinType < showWinTypeCount) {
                     this.playWinType(showWinTypeCount);
-                    this.GoldNumLabel.text = GX.GoldFormat(obtainGold, false, true);
+                    this.GoldNumLabel.text = GX.GoldFormat(obtainGold, true, false,true);
                 }
                 game.Timer.clearTimeout(this._mDelayClosePanelTimer)
                 this._mDelayClosePanelTimer = game.Timer.setTimeout(() => {

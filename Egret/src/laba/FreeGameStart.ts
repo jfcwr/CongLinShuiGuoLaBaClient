@@ -104,7 +104,7 @@ module conglinshuiguo {
 
         public playAppear() {
             SoundHand.Instance.switchMusicBG(3)
-            this.leftCountLabel.text = GX.GoldFormat(DataCenter.Instance.getFreeBonusCount(), true, true, true)//DataCenter.Instance.getFreeBonusCount()+"";
+            this.leftCountLabel.text = GX.GoldFormat(DataCenter.Instance.getFreeBonusCount(), true, false, true)//DataCenter.Instance.getFreeBonusCount()+"";
             egret.Tween.get(this.bgimage).set({ alpha: 0 }).to({ alpha: 1 }, 300);
             if(!this.winMonkeyMov){
                 this.winMonkeyMov = uniLib.DragonUtils.createDragonBoneAnimation("mgbg_wins_lemur")
@@ -235,7 +235,7 @@ module conglinshuiguo {
                             // labalib.Utils.PlayTweenGroup(this.startBtnLight, 1)
 
                         })
-                });
+                },{isBitmapLabel:true,fontPrecise:false,isThousandFormat:true});
             // })
             this.mAutoCloseTimer = game.Timer.setTimeout(() => {
                 // this.lcloud.visible = true

@@ -76,7 +76,7 @@ class CLSGMain extends uniLib.GameDoc {
         egret.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
 
         RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
-        game.Language.Type = game.LanguageType.Chinese;
+        game.Language.Type = game.LanguageType.Vietnamese;
         // RES.loadConfig("resource/default.res.json", "resource/");
         RES.loadConfig("resource/" + game.Language.getResJsonFileName(), "resource/");
 

@@ -248,7 +248,7 @@
 		<e:Group id="mysteriousBoxGroup" width="710" height="515" horizontalCenter="0" touchEnabled="false" top="375"/>
 		<e:Group height="106" touchEnabled="false" touchChildren="false" x="-5" y="259">
 			<e:Group id="worldGroup" width="628" height="77" anchorOffsetY="0" x="45" anchorOffsetX="0" y="29">
-			<e:Image id="TipsImage" scaleX="1" scaleY="1" touchEnabled="false" x="116" source="infoboard-info_1" verticalCenter="0"/>
+			<e:Image id="TipsImage" scaleX="1" scaleY="1" touchEnabled="false" source="infoboard-info_1" verticalCenter="0" horizontalCenter="19"/>
 			</e:Group>
 
 			<e:Group id="winWorldGroup" width="628" height="77" anchorOffsetY="0" anchorOffsetX="0" y="30" horizontalCenter="0" visible="false">
@@ -401,10 +401,10 @@
 					</game:Button>
 					</e:Group>
 					<e:Group width="720" height="72" x="0" y="108">
-					<e:Label id="multilingual5" text="声音" x="60" width="80" textAlign="center" textColor="0x605d5c" size="26" scaleX="1" scaleY="1" verticalCenter="0"/>
-					<e:Label id="multilingual6" text="赔付表" x="228" textAlign="center" textColor="0x605d5c" size="26" width="80" scaleX="1" scaleY="1" verticalCenter="0"/>
-					<e:Label id="multilingual7" text="规则" width="80" textAlign="center" size="26" textColor="0x605d5c" horizontalCenter="85" x="296" scaleX="1" scaleY="1" verticalCenter="0"/>
-					<e:Label id="multilingual8" text="退出" x="576" width="80" textAlign="center" size="26" textColor="0x605D5C" scaleX="1" scaleY="1" verticalCenter="0"/>
+					<e:Label id="multilingual5" text="声音" width="140" textAlign="center" textColor="0x605d5c" size="26" scaleX="1" scaleY="1" verticalCenter="0" horizontalCenter="-260"/>
+					<e:Label id="multilingual6" text="赔付表" textAlign="center" textColor="0x605d5c" size="26" width="140" scaleX="1" scaleY="1" verticalCenter="0" horizontalCenter="-92"/>
+					<e:Label id="multilingual7" text="规则" width="140" textAlign="center" size="26" textColor="0x605d5c" horizontalCenter="85" scaleX="1" scaleY="1" verticalCenter="0"/>
+					<e:Label id="multilingual8" text="退出" width="140" textAlign="center" size="26" textColor="0x605D5C" scaleX="1" scaleY="1" verticalCenter="0" horizontalCenter="256"/>
 					<e:layout>
 						<e:BasicLayout/>
 					</e:layout>

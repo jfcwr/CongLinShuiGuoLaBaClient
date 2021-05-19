@@ -950,7 +950,7 @@ module conglinshuiguo {
             
             let label = this.iconLineGroup.getChildByName("muti") as eui.BitmapLabel
             label.visible = point != 0 ? true : false
-            label.text = GX.GoldFormat(point, true, true, true);//"" + point
+            label.text = GX.GoldFormat(point, true, false, true);//"" + point
             let labely = SgmlHelper.Instance.getLineInfo(index)[2]
             let labelPosmap = [0, -20, -50, 40, 40, 90, 0, 40, 30, 30,
                 0, 30, 40, 50, 0,30, 0, 0, 20, 40]
@@ -1734,7 +1734,7 @@ module conglinshuiguo {
 
         public chipChanged() {
             let point = this.myUser.point == null ? 0 : this.myUser.point;
-            this.moneyLabel.text = GX.GoldFormat(Number(GX.numToFixed(point, 2)), true, true, true);
+            this.moneyLabel.text = GX.GoldFormat(Number(GX.numToFixed(point, 2)), true, false, true);
             if (point != 0) {
                 this.myUser.pointChanged.remove(this.chipChanged, this);
                 return;
@@ -1766,11 +1766,11 @@ module conglinshuiguo {
             //     this.moneyLabel.text = GX.GoldFormat(Number(GX.numToFixed(DataCenter.Instance.mainGold(), 2)), true, true, true);
             // }
             // else{
-            this.moneyLabel.text = GX.GoldFormat(Number(GX.numToFixed(gold, 2)), true, true, true);
+            this.moneyLabel.text = GX.GoldFormat(Number(GX.numToFixed(gold, 2)), true, false, true);
             // }
         }
         public setMainGoldManu(gold: number) {
-            this.moneyLabel.text = GX.GoldFormat(Number(GX.numToFixed(gold, 2)), true, true, true);
+            this.moneyLabel.text = GX.GoldFormat(Number(GX.numToFixed(gold, 2)), true, false, true);
         }
 
         //取出需要播放的组；
@@ -2070,7 +2070,7 @@ module conglinshuiguo {
             }
             if (isDisPlay)
                 DataCenter.Instance.DisplayRaceGold(raceNo);
-            this.raceObtainGoldLabel.text = GX.GoldFormat(obtainGold, false, true, true)//"" + obtainGold
+            this.raceObtainGoldLabel.text = GX.GoldFormat(obtainGold, false, false, true)//"" + obtainGold
             // this.switchTipsImage(4, obtainGold)
         }
         public delayRotateTimer: number
@@ -2861,7 +2861,7 @@ module conglinshuiguo {
             
 
             if(this.isFreeGame){
-                this.winMoneyLabel.text = GX.GoldFormat(obtainGold, true, true, true)
+                this.winMoneyLabel.text = GX.GoldFormat(obtainGold, true, false, true)
                 this.TipsImage.source = "infoboard-info_7";
                 this.TipsImage.x = 20;
                 return
@@ -2888,12 +2888,12 @@ module conglinshuiguo {
                 let showImageIndex = [1, 2, 7, 3, 4,5]
                 for (let idx of showImageIndex) {
                     let posX = (parent.width - widthlist[idx - 1]) / 2
-                    let moveWidth = posX > 0 ? posX : 20
                     let imageWidth = RES.getRes("infoboard-info_" + idx)._bitmapWidth;
+                    let moveWidth = (imageWidth-600)/2//posX > 0 ? posX : 20
                     if (imageWidth>600) {
-                        moveTween.set({ x: moveWidth, source: "infoboard-info_" + idx }).wait(300).to({ x: -widthlist[idx - 1] }, 5000)
+                    moveTween.set({ horizontalCenter: moveWidth, source: "infoboard-info_" + idx }).wait(300).to({ horizontalCenter: -(600+moveWidth+50) }, imageWidth*5)
                     } else {
-                        moveTween.set({ x: moveWidth, source: "infoboard-info_" + idx }).wait(5000)
+                        moveTween.set({ horizontalCenter: 0, source: "infoboard-info_" + idx }).wait(5000)
                     }
                 }
             }
@@ -2922,14 +2922,14 @@ module conglinshuiguo {
                     obtainGold1 = DataCenter.Instance.RaceObtainGold;
                 }
 
-                this.winMoneyLabel.text = GX.GoldFormat(obtainGold1, true, true, true)
+                this.winMoneyLabel.text = GX.GoldFormat(obtainGold1, true, false, true)
                 let muti = obtainGold1 * 20 / DataCenter.Instance.CurDizhu
                 if (!DataCenter.Instance.isBigwin(obtainGold1) && muti > 60) {
                     labalib.Utils.scrollNumber(this.winMoneyLabel, 0, obtainGold1, 2400, () => {
                         // uniLib.SoundMgr.instance.playSound("scrollgold2_mp3", 1);
-                    })
+                    },{isBitmapLabel:true,fontPrecise:false,isThousandFormat:true})
                 } else
-                    this.winMoneyLabel.text = GX.GoldFormat(obtainGold1, true, true, true)
+                    this.winMoneyLabel.text = GX.GoldFormat(obtainGold1, true, false, true)
                 this.winMoneyLabel.visible = true
                 this.winMoneyImage.visible = true
 
