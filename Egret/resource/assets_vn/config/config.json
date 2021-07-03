@@ -1,7 +1,7 @@
 {
-    "LoginUrl": "http://192.168.8.3:9205/httplogin",
+    "LoginUrl": "https://login.test-outside.gjhszc.com:7000/httplogin",
     "GameID": 8548,
-    "ZoneID": 302,
+    "ZoneID": 301,
     "testUserId": 10,
     "debug": 1,
     "cdnPath": "",

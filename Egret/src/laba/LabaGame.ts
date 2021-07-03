@@ -1478,7 +1478,7 @@ module conglinshuiguo {
 
         public mGameButtonStatus: GameRotateStatus = GameRotateStatus.RotateNormal
         public onRotateButtonByClick(e: egret.Event = null) {
-            if(Number(this.moneyLabel.text)<labalib.LabaDataCenter.Instance.CurDizhu){
+            if(DataCenter.Instance.ServerRealGold<labalib.LabaDataCenter.Instance.CurDizhu){
                 GX.Tips.showTips(game.Words.get(101))
                 return;
             }
