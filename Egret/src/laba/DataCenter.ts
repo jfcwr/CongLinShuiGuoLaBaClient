@@ -44,6 +44,8 @@ module conglinshuiguo {
         public loadConfig() {
             this.mLabaItemMultiplyCfg = table.ItemMultiplyList.instance();
             this.mLabaLineInfoCfg = table.LabaLineList.instance();
+            this.mLabaLineInfoCfg[this.mLabaLineInfoCfg.length-1].col2RowNo = 3;
+            this.mLabaLineInfoCfg[this.mLabaLineInfoCfg.length-1].col4RowNo = 1;
             this.mTableGameRuleConfig = table.TableGameRuleConfigList.instance();
             this.mTableItemConfig = table.TableItemConfig.instance();
             this.mLabaEffectResultPoolCfg = table.LabaEffectMultiplyList.instance();

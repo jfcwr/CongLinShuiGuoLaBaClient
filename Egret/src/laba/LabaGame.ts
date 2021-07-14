@@ -513,6 +513,8 @@ module conglinshuiguo {
             this.playMonkeyAboutMov();
             this.multilingualLabel();
 
+
+
         }
         private multilingual4:eui.Label;
         private multilingual1:eui.Label;
@@ -2932,6 +2934,7 @@ module conglinshuiguo {
                     this.winMoneyLabel.text = GX.GoldFormat(obtainGold1, true, true, true)
                 this.winMoneyLabel.visible = true
                 this.winMoneyImage.visible = true
+                
 
                 
             }

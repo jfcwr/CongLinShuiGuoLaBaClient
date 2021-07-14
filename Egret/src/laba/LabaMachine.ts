@@ -497,13 +497,13 @@ module conglinshuiguo {
             //     "awardMultiple": 5, "specialSymbolNum": 9, "isPinpan": 0
             // }]
             // topData.labaStatusInfo.dataList = [{
-            //     "isFalseFree": 0, "awardMultipleReal": 0, "specialSymbolAward": 0, "awardPoint": 20000,
-            //     "itemIdList": [[3, 1, 3],
-            //     [4, 8, 6],
-            //     [3, 1, 3],
-            //     [3, 1, 3],
-            //     [3, 2, 3]], "jackpotSpecialSymbolType": 0, "totalValue": 0, "specialSymbolValues": [],
-            //     "awardMultiple": 5, "specialSymbolNum": 9, "isPinpan": 0
+            //     "isFalseFree": 0, "awardMultipleReal": 18, "specialSymbolAward": 0, "awardPoint": 13500,
+            //     "itemIdList": [[4, 4, 8],
+            //     [8, 1, 4],
+            //     [1, 4, 5],
+            //     [5, 7, 6],
+            //     [5, 6, 6]], "jackpotSpecialSymbolType": 0, "totalValue": 0, "specialSymbolValues": [],
+            //     "awardMultiple": 0, "specialSymbolNum": 0, "isPinpan": 0
             // }]
             // topData.labaStatusInfo.dataList[0].awardPoint = 5000 / 5 * 326
             // topData.labaStatusInfo.dataList[0].awardMultipleReal = 326
