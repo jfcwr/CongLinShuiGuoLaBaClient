@@ -2861,7 +2861,7 @@ module conglinshuiguo {
             
 
             if(this.isFreeGame){
-                this.winMoneyLabel.text = GX.GoldFormat(obtainGold, true, false, true)
+                this.winMoneyLabel.text = GX.GoldFormat(obtainGold, true, true, true)
                 this.TipsImage.source = "infoboard-info_7";
                 this.TipsImage.x = 20;
                 return
@@ -2922,14 +2922,14 @@ module conglinshuiguo {
                     obtainGold1 = DataCenter.Instance.RaceObtainGold;
                 }
 
-                this.winMoneyLabel.text = GX.GoldFormat(obtainGold1, true, false, true)
+                this.winMoneyLabel.text = GX.GoldFormat(obtainGold1, true, true, true)
                 let muti = obtainGold1 * 20 / DataCenter.Instance.CurDizhu
                 if (!DataCenter.Instance.isBigwin(obtainGold1) && muti > 60) {
                     labalib.Utils.scrollNumber(this.winMoneyLabel, 0, obtainGold1, 2400, () => {
                         // uniLib.SoundMgr.instance.playSound("scrollgold2_mp3", 1);
                     },{isBitmapLabel:true,fontPrecise:false,isThousandFormat:true})
                 } else
-                    this.winMoneyLabel.text = GX.GoldFormat(obtainGold1, true, false, true)
+                    this.winMoneyLabel.text = GX.GoldFormat(obtainGold1, true, true, true)
                 this.winMoneyLabel.visible = true
                 this.winMoneyImage.visible = true
 
